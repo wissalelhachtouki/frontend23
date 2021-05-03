@@ -1,10 +1,10 @@
 import Vue from "vue";
 import Router from "vue-router";
 import Index from "./views/Index.vue";
-import Login from "./views/components/Login";
+import Login from "./views/Login";
 import MainNavbar from "./layout/MainNavbar.vue";
 import MainFooter from "./layout/MainFooter.vue";
-import Register from "@/views/components/Register";
+import Register from "@/views/Register";
 
 Vue.use(Router);
 

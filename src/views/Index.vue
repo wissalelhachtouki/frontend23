@@ -15,38 +15,41 @@
       <div class="section section-basic">
         <div class="container">
           <div class="title">
-            <h2>Basic Elements</h2>
+            <h2 style="text-align: center"><strong>ABOUT US</strong></h2>
           </div>
-          <basic-elements></basic-elements>
+          <about-us></about-us>
         </div>
       </div>
-      <div class="section section-navbars">
-        <div class="container">
-          <small-navigation></small-navigation>
-        </div>
-        <navigation></navigation>
-      </div>
-      <div class="section section-tabs">
-        <div class="container">
-          <tabs></tabs>
-        </div>
-      </div>
-      <div class="section section-white">
-        <div class="container">
-          <nav-pills></nav-pills>
-        </div>
-      </div>
-      <div class="section section-notifications">
+
+      <div class="section ">
         <div class="container">
           <div class="title">
-            <h3>Notifications</h3>
+            <h2 style="text-align: center ; color: #4a148c ; font-family: 'Arial Rounded MT Bold'"  ><strong> Le copilote numérique de votre  activité de formation </strong></h2>
           </div>
+          <details-section></details-section>
         </div>
-        <notifications></notifications>
+      </div>
+      <div class="section section-dashboard">
+        <div class="container">
+
+        </div>
+        <DashboardSection></DashboardSection>
+      </div>
+      <div class="section section-dashboard">
+        <div class="container">
+
+        </div>
+        <Tasks></Tasks>
+      </div>
+      <div class="section section-dashboard">
+        <div class="container">
+
+        </div>
+        <gestionforma></gestionforma>
       </div>
       <div class="section">
         <div class="container">
-          <typography-images></typography-images>
+          <card></card>
         </div>
       </div>
       <div class="section section-javascript">
@@ -82,8 +85,20 @@
 
 
 
+import DetailsSection from "./components/DetailsSection";
+import DashboardSection from "./components/DashboardSection";
+import Tasks from "./components/Tasks";
+import Gestionforma from "./components/Gestionforma";
+import AboutUs from "./components/AboutUs";
+import card from "./components/card";
 export default {
   components: {
+    AboutUs,
+    Gestionforma,
+    Tasks,
+    card,
+    DashboardSection,
+    DetailsSection
 
 
 

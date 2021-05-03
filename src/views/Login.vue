@@ -4,22 +4,29 @@
       <div class="container">
         <div class="md-layout">
           <div class="md-layout-item md-size-33 md-small-size-66 md-xsmall-size-100 md-medium-size-40 mx-auto">
-            <login-card header-color="green">
+            <login-card header-color="black">
               <h4 slot="title" class="card-title">Login</h4>
+
+
 
               <md-field class="md-form-group" slot="inputs">
                 <md-icon>email</md-icon>
                 <label>Email...</label>
                 <md-input v-model="email" type="email"></md-input>
               </md-field>
+
               <md-field class="md-form-group" slot="inputs">
                 <md-icon>lock_outline</md-icon>
                 <label>Password...</label>
                 <md-input v-model="password"></md-input>
               </md-field>
 
+              <md-checkbox class="md-form-group" slot="inputs">
+                <label>Remember me</label>
+              </md-checkbox>
+
               <md-button slot="footer" class="md-simple md-success md-lg">
-                Get Started
+                Se Connecter
               </md-button>
             </login-card>
           </div>
@@ -36,10 +43,10 @@ export default {
   components: {
     LoginCard
   },
-  bodyClass: "register-page",
+  bodyClass: "login-page",
   data() {
     return {
-      firstname: null,
+
       email: null,
       password: null
     };

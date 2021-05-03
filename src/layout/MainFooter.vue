@@ -9,31 +9,25 @@
         <ul>
           <li>
             <h1>
-              Notre Appli
+              Digiforma
             </h1>
           </li>
 
           <li>
-            <h2>
-              About Us
-            </h2>
+            <h3>
+              AboutUs
+            </h3>
           </li>
+
           <li>
             <h3 >
               Blog
             </h3>
           </li>
-          <li>
-            <h3 >
-              Licenses
-            </h3>
-          </li>
         </ul>
       </nav>
       <div class="copyright">
-        &copy; {{ year }}, made with <md-icon>favorite</md-icon> by
-        <a href="https://www.creative-tim.com/" target="_blank">Creative Tim</a>
-        for a better web.
+        &copy; {{ year }}, made with <md-icon>favorite</md-icon> by Us.
       </div>
     </div>
   </footer>
