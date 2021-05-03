@@ -4,6 +4,7 @@ import Index from "./views/Index.vue";
 import Login from "./views/components/Login";
 import MainNavbar from "./layout/MainNavbar.vue";
 import MainFooter from "./layout/MainFooter.vue";
+import Register from "@/views/components/Register";
 
 Vue.use(Router);
 
@@ -26,6 +27,14 @@ export default new Router({
         header: { colorOnScroll: 400 }
       }
     },
+    {
+      path: "/register",
+      name: "register",
+      components: { default: Register, header: MainNavbar, footer: MainFooter },
+      props: {
+        header: { colorOnScroll: 400 }
+      }
+    }
 
   ],
   scrollBehavior: to => {

@@ -28,38 +28,24 @@
             </mobile-menu>
             <md-list>
 
-
-
-              <md-list-item
-                href="javascript:void(0)"
-                @click="scrollToElement()"
-                v-if="showDownload"
-              >
+              <md-list-item>
                 <a href="#/login">
                   <i class="material-icons">fingerprint</i>
                   <p>Login Page</p>
                 </a>
               </md-list-item>
 
-              <md-list-item
-                  href="javascript:void(0)"
-                  @click="scrollToElement()"
-                  v-if="showDownload"
-              >
-                <a href="#/profile">
+              <md-list-item>
+                <a href="#/register">
                   <i class="material-icons">account_circle</i>
                   <p>Register</p>
                 </a>
               </md-list-item>
 
-              <md-list-item
-                  href="javascript:void(0)"
-                  @click="scrollToElement()"
-                  v-if="showDownload"
-              >
-                <a href="#/landing">
+              <md-list-item>
+                <a href="#/">
                   <i class="material-icons">view_day</i>
-                  <p>Contact </p>
+                  <p>Home</p>
                 </a>
               </md-list-item>
 
