@@ -21,13 +21,15 @@
                 <md-input v-model="password"></md-input>
               </md-field>
 
-              <md-checkbox class="md-form-group" slot="inputs">
-                <label>Remember me</label>
+              <md-checkbox class="md-form-group md-success" slot="inputs">
+                <label>Se souvenir de moi</label>
               </md-checkbox>
 
-              <md-button slot="footer" class="md-simple md-success md-lg">
+              <md-button slot="footer" >
                 Se Connecter
               </md-button>
+
+
             </login-card>
           </div>
         </div>
