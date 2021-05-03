@@ -12,18 +12,6 @@
               Digiforma
             </h1>
           </li>
-
-          <li>
-            <h3>
-              AboutUs
-            </h3>
-          </li>
-
-          <li>
-            <h3 >
-              Blog
-            </h3>
-          </li>
         </ul>
       </nav>
       <div class="copyright">

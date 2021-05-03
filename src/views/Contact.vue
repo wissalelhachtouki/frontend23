@@ -1,11 +1,11 @@
-<template>
+<template >
   <div class="wrapper">
     <div class="section page-header header-filter" :style="headerStyle">
       <div class="container">
         <div class="md-layout">
           <div class="md-layout-item md-size-33 md-small-size-66 md-xsmall-size-100 md-medium-size-40 mx-auto">
-            <login-card header-color="info">
-              <h4 slot="title" class="card-title">Register</h4>
+            <login-card header-color="orange">
+              <h4 slot="title" class="card-title">Contact Us</h4>
 
 
               <md-field class="md-form-group" slot="inputs">
@@ -14,27 +14,24 @@
                 <md-input v-model="nom" type="text"></md-input>
               </md-field>
 
+
+
               <md-field class="md-form-group" slot="inputs">
                 <md-icon>email</md-icon>
-                <label>Email...</label>
+                <label>Email ...</label>
                 <md-input v-model="email" type="email"></md-input>
               </md-field>
 
               <md-field class="md-form-group" slot="inputs">
-                <md-icon>lock_outline</md-icon>
-                <label>Password...</label>
-                <md-input v-model="password"></md-input>
+
+                <label> <md-icon>inbox</md-icon> </label>
+                <md-textarea v-model="text" type="text"></md-textarea>
               </md-field>
 
-              <md-field class="md-form-group" slot="inputs">
-                <md-icon>lock_outline</md-icon>
-                <label>Confirm Password...</label>
-                <md-input v-model="password"></md-input>
-              </md-field>
 
 
               <md-button slot="footer" class="md-simple md-success md-lg">
-                Confirmer
+                Envoyer
               </md-button>
             </login-card>
           </div>

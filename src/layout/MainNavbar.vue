@@ -43,6 +43,13 @@
               </md-list-item>
 
               <md-list-item>
+                <a href="#/contact">
+                  <i class="material-icons">email</i>
+                  <p>Contact</p>
+                </a>
+              </md-list-item>
+
+              <md-list-item>
                 <a href="#/">
                   <i class="material-icons">view_day</i>
                   <p>Home</p>
