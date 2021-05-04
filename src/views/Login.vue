@@ -31,7 +31,7 @@
 
               <md-label slot="inputs" class="md-form-group">
                 <hr>
-                <a href="">Don't have an account? Sign up</a>
+                <p>Don't have an account? <a href="#/register"> Sign up</a></p>
               </md-label>
 
 

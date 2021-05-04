@@ -36,7 +36,7 @@
               <md-label slot="inputs" class="md-form-group">
 
                 <br>
-                <a href="">Have already an account? Sign in</a>
+                <p>Have already an account? <a href="#/login">Sign in</a></p>
               </md-label>
 
 
