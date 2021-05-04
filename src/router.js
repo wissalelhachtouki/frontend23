@@ -7,6 +7,7 @@ import MainNavbar from "./layout/MainNavbar.vue";
 import MainFooter from "./layout/MainFooter.vue";
 import Register from "@/views/Register";
 import Blog1 from "./views/Blog1";
+import Blog2 from "./views/Blog2";
 
 Vue.use(Router);
 
@@ -25,6 +26,14 @@ export default new Router({
       path: "/blog1",
       name: "blog1",
       components: { default: Blog1, header: MainNavbar, footer: MainFooter },
+      props: {
+        header: { colorOnScroll: 400 }
+      }
+    },
+    {
+      path: "/blog2",
+      name: "blog2",
+      components: { default: Blog2  , header: MainNavbar, footer: MainFooter },
       props: {
         header: { colorOnScroll: 400 }
       }

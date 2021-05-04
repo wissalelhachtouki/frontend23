@@ -18,7 +18,7 @@
               plain
               flex-column
               nav-pills-icons
-              color-button="primary"
+              color-button="danger"
           >
             <!-- here you can add your content for tab-content -->
             <template slot="tab-pane-1">

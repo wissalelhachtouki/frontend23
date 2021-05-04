@@ -1,4 +1,4 @@
-<template>
+<template >
   <div class="wrapper">
 
 
@@ -13,12 +13,13 @@
             </div>
           </div>
           <div class="description text-center">
-            <p>
-              L'application mobile Turkish Airlines vous offre une expérience de voyage améliorée. Vous pouvez acheter un billet et traiter les transactions d'enregistrement sur mobile tout en planifiant vos vacances du début à la fin. Toutes les informations dont vous avez besoin pour votre voyage sont désormais à portée de main ! Pour télécharger notre application mobile, vous pouvez suivre les liens Turkish Airlines pour iOS ou Turkish Airlines pour Android en fonction du système d'exploitation de votre smartphone.
-            </p>
+            <h4>
+              <strong style="color: #1b5e20">Digiforma </strong> est un produit  qui édite des solutions innovantes en mode SaaS. Forts de notre expertise en technologies web et de notre expérience de la formation, nous développons des outils à destination des organismes de formation et des formateurs indépendants : outils pédagogiques, solution de formation à distance pour
+              les équipes commerciales et logiciel de gestion administrative.
+            </h4>
 
         <md-button href="#/register" class="md-simple  md-success md-round md-lg"
-        ><strong>Créer Votre Compte gratuit </strong> </md-button
+        ><strong>Essayer maintenant! </strong> </md-button
         >
       </div>
 

@@ -18,8 +18,8 @@
                   />
                 </div>
                 <div class="name">
-                  <h3 class="title">Wissal El hachtouki</h3>
-                  <h6>Pourquoi Un Dashboard?</h6>
+                  <h3 class="title">Anass Belkas</h3>
+                  <h6>Quel est le rôle de la formation ?</h6>
                   <md-button
                       href="javascript:void(0)"
                       class="md-just-icon md-simple md-dribbble"
@@ -41,14 +41,16 @@
           </div>
           <div class="description text-center">
             <p>
-              Le dashboard affiche tous les éléments qui permettent d’apprécier et de juger la situation dans laquelle se trouve l’entreprise. Il permet d’avoir une vue générale du système, car il résume toutes les informations en quelques indicateurs essentiels. Il aide ainsi à prendre les bonnes décisions.
+              La formation permet au salarié de développer sa carrière professionnelle, sur le long terme. Grâce à ces cursus, il pourra en effet améliorer ses capacités, s’adapter au changement et éventuellement obtenir une promotion. Le renforcement de ses compétences sera par ailleurs favorable à sa mobilité interne, voire externe.
 
-              Comme dans une voiture, le tableau de bord aide à piloter son entreprise. Parmi les fonctions les plus importantes figurent les voyants rouges ou orange qui signalent l’apparition d’un problème à corriger. En effet, grâce à sa mise en forme, il est plus facile de trouver quel indicateur revoir.
+              Les objectifs de la formation peuvent varier en fonction de l’entreprise et des collaborateurs concernés. Ces programmes sont notamment indispensables pour réajuster les connaissances du personnel aux besoins de l’établissement ou à l’évolution du métier.
 
-              Il permet essentiellement de gagner du temps, car il donne une vue d’ensemble sur toutes les données chiffrées qui ne seront plus éparpillées dans les différentes branches de l’entreprise, mais centralisées dans un seul support.
+              Le salarié peut également avoir besoin d’étoffer ses compétences pour mieux remplir ses missions actuelles ou futures. D’ailleurs, de nombreux participants sont motivés par l’envie de progresser dans la hiérarchie. Ils seront ainsi en mesure de concrétiser leurs projets professionnels grâce à la formation.
 
-              En outre, le dashboard aide à savoir si les objectifs ont été atteints. Dans le cas contraire, la réaction sera rapide si le tableau est régulièrement mis à jour.
-              Ce ne sont pas toutes les informations qui devront être affichées sur le dashboard ou du moins pas en détail. Il faudra les sélectionner et définir quels sont les bons indicateurs. À partir de ces derniers, il est possible d’opter pour un tableau de bord analytique ou un tableau de bord opérationnel.
+              Aujourd’hui, un salarié expérimenté peut vite devenir moins performant face aux nombreux progrès dans son secteur. Il a donc besoin d’une remise à niveau pour gagner en efficacité dans son travail. De plus, les acquis de ces personnes sont précieux pour l’entreprise. La formation permettra ainsi de combler leurs lacunes et de mettre en valeur leurs atouts.
+
+
+
             </p>
           </div>
 

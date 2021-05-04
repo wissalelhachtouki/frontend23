@@ -24,7 +24,7 @@
       <div class="section ">
         <div class="container">
           <div class="title">
-            <h2 style="text-align: center ; color: #4a148c ; font-family: 'Arial Rounded MT Bold'"  ><strong> Le copilote numérique de votre  activité de formation </strong></h2>
+            <h2 style="text-align: center ; color: darkslategray ; font-family: 'Arial Rounded MT Bold'"  ><strong> Le copilote numérique de votre  activité de formation </strong></h2>
           </div>
           <details-section></details-section>
         </div>
@@ -66,12 +66,9 @@
             <div
                 class="md-layout-item md-size-66 md-xsmall-size-100 ml-auto mr-auto text-center"
             >
-              <h2><strong>Blog</strong></h2>
+              <h2 style="color: darkseagreen"><strong>Blog</strong></h2>
               <h4>
-                The kit comes with three pre-built pages to help you get started
-                faster. You can change the text and images and you're good to
-                go. More importantly, looking at them will give you a picture of
-                what you can built with this powerful kit.
+                Non seulement le blog vous aide à augmenter le trafic sur votre site, mais il vous permettra de promouvoir votre notoriété, d'améliorer la visibilité de vos produits et surtout d'entretenir une relation commerciale durable avec vos clients.
               </h4>
             </div>
           </div>
@@ -93,14 +90,14 @@
               >
             </div>
             <div class="md-layout-item">
-              <a href="#/blog1" target="_blank">
+              <a href="#/blog2" target="_blank">
                 <img
                     :src="blog2"
                     alt="Rounded Image"
                     class="img-raised rounded img-fluid"
                 />
               </a>
-              <md-button href="#/blog1" class="md-simple md-success md-lg"
+              <md-button href="#/blog2" class="md-simple md-success md-lg"
               ><strong>Lire la suite </strong> </md-button
               >
             </div>
@@ -167,7 +164,7 @@ export default {
     },
     blog2: {
       type: String,
-      default: require("@/assets/img/blog1.jpg")
+      default: require("@/assets/img/blog2.jpg")
     }
 
 
