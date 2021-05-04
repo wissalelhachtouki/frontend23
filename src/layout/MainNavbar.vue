@@ -31,7 +31,7 @@
               <md-list-item>
                 <a href="#/login">
                   <i class="material-icons">fingerprint</i>
-                  <p>Login Page</p>
+                  <p>Login </p>
                 </a>
               </md-list-item>
 

@@ -6,6 +6,7 @@ import Contact from "./views/Contact";
 import MainNavbar from "./layout/MainNavbar.vue";
 import MainFooter from "./layout/MainFooter.vue";
 import Register from "@/views/Register";
+import Blog1 from "./views/Blog1";
 
 Vue.use(Router);
 
@@ -18,6 +19,14 @@ export default new Router({
       props: {
         header: { colorOnScroll: 400 },
         footer: { backgroundColor: "black" }
+      }
+    },
+    {
+      path: "/blog1",
+      name: "blog1",
+      components: { default: Blog1, header: MainNavbar, footer: MainFooter },
+      props: {
+        header: { colorOnScroll: 400 }
       }
     },
     {

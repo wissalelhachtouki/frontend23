@@ -60,6 +60,55 @@
         </div>
       </div>
 
+      <div class="section">
+        <div class="container text-center">
+          <div class="md-layout">
+            <div
+                class="md-layout-item md-size-66 md-xsmall-size-100 ml-auto mr-auto text-center"
+            >
+              <h2><strong>Blog</strong></h2>
+              <h4>
+                The kit comes with three pre-built pages to help you get started
+                faster. You can change the text and images and you're good to
+                go. More importantly, looking at them will give you a picture of
+                what you can built with this powerful kit.
+              </h4>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="section section-examples">
+        <div class="container-fluid text-center">
+          <div class="md-layout">
+            <div class="md-layout-item">
+              <a href="#/blog1" target="_blank">
+                <img
+                    :src="blog1"
+                    alt="Rounded Image"
+                    class="img-raised rounded img-fluid"
+                />
+              </a>
+              <md-button href="#/blog1" class="md-simple md-success md-lg"
+              ><strong>Lire la suite </strong> </md-button
+              >
+            </div>
+            <div class="md-layout-item">
+              <a href="#/blog1" target="_blank">
+                <img
+                    :src="blog2"
+                    alt="Rounded Image"
+                    class="img-raised rounded img-fluid"
+                />
+              </a>
+              <md-button href="#/blog1" class="md-simple md-success md-lg"
+              ><strong>Lire la suite </strong> </md-button
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+
+
 
 
 
@@ -112,7 +161,14 @@ export default {
       type: String,
       default: require("@/assets/img/profile_city.jpg")
     },
-
+    blog1: {
+      type: String,
+      default: require("@/assets/img/blog1.jpg")
+    },
+    blog2: {
+      type: String,
+      default: require("@/assets/img/blog1.jpg")
+    }
 
 
   },

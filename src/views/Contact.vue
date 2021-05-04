@@ -10,7 +10,7 @@
 
               <md-field class="md-form-group" slot="inputs">
                 <md-icon>people</md-icon>
-                <label>Nom d'utilisateur...</label>
+                <label> Votre Nom ...</label>
                 <md-input v-model="nom" type="text"></md-input>
               </md-field>
 
@@ -18,13 +18,14 @@
 
               <md-field class="md-form-group" slot="inputs">
                 <md-icon>email</md-icon>
-                <label>Email ...</label>
+                <label> Your Email ...</label>
                 <md-input v-model="email" type="email"></md-input>
               </md-field>
 
-              <md-field class="md-form-group" slot="inputs">
+              <md-field class="md-form-group" slot="inputs" >
 
                 <label> <md-icon>edit</md-icon> </label>
+
                 <md-textarea v-model="textarea" type="text"></md-textarea>
               </md-field>
 
