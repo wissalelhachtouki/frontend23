@@ -110,7 +110,7 @@ export default {
   props: {
     image: {
       type: String,
-      default: require("@/assets/img/vue-mk-headerr.jpg")
+      default: require("@/assets/img/profile_city.jpg")
     },
 
 
