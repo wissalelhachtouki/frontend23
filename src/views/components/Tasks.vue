@@ -29,6 +29,11 @@
 
           </tabs>
         </div>
+
+        <div class="md-layout-item md-size-50 md-small-size-100">
+          <img :src="task" class="rounded" alt="Cinque Terre">
+
+        </div>
       </div>
 
 
@@ -45,6 +50,12 @@ export default {
 
   components: {
     Tabs
+  },
+  props: {
+    task: {
+      type: String,
+      default: require("@/assets/img/dashboard.jpg")
+    }
   }
 
 };

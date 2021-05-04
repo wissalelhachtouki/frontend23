@@ -27,13 +27,20 @@
               </md-field>
 
               <md-field class="md-form-group" slot="inputs">
-                <md-icon>lock_outline</md-icon>
+                <md-icon>warning</md-icon>
                 <label>Confirm Password...</label>
                 <md-input v-model="password"></md-input>
               </md-field>
 
 
-              <md-button slot="footer" class="md-simple md-success md-lg">
+              <md-label slot="inputs" class="md-form-group">
+
+                <br>
+                <a href="">Have already an account? Sign in</a>
+              </md-label>
+
+
+              <md-button slot="footer" class="md-simple md-info md-lg">
                 Confirmer
               </md-button>
             </login-card>

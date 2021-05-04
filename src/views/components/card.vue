@@ -7,7 +7,7 @@
 
           <nav-tabs-card no-label>
             <template slot="content">
-              <md-tabs class="md-success  " md-alignment="left">
+              <md-tabs class="md-success md-alignment-centered" md-alignment="left">
                 <md-tab id="tab-home"  md-icon="lock">
                   <h4><strong>Sécurité et <br> protection de vos <br> données </strong></h4>
 
@@ -28,7 +28,7 @@
 
           <nav-tabs-card no-label>
             <template slot="content">
-              <md-tabs class="md-warning" md-alignment="left">
+              <md-tabs class="md-warning md-alignment-centered" md-alignment="left">
                 <md-tab id="tab-home"  md-icon="layers">
                   <h4><strong>Générateur de<br> documents en accord avec <br>la réglementation</strong></h4>
 
@@ -46,7 +46,7 @@
 
           <nav-tabs-card no-label>
             <template slot="content">
-              <md-tabs class="md-info" md-alignment="center">
+              <md-tabs class="md-info md-alignment-centered" md-alignment="center">
                 <md-tab id="tab-home" md-icon="lock" >
                   <h4><strong>Technologie <br>
                     innovante et  <br>ergonomique n</strong></h4>

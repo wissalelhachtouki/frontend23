@@ -1,4 +1,4 @@
-<template >
+<template>
   <div class="wrapper">
     <div class="section page-header header-filter" :style="headerStyle">
       <div class="container">
@@ -24,13 +24,13 @@
 
               <md-field class="md-form-group" slot="inputs">
 
-                <label> <md-icon>inbox</md-icon> </label>
-                <md-textarea v-model="text" type="text"></md-textarea>
+                <label> <md-icon>edit</md-icon> </label>
+                <md-textarea v-model="textarea" type="text"></md-textarea>
               </md-field>
 
 
 
-              <md-button slot="footer" class="md-simple md-success md-lg">
+              <md-button slot="footer" class="md-simple md-warning md-lg">
                 Envoyer
               </md-button>
             </login-card>

@@ -21,13 +21,24 @@
                 <md-input v-model="password"></md-input>
               </md-field>
 
-              <md-checkbox class="md-form-group md-success" slot="inputs">
-                <label>Se souvenir de moi</label>
-              </md-checkbox>
+              <md-checkbox v-model="boolean" slot="inputs">Remember me</md-checkbox>
 
-              <md-button slot="footer" >
+
+              <md-label slot="inputs" class="md-form-group">
+                <br>
+                <a href="">Forgot Password?</a>
+              </md-label>
+
+              <md-label slot="inputs" class="md-form-group">
+                <hr>
+                <a href="">Don't have an account? Sign up</a>
+              </md-label>
+
+
+              <md-button slot="footer" class="md-simple md-success md-lg">
                 Se Connecter
               </md-button>
+
 
 
             </login-card>
@@ -48,7 +59,7 @@ export default {
   bodyClass: "login-page",
   data() {
     return {
-
+      boolean: false,
       email: null,
       password: null
     };

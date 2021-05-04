@@ -29,29 +29,31 @@
           <details-section></details-section>
         </div>
       </div>
-      <div class="section section-dashboard">
-        <div class="container">
 
-        </div>
-        <DashboardSection></DashboardSection>
-      </div>
-      <div class="section section-dashboard">
+      <div class="section">
         <div class="container">
-
+          <DashboardSection></DashboardSection>
         </div>
-        <Tasks></Tasks>
       </div>
-      <div class="section section-dashboard">
+
+      <div class="section">
         <div class="container">
-
+          <Tasks></Tasks>
         </div>
-        <gestionforma></gestionforma>
       </div>
+
+      <div class="section">
+        <div class="container">
+          <gestionforma></gestionforma>
+        </div>
+      </div>
+
       <div class="section">
         <div class="container">
           <card></card>
         </div>
       </div>
+
       <div class="section section-javascript">
         <div class="container">
           <javascript-components></javascript-components>
@@ -64,9 +66,7 @@
       <div class="section section-download" id="downloadSection">
         <div class="container">
 
-          <br /><br />
-
-
+          <br/><br/>
 
 
         </div>

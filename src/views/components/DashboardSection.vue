@@ -4,15 +4,8 @@
       <div class="md-layout">
 
         <div class="md-layout-item md-size-50 md-small-size-100">
-          <tabs
-              :tab-name="['Dashboard', 'Schedule', 'Gestion']"
-              :tab-icon="['dashboard', 'schedule', 'list']"
-              plain
-              nav-pills-icons
-              color-button="primary"
-          >
+          <img :src="dash" class="rounded" alt="Cinque Terre">
 
-          </tabs>
         </div>
 
         <div class="md-layout-item md-size-50 md-small-size-100">
@@ -48,6 +41,12 @@ export default {
 
   components: {
     Tabs
+  },
+  props: {
+    dash: {
+      type: String,
+      default: require("@/assets/img/dashboard.jpg")
+    }
   }
 };
 </script>
