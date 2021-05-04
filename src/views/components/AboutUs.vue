@@ -17,7 +17,7 @@
               L'application mobile Turkish Airlines vous offre une expérience de voyage améliorée. Vous pouvez acheter un billet et traiter les transactions d'enregistrement sur mobile tout en planifiant vos vacances du début à la fin. Toutes les informations dont vous avez besoin pour votre voyage sont désormais à portée de main ! Pour télécharger notre application mobile, vous pouvez suivre les liens Turkish Airlines pour iOS ou Turkish Airlines pour Android en fonction du système d'exploitation de votre smartphone.
             </p>
 
-        <md-button href="#/login" class="md-simple  md-success md-round md-lg"
+        <md-button href="#/register" class="md-simple  md-success md-round md-lg"
         ><strong>Créer Votre Compte gratuit </strong> </md-button
         >
       </div>
