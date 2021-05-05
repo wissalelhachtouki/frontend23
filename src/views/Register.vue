@@ -11,7 +11,7 @@
               <md-field class="md-form-group" slot="inputs">
                 <md-icon>people</md-icon>
                 <label>Nom d'utilisateur...</label>
-                <md-input v-model="nom" type="text"></md-input>
+                <md-input v-model="name" type="text"></md-input>
               </md-field>
 
               <md-field class="md-form-group" slot="inputs">
@@ -23,13 +23,13 @@
               <md-field class="md-form-group" slot="inputs">
                 <md-icon>lock_outline</md-icon>
                 <label>Password...</label>
-                <md-input v-model="password"></md-input>
+                <md-input v-model="password" type="password"></md-input>
               </md-field>
 
               <md-field class="md-form-group" slot="inputs">
                 <md-icon>warning</md-icon>
                 <label>Confirm Password...</label>
-                <md-input v-model="password"></md-input>
+                <md-input v-model="password_confirmation" type="password"></md-input>
               </md-field>
 
 
@@ -40,7 +40,7 @@
               </md-label>
 
 
-              <md-button slot="footer" class="md-simple md-info md-lg">
+              <md-button @click.prevent="handleSubmit" slot="footer" class="md-simple md-info md-lg">
                 Confirmer
               </md-button>
             </login-card>
@@ -53,6 +53,7 @@
 
 <script>
 import { LoginCard } from "@/components";
+import axios from "axios";
 
 export default {
   components: {
@@ -61,10 +62,24 @@ export default {
   bodyClass: "login-page",
   data() {
     return {
-
-      email: null,
-      password: null
+      name: "",
+      email: "",
+      password: "",
+      password_confirmation: ""
     };
+  },
+  methods: {
+    async handleSubmit(){
+      const data = {
+        name: this.name,
+        email: this.email,
+        password: this.password,
+        password_confirmation: this.password_confirmation
+      };
+      const response = await axios.post("register", data);
+      console.log(response);
+      this.$router.push("/login");
+    }
   },
   props: {
     header: {

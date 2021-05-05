@@ -4,10 +4,8 @@
       <div class="container">
         <div class="md-layout">
           <div class="md-layout-item md-size-33 md-small-size-66 md-xsmall-size-100 md-medium-size-40 mx-auto">
-            <login-card header-color="green">
-              <h4 slot="title" class="card-title">Login</h4>
-
-
+            <login-card header-color="red">
+              <h4 slot="title" class="card-title">Reset Password</h4>
 
               <md-field class="md-form-group" slot="inputs">
                 <md-icon>email</md-icon>
@@ -21,22 +19,14 @@
                 <md-input v-model="password" type="password"></md-input>
               </md-field>
 
-              <md-checkbox v-model="boolean" slot="inputs">Remember me</md-checkbox>
+              <md-field class="md-form-group" slot="inputs">
+                <md-icon>warning</md-icon>
+                <label>Confirm Password...</label>
+                <md-input v-model="password_confirmation" type="password"></md-input>
+              </md-field>
 
-
-              <md-label slot="inputs" class="md-form-group">
-                <br>
-                <a href="#/forgot-password">Forgot Password?</a>
-              </md-label>
-
-              <md-label slot="inputs" class="md-form-group">
-                <hr>
-                <p>Don't have an account? <a href="#/register"> Sign up</a></p>
-              </md-label>
-
-
-              <md-button @click.prevent="handleSubmit" slot="footer" class="md-simple md-success md-lg">
-                Se Connecter
+              <md-button @click.prevent="handleSubmit" slot="footer" class="md-simple md-danger md-lg">
+                Submit
               </md-button>
 
 
@@ -61,7 +51,7 @@ export default {
     return {
       email: "",
       password: "",
-      boolean: false
+      password_confirmation: ""
     };
   },
   methods: {
@@ -69,13 +59,12 @@ export default {
       const data = {
         email: this.email,
         password: this.password,
+        password_confirmation: this.password_confirmation,
+        token: this.$route.params.token
       };
-      const response = await axios.post("login", data);
-      localStorage.setItem("token", response.data.token);
-
-      this.$store.dispatch("user", response.data.user);
-      this.$router.push("/dashboard");
-
+      const response = await axios.post("password/reset", data);
+      console.log(response);
+      this.$router.push("/login");
     }
   },
   props: {
