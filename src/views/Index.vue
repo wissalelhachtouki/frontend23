@@ -4,11 +4,9 @@
 
       <div class="md-layout">
         <div class="md-layout-item">
-
             <div class="brand">
               <h1>Digiforma</h1>
-              <h3>La solution tout-en-un
-                pour les professionnels de la formation</h3>
+              <h3>La solution tout-en-un pour les professionnels de la formation</h3>
             </div>
         </div>
       </div>

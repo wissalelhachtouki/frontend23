@@ -16,7 +16,15 @@
               </md-field>
 
 
+              <md-label class="md-form-group" slot="error">
+                <div v-if="message" class="alert alert-success" role="alert">
+                  {{message}}
+                </div>
+              </md-label>
 
+              <md-label class="md-form-group" slot="error">
+                <error v-if="error" :error="error"/>
+              </md-label>
 
 
               <md-button @click.prevent="handleSubmit" slot="footer" class="md-simple md-danger md-lg">
@@ -36,26 +44,37 @@
 <script>
 import { LoginCard } from "@/components";
 import axios from "axios";
+import Error from "@/views/components/Error";
+
 export default {
   components: {
-    LoginCard
+    LoginCard,
+    Error
   },
   bodyClass: "login-page",
   data() {
     return {
-      email: ""
+      email: "",
+      message: "",
+      error: ""
     };
   },
   methods: {
     async handleSubmit(){
-      const data = {
-        email: this.email
-      };
-      const response = await axios.post("password/create", data);
-      console.log(response);
+        try{
+          const data = {
+            email: this.email
+          };
+          await axios.post("password/create", data);
 
-      this.$router.push("/login");
-
+          this.message = "We have e-mailed your password reset link!";
+          this.error = "";
+          //this.$router.push("/login");
+          }
+        catch (e){
+          this.error = "Error occurred !";
+          this.message = "";
+        }
     }
   },
   props: {

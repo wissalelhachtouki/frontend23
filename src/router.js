@@ -22,7 +22,7 @@ export default new Router({
       name: "index",
       components: { default: Index, header: MainNavbar, footer: MainFooter },
       props: {
-        header: { colorOnScroll: 400 },
+        header: { colorOnScroll: 200 },
         footer: { backgroundColor: "black" }
       }
     },
@@ -31,7 +31,7 @@ export default new Router({
       name: "blog1",
       components: { default: Blog1, header: MainNavbar, footer: MainFooter },
       props: {
-        header: { colorOnScroll: 400 }
+        header: { colorOnScroll: 200 }
       }
     },
     {
@@ -39,7 +39,7 @@ export default new Router({
       name: "blog2",
       components: { default: Blog2, header: MainNavbar, footer: MainFooter },
       props: {
-        header: { colorOnScroll: 400 }
+        header: { colorOnScroll: 200 }
       }
     },
     {

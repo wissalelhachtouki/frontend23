@@ -7,8 +7,6 @@
             <login-card header-color="green">
               <h4 slot="title" class="card-title">Login</h4>
 
-
-
               <md-field class="md-form-group" slot="inputs">
                 <md-icon>email</md-icon>
                 <label>Email...</label>
@@ -21,23 +19,29 @@
                 <md-input v-model="password" type="password"></md-input>
               </md-field>
 
-              <md-checkbox v-model="boolean" slot="inputs">Remember me</md-checkbox>
+              <md-label class="md-form-group" slot="error">
+              <error v-if="error" :error="error"/>
+              </md-label>
 
 
-              <md-label slot="inputs" class="md-form-group">
+              <md-checkbox v-model="boolean" slot="action">Remember me</md-checkbox>
+
+              <md-label slot="action" class="md-form-group">
                 <br>
                 <a href="#/forgot-password">Forgot Password?</a>
               </md-label>
 
-              <md-label slot="inputs" class="md-form-group">
-                <hr>
-                <p>Don't have an account? <a href="#/register"> Sign up</a></p>
-              </md-label>
+
 
 
               <md-button @click.prevent="handleSubmit" slot="footer" class="md-simple md-success md-lg">
                 Se Connecter
               </md-button>
+
+              <md-label slot="sign" class="md-form-group">
+                <hr>
+                <p>Don't have an account? <a href="#/register"> Sign up</a></p>
+              </md-label>
 
 
 
@@ -52,30 +56,38 @@
 <script>
 import { LoginCard } from "@/components";
 import axios from "axios";
+import Error from "@/views/components/Error";
+
 export default {
   components: {
-    LoginCard
+    LoginCard,
+    Error
   },
   bodyClass: "login-page",
   data() {
     return {
       email: "",
       password: "",
-      boolean: false
+      boolean: false,
+      error: ""
     };
   },
   methods: {
     async handleSubmit(){
-      const data = {
-        email: this.email,
-        password: this.password,
-      };
-      const response = await axios.post("login", data);
-      localStorage.setItem("token", response.data.token);
+      try {
+        const data = {
+          email: this.email,
+          password: this.password,
+        };
+        const response = await axios.post("login", data);
+        localStorage.setItem("token", response.data.token);
 
-      this.$store.dispatch("user", response.data.user);
-      this.$router.push("/dashboard");
-
+        this.$store.dispatch("user", response.data.user);
+        this.$router.push("/dashboard");
+      }
+      catch (e){
+        this.error = "Invalid email or password !"
+      }
     }
   },
   props: {
