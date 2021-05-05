@@ -45,7 +45,7 @@ export default {
   props: {
     dash: {
       type: String,
-      default: require("@/assets/img/dashboard.jpg")
+      default: require("@/assets/img/aboutus.jpg")
     }
   }
 };

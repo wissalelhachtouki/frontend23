@@ -47,7 +47,7 @@ export default {
   props: {
     list: {
       type: String,
-      default: require("@/assets/img/dashboard.jpg")
+      default: require("@/assets/img/aboutus.jpg")
     }
   }
 };

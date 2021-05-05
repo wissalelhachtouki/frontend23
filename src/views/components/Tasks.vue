@@ -13,7 +13,7 @@
               plain
               flex-column
               nav-pills-icons
-              color-button="primary"
+              color-button="success"
           >
             <!-- here you can add your content for tab-content -->
 
@@ -54,7 +54,7 @@ export default {
   props: {
     task: {
       type: String,
-      default: require("@/assets/img/dashboard.jpg")
+      default: require("@/assets/img/aboutus.jpg")
     }
   }
 

@@ -1,6 +1,7 @@
 <template>
   <div class="wrapper">
     <parallax class="page-header header-filter" :style="headerStyle">
+
       <div class="md-layout">
         <div class="md-layout-item">
 
@@ -12,10 +13,11 @@
       </div>
     </parallax>
     <div class="main main-raised">
+
       <div class="section section-basic">
         <div class="container">
           <div class="title">
-            <h2 style="text-align: center"><strong>ABOUT US</strong></h2>
+            <h2 style="line-height: 1.33 ;font-weight: 300 ; margin-bottom: 5px"><strong>ABOUT US</strong></h2>
           </div>
           <about-us></about-us>
         </div>
@@ -50,15 +52,14 @@
 
       <div class="section">
         <div class="container">
+          <div class="title">
+            <h2 style="text-align: center ; color: darkslategray ; font-family: 'Arial Rounded MT Bold'"  ><strong> Area of expertise  </strong></h2>
+          </div>
           <card></card>
         </div>
       </div>
 
-      <div class="section section-javascript">
-        <div class="container">
-          <javascript-components></javascript-components>
-        </div>
-      </div>
+
 
       <div class="section">
         <div class="container text-center">
@@ -208,6 +209,9 @@ export default {
 };
 </script>
 <style lang="scss">
+
+
+
 .section-download {
   .md-button + .md-button {
     margin-left: 5px;
