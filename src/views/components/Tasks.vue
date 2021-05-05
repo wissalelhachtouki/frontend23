@@ -9,7 +9,7 @@
         <div class="md-layout-item md-size-50 md-small-size-100">
           <tabs
               :tab-name="['Tasks']"
-              :tab-icon="['message']"
+              :tab-icon="['fact_check']"
               plain
               flex-column
               nav-pills-icons

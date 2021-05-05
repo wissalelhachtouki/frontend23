@@ -14,7 +14,7 @@
           </div>
           <tabs
               :tab-name="['Gestion' ]"
-              :tab-icon="['list']"
+              :tab-icon="['assignment']"
               plain
               flex-column
               nav-pills-icons

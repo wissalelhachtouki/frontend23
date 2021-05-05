@@ -10,7 +10,7 @@
       <div class="md-layout">
 
         <div class="md-layout-item md-size-50 md-small-size-100">
-          <tabs :tab-name="['Schedule']" :tab-icon="['schedule']" plain flex-column nav-pills-icons color-button="info">
+          <tabs :tab-name="['Schedule']" :tab-icon="['calendar_today']" plain flex-column nav-pills-icons color-button="info">
             <!-- here you can add your content for tab-content -->
 
             <template slot="tab-pane-1">

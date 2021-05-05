@@ -57,66 +57,12 @@
           <card></card>
         </div>
       </div>
-
-
-
-      <div class="section">
-        <div class="container text-center">
-          <div class="md-layout">
-            <div
-                class="md-layout-item md-size-66 md-xsmall-size-100 ml-auto mr-auto text-center"
-            >
-              <h2 style="font-family: 'Arial Rounded MT Bold'" ><strong>Blog</strong></h2>
-              <h4>
-                Non seulement le blog vous aide à augmenter le trafic sur votre site, mais il vous permettra de promouvoir votre notoriété, d'améliorer la visibilité de vos produits et surtout d'entretenir une relation commerciale durable avec vos clients.
-              </h4>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="section section-examples">
-        <div class="container-fluid text-center">
-          <div class="md-layout">
-            <div class="md-layout-item">
-              <a href="#/blog1" target="_blank">
-                <img
-                    :src="blog1"
-                    alt="Rounded Image"
-                    class="img-raised rounded img-fluid"
-                />
-              </a>
-              <md-button href="#/blog1" class="md-simple md-success md-lg"
-              ><strong>Lire la suite </strong> </md-button
-              >
-            </div>
-            <div class="md-layout-item">
-              <a href="#/blog2" target="_blank">
-                <img
-                    :src="blog2"
-                    alt="Rounded Image"
-                    class="img-raised rounded img-fluid"
-                />
-              </a>
-              <md-button href="#/blog2" class="md-simple md-success md-lg"
-              ><strong>Lire la suite </strong> </md-button
-              >
-            </div>
-          </div>
-        </div>
-      </div>
-
-
-
-
-
-      <div class="section section-download" id="downloadSection">
+      <div class="section section-javascript">
         <div class="container">
-
-          <br/><br/>
-
-
+          <blogs></blogs>
         </div>
       </div>
+
     </div>
   </div>
 </template>
@@ -137,8 +83,10 @@ import Tasks from "./components/Tasks";
 import Gestionforma from "./components/Gestionforma";
 import AboutUs from "./components/AboutUs";
 import card from "./components/card";
+import Blogs from "./components/Blogs";
 export default {
   components: {
+    Blogs,
     AboutUs,
     Gestionforma,
     Tasks,
