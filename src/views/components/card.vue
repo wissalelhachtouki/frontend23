@@ -8,7 +8,7 @@
           <nav-tabs-card no-label>
             <template slot="content">
               <md-tabs class="md-success md-alignment-centered" md-alignment="left">
-                <md-tab id="tab-home"  >
+                <md-tab id="tab-home"  md-icon="lock"  >
                   <h4><strong>Sécurité et  protection de vos  données </strong></h4>
 
                   <h4>Notre solution utilise un cryptage 128 bits qui vous
@@ -29,7 +29,7 @@
           <nav-tabs-card no-label>
             <template slot="content">
               <md-tabs class="md-warning md-alignment-centered" md-alignment="left">
-                <md-tab id="tab-home"  >
+                <md-tab id="tab-home" md-icon="folder " >
                   <h4><strong>Générateur de<br> documents en accord avec la réglementation</strong></h4>
 
                   <h4>Remplissez vos informations et générez automatiquement les documents
@@ -47,7 +47,7 @@
           <nav-tabs-card no-label>
             <template slot="content">
               <md-tabs class="md-info md-alignment-centered" md-alignment="center">
-                <md-tab id="tab-home"  >
+                <md-tab id="tab-home" md-icon="stay_current_portrait   " >
                   <h4><strong>Technologie
                     innovante et  ergonomique</strong></h4>
                   <h4>La technologie innovante que nous utilisons offre
@@ -68,12 +68,12 @@
           <nav-tabs-card no-label>
             <template slot="content">
               <md-tabs class="md-rose md-alignment-centered" md-alignment="left">
-                <md-tab id="tab-home"  >
-                  <h4><strong>Générateur de<br> documents en accord avec la réglementation</strong></h4>
+                <md-tab id="tab-home"  md-icon="verified">
+                  <h4><strong>100% dédiée à la<br> formation</strong></h4>
 
-                  <h4>Remplissez vos <br>informations et générez automatiquement les documents
+                  <h4>La solution Digiforma a été pensée etdéveloppée par des
 
-                    administratifs</h4>
+                    formateurs confirmés. Le service est disponible 24h/24h à partir den’importe quel ordinateur.</h4>
                 </md-tab>
 
               </md-tabs>

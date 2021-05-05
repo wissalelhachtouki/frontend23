@@ -16,7 +16,7 @@
       <div class="section section-basic">
         <div class="container">
           <div class="title">
-            <h2 style="line-height: 1.33 ;font-weight: 300 ; margin-bottom: 5px"><strong>ABOUT US</strong></h2>
+            <h2 style="line-height: 1.33 ;font-weight: 300 ; margin-bottom: 5px ; font-family: 'Arial Rounded MT Bold'"><strong>ABOUT US</strong></h2>
           </div>
           <about-us></about-us>
         </div>
@@ -66,7 +66,7 @@
             <div
                 class="md-layout-item md-size-66 md-xsmall-size-100 ml-auto mr-auto text-center"
             >
-              <h2 ><strong>Blog</strong></h2>
+              <h2 style="font-family: 'Arial Rounded MT Bold'" ><strong>Blog</strong></h2>
               <h4>
                 Non seulement le blog vous aide à augmenter le trafic sur votre site, mais il vous permettra de promouvoir votre notoriété, d'améliorer la visibilité de vos produits et surtout d'entretenir une relation commerciale durable avec vos clients.
               </h4>
