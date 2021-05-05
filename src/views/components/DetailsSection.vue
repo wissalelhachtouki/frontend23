@@ -4,7 +4,7 @@
       <br>
 
       <div class="title">
-        <h3><strong>PILOTEZ VOS FORMATIONS EN TEMPS RÉEL</strong></h3>
+        <h3><strong>Pilotez vos formations en temps réel</strong></h3>
       </div>
 
       <div class="md-layout">

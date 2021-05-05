@@ -9,7 +9,7 @@
         </div>
 
         <div class="md-layout-item md-size-50 md-small-size-100">
-          <h3><strong>AMÉLIOREZ VOTRE SUIVI AVEC DASHBOARD INTÉGRÉ</strong></h3>
+          <h3><strong>Améliorez votre suivi avec DASHBOARD intégrer</strong></h3>
           <tabs
               :tab-name="['Dashboard']"
               :tab-icon="['dashboard']"

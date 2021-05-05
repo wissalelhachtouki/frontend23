@@ -2,7 +2,7 @@
   <div class="wrapper">
     <div id="details">
       <div class="title">
-        <h3><strong>AMÉLIOREZ VOTRE PERFORMENCE AVEC <br> UNE TO-DO LIST INTÉGRÉ</strong></h3>
+        <h3 ><strong>Améliorez votre performence avec <br> une To-Do list intégrer</strong></h3>
       </div>
       <div class="md-layout">
 

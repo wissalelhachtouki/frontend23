@@ -10,7 +10,7 @@
 
         <div class="md-layout-item md-size-50 md-small-size-100">
           <div class="title">
-            <h3><strong> UNE  LIST DETAILS POUR LA GESTION DES FORMATIONS</strong></h3>
+            <h3><strong> Une  list details pour la gestion des formations</strong></h3>
           </div>
           <tabs
               :tab-name="['Gestion' ]"
@@ -22,12 +22,10 @@
           >
             <!-- here you can add your content for tab-content -->
             <template slot="tab-pane-1">
-              Collaboratively administrate empowered markets via plug-and-play
-              networks. Dynamically procrastinate B2C users after installed base
-              benefits.
-              <br /><br />
-              Dramatically visualize customer directed convergence without
-              revolutionary ROI.
+              <h4>● Fixer vos Priorités</h4>
+              <h4>● Mieux organiser votre journée</h4>
+              <h4>● Gagner du temps</h4>
+              <h4>● Diminuer son stress</h4>
             </template>
 
           </tabs>

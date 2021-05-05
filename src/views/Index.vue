@@ -16,7 +16,7 @@
       <div class="section section-basic">
         <div class="container">
           <div class="title">
-            <h2 style="line-height: 1.33 ;font-weight: 300 ; margin-bottom: 5px ; font-family: 'Arial Rounded MT Bold'"><strong>ABOUT US</strong></h2>
+            <h2 style=" font-family: 'Arial Rounded MT Bold'"><strong>About us</strong></h2>
           </div>
           <about-us></about-us>
         </div>
@@ -52,7 +52,7 @@
       <div class="section">
         <div class="container">
           <div class="title">
-            <h2 style="text-align: center ; color: darkslategray ; font-family: 'Arial Rounded MT Bold'"  ><strong> Area of expertise  </strong></h2>
+            <h2 style="text-align: center ; color: darkslategray ; font-family: 'Arial Rounded MT Bold'"  ><strong> Gérer vos formations professionnelles ne devrait<br> pas vous prendre plus de temps.</strong></h2>
           </div>
           <card></card>
         </div>

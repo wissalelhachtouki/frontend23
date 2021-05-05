@@ -2,7 +2,7 @@
   <div class="wrapper">
     <div id="javascriptComponents">
       <div class="title">
-        <h2 style="font-family: 'Arial Rounded MT Bold' ; text-align: center" ><strong> Venez Decouvrir Nos Blog</strong></h2>
+        <h2 style="font-family: 'Arial Rounded MT Bold' ; text-align: center" ><strong> Venez Decouvrir Nos Blogs</strong></h2>
 
       </div>
       <div class="md-layout">
