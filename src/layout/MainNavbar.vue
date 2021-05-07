@@ -8,7 +8,7 @@
   >
     <div class="md-toolbar-row md-collapse-lateral">
       <div class="md-toolbar-section-start">
-        <h3 class="md-title">Digiforma</h3>
+        <h3 class="md-title">Forma</h3>
       </div>
       <div class="md-toolbar-section-end">
         <md-button

@@ -9,7 +9,7 @@
         <ul>
           <li>
             <h1>
-              Digiforma
+             Forma
             </h1>
           </li>
 

@@ -8,7 +8,7 @@
 
             <div class="md-layout-item md-size-50 mx-auto">
               <h4 style="font-weight: 300 ; margin-bottom: 50px  ; line-height: 1.7; z-index: 4">
-                <strong style="color: #1b5e20 ">Digiforma </strong> est un produit  qui édite des solutions innovantes en mode SaaS. Forts de notre expertise en technologies web et de notre expérience de la formation , nous développons des outils à destination des organismes de formation <br>et des formateurs indépendants : outils pédagogiques, solution de formation à distance <br> pour
+                <strong style="color: #1b5e20 ">Forma </strong> est un produit  qui édite des solutions innovantes en mode SaaS. Forts de notre expertise en technologies web et de notre expérience de la formation , nous développons des outils à destination des organismes de formation <br>et des formateurs indépendants : outils pédagogiques, solution de formation à distance <br> pour
                 les équipes commerciales et logiciel de gestion administrative.
               </h4>
               <div class="col-z-index text-left col-md-6" >

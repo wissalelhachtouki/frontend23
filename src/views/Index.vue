@@ -5,7 +5,7 @@
       <div class="md-layout">
         <div class="md-layout-item">
             <div class="brand">
-              <h1>Digiforma</h1>
+              <h1>Forma</h1>
               <h3>La solution tout-en-un pour les professionnels de la formation</h3>
             </div>
         </div>
@@ -52,7 +52,7 @@
       <div class="section">
         <div class="container">
           <div class="title">
-            <h2 style="text-align: center ; color: darkslategray ; font-family: 'Arial Rounded MT Bold'"  ><strong> Gérer vos formations professionnelles ne devrait<br> pas vous prendre plus de temps.</strong></h2>
+            <h2 style="text-align: center ; color: darkslategray ; font-family: 'Arial Rounded MT Bold'"  ><strong> Gérer vos formations  ne devrait<br> pas vous prendre plus de temps.</strong></h2>
           </div>
           <card></card>
         </div>
