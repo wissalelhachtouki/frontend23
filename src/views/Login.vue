@@ -83,7 +83,22 @@ export default {
         localStorage.setItem("token", response.data.token);
 
         this.$store.dispatch("user", response.data.user);
-        this.$router.push("/dashboard");
+
+
+        console.log(response);
+
+        const verified = response.data.email_verified_at;
+
+
+
+        if (verified){
+          this.$router.push("/dashboard");
+        }else{
+        this.$router.push("/sendEmail");
+        }
+
+
+
       }
       catch (e){
         this.error = "Invalid email or password !"

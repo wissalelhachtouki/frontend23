@@ -11,6 +11,9 @@ export default {
   name: "Dashboard",
   computed: {
     ...mapGetters(["user"])
+  },
+  mounted() {
+    console.log("this is ngoninit Dashboard")
   }
 };
 </script>

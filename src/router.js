@@ -12,6 +12,8 @@ import Dashboard from "@/views/Dashboard";
 import MainNavbar2 from "@/layout/MainNavbar2";
 import Forgot from "@/views/Forgot";
 import Reset from "@/views/Reset";
+import SendEmail from "@/views/SendEmail";
+import VerifyEmail from "@/views/VerifyEmail";
 
 Vue.use(Router);
 
@@ -90,8 +92,23 @@ export default new Router({
       props: {
         header: { colorOnScroll: 400 }
       }
+    },
+    {
+      path: "/sendEmail",
+      name: "sendEmail",
+      components: { default: SendEmail, header: MainNavbar },
+      props: {
+        header: { colorOnScroll: 400 }
+      }
+    },
+    {
+      path: "/verify/:id/:token",
+      name: "verify",
+      components: { default: VerifyEmail, header: MainNavbar },
+      props: {
+        header: { colorOnScroll: 400 }
+      }
     }
-
   ],
   scrollBehavior: to => {
     if (to.hash) {

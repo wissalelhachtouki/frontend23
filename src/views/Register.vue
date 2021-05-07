@@ -82,7 +82,10 @@ export default {
             password_confirmation: this.password_confirmation
         };
          const response = await axios.post("register", data);
-         console.log(response);
+
+        localStorage.setItem("tokenV", response.data.token);
+
+        console.log(response);
          this.$router.push("/login");
       }
       catch (e){
