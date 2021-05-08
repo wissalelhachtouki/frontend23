@@ -82,7 +82,12 @@ export default {
         const response = await axios.post("login", data);
         localStorage.setItem("token", response.data.token);
 
-        this.$store.dispatch("user", response.data.user);
+        localStorage.setItem("tokenV", response.data.user.tokenV)
+
+
+        console.log(response.data);
+
+        await this.$store.dispatch("user", response.data.user);
 
 
         console.log(response);

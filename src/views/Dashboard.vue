@@ -7,13 +7,15 @@
 
 <script>
 import {mapGetters} from "vuex";
+import store from "../vuex";
 export default {
   name: "Dashboard",
-  computed: {
-    ...mapGetters(["user"])
+  data() {
+    return {
+    }
   },
-  mounted() {
-    console.log("this is ngoninit Dashboard")
+  computed: {
+    ...mapGetters({user: "user"})
   }
 };
 </script>

@@ -32,7 +32,19 @@ export default {
   methods: {
     async handleSend(){
 
-      await axios.get("email/resend");
+      console.log("//////// %c","color:green");
+      console.log("******");
+
+      //console.log(localStorage.getItem("token"));
+
+      console.log("========================");
+
+      console.log(localStorage.getItem("tokenV"));
+      console.log("******");
+
+      const result = await axios.get("email/resend");
+
+      console.log(result);
     }
   },
   props: {

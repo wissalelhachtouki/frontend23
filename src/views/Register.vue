@@ -83,8 +83,6 @@ export default {
         };
          const response = await axios.post("register", data);
 
-        localStorage.setItem("tokenV", response.data.token);
-
         console.log(response);
          this.$router.push("/login");
       }
