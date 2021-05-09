@@ -33,7 +33,6 @@ export default {
     async handleSend(){
 
       console.log("//////// %c","color:green");
-      console.log("******");
 
       //console.log(localStorage.getItem("token"));
 
@@ -42,9 +41,26 @@ export default {
       console.log(localStorage.getItem("tokenV"));
       console.log("******");
 
-      const result = await axios.get("email/resend");
 
+
+      axios.interceptors.request.use(
+          config => {
+            const token = localStorage.getItem("token");
+            const tokenV = localStorage.getItem("tokenV");
+
+            if (token && tokenV) {
+              config.headers.Authorization = `Bearer ${token}`;
+              config.headers.verification = `Bearer ${tokenV}`;
+            }
+            return config;
+          },
+          error => Promise.reject(error)
+      );
+
+      localStorage.getItem("tokenV");
+      const result = await axios.get("email/resend");
       console.log(result);
+
     }
   },
   props: {
