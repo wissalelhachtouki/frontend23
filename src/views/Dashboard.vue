@@ -3,11 +3,11 @@
     <MainSidebar/>
     <div class="home_content">
       <div class="d-flex justify-content-center width">
-         <div class="border  p-2 mt-5 w-100 ">
+         <div class="border  p-2 mt-5 w-100 background-color">
          <LineChart  :height="300"/>
          </div>
       </div>
-      <div class="row container mt-3">
+      <div class="row width mt-3">
        <div class="col-md-3"><div class="card border">
   <div class="card-body">
    <button class="btn btn-primary">this is a button</button>
@@ -85,6 +85,9 @@ export default {
 .sidebar.active ~ .home_content{
   width: calc(100% - 240px);
   left: 240px;
+}
+.background-color{
+  background-color:#FFF;
 }
 .border{
   -webkit-box-shadow: -1px -1px 17px 4px #e1e5ea; 
