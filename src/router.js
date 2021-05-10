@@ -13,6 +13,10 @@ import Forgot from "@/views/Forgot";
 import Reset from "@/views/Reset";
 import SendEmail from "@/views/SendEmail";
 import VerifyEmail from "@/views/VerifyEmail";
+import User from "@/views/User";
+import Calendrier from "@/views/Calendrier";
+import Formations from "@/views/Formations";
+import Todos from "@/views/Todos";
 
 Vue.use(Router);
 
@@ -88,6 +92,26 @@ export default new Router({
       path: "/dashboard",
       name: "dashboard",
       components: { default: Dashboard }
+    },
+    {
+      path: "/user",
+      name: "user",
+      components: { default: User }
+    },
+    {
+      path: "/calendrier",
+      name: "calendrier",
+      components: { default: Calendrier }
+    },
+    {
+      path: "/formations",
+      name: "formations",
+      components: { default: Formations }
+    },
+    {
+      path: "/todo-list",
+      name: "todo-list",
+      components: { default: Todos }
     },
     {
       path: "/sendEmail",

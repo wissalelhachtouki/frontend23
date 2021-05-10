@@ -16,35 +16,35 @@
         <span class="tooltip">Search</span>
       </li>
       <li>
-        <a href="#">
+        <a href="#/dashboard">
           <i class="bx bxs-dashboard"></i>
           <span class="links_name">Dashboard</span>
         </a>
         <span class="tooltip">Dashboard</span>
       </li>
       <li>
-        <a href="#">
+        <a href="#/user">
           <i class="bx bx-user"></i>
           <span class="links_name">User</span>
         </a>
         <span class="tooltip">User</span>
       </li>
       <li>
-        <a href="#">
+        <a href="#/calendrier">
           <i class='bx bx-calendar' ></i>
           <span class="links_name">Calendar</span>
         </a>
         <span class="tooltip">Calendar</span>
       </li>
       <li>
-        <a href="#">
+        <a href="#/formations">
           <i class='bx bx-list-check' ></i>
           <span class="links_name">List Formations</span>
         </a>
         <span class="tooltip">Formations</span>
       </li>
       <li>
-        <a href="#">
+        <a href="#/todo-list">
           <i class='bx bx-task' ></i>
           <span class="links_name">Tasks</span>
         </a>
