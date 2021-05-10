@@ -27,6 +27,6 @@ export default {
 </script>
 
 <style>
-
+@import "~bootstrap/dist/css/bootstrap.css";
 </style>
 © 2021 GitHub, Inc.

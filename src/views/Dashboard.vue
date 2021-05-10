@@ -2,12 +2,32 @@
   <div class="dashboard">
     <MainSidebar/>
     <div class="home_content">
-      <div class="text">
-        <h3 v-if="user">Hi, {{ user.name }}</h3>
-        <h3 v-if="!user">you are not logged in!</h3>
+      <div class="d-flex justify-content-center width">
+         <div class="border  p-2 mt-5 w-100 ">
+         <LineChart  :height="300"/>
+         </div>
       </div>
-      <div id="app">
-        <LineChart/>
+      <div class="row container mt-3">
+       <div class="col-md-3"><div class="card border">
+  <div class="card-body">
+   <button class="btn btn-primary">this is a button</button>
+  </div>
+</div></div>
+       <div class="col-md-3"><div class="card border">
+  <div class="card-body">
+    <button class="btn btn-primary">this is a button</button>
+  </div>
+</div></div>
+       <div class="col-md-3"><div class="card border ">
+  <div class="card-body">
+ <button class="btn btn-primary">this is a button</button>
+  </div>
+</div></div>
+       <div class="col-md-3"><div class="card border ">
+  <div class="card-body">
+    <button class="btn btn-primary">this is a button</button>
+  </div>
+</div></div>
       </div>
     </div>
   </div>
@@ -46,12 +66,15 @@ export default {
   height: 100%;
   width: calc(100% - 78px);
   left: 78px;
-  background: #e4e9f7;
   box-shadow: 0 5px 10px rgba(0,0,0,0.2);
   transition: all 0.5s ease;
 }
 .sidebar.active ~ .home_content{
   z-index: 100;
+}
+.width{
+  width:95%;
+  margin:0 30px;
 }
 .home_content .text{
   font-size: 25px;
@@ -63,13 +86,12 @@ export default {
   width: calc(100% - 240px);
   left: 240px;
 }
-
-#app {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+.border{
+  -webkit-box-shadow: -1px -1px 17px 4px #e1e5ea; 
+box-shadow: -1px -1px 17px 4px #e1e5ea;
+border: 2px solid #1C6EA4;
+border-radius:10px;
 }
+
+
 </style>
