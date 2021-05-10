@@ -1,4 +1,5 @@
 <template>
+  <div id="app">
   <div id="material-kit">
     <div :class="{ 'nav-open': NavbarStore.showNavbar }">
       <router-view name="header" />
@@ -7,6 +8,7 @@
       </div>
       <router-view name="footer" />
     </div>
+  </div>
   </div>
 </template>
 
@@ -23,3 +25,8 @@ export default {
   }
 };
 </script>
+
+<style>
+
+</style>
+© 2021 GitHub, Inc.
