@@ -102,7 +102,7 @@ export default new Router({
       }
     },
     {
-      path: "/verify/:id/:token",
+      path: "/verify",
       name: "verify",
       components: { default: VerifyEmail, header: MainNavbar },
       props: {
