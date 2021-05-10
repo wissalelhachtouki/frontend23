@@ -4,7 +4,7 @@
     <div class="home_content">
       <div class="d-flex justify-content-center width">
         <div class="border  p-2 mt-5 w-100 background-color">
-          <LineChart :height="300" />
+          <AreaChart :height="300" />
         </div>
       </div>
       <div class="row width mt-5">
@@ -40,7 +40,7 @@
         <div class="row width mb-4">
         <div class=" col-md-6">
           <div class="border  p-2 mt-5 w-100 background-color">
-            <LineChart :height="300" />
+            <BarChart :height="300" />
           </div>
         </div>
         <div class=" col-md-6">
@@ -57,12 +57,16 @@
 import MainSidebar from "@/layout/MainSidebar";
 import { mapGetters } from "vuex";
 import LineChart from "./components/LineChart.vue";
+import BarChart from "./components/BarChart.vue";
+import AreaChart from "./components/AreaChart.vue";
 
 export default {
   name: "Dashboard",
   components: {
     MainSidebar,
-    LineChart
+    LineChart,
+    BarChart,
+    AreaChart
   },
   data() {
     return {
