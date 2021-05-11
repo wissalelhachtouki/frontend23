@@ -2,34 +2,36 @@
   <div class="formations">
     <MainSidebar/>
     <div class="home_content">
-      <div class="d-flex justify-content-center width">
-        <div class="border  p-2 mt-5 w-100 background-color">
+      <div class="d-flex  width">
+        <div class="   mt-5 w-100 ">
       <!-- Main content -->
-          <div class="card" style="background-color: #caf7e3 ; border-radius: 15px ; border-color: black  ">
-            <div class="card-header" style="border-radius: 15px"><strong>Liste des Formation</strong></div>
+          <div class="card" >
+           <h3>Liste des Formation</h3>
             <div class="card-body">
 
-              <table class="table table-bordered table-dark table-hover table-striped">
+              <table class="table  table-hover ">
                 <thead>
 
-                <th>Ref</th>
-                <th>Titre</th>
-                <th>Nombre de jours</th>
-                <th>Tarifs par jours</th>
-                <th>Nombre de participants</th>
-                <th>Actions</th>
+                <th STYLE="color: tomato">ID</th>
+                <th STYLE="color: tomato">Titre</th>
+                <th STYLE="color: tomato">Nombre de jours</th>
+                <th STYLE="color: tomato">Tarifs/J</th>
+                <th STYLE="color: tomato">Nombre de participants</th>
+                <th STYLE="color: tomato">Actions</th>
 
                 </thead>
+
                 <tbody>
+
                 <tr>
 
-                  <td class="font-weight-bold">#</td>
+                  <td class="font-weight-bold">1</td>
                   <td class="font-weight-bold">test2</td>
                   <td class="font-weight-bold">test3</td>
                   <td class="font-weight-bold">test4 DH</td>
                   <td class="font-weight-bold">test5</td>
                   <td>
-                    <span><i class="bx bxs-plus-square btn btn-info" style="margin: 0 5px"></i></span>
+
                     <span><i class="fa fa-edit btn btn-warning" style="margin: 0 5px"></i></span>
                     <span><i class="bx bxs-trash btn btn-danger" style="margin: 0 5px"></i></span>
                   </td>
@@ -42,14 +44,16 @@
             </div>
             <div class="card-footer">
               <div class="card border">
-                  <button class="btn btn-outline-dark" @click="showModal = true">Ajouter une formation</button>
+                  <button class="btn btn-block" @click="showModal = true">Ajouter une formation</button>
 
               </div>
             </div>
           </div>
+        </div>
+
       <!-- /.content -->
         </div>
-      </div>
+
 
       <div class="home_content">
         <div v-if="showModal" v-cloak>
@@ -57,8 +61,8 @@
             <div class="modal-mask">
               <div class="modal-wrapper">
                 <div class="modal-dialog modal-xl" role="document">
-                  <div class="modal-content" style="background-color: #e3fdfd ; border-radius: 15px ; border-color: black">
-                    <div class="modal-header" style="padding-bottom: 15px ; border-radius: 15px">
+                  <div class="modal-content" >
+                    <div class="modal-header" >
                       <h5 class="modal-title">Entrer votre formation</h5>
                       <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true" @click="showModal = false">&times;</span>
@@ -66,35 +70,35 @@
                     </div>
                     <div class="modal-body">
 
-                      <div class="card" style="background-color: #e3fdfd ; border-radius: 15px ; border-color: black" >
+                      <div class="card"  >
                         <div class="card-body">
 
                           <div class="form-group">
                             <label>Titre</label>
-                            <input type="text" style=" border-radius: 15px" class="form-control">
+                            <input type="text" class="form-control">
                           </div>
 
                           <div class="row">
                             <div class="form-group col-md-4">
                               <label>Nombre de jours de la formation</label>
-                              <input type="number" style=" border-radius: 15px" class="form-control">
+                              <input type="number"  class="form-control">
                             </div>
 
                             <div class="form-group col-md-4">
                               <label>Tarifs par jours</label>
-                              <input type="number" style=" border-radius: 15px" class="form-control">
+                              <input type="number"  class="form-control">
                             </div>
 
                             <div class="form-group col-md-4">
                               <label>Nombre de participants dans la formation</label>
-                              <input type="number" style=" border-radius: 15px" class="form-control">
+                              <input type="number"  class="form-control">
                             </div>
                           </div>
 
 
                           <div class="form-group">
                             <label>Description</label>
-                            <textarea style="border-radius: 15px" class="form-control"/>
+                            <textarea  class="form-control"/>
                           </div>
 
 
@@ -104,8 +108,8 @@
 
                     </div>
                     <div class="modal-footer">
-                      <button class="btn btn-block btn-outline-success" style=" border-radius: 15px">Valider</button>
-                      <button class="btn btn btn-outline-secondary" style=" border-radius: 15px" @click="showModal = false">Close</button>
+                      <button class="btn  btn-outline-success" >Valider</button>
+                      <button class="btn btn btn-outline-secondary"  @click="showModal = false">Close</button>
                     </div>
                   </div>
                 </div>
@@ -114,8 +118,8 @@
           </transition>
         </div>
       </div>
+  </div>
 
-    </div>
   </div>
 </template>
 
