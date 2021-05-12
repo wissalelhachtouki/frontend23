@@ -536,10 +536,12 @@ export default {
     ,
     async deleteFormation(id) {
       let x = window.confirm("You want to delete the formation?");
-
+       
       if (x) {
+        // Delete from database
         const response = await axios.delete("formations/" + id);
-
+        // Delete from the state 
+        
         console.log(response);
         alert("Formation deleted!");
       }

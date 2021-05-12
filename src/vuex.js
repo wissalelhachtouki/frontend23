@@ -23,6 +23,9 @@ const store = new Vuex.Store({
     user(context, user) {
       context.commit("user", user);
     },
+    deleteFormation(context,formationToRemove){
+     context.commit("deleteFormation",formationToRemove);
+    },
     async setFormations(state) {
       const response = await axios.get("formations");
       console.log(response.data);
@@ -32,6 +35,9 @@ const store = new Vuex.Store({
   mutations: {
     user(state, user) {
       state.user = user;
+    },
+    deleteFormation(state,formationToRemove){
+        state.formations.filter((formation)=>formation !== formationToRemove);
     },
     setFormations(state, formations) {
       state.formations = formations.data;
