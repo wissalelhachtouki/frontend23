@@ -24,12 +24,15 @@ const store = new Vuex.Store({
       context.commit("user", user);
     },
     deleteFormation(context,formationToRemove){
-      const newValue =  state.formations.filter((formation)=>formation !== formationToRemove);
+      const newValue = state.formations.filter( (formation)=>formation !== formationToRemove);
       console.log(newValue);
-     context.commit("deleteFormation",newValue);
+      context.commit("deleteFormation",newValue);
     },
-    addFormation(context,formationToAdd){
-      context.commit("addFomration",formationToAdd);
+    async addFormation(context, formationToAdd){
+      const response = await axios.post("formations", formationToAdd);
+      console.log("this is add formation");
+      console.log(response.data.data);
+      context.commit("addFormation", response.data.data);
     },
     async setFormations(state) {
       const response = await axios.get("formations");
@@ -43,7 +46,6 @@ const store = new Vuex.Store({
     },
     deleteFormation(state,newValue){
       state.formations = newValue;
-      
     },
     addFormation(state,formationToAdd){
       state.formations.push(formationToAdd)
