@@ -121,7 +121,7 @@
 
 
 
-      <div class="home_content">
+
         <div v-if="showModal" v-cloak>
           <transition name="modal ">
             <div class="modal-mask ">
@@ -177,7 +177,7 @@
             </div>
           </transition>
         </div>
-      </div>
+
 
 
 
