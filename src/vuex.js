@@ -31,6 +31,11 @@ const store = new Vuex.Store({
     addFormation(context,formationToAdd){
       context.commit("addFomration",formationToAdd);
     },
+    updateFormation(context,formationToUpdate,updatedFormation){
+      // axios call to update the formation in the database
+      const newValue = state.formations.splice(state.formations.indexOf(formationToUpdate),1,updatedFormation);
+      context.commit("updateFormation",newValue)
+    },
     async setFormations(state) {
       const response = await axios.get("formations");
       console.log(response.data);
@@ -44,6 +49,9 @@ const store = new Vuex.Store({
     deleteFormation(state,newValue){
       state.formations = newValue;
       
+    },
+    updateFormation(state,newValue){
+      state.formations = newValue;
     },
     addFormation(state,formationToAdd){
       state.formations.push(formationToAdd)
