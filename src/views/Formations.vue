@@ -33,7 +33,7 @@
                   <td>
                     <span><i @click="showModalDetails = true ; forDetails(formation)" class="bx bxs-plus-square btn btn-info" style="margin: 0 5px ; border-radius: 15px"></i></span>
                     <span><i @click="showModalEdit = true ; editFormationPart1(formation)" class="fa fa-edit btn btn-warning" style="margin: 0 5px ; border-radius: 15px"></i></span>
-                    <span><i @click="deleteFormation(formation.id)" class="bx bxs-trash btn btn-danger" style="margin: 0 5px ; border-radius: 15px"></i></span>
+                    <span><i @click="deleteFormation(formation)" class="bx bxs-trash btn btn-danger" style="margin: 0 5px ; border-radius: 15px"></i></span>
                   </td>
                 </tr>
 
@@ -460,11 +460,11 @@ export default {
           description: this.description
         };
 
-        console.log(response);
 
-        const response = await axios.post("formations", data);
+        //const response = await axios.post("formations", data);
 
-        console.log(response);
+        await this.$store.dispatch("addFormation", data);
+
         alert("formation added!");
       }
       catch (e){
@@ -534,17 +534,17 @@ export default {
 
 
     ,
-    async deleteFormation(id) {
-      let x = window.confirm("You want to delete the formation?");
-       
-      if (x) {
+    async deleteFormation(formation) {
+
+
         // Delete from database
-        const response = await axios.delete("formations/" + id);
+        const response = await axios.delete("formations/" + formation.id);
         // Delete from the state 
-        
+
+        await this.$store.dispatch("deleteFormation", formation);
         console.log(response);
         alert("Formation deleted!");
-      }
+
     }
   },
   mounted() {
