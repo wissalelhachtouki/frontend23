@@ -7,7 +7,7 @@ Vue.use(Vuex);
 const state = {
   user: null,
   formations: []
-}
+};
 
 const store = new Vuex.Store({
   state,
@@ -23,21 +23,35 @@ const store = new Vuex.Store({
     user(context, user) {
       context.commit("user", user);
     },
-    deleteFormation(context,formationToRemove){
-      const newValue = state.formations.filter( (formation)=>formation !== formationToRemove);
+    deleteFormation(context, formationToRemove) {
+      const newValue = state.formations.filter(
+        formation => formation !== formationToRemove
+      );
       console.log(newValue);
-      context.commit("deleteFormation",newValue);
+      context.commit("deleteFormation", newValue);
     },
-    async addFormation(context, formationToAdd){
+    async addFormation(context, formationToAdd) {
       const response = await axios.post("formations", formationToAdd);
       console.log("this is add formation");
       console.log(response.data.data);
       context.commit("addFormation", response.data.data);
     },
-    updateFormation(context,formationToUpdate,updatedFormation){
+    async updateFormation(context, updatedFormation) {
       // axios call to update the formation in the database
-      const newValue = state.formations.splice(state.formations.indexOf(formationToUpdate),1,updatedFormation);
-      context.commit("updateFormation",newValue)
+      const response = await axios.put("formations/" + updatedFormation.id, updatedFormation);
+      console.log("this is update formation");
+      console.log(response.data);
+
+      let formationToUpdateIndex = state.formations.findIndex(
+        formation => formation.id === updatedFormation.id
+      );
+
+      let newValue = state.formations;
+      newValue[formationToUpdateIndex] = updatedFormation;
+      context.commit("updateFormation", newValue);
+
+
+
     },
     async setFormations(state) {
       const response = await axios.get("formations");
@@ -49,14 +63,14 @@ const store = new Vuex.Store({
     user(state, user) {
       state.user = user;
     },
-    deleteFormation(state,newValue){
+    deleteFormation(state, newValue) {
       state.formations = newValue;
     },
-    updateFormation(state,newValue){
+    updateFormation(state, newValue) {
       state.formations = newValue;
     },
-    addFormation(state,formationToAdd){
-      state.formations.push(formationToAdd)
+    addFormation(state, formationToAdd) {
+      state.formations.push(formationToAdd);
     },
     setFormations(state, formations) {
       state.formations = formations.data;

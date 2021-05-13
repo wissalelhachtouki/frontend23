@@ -179,7 +179,7 @@
 
                   </div>
                   <div class="modal-footer" style=" border-radius: 15px">
-                    <button class="btn btn-outline-success btn-block" @click.prevent="handleValid" style=" border-radius: 15px">Valider</button>
+                    <button class="btn btn-outline-success btn-block" @click.prevent="handleValid" data-dismiss="modal" style=" border-radius: 15px">Valider</button>
                     <button class="btn btn btn-outline-secondary"  @click="showModalPage2 = false"  style=" border-radius: 15px">Back</button>
                     <button class="btn btn btn-outline-secondary"  @click="showModalPage2 = false ; showModal = false"  style=" border-radius: 15px">Close</button>
                   </div>
@@ -210,8 +210,9 @@
                   <div class="modal-body">
                     <div v-if="formations" class="card">
                       <div class="card-header">
-                        <label>Title : </label>
-                        <label>{{ formations.title }}</label>
+                        <div class="row"></div>
+                        <label class="col-md-4">Title : </label>
+                        <label class="col-md-8">{{ formations.title }}</label>
                       </div>
                       <div class="card-body">
                         <div class="row">
@@ -389,7 +390,7 @@
 
                   </div>
                   <div class="modal-footer" style=" border-radius: 15px">
-                    <button class="btn btn-outline-success btn-block" @click.prevent="updateUser" style=" border-radius: 15px">Valider</button>
+                    <button class="btn btn-outline-success btn-block" @click.prevent="updateUser(formations.id)" style=" border-radius: 15px">Valider</button>
                     <button class="btn btn btn-outline-secondary"  @click="showModalEditpage2 = false"  style=" border-radius: 15px">Back</button>
                     <button class="btn btn btn-outline-secondary"  @click="showModalEditpage2 = false ; showModalEdit = false"  style=" border-radius: 15px">Close</button>
                   </div>
@@ -461,11 +462,11 @@ export default {
         };
 
 
-        //const response = await axios.post("formations", data);
-
         await this.$store.dispatch("addFormation", data);
 
-        alert("formation added!");
+        this.showModal = false;
+        this.showModalPage2 = false;
+
       }
       catch (e){
         this.error = "Error occurred !"
@@ -507,26 +508,32 @@ export default {
       console.log(this.frm);
     },
 
-    async updateUser() {
+    async updateUser(id) {
       try {
-        const response = await axios.put("formations/" + this.formations.id,
-            {
-              title: this.formations.title,
-              nombreDeJours: this.formations.nombreDeJours,
-              tarifsParJours: this.formations.tarifsParJours,
-              nombreDeParticipant: this.formations.nombreDeParticipant,
-              modalites: this.formations.modalites,
-              publicConcerne: this.formations.publicConcerne,
-              lieuFormation: this.formations.lieuFormation,
-              dureeFormation: this.formations.dureeFormation,
-              dateDebut: this.formations.dateDebut,
-              horaire: this.formations.horaire,
-              description: this.formations.description
-            }
-        );
+        const data = {
+          id: id,
+          title: this.formations.title,
+          nombreDeJours: this.formations.nombreDeJours,
+          tarifsParJours: this.formations.tarifsParJours,
+          nombreDeParticipant: this.formations.nombreDeParticipant,
+          modalites: this.formations.modalites,
+          publicConcerne: this.formations.publicConcerne,
+          lieuFormation: this.formations.lieuFormation,
+          dureeFormation: this.formations.dureeFormation,
+          dateDebut: this.formations.dateDebut,
+          horaire: this.formations.horaire,
+          description: this.formations.description
+        };
 
-        console.log(response.data);
-        alert("formation updated!");
+        console.log("this data id");
+        console.log(data.id);
+        console.log("this data updated");
+        console.log(data);
+        await this.$store.dispatch("updateFormation", data);
+
+        this.showModalEdit = false;
+        this.showModalEditpage2 = false;
+
       } catch (e) {
         console.log(e);
       }
