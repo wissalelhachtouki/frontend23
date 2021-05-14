@@ -1,21 +1,48 @@
 <template>
   <div class="user">
-    <MainSidebar/>
+    <MainSidebar />
     <div class="home_content">
-      <h1>this is calendar</h1>
-    </div>
+      <div class="card">
+        <div class="card-header">User</div>
 
+        <div class="card-body">
+          <div class="row">
+            <label class="col-md-4">photo ? </label>
+            <label class="col-md-8"> </label>
+          </div>
+          <div class="row">
+            <label class="col-md-4">Name : </label>
+            <label class="col-md-8">{{ user.name }}</label>
+          </div>
+          <div class="row">
+            <label class="col-md-4">email : </label>
+            <label class="col-md-8">{{ user.email }}</label>
+          </div>
+          <div class="row">
+            <a href="#/forgot-password" class="col-md-4">Do you want to change you password ?</a>
+          </div>
+        </div>
+        <div class="card-footer">
+          <button class="btn btn-primary" style=" border-radius: 15px">
+            +
+          </button>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
 import MainSidebar from "@/layout/MainSidebar";
-
+import { mapGetters } from "vuex";
 
 export default {
   name: "User",
   components: {
     MainSidebar
+  },
+  computed: {
+    ...mapGetters(["user"])
   }
 };
 </script>
@@ -27,22 +54,22 @@ body {
   background: #fff;
   color: #333;
   font-family: Lato, sans-serif;
-  background-color:#e4e4e4;
+  background-color: #e4e4e4;
 }
 
 .container {
   display: block;
   width: 400px;
   margin: 10px auto 100px;
-  background-color:#fff;
-  padding:0px 10px 10px 10px;
-  border-radius:10px
+  background-color: #fff;
+  padding: 0px 10px 10px 10px;
+  border-radius: 10px;
 }
 
 h2 {
-  text-align:center;
-  padding-top:10px;
-  margin-bottom:0px;
+  text-align: center;
+  padding-top: 10px;
+  margin-bottom: 0px;
 }
 
 ul {
@@ -80,11 +107,10 @@ button:hover {
   color: #333;
 }
 
-
 /* Heading */
 
 h3,
-label[for='new-task'] {
+label[for="new-task"] {
   color: #333;
   font-weight: 700;
   font-size: 15px;
@@ -111,10 +137,9 @@ input[type="text"]:focus {
   color: #333;
 }
 
-
 /* New Task */
 
-label[for='new-task'] {
+label[for="new-task"] {
   display: block;
   margin: 0 0 20px;
 }
@@ -125,9 +150,8 @@ input#new-task {
 }
 
 p > button:hover {
-  color: #0FC57C;
+  color: #0fc57c;
 }
-
 
 /* Task list */
 
@@ -155,9 +179,8 @@ li > input[type="text"] {
 }
 
 li > .delete:hover {
-  color: #CF2323;
+  color: #cf2323;
 }
-
 
 /* Completed */
 
@@ -166,14 +189,13 @@ li > .delete:hover {
   color: #888;
 }
 
-
 /* Edit Task */
 
-ul li input[type=text] {
+ul li input[type="text"] {
   display: none;
 }
 
-ul li.editMode input[type=text] {
+ul li.editMode input[type="text"] {
   display: block;
 }
 
