@@ -1,16 +1,35 @@
-<template>
+<template >
   <div class="todos">
     <MainSidebar/>
     <div class="home_content">
+
       <div class="row d-flex justify-content-center container">
+
         <div class="col-md-12">
           <div class="card-hover-shadow-2x mb-3 card">
+            <h2><strong>TODO LIST</strong></h2>
+
             <div class="card-header-tab card-header">
-              <div class="card-header-title font-size-lg text-capitalize font-weight-normal"><i class="fa fa-tasks"></i>&nbsp;Task Lists</div>
+              <div class="card-header-title font-size-lg text-capitalize font-weight-normal "><i class="fa fa-plus-square"></i><strong>&nbsp;Add Tasks</strong></div>
             </div>
+            <p>
+              <input v-model="newTodo" @keyup.enter="addTodo" id="new-task"  type="text" placeholder="New tasks go here..." autofocus>
+              <button class="btn btn-success" v-on:click="addTodo">Add</button>
+
+</p>
+
+
+
+            <div class="card-header-tab card-header">
+              <div class="card-header-title font-size-lg text-capitalize font-weight-normal"><i class="fa fa-tasks"></i><strong>&nbsp;Task Lists</strong></div>
+            </div>
+
+            <div class="wrapper">
+
             <div class="scroll-area-lg">
               <perfect-scrollbar class="ps-show-limits">
                 <div style="position: static;" class="ps ps--active-y">
+                  <p>
                   <div class="ps-content">
                     <ul class=" list-group list-group-flush">
 
@@ -19,7 +38,7 @@
                         <div class="widget-content p-0">
                           <div class="widget-content-wrapper">
                             <div class="widget-content-left mr-2">
-                              <div class="custom-checkbox custom-control"><input class="custom-control-input" id="exampleCustomCheckbox2" type="checkbox"><label class="custom-control-label" for="exampleCustomCheckbox2">&nbsp;</label></div>
+                             
                             </div>
                             <div class="widget-content-left">
                               <div class="widget-heading">Office grocery shopping</div>
@@ -28,59 +47,24 @@
                             <div class="widget-content-right"> <button class="border-0 btn-transition btn btn-outline-success"> <i class="fa fa-check"></i></button> <button class="border-0 btn-transition btn btn-outline-danger"> <i class="fa fa-trash"></i> </button> </div>
                           </div>
                         </div>
+
                       </li>
                     </ul>
+
+                  </div>
+
+
+                  <div class="card-header-tab card-header">
+                    <div class="card-header-title font-size-lg text-capitalize font-weight-normal"><i class="fa fa-check-square"></i><strong>&nbsp;Completed</strong></div>
                   </div>
                 </div>
               </perfect-scrollbar>
             </div>
-            <div class="d-block text-right card-footer">
-              <button class="mr-2 btn btn-link btn-sm" >Cancel</button>
-              <button class="btn btn-primary" @click="showModal = true">Add Task</button></div>
+
           </div>
         </div>
       </div>
-
-
-
-
-        <div v-if="showModal" v-cloak>
-          <transition name="modal">
-            <div class="modal-mask ">
-              <div class="modal-wrapper">
-                <div class="modal-dialog modal-dialog-centered">
-                  <div class="modal-content" >
-                    <div class="modal-header" >
-                      <h5 class="modal-title">Entrer votre formation</h5>
-                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true" @click="showModal = false">&times;</span>
-                      </button>
-                    </div>
-                    <div class="modal-body">
-
-                      <div class="card"  >
-                        <div class="card-body">
-
-                          <div class="form-group">
-                            <label>Task Title</label>
-                            <input type="text" class="form-control">
-                          </div>
-
-                        </div>
-                      </div>
-
-                    </div>
-                    <div class="modal-footer">
-                      <button class="btn  btn-outline-success" >Add</button>
-                      <button class="btn btn btn-outline-secondary"  @click="showModal = false">Cancel</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </transition>
-        </div>
-
+      </div>
 
 
 
@@ -109,6 +93,44 @@ export default {
 
 <style scoped>
 
+
+.home_content{
+  display: block;
+  width: 400px;
+  margin: 10px auto 100px;
+  background-color:#fff;
+  padding:0px 10px 10px 10px;
+  border-radius:10px
+}
+h2 {
+  text-align:center;
+  padding-top:10px;
+  margin-bottom:0px;
+}
+.controls {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
+input {
+  flex: 8;
+  padding: 0 10px;
+  margin:  0 20px;
+  align-content: center;
+
+}
+
+button{
+
+  background: none;
+  border: 0px;
+  color: #888;
+  font-size: 15px;
+  width: 60px;
+  margin: 10px 0 0;
+  font-family: Lato, sans-serif;
+  cursor: pointer;
+}
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
@@ -133,6 +155,7 @@ i {
   border-width: 0;
   transition: all .2s
 }
+
 
 .card-header:first-child {
   border-radius: calc(0.25rem - 1px) calc(0.25rem - 1px) 0 0

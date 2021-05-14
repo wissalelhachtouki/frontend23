@@ -132,7 +132,7 @@ body{
   left: 0;
   height: 100%;
   width: 78px;
-  background: #11101d;
+  background: cornflowerblue;
   padding: 6px 14px;
   z-index: 99;
   transition: all 0.5s ease;
