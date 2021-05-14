@@ -1,111 +1,224 @@
-<template >
+<template>
   <div class="todos">
-    <MainSidebar/>
+    <MainSidebar />
     <div class="home_content">
-
       <div class="row d-flex justify-content-center container">
-
         <div class="col-md-12">
           <div class="card-hover-shadow-2x mb-3 card">
             <h2><strong>TODO LIST</strong></h2>
 
             <div class="card-header-tab card-header">
-              <div class="card-header-title font-size-lg text-capitalize font-weight-normal "><i class="fa fa-plus-square"></i><strong>&nbsp;Add Tasks</strong></div>
+              <div
+                class="card-header-title font-size-lg text-capitalize font-weight-normal "
+              >
+                <i class="fa fa-plus-square"></i
+                ><strong>&nbsp;Add Tasks</strong>
+              </div>
             </div>
-            <p>
-              <input v-model="newTodo" @keyup.enter="addTodo" id="new-task"  type="text" placeholder="New tasks go here..." autofocus>
-              <button class="btn btn-success" v-on:click="addTodo">Add</button>
-
-</p>
-
-
+            <div class="row">
+              <input
+                v-model="name"
+                type="text"
+                class="form-control col-md-6"
+                placeholder="New tasks go here..."
+              />
+              <button class="btn btn-success" @click.prevent="handleValid">
+                Add
+              </button>
+            </div>
 
             <div class="card-header-tab card-header">
-              <div class="card-header-title font-size-lg text-capitalize font-weight-normal"><i class="fa fa-tasks"></i><strong>&nbsp;Task Lists</strong></div>
+              <div
+                class="card-header-title font-size-lg text-capitalize font-weight-normal"
+              >
+                <i class="fa fa-tasks"></i><strong>&nbsp;Task Lists</strong>
+              </div>
             </div>
 
             <div class="wrapper">
-
-            <div class="scroll-area-lg">
-              <perfect-scrollbar class="ps-show-limits">
-                <div style="position: static;" class="ps ps--active-y">
-                  <p>
-                  <div class="ps-content">
-                    <ul class=" list-group list-group-flush">
-
-                      <li class="list-group-item">
-                        <div class="todo-indicator bg-info"></div>
-                        <div class="widget-content p-0">
-                          <div class="widget-content-wrapper">
-                            <div class="widget-content-left mr-2">
-                             
+              <div style="position: static;" class="ps ps--active-y">
+                <div class="ps-content">
+                  <ul class=" list-group list-group-flush">
+                    <li
+                      v-for="(todo, index) in todos"
+                      :key="todo.id"
+                      class="list-group-item"
+                      v-if="!todo.completed"
+                    >
+                      <div class="widget-subheading">
+                        <i> N° {{ index + 1 }}</i>
+                      </div>
+                      <div class="todo-indicator bg-info"></div>
+                      <div class="widget-content p-0">
+                        <div class="widget-content-wrapper">
+                          <div class="widget-content-left mr-2"></div>
+                          <div class="widget-content-left">
+                            <div class="widget-heading">
+                              {{ todo.name }}
                             </div>
-                            <div class="widget-content-left">
-                              <div class="widget-heading">Office grocery shopping</div>
-                              <div class="widget-subheading">By Tida</div>
+                            <div class="widget-subheading">
+                              By : {{ user.name }}
                             </div>
-                            <div class="widget-content-right"> <button class="border-0 btn-transition btn btn-outline-success"> <i class="fa fa-check"></i></button> <button class="border-0 btn-transition btn btn-outline-danger"> <i class="fa fa-trash"></i> </button> </div>
+                          </div>
+                          <div class="widget-content-right">
+                            <button
+                              @click.prevent="updateTodo(todo.id)"
+                              class="border-0 btn-transition btn btn-outline-success"
+                            >
+                              <i class="fa fa-check"></i>
+                            </button>
+                            <button
+                              @click="deleteTodo(todo)"
+                              class="border-0 btn-transition btn btn-outline-danger"
+                            >
+                              <i class="fa fa-trash"></i>
+                            </button>
                           </div>
                         </div>
-
-                      </li>
-                    </ul>
-
-                  </div>
-
-
-                  <div class="card-header-tab card-header">
-                    <div class="card-header-title font-size-lg text-capitalize font-weight-normal"><i class="fa fa-check-square"></i><strong>&nbsp;Completed</strong></div>
-                  </div>
+                      </div>
+                    </li>
+                  </ul>
                 </div>
-              </perfect-scrollbar>
+              </div>
             </div>
 
+            <div class="card-header-tab card-header">
+              <div
+                class="card-header-title font-size-lg text-capitalize font-weight-normal"
+              >
+                <i class="fa fa-check-square"></i
+                ><strong>&nbsp;Completed</strong>
+              </div>
+            </div>
+
+            <div class="wrapper">
+              <div style="position: static;" class="ps ps--active-y">
+                <div class="ps-content">
+                  <ul class=" list-group list-group-flush">
+                    <li
+                      v-for="(todo, index) in todos"
+                      :key="todo.id"
+                      class="list-group-item"
+                      v-if="todo.completed"
+                    >
+                      <div class="widget-subheading">
+                        <i> N° {{ index + 1 }}</i>
+                      </div>
+                      <div class="todo-indicator bg-success"></div>
+                      <div class="widget-content p-0">
+                        <div class="widget-content-wrapper">
+                          <div class="widget-content-left mr-2"></div>
+                          <div class="widget-content-left">
+                            <div class="widget-heading" style="text-decoration: line-through">
+                              {{ todo.name }}
+                            </div>
+                            <div class="widget-subheading">
+                              By : {{ user.name }}
+                            </div>
+                          </div>
+                          <div class="widget-content-right">
+                            <button
+                              @click="deleteTodo(todo)"
+                              class="border-0 btn-transition btn btn-outline-danger"
+                            >
+                              <i class="fa fa-trash"></i>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-      </div>
-
-
-
     </div>
   </div>
-
 </template>
 
 <script>
 import MainSidebar from "@/layout/MainSidebar";
+import { mapGetters } from "vuex";
+import axios from "axios";
 
 export default {
   name: "Todos",
   components: {
     MainSidebar
   },
-  data(){
-    return{
-      showModal: false
+  data() {
+    return {
+      name: "",
+      completed: false
+    };
+  },
+  computed: {
+    ...mapGetters(["todos"]),
+    ...mapGetters(["user"])
+  },
+  mounted() {
+    this.$store.dispatch("setTodos");
+  },
+  methods: {
+    async handleValid() {
+      try {
+        const data = {
+          name: this.name,
+          completed: false,
+          completed_at: null
+        };
+
+        await this.$store.dispatch("addTodo", data);
+
+        this.name = "";
+      } catch (e) {
+        this.error = "Error occurred !";
+      }
+    },
+    async deleteTodo(todo) {
+      // Delete from database
+      const response = await axios.delete("todos/" + todo.id);
+      // Delete from the state
+
+      await this.$store.dispatch("deleteTodo", todo);
+      console.log(response);
+      alert("Todo deleted!");
+    },
+    async updateTodo(id) {
+      try {
+        const data = {
+          id: id,
+          completed: true
+        };
+        console.log("this data id");
+        console.log(data.id);
+        console.log("this data updated");
+        console.log(data);
+        await this.$store.dispatch("updateTodo", data);
+      } catch (e) {
+        console.log(e);
+      }
     }
   }
 };
-
-
 </script>
 
 <style scoped>
-
-
-.home_content{
-  display: block;
-  width: 400px;
-  margin: 10px auto 100px;
-  background-color:#fff;
-  padding:0px 10px 10px 10px;
-  border-radius:10px
+.home_content {
+  position: absolute;
+  height: 100%;
+  width: calc(100% - 78px);
+  left: 78px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  transition: all 0.5s ease;
+  overflow-y: scroll;
 }
 h2 {
-  text-align:center;
-  padding-top:10px;
-  margin-bottom:0px;
+  text-align: center;
+  padding-top: 10px;
+  margin-bottom: 0px;
 }
 .controls {
   display: flex;
@@ -115,13 +228,12 @@ h2 {
 input {
   flex: 8;
   padding: 0 10px;
-  margin:  0 20px;
+  margin: 5px 20px;
   align-content: center;
-
+  width: 60%;
 }
 
-button{
-
+button {
   background: none;
   border: 0px;
   color: #888;
@@ -133,32 +245,36 @@ button{
 }
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-size: 0.88rem;
   font-weight: 400;
   line-height: 1.5;
   color: #495057;
   text-align: left;
-  background-color: #6200EA
+  background-color: #6200ea;
 }
 
 i {
-  font-style: italic
+  font-style: italic;
 }
 
 .container {
-  margin-top: 100px
+  margin-top: 100px;
 }
 
 .card {
-  box-shadow: 0 0.46875rem 2.1875rem rgba(4, 9, 20, 0.03), 0 0.9375rem 1.40625rem rgba(4, 9, 20, 0.03), 0 0.25rem 0.53125rem rgba(4, 9, 20, 0.05), 0 0.125rem 0.1875rem rgba(4, 9, 20, 0.03);
+  box-shadow: 0 0.46875rem 2.1875rem rgba(4, 9, 20, 0.03),
+    0 0.9375rem 1.40625rem rgba(4, 9, 20, 0.03),
+    0 0.25rem 0.53125rem rgba(4, 9, 20, 0.05),
+    0 0.125rem 0.1875rem rgba(4, 9, 20, 0.03);
   border-width: 0;
-  transition: all .2s
+  transition: all 0.2s;
 }
 
-
 .card-header:first-child {
-  border-radius: calc(0.25rem - 1px) calc(0.25rem - 1px) 0 0
+  border-radius: calc(0.25rem - 1px) calc(0.25rem - 1px) 0 0;
 }
 
 .card-header {
@@ -169,43 +285,43 @@ i {
   padding-bottom: 0;
   padding-right: 0.625rem;
   height: 3.5rem;
-  background-color: #fff
+  background-color: #fff;
 }
 
 .widget-subheading {
   color: #858a8e;
-  font-size: 10px
+  font-size: 10px;
 }
 
 .card-header.card-header-tab .card-header-title {
   display: flex;
   align-items: center;
-  white-space: nowrap
+  white-space: nowrap;
 }
 
 .card-header .header-icon {
   font-size: 1.65rem;
-  margin-right: 0.625rem
+  margin-right: 0.625rem;
 }
 
 .card-header.card-header-tab .card-header-title {
   display: flex;
   align-items: center;
-  white-space: nowrap
+  white-space: nowrap;
 }
 
 .btn-actions-pane-right {
   margin-left: auto;
-  white-space: nowrap
+  white-space: nowrap;
 }
 
 .text-capitalize {
-  text-transform: capitalize !important
+  text-transform: capitalize !important;
 }
 
 .scroll-area-sm {
   height: 288px;
-  overflow-x: hidden
+  overflow-x: hidden;
 }
 
 .list-group-item {
@@ -214,14 +330,14 @@ i {
   padding: 0.75rem 1.25rem;
   margin-bottom: -1px;
   background-color: #fff;
-  border: 1px solid rgba(0, 0, 0, 0.125)
+  border: 1px solid rgba(0, 0, 0, 0.125);
 }
 
 .list-group {
   display: flex;
   flex-direction: column;
   padding-left: 0;
-  margin-bottom: 0
+  margin-bottom: 0;
 }
 
 .todo-indicator {
@@ -231,79 +347,79 @@ i {
   border-radius: 0.3rem;
   left: 0.625rem;
   top: 20%;
-  opacity: .6;
-  transition: opacity .2s
+  opacity: 0.6;
+  transition: opacity 0.2s;
 }
 
 .bg-warning {
-  background-color: #f7b924 !important
+  background-color: #f7b924 !important;
 }
 
 .widget-content {
   padding: 1rem;
   flex-direction: row;
-  align-items: center
+  align-items: center;
 }
 
 .widget-content .widget-content-wrapper {
   display: flex;
   flex: 1;
   position: relative;
-  align-items: center
+  align-items: center;
 }
 
 .widget-content .widget-content-right.widget-content-actions {
   visibility: hidden;
   opacity: 0;
-  transition: opacity .2s
+  transition: opacity 0.2s;
 }
 
 .widget-content .widget-content-right {
-  margin-left: auto
+  margin-left: auto;
 }
 
 .btn:not(:disabled):not(.disabled) {
-  cursor: pointer
+  cursor: pointer;
 }
 
 .btn {
-  position: relative;
-  transition: color 0.15s, background-color 0.15s, border-color 0.15s, box-shadow 0.15s
+  transition: color 0.15s, background-color 0.15s, border-color 0.15s,
+    box-shadow 0.15s;
 }
 
 .btn-outline-success {
   color: #3ac47d;
-  border-color: #3ac47d
+  border-color: #3ac47d;
 }
 
 .btn-outline-success:hover {
   color: #fff;
   background-color: #3ac47d;
-  border-color: #3ac47d
+  border-color: #3ac47d;
 }
 
 .btn-outline-success:hover {
   color: #fff;
   background-color: #3ac47d;
-  border-color: #3ac47d
+  border-color: #3ac47d;
 }
 
 .btn-primary {
   color: #fff;
   background-color: #3f6ad8;
-  border-color: #3f6ad8
+  border-color: #3f6ad8;
 }
 
 .btn {
   position: relative;
-  transition: color 0.15s, background-color 0.15s, border-color 0.15s, box-shadow 0.15s;
-  outline: none !important
+  transition: color 0.15s, background-color 0.15s, border-color 0.15s,
+    box-shadow 0.15s;
+  outline: none !important;
 }
 
 .card-footer {
-  background-color: #fff
+  background-color: #fff;
 }
-
 
 .home_content {
   position: absolute;
@@ -339,12 +455,11 @@ i {
   width: 100%;
   height: 100%;
   display: table;
-  transition: opacity .3s ease;
+  transition: opacity 0.3s ease;
 }
 
 .modal-wrapper {
   display: table-cell;
   vertical-align: middle;
-
 }
 </style>

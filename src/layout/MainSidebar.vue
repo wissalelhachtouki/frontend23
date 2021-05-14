@@ -88,6 +88,8 @@ export default {
     let sidebar = document.querySelector(".sidebar");
     let searchBtn = document.querySelector(".bx-search");
 
+    sidebar.classList.toggle("active");
+
     btn.onclick = () => {
       console.log("was click");
       sidebar.classList.toggle("active");

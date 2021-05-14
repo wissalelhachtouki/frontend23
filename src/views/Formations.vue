@@ -390,7 +390,7 @@
 
                   </div>
                   <div class="modal-footer" style=" border-radius: 15px">
-                    <button class="btn btn-outline-success btn-block" @click.prevent="updateUser(formations.id)" style=" border-radius: 15px">Valider</button>
+                    <button class="btn btn-outline-success btn-block" @click.prevent="updateFormation(formations.id)" style=" border-radius: 15px">Valider</button>
                     <button class="btn btn btn-outline-secondary"  @click="showModalEditpage2 = false"  style=" border-radius: 15px">Back</button>
                     <button class="btn btn btn-outline-secondary"  @click="showModalEditpage2 = false ; showModalEdit = false"  style=" border-radius: 15px">Close</button>
                   </div>
@@ -508,7 +508,7 @@ export default {
       console.log(this.frm);
     },
 
-    async updateUser(id) {
+    async updateFormation(id) {
       try {
         const data = {
           id: id,

@@ -6,7 +6,8 @@ Vue.use(Vuex);
 
 const state = {
   user: null,
-  formations: []
+  formations: [],
+  todos: []
 };
 
 const store = new Vuex.Store({
@@ -17,6 +18,9 @@ const store = new Vuex.Store({
     },
     formations: (state) => {
       return state.formations;
+    },
+    todos: (state) => {
+      return state.todos;
     }
   },
   actions: {
@@ -57,7 +61,43 @@ const store = new Vuex.Store({
       const response = await axios.get("formations");
       console.log(response.data);
       state.commit("setFormations", response.data);
-    }
+    },
+
+
+
+
+    async setTodos(state) {
+      const response = await axios.get("todos");
+      console.log(response.data);
+      state.commit("setTodos", response.data);
+    },
+    deleteTodo(context, todoToRemove) {
+      const newValue = state.todos.filter(
+        todo => todo !== todoToRemove
+      );
+      console.log(newValue);
+      context.commit("deleteTodo", newValue);
+    },
+    async addTodo(context, todoToAdd) {
+      const response = await axios.post("todos", todoToAdd);
+      console.log("this is add todo");
+      console.log(response.data.data);
+      context.commit("addTodo", response.data.data);
+    },
+    async updateTodo(context, updatedTodo) {
+      // axios call to update the formation in the database
+      const response = await axios.put("todos/" + updatedTodo.id, updatedTodo);
+      console.log("this is update todo");
+      console.log(response.data);
+
+      let todoToUpdateIndex = state.todos.findIndex(
+        todo => todo.id === updatedTodo.id
+      );
+
+      let newValue = state.todos;
+      newValue[todoToUpdateIndex] = updatedTodo;
+      context.commit("updateTodo", newValue);
+    },
   },
   mutations: {
     user(state, user) {
@@ -74,6 +114,19 @@ const store = new Vuex.Store({
     },
     setFormations(state, formations) {
       state.formations = formations.data;
+    },
+
+    setTodos(state, todos) {
+      state.todos = todos.data;
+    },
+    deleteTodo(state, newValue) {
+      state.todos = newValue;
+    },
+    addTodo(state, todoToAdd) {
+      state.todos.push(todoToAdd);
+    },
+    updateTodo(state, newValue) {
+      state.todos = newValue;
     }
   }
 });
