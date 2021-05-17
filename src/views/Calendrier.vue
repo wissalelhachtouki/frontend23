@@ -1,31 +1,49 @@
 <template>
   <div class="calendar">
-    <MainSidebar/>
+    <MainSidebar />
     <div class="home_content">
       <div class="card">
+        <vue-cal
+          class="vuecal--blue-theme"
+          selected-date="2021-1-21"
+          :disable-views="['years', 'year']"
+          default-view="month"
+          events-on-month-view="short"
+          overlaps-per-time-step
 
+          style="height: 600px"
+        >
+          <p>POOOPPOOO</p>
+        </vue-cal>
+      </div>
+    </div>
   </div>
-    </div>
-    </div>
 </template>
 
 <script>
 import MainSidebar from "@/layout/MainSidebar";
-
+import vuecal from "vue-cal";
+import "vue-cal/dist/vuecal.css";
+import { mapGetters } from "vuex";
 
 export default {
   name: "Calendrier",
   components: {
-    MainSidebar
+    MainSidebar,
+    "vue-cal": vuecal
+  },
+  data: () => ({
+  }),
+  computed: {
+    ...mapGetters(["formations"])
+  },
+  mounted() {
+    this.$store.dispatch("setFormations");
   }
 };
 </script>
 
 <style lang="scss" scoped>
-
-
-
-
 .home_content {
   position: absolute;
   height: 100%;
