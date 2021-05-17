@@ -1,11 +1,16 @@
 <template>
   <div class="todos">
+    <div
+      class="section page-header header-filter"
+      :style="headerStyle"
+    >
+
     <MainSidebar />
     <div class="home_content">
-      <div class="row d-flex justify-content-center container">
-        <div class="col-md-12">
-          <div class="card-hover-shadow-2x mb-3 card">
-            <h2><strong>TODO LIST</strong></h2>
+      <div class="row d-flex  justify-content-center container" >
+        <div class="col-md-17"  style="border-radius: 10px">
+          <div class="card-hover-shadow-5x mb-5 card ">
+            <h2><strong style="text-align: left">To do list</strong></h2>
 
             <div class="card-header-tab card-header">
               <div
@@ -13,18 +18,21 @@
               >
                 <i class="fa fa-plus-square"></i
                 ><strong>&nbsp;Add Tasks</strong>
+                <input
+
+                  v-model="name"
+                  type="text"
+                  class="form-control "
+                  placeholder="New tasks go here..."
+                />
+                <button class="btn btn-info" @click.prevent="handleValid">
+                  Add
+                </button>
+
               </div>
             </div>
             <div class="row">
-              <input
-                v-model="name"
-                type="text"
-                class="form-control col-md-6"
-                placeholder="New tasks go here..."
-              />
-              <button class="btn btn-success" @click.prevent="handleValid">
-                Add
-              </button>
+
             </div>
 
             <div class="card-header-tab card-header">
@@ -136,6 +144,7 @@
       </div>
     </div>
   </div>
+  </div>
 </template>
 
 <script>
@@ -154,7 +163,18 @@ export default {
       completed: false
     };
   },
+  props: {
+    header: {
+      type: String,
+      default: require("@/assets/img/vue-mk-headerr.jpg")
+    },
+  },
   computed: {
+    headerStyle() {
+      return {
+        backgroundImage: `url(${this.header})`
+      };
+    },
     ...mapGetters(["todos"]),
     ...mapGetters(["user"])
   },

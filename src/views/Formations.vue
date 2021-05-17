@@ -1,25 +1,77 @@
 <template>
-  <div class="formations">
+  <div class="wrapper">
+
+
+
+
+
+    <div
+      class="section page-header header-filter"
+      :style="headerStyle"
+    >
+
     <MainSidebar/>
+
+
     <div class="home_content">
+
       <div class="d-flex  width">
         <div class="   mt-5 w-100 ">
       <!-- Main content -->
-          <div class="card" style=" border-radius: 15px">
-            <h3 style="text-align: center"><strong>Liste des Formation</strong></h3>
-            <div class="card-body" style=" border-radius: 15px">
+          <div class="card-styling"  style="border-radius: 10px">
+            <div class="card-header border-0">
+              <div class="row">
+                <div class="col-6">
+                  <h3 class="mb-0"><strong>Liste des Formation</strong></h3>
+                </div>
+                <div class="col-6 text-right">
+                  <base-button type="warning" class="btn    btn-sm btn-info" @click="showModal = true" ><!---->
 
-              <table class="table  table-hover" style="border-radius: 15px">
-                <thead style=" border-radius: 15px">
+                    <i class='fas fa-edit' ></i>
+                    <span class="btn-inner--text">Add</span>
+                  </base-button>
+                </div>
+              </div>
+            </div>
 
-                <th class="font-weight-bold">ID</th>
-                <th class="font-weight-bold">Titre</th>
-                <th class="font-weight-bold">Nombre de jours</th>
-                <th class="font-weight-bold">Tarifs/J</th>
-                <th class="font-weight-bold">Nombre de participants</th>
-                <th class="font-weight-bold">Actions</th>
 
+            <div class="el-table__header-wrapper">
+              <table cellspacing="0" cellpadding="0" border="0" class="el-table__header" style="width: 1250px;"><colgroup>
+                  <col name="el-table_4_column_13" width="76">
+                  <col name="el-table_4_column_14" width="220" />
+                  <col name="el-table_4_column_15" width="294">
+                  <col name="el-table_4_column_16" width="220">
+                  <col name="el-table_4_column_17" width="220">
+                  <col name="el-table_4_column_18" width="220">
+                </colgroup>
+                <thead class="">
+                  <tr class="">
+                  <th colspan="1" rowspan="1" class="el-table_4_column_13  is-center   is-leaf">
+                    <div class="cell">ID</div>
+                  </th>
+                  <th colspan="1" rowspan="1" class="el-table_4_column_14     is-leaf">
+                    <div class="cell">Titre</div>
+                  </th>
+                  <th colspan="1" rowspan="1" class="el-table_4_column_15     is-leaf">
+                    <div class="cell">Nombre de jours</div>
+                  </th>
+                  <th colspan="1" rowspan="1" class="el-table_4_column_16  is-center   is-leaf">
+                    <div class="cell">Nombre de participant</div>
+                  </th>
+                  <th colspan="1" rowspan="1" class="el-table_4_column_17  is-right   is-leaf">
+                    <div class="cell">Tarifs/J</div>
+                  </th>
+                  <th colspan="1" rowspan="1" class="el-table_4_column_18  is-right   is-leaf">
+                    <div class="cell">Actions</div>
+                  </th>
+                </tr>
                 </thead>
+              </table>
+            </div>
+
+            <div class="card-body" >
+
+              <table class="table  " >
 
                 <tbody style=" border-radius: 15px">
 
@@ -38,18 +90,29 @@
                 </tr>
 
                 </tbody>
+                <div class="card-footer">
+                  <!----><div class="col-12 d-flex justify-content-center justify-content-sm-between flex-wrap">
+                  <div>
+                  </div><ul class="pagination pagination-no-border pagination-primary">
+                  <li class="page-item prev-page"><a aria-label="Previous" class="page-link">
+                    <i aria-hidden="true" class=" fas fa-angle-double-left"></i></a></li>
+                  <li class="page-item"><a class="page-link">1</a></li>
+                  <li class="page-item"><a class="page-link">2</a></li>
+                  <li class="page-item"><a class="page-link">3</a></li>
+                  <li class="page-item active"><a class="page-link">4</a></li>
+                  <li class="page-item"><a class="page-link">5</a></li>
+                  <li class="page-item page-pre next-page"><a aria-label="Next" class="page-link">
+                    <i aria-hidden="true" class=" fas fa-angle-double-right"></i>
+                  </a></li></ul></div></div>
               </table>
 
 
-            </div>
-            <div class="card-footer">
-              <div class="card border">
-                  <button class="btn btn-outline-primary btn-block" @click="showModal = true" style=" border-radius: 15px">Ajouter une formation</button>
-              </div>
-            </div>
-          </div>
-        </div>
 
+            </div>
+
+          </div>
+
+        </div>
       <!-- /.content -->
         </div>
 
@@ -59,40 +122,41 @@
           <transition name="modal">
             <div class="modal-mask">
               <div class="modal-wrapper">
-                <div class="modal-dialog modal-xl" role="document">
-                  <div class="modal-content" style=" border-radius: 15px">
-                    <div class="modal-header" style=" border-radius: 15px">
-                      <h5 class="modal-title">Entrer votre formation</h5>
+                <div class="modal-dialog  modal-md" role="document">
+                  <div class="modal-content" style=" border-radius: 10px">
+                    <div class="modal-header" style=" border-radius: 10px">
+                      <h5 class="modal-title"><strong>Entrer votre formation</strong></h5>
                       <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true" @click="showModal = false">&times;</span>
                       </button>
                     </div>
                     <div class="modal-body">
 
-                      <div class="card" style=" border-radius: 15px">
+                      <div class="card" style=" border-radius: 10px">
                         <div class="card-body">
 
                           <div class="form-group">
                             <label>Titre</label>
-                            <input v-model="title" type="text" class="form-control" style=" border-radius: 15px">
+                            <input v-model="title" type="text" class="form-control" >
                           </div>
 
-                          <div class="row">
-                            <div class="form-group col-md-4">
-                              <label>Nombre de jours de la formation</label>
-                              <input v-model="nombreDeJours" type="number"  class="form-control" style=" border-radius: 15px">
+
+                            <div class="form-group ">
+                              <label>Nombre de jours de la formation </label>
+                              <input v-model="nombreDeJours" type="number"  class="form-control" >
+
                             </div>
 
-                            <div class="form-group col-md-4">
+                            <div class="form-group ">
                               <label>Tarifs par jours</label>
-                              <input v-model="tarifsParJours" type="number"  class="form-control" style=" border-radius: 15px">
+                              <input v-model="tarifsParJours" type="number"  class="form-control" >
                             </div>
 
-                            <div class="form-group col-md-4">
+                            <div class="form-group ">
                               <label>Nombre de participants dans la formation</label>
-                              <input v-model="nombreDeParticipant" type="number"  class="form-control" style=" border-radius: 15px">
+                              <input v-model="nombreDeParticipant" type="number"  class="form-control" >
                             </div>
-                          </div>
+
 
 
 
@@ -100,9 +164,9 @@
                       </div>
 
                     </div>
-                    <div class="modal-footer" style=" border-radius: 15px">
-                      <button class="btn btn-outline-info btn-block" @click="showModalPage2 = true" style=" border-radius: 15px">Continuer vers le Plan</button>
-                      <button class="btn btn btn-outline-secondary"  @click="showModal = false" style=" border-radius: 15px">Close</button>
+                    <div class="modal-footer" style=" border-radius: 10px">
+                      <button class="btn btn-outline-info btn-block" @click="showModalPage2 = true" style=" border-radius: 10px">Continuer vers le Plan</button>
+                      <button class="btn btn btn-outline-secondary"  @click="showModal = false" style=" border-radius: 10px">Close</button>
                     </div>
                   </div>
                 </div>
@@ -117,8 +181,8 @@
           <div class="modal-mask">
             <div class="modal-wrapper">
               <div class="modal-dialog modal-xl" role="document">
-                <div class="modal-content" style=" border-radius: 15px">
-                  <div class="modal-header" style=" border-radius: 15px">
+                <div class="modal-content" style=" border-radius: 10px">
+                  <div class="modal-header" style=" border-radius: 10px">
                     <h5 class="modal-title">Entrer votre plan de formation</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                       <span aria-hidden="true" @click="showModalPage2 = false ; showModal = false">&times;</span>
@@ -400,10 +464,20 @@
           </div>
         </transition>
       </div>
+    </div>
 
+
+
+    </div>
+
+    <footer class="footer">
+      <div class="container-fluid">
+        <ul class="nav">
+        </ul><div class="copyright"> © 2021, made with <i class="fa-favorite"></i> by Us .
+      </div></div></footer>
   </div>
 
-  </div>
+
 </template>
 
 <script>
@@ -418,6 +492,7 @@ export default {
   name: "Formations",
   components: {
     MainSidebar
+
   },
   data(){
     return{
@@ -441,10 +516,22 @@ export default {
       frm: {}
     }
   },
+  props: {
+    header: {
+      type: String,
+      default: require("@/assets/img/vue-mk-headerr.jpg")
+    },
+  },
   computed: {
+    headerStyle() {
+      return {
+        backgroundImage: `url(${this.header})`
+      };
+    },
     ...mapGetters(["formations"])
   },
   methods: {
+
     async handleValid(){
       try{
         const data = {
@@ -561,6 +648,59 @@ export default {
 </script>
 
 <style scoped>
+
+.card-header:first-child {
+  border-radius: calc(.375rem - 1px) calc(.375rem - 1px) 0 0;}
+.border-0 {
+  border: 0!important;
+}
+.card-header {
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 0;
+  background-color: #fff;
+  border-bottom: 1px solid rgba(0,0,0,.05);
+}
+col-6{
+position: relative;
+width: 100%;
+padding-right: 15px;
+padding-left: 15px;
+  flex: 0 0 50%;
+  max-width: 50%;
+}
+.btn-neutral {
+  color: #5e72e4;
+}
+.fas {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+}
+h3 {
+  font-size: 1.0625rem;
+}
+.card-styling {
+  margin-top: 2%;
+  background-color: white;
+  color: #333533;
+
+  box-shadow: 0 8px 8px 0 rgba(0, 0, 0.3, 0.3);
+  transition: 0.3s;
+}
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th,
+td {
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+.card-styling:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0.5, 0.5);
+}
 .home_content {
   position: absolute;
   height: 100%;
@@ -617,3 +757,6 @@ export default {
 
 
 </style>
+
+
+

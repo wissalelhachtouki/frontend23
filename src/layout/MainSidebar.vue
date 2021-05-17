@@ -134,7 +134,7 @@ body{
   left: 0;
   height: 100%;
   width: 78px;
-  background: cornflowerblue;
+  background: #e1bee7;
   padding: 6px 14px;
   z-index: 99;
   transition: all 0.5s ease;
@@ -225,7 +225,7 @@ body{
   border-radius: 12px;
   outline: none;
   border: none;
-  background: #1d1b31;
+  background: black;
   padding-left: 50px;
   font-size: 18px;
   color: #fff;

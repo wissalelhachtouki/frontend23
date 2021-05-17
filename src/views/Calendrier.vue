@@ -2,14 +2,16 @@
   <div class="calendar">
     <MainSidebar/>
     <div class="home_content">
-      <h1>this is calendar</h1>
-    </div>
+      <div class="card">
 
   </div>
+    </div>
+    </div>
 </template>
 
 <script>
 import MainSidebar from "@/layout/MainSidebar";
+
 
 export default {
   name: "Calendrier",
@@ -19,7 +21,11 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+
+
+
+
 .home_content {
   position: absolute;
   height: 100%;
