@@ -134,7 +134,8 @@ body{
   left: 0;
   height: 100%;
   width: 78px;
-  background: #1d1b31;
+  background: rgb(0,232,200);
+  background: linear-gradient(180deg, rgba(0,232,200,1) 0%, rgba(0,182,225,1) 90%, rgba(0,164,234,1) 100%);
   padding: 6px 14px;
   z-index: 99;
   transition: all 0.5s ease;
