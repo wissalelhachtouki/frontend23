@@ -1,14 +1,15 @@
 <template>
   <div class="todos">
     <div
-      class="section page-header header-filter"
+      class="page-header header-filter"
       :style="headerStyle"
     >
 
     <MainSidebar />
     <div class="home_content">
+      <div><MainNavbar2/></div>
       <div class="row d-flex  justify-content-center container" >
-        <div class="col-md-17"  style="border-radius: 10px">
+        <div class="col-md-17"  style="border-radius: 10px ; width: 80%">
           <div class="card-hover-shadow-5x mb-5 card ">
             <h2><strong style="text-align: left">To do list</strong></h2>
 
@@ -149,13 +150,15 @@
 
 <script>
 import MainSidebar from "@/layout/MainSidebar";
+import MainNavbar2 from "@/layout/MainNavbar2";
 import { mapGetters } from "vuex";
 import axios from "axios";
 
 export default {
   name: "Todos",
   components: {
-    MainSidebar
+    MainSidebar,
+    MainNavbar2
   },
   data() {
     return {

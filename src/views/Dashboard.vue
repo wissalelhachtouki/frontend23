@@ -5,6 +5,10 @@
     <MainSidebar />
     <div class="home_content">
 
+      <div>
+        <MainNavbar2/>
+      </div>
+      <div class="card">
       <h4 class="mb-4 text-muted" style="margin-bottom: 3rem">Dashboard</h4>
       <div class="row">
 
@@ -202,12 +206,14 @@
 
     </div>
   </div>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
 import MainSidebar from "@/layout/MainSidebar";
+import MainNavbar2 from "@/layout/MainNavbar2";
 import { mapGetters } from "vuex";
 import LineChart from "./components/LineChart.vue";
 import BarChart from "./components/BarChart.vue";
@@ -218,8 +224,7 @@ export default {
   components: {
     MainSidebar,
     LineChart,
-
-
+    MainNavbar2
   },
   data() {
     return {

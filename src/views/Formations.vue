@@ -1,9 +1,11 @@
 <template>
   <div class="wrapper">
-    <div class="section page-header header-filter" :style="headerStyle">
+    <div class="page-header header-filter" :style="headerStyle">
       <MainSidebar />
 
       <div class="home_content">
+        <div><MainNavbar2/></div>
+
         <div class="d-flex  width">
           <div class="   mt-5 w-100 ">
             <!-- Main content -->
@@ -14,7 +16,7 @@
                     <h3 class="mb-0"><strong>Liste des Formation</strong></h3>
                   </div>
                   <div class="col-6 text-right">
-                    <base-button
+                    <button
                       type="warning"
                       class="btn    btn-sm btn-info"
                       @click="showModal = true"
@@ -22,7 +24,7 @@
 
                       <i class="fas fa-edit"></i>
                       <span class="btn-inner--text">Add</span>
-                    </base-button>
+                    </button>
                   </div>
                 </div>
               </div>
@@ -195,8 +197,7 @@
                         aria-label="Close"
                       >
                         <span aria-hidden="true" @click="showModal = false"
-                          >&times;</span
-                        >
+                          >&times;</span>
                       </button>
                     </div>
                     <div class="modal-body">
@@ -819,13 +820,15 @@
 
 <script>
 import MainSidebar from "@/layout/MainSidebar";
+import MainNavbar2 from "@/layout/MainNavbar2";
 import axios from "axios";
 import { mapGetters } from "vuex";
 
 export default {
   name: "Formations",
   components: {
-    MainSidebar
+    MainSidebar,
+    MainNavbar2
   },
   data() {
     return {

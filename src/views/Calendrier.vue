@@ -2,19 +2,22 @@
   <div class="calendar">
     <MainSidebar />
     <div class="home_content">
-      <div class="card">
+      <div><MainNavbar2/></div>
+      <div class="container-fluid">
         <vue-cal
-          class="vuecal--blue-theme"
+          class="vuecal--green-theme"
           selected-date="2021-1-21"
           :disable-views="['years', 'year']"
           default-view="month"
           events-on-month-view="true"
           :events="events"
           overlaps-per-time-step
-          style="height: 720px;
-            background-color: #e0f2f1;
-            border: 1px solid black;
-            color: black;"
+          style="
+            background-color: #fff;
+            margin-top: 2%;
+            border: 1px transparent;
+            border-radius: 10px;
+            "
         >
         </vue-cal>
       </div>
@@ -24,6 +27,8 @@
 
 <script>
 import MainSidebar from "@/layout/MainSidebar";
+import MainNavbar2 from "@/layout/MainNavbar2";
+
 import vuecal from "vue-cal";
 import "vue-cal/dist/vuecal.css";
 import { mapGetters } from "vuex";
@@ -32,7 +37,8 @@ export default {
   name: "Calendrier",
   components: {
     MainSidebar,
-    "vue-cal": vuecal
+    "vue-cal": vuecal,
+    MainNavbar2
   },
   data: () => ({}),
   computed: {
@@ -82,13 +88,14 @@ export default {
   border-radius: 10px;
 }
 
-.vuecal__cell{
-  margin: 0px;
+.container-fluid, .container-lg, .container-md, .container-sm, .container-xl {
+  width: 90%;
+  height: 85%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
 }
-.vuecal__cell-content{
-  margin: 0px;
-}
-.out-of-scope{
-  margin: 0px;
-}
+
+
 </style>

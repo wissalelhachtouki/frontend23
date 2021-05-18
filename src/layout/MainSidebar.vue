@@ -11,11 +11,6 @@
     </div>
     <ul class="nav_list">
       <li>
-        <i class="bx bx-search"></i>
-        <input type="text" placeholder="Search..." />
-        <span class="tooltip">Search</span>
-      </li>
-      <li>
         <a href="#/dashboard">
           <i class="bx bxs-dashboard"></i>
           <span class="links_name">Dashboard</span>
@@ -86,7 +81,6 @@ export default {
   mounted() {
     let btn = document.querySelector("#btn");
     let sidebar = document.querySelector(".sidebar");
-    let searchBtn = document.querySelector(".bx-search");
 
     sidebar.classList.toggle("active");
 
@@ -100,10 +94,6 @@ export default {
         console.log("this is else");
         btn.classList.replace("bx-menu-alt-right", "bx-menu");
       }
-    }
-
-    searchBtn.onclick = () => {
-      sidebar.classList.toggle("active");
     }
   }
 };
