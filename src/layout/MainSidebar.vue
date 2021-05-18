@@ -134,7 +134,7 @@ body{
   left: 0;
   height: 100%;
   width: 78px;
-  background: #e1bee7;
+  background: #1d1b31;
   padding: 6px 14px;
   z-index: 99;
   transition: all 0.5s ease;

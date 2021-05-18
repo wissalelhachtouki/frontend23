@@ -8,12 +8,14 @@
           selected-date="2021-1-21"
           :disable-views="['years', 'year']"
           default-view="month"
-          events-on-month-view="short"
+          events-on-month-view="true"
+          :events="events"
           overlaps-per-time-step
-
-          style="height: 600px"
+          style="height: 720px;
+            background-color: #e0f2f1;
+            border: 1px solid black;
+            color: black;"
         >
-          <p>POOOPPOOO</p>
         </vue-cal>
       </div>
     </div>
@@ -32,13 +34,13 @@ export default {
     MainSidebar,
     "vue-cal": vuecal
   },
-  data: () => ({
-  }),
+  data: () => ({}),
   computed: {
-    ...mapGetters(["formations"])
+    //...mapGetters(["formations"]),
+    ...mapGetters(["events"])
   },
   mounted() {
-    this.$store.dispatch("setFormations");
+    this.$store.dispatch("setEvents");
   }
 };
 </script>
@@ -78,5 +80,15 @@ export default {
   box-shadow: -1px -1px 17px 4px #e1e5ea;
   border: 2px solid #1c6ea4;
   border-radius: 10px;
+}
+
+.vuecal__cell{
+  margin: 0px;
+}
+.vuecal__cell-content{
+  margin: 0px;
+}
+.out-of-scope{
+  margin: 0px;
 }
 </style>

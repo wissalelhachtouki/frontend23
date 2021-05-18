@@ -7,20 +7,24 @@ Vue.use(Vuex);
 const state = {
   user: null,
   formations: [],
-  todos: []
+  todos: [],
+  events: []
 };
 
 const store = new Vuex.Store({
   state,
   getters: {
-    user: (state) => {
+    user: state => {
       return state.user;
     },
-    formations: (state) => {
+    formations: state => {
       return state.formations;
     },
-    todos: (state) => {
+    todos: state => {
       return state.todos;
+    },
+    events: state => {
+      return state.events;
     }
   },
   actions: {
@@ -42,7 +46,10 @@ const store = new Vuex.Store({
     },
     async updateFormation(context, updatedFormation) {
       // axios call to update the formation in the database
-      const response = await axios.put("formations/" + updatedFormation.id, updatedFormation);
+      const response = await axios.put(
+        "formations/" + updatedFormation.id,
+        updatedFormation
+      );
       console.log("this is update formation");
       console.log(response.data);
 
@@ -53,9 +60,6 @@ const store = new Vuex.Store({
       let newValue = state.formations;
       newValue[formationToUpdateIndex] = updatedFormation;
       context.commit("updateFormation", newValue);
-
-
-
     },
     async setFormations(state) {
       const response = await axios.get("formations");
@@ -63,8 +67,25 @@ const store = new Vuex.Store({
       state.commit("setFormations", response.data);
     },
 
+    async setEvents(state) {
+      let newValue = [];
 
+      const response = await axios.get("formations");
 
+      console.log("the 1 " + newValue);
+
+      for (let i = 0; i < response.data.data.length; i++) {
+        newValue.push(
+              {
+                start: response.data.data[i].dateDebut + " " + response.data.data[i].horaireDebut,
+                end: response.data.data[i].dateFin + " " + response.data.data[i].horaireFin,
+                title: response.data.data[i].title + " - " + response.data.data[i].lieuFormation
+              }
+          );
+      }
+      console.log("the 2 " + newValue);
+      state.commit("setEvents", newValue);
+    },
 
     async setTodos(state) {
       const response = await axios.get("todos");
@@ -72,9 +93,7 @@ const store = new Vuex.Store({
       state.commit("setTodos", response.data);
     },
     deleteTodo(context, todoToRemove) {
-      const newValue = state.todos.filter(
-        todo => todo !== todoToRemove
-      );
+      const newValue = state.todos.filter(todo => todo !== todoToRemove);
       console.log(newValue);
       context.commit("deleteTodo", newValue);
     },
@@ -97,7 +116,7 @@ const store = new Vuex.Store({
       let newValue = state.todos;
       newValue[todoToUpdateIndex] = updatedTodo;
       context.commit("updateTodo", newValue);
-    },
+    }
   },
   mutations: {
     user(state, user) {
@@ -127,6 +146,10 @@ const store = new Vuex.Store({
     },
     updateTodo(state, newValue) {
       state.todos = newValue;
+    },
+
+    setEvents(state, events) {
+      state.events = events;
     }
   }
 });
