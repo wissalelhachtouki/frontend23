@@ -464,67 +464,60 @@
                     </div>
                     <div class="modal-body">
                       <div v-if="formations" class="card">
-                        <div class="card-header">
-                          <div class="row"></div>
-                          <label class="col-md-4">Title : </label>
-                          <label class="col-md-8">{{ formations.title }}</label>
-                        </div>
+
+
                         <div class="card-body">
-                          <div class="row">
-                            <label class="col-md-4">lieuFormation : </label>
-                            <label class="col-md-8"
-                              >{{ formations.lieuFormation }}
-                            </label>
-                          </div>
-                          <div class="row">
-                            <label class="col-md-4">public concerné : </label>
-                            <label class="col-md-8"
-                              >{{ formations.publicConcerne }}
-                            </label>
-                          </div>
-                          <div class="row">
-                            <label class="col-md-4">modalites : </label>
-                            <label class="col-md-8"
-                              >{{ formations.modalites }}
-                            </label>
-                          </div>
-                          <div class="row">
-                            <label class="col-md-4">dureeFormation : </label>
-                            <label class="col-md-8"
-                              >{{ formations.dureeFormation }}
-                            </label>
-                          </div>
-                          <div class="row">
-                            <label class="col-md-4">date : </label>
-                            <label class="col-md-8"
-                              >De {{ formations.dateDebut }} A {{ formations.dateFin }}
-                            </label>
-                          </div>
-                          <div class="row">
-                            <label class="col-md-4">horaire : </label>
-                            <label class="col-md-8"
-                              >De {{ formations.horaireDebut }} A {{ formations.horaireFin }}
-                            </label>
-                          </div>
-                          <div class="row">
-                            <label class="col-md-4"
-                              >objectifs et contenus :
-                            </label>
-                            <p class="col-md-8">{{ formations.description }}</p>
-                          </div>
+
+                        <table id="myTable" style="width:100%">
+                          <tr>
+                            <th>&nbsp;</th>
+                            <th>{{ formations.title }}</th>
+                          </tr>
+                          <tr>
+                            <td>lieuFormation : </td>
+                            <td>{{ formations.lieuFormation }}</td>
+                          </tr>
+                          <tr>
+                            <td>public concerné : </td>
+                            <td>{{ formations.publicConcerne }}</td>
+                          </tr>
+                          <tr>
+                            <td>modalites : </td>
+                            <td>{{ formations.modalites }}</td>
+                          </tr>
+                          <tr>
+                            <td>dureeFormation : </td>
+                            <td>{{ formations.dureeFormation }}</td>
+                          </tr>
+                          <tr>
+                            <td>date : </td>
+                            <td>De  {{ formations.dateDebut }}  à  {{ formations.dateFin }}</td>
+                          </tr>
+                          <tr>
+                            <td>horaire : </td>
+                            <td>De  {{ formations.horaireDebut }}  à  {{ formations.horaireFin }}</td>
+                          </tr>
+                          <tr>
+                            <td>objectifs et contenus :</td>
+                            <td>{{ formations.description }}</td>
+                          </tr>
+                        </table>
+
+
+
+
                         </div>
-                        <div class="card-footer">
-                          <button
-                            class="btn btn-primary"
-                            @click="showModalDetails = false"
-                            style=" border-radius: 15px"
-                          >
-                            +
-                          </button>
-                        </div>
+
                       </div>
                     </div>
                     <div class="modal-footer" style="border-radius: 15px">
+                      <button
+                          class="btn btn-primary"
+                          @click="makePDF"
+                          style="border-radius: 15px"
+                      >
+                        Télécharger PDF
+                      </button>
                       <button
                         class="btn btn btn-outline-secondary"
                         @click="showModalDetails = false"
@@ -823,6 +816,8 @@ import MainSidebar from "@/layout/MainSidebar";
 import MainNavbar2 from "@/layout/MainNavbar2";
 import axios from "axios";
 import { mapGetters } from "vuex";
+import JSPDF from "jspdf";
+import autoTable from "jspdf-autotable";
 
 export default {
   name: "Formations",
@@ -975,6 +970,13 @@ export default {
       await this.$store.dispatch("deleteFormation", formation);
       console.log(response);
       alert("Formation deleted!");
+    },
+    makePDF(){
+      var doc = new JSPDF();
+
+      autoTable(doc, { html: "#myTable" });
+
+      doc.save("MaFormation.pdf");
     }
   },
   mounted() {
@@ -1089,4 +1091,5 @@ td {
   display: table-cell;
   vertical-align: middle;
 }
+
 </style>
