@@ -19,11 +19,11 @@
                         style="float: right"
                       >
                         <md-button
-                          style="border-radius: 15px"
-                          class=" md-primary md-block"
+
+                          class=" md-primary md-sm  md-block"
                           @click="showModal = true"
                         >
-                          <md-icon>library_books</md-icon> Ajouter
+                          <md-icon>playlist_add</md-icon> Ajouter
                         </md-button>
                       </div>
                       </h4>
@@ -32,7 +32,7 @@
                     <table class="table">
                       <thead>
                         <tr>
-                          <th class="text-center">ID</th>
+                          <th class="text-center" >ID</th>
                           <th class="text-center">Titre</th>
                           <th class="text-center">Nombre Jours</th>
                           <th class="text-center">Tarifs/J</th>
@@ -45,7 +45,7 @@
                           v-for="(formation, index) in formations"
                           :key="formation.id"
                         >
-                          <td class="text-center">{{ index + 1 }}</td>
+                          <td class="text-center" >{{ index + 1 }}</td>
                           <td class="text-center">{{ formation.title }}</td>
                           <td class="text-center">{{ formation.nombreDeJours }}</td>
                           <td class="text-center">{{ formation.tarifsParJours }} DH</td>
@@ -59,9 +59,9 @@
                                 "
                                 class="btn btn-link text-info material-icons"
                                 style="margin: 0 5px ; border-radius: 15px"
-                                >person</i
-                              ></span
-                            >
+                                >list</i
+                              ></span  >
+
                             <span
                               ><i
                                 @click="
@@ -91,6 +91,7 @@
             </div>
           </div>
         </div>
+
         <footer> <h2>hhh</h2></footer>
 
 
@@ -100,10 +101,11 @@
               <div class="modal-wrapper">
                 <div class="modal-dialog  modal-md" role="document">
                   <div class="modal-content" style=" border-radius: 10px">
-                    <div class="modal-header" style=" border-radius: 10px">
-                      <h5 class="modal-title">
-                        <strong>Entrer votre formation</strong>
-                      </h5>
+                    <div class="modal-header card-header card-header-primary card-header-icon"  >
+                      <h4 class="modal-title card-title " >
+                        <strong style="text-align: left">Entrer votre formation</strong>
+                      </h4>
+
                       <md-button
                         type="button"
                         class="md-simple md-just-icon md-round modal-default-button"
@@ -117,60 +119,62 @@
                       <div class="card" style=" border-radius: 10px">
                         <div class="card-body">
                           <div class="form-group">
-                            <label>Titre</label>
-                            <input
-                              v-model="title"
-                              type="text"
-                              class="form-control"
-                            />
+                            <md-field class="md-form-group" slot="inputs">
+                              <md-icon >  </md-icon>
+                              <md-input v-model="title" type="text"></md-input>
+                              <label>Titre...</label>
+
+                            </md-field>
                           </div>
 
                           <div class="form-group ">
-                            <label>Nombre de jours de la formation </label>
-                            <input
-                              v-model="nombreDeJours"
-                              type="number"
-                              class="form-control"
-                            />
+                            <md-field class="md-form-group" slot="inputs">
+
+                              <md-icon >  </md-icon>
+                              <md-input v-model="nombreDeJours" type="number"></md-input>
+                              <label>Nombre de jour...</label>
+
+                            </md-field>
                           </div>
 
                           <div class="form-group ">
-                            <label>Tarifs par jours</label>
-                            <input
-                              v-model="tarifsParJours"
-                              type="number"
-                              class="form-control"
-                            />
+                            <md-field class="md-form-group" slot="inputs">
+                              <div></div>
+                              <md-icon >  </md-icon>
+                              <md-input v-model="tarifsParJours" type="number"></md-input>
+                              <label>Tarif/J...</label>
+
+                            </md-field>
                           </div>
 
                           <div class="form-group ">
-                            <label
-                              >Nombre de participants dans la formation</label
-                            >
-                            <input
-                              v-model="nombreDeParticipant"
-                              type="number"
-                              class="form-control"
-                            />
+                            <md-field class="md-form-group" slot="inputs">
+                              <div></div>
+                              <md-icon >  </md-icon>
+                              <md-input v-model="nombreDeParticipant" type="number"></md-input>
+                              <label>Nombre de Participants...</label>
+
+                            </md-field>
                           </div>
                         </div>
                       </div>
                     </div>
 
-                    <div class="modal-footer">
+
+                      <md-button
+                        class="md-simple md-rose"
+                        @click="showModalPage2 = true"
+
+                      ><strong>
+                        Continuer vers le Plan</strong>
+                      </md-button>
                       <md-button
                         class="md-simple"
-                        @click="showModalPage2 = true"
-                      >
-                        Continuer vers le Plan
-                      </md-button>
-                      <md-button
-                        class="md-danger md-simple"
                         @click="showModal = false"
-                      >
-                        Close
+                      ><strong>
+                        Close</strong>
                       </md-button>
-                    </div>
+
                   </div>
                 </div>
               </div>
@@ -184,158 +188,154 @@
               <div class="modal-wrapper">
                 <div class="modal-dialog modal-xl" role="document">
                   <div class="modal-content" style=" border-radius: 10px">
-                    <div class="modal-header" style=" border-radius: 10px">
-                      <h5 class="modal-title">
-                        Entrer votre plan de formation
+                    <div class="modal-header card-header card-header-primary card-header-icon" >
+                      <h5 class="modal-title card-title ">
+                        Plan de formation
                       </h5>
-                      <button
+                      <md-button
                         type="button"
-                        class="close"
+                        class="md-simple md-just-icon md-round modal-default-button"
                         data-dismiss="modal"
                         aria-label="Close"
-                      >
-                        <span
-                          aria-hidden="true"
-                          @click="
-                            showModalPage2 = false;
-                            showModal = false;
-                          "
-                          >&times;</span
-                        >
-                      </button>
+                        @click="
+                       showModalPage2 = false;
+                        showModal = false;"
+                      ><md-icon>clear</md-icon>
+                      </md-button>
+
                     </div>
                     <div class="modal-body">
                       <div class="card" style=" border-radius: 15px">
                         <div class="card-body">
                           <div class="row">
-                            <div class="form-group col-md-4">
-                              <label>lieuFormation</label>
-                              <input
-                                v-model="lieuFormation"
-                                type="text"
-                                class="form-control"
-                                style=" border-radius: 15px"
-                              />
+                            <div class="form-group col-md-4 ">
+
+                              <md-field class="md-form-group" slot="inputs">
+                                <md-icon></md-icon>
+                                <label>Lieu de Formation ...</label>
+                                <md-input v-model="lieuFormation" type="text"></md-input>
+                              </md-field>
                             </div>
 
                             <div class="form-group col-md-4">
-                              <label>public concerné</label>
-                              <input
-                                v-model="publicConcerne"
-                                type="text"
-                                class="form-control"
-                                style=" border-radius: 15px"
-                              />
+
+                              <md-field class="md-form-group" slot="inputs">
+                                <md-icon></md-icon>
+                                <label>Public Concerné ...</label>
+                                <md-input v-model="publicConcerne" type="text"></md-input>
+                              </md-field>
                             </div>
 
                             <div class="form-group col-md-4">
-                              <label>modalites</label>
-                              <input
-                                v-model="modalites"
-                                type="text"
-                                class="form-control"
-                                style=" border-radius: 15px"
-                              />
+
+                              <md-field class="md-form-group" slot="inputs">
+                                <md-icon></md-icon>
+                                <label>Modalités ...</label>
+                                <md-input v-model="modalites" type="text"></md-input>
+                              </md-field>
                             </div>
 
                             <div class="form-group col-md-4">
-                              <label>dureeFormation</label>
-                              <input
-                                v-model="dureeFormation"
-                                type="number"
-                                class="form-control"
-                                style=" border-radius: 15px"
-                              />
+                              <md-field class="md-form-group" slot="inputs">
+                                <md-icon></md-icon>
+                                <label>Durée de Formation...</label>
+                                <md-input v-model="dureeFormation" type="text"></md-input>
+                              </md-field>
                             </div>
 
                             <div class="form-group col-md-4">
-                              <label>dateDebut</label>
-                              <input
+                              <md-field class="md-form-group" slot="inputs">
+                                <md-icon></md-icon>
+                              <label>Date Debut ...</label>
+                              <md-input
                                 v-model="dateDebut"
-                                type="text"
+                                type="date"
                                 data-date-format="yyyy/mm/dd"
-                                placeholder="yyyy/mm/dd"
-                                class="form-control"
-                                style=" border-radius: 15px"
-                              />
+
+                              ></md-input>
+                              </md-field>
                             </div>
 
                             <div class="form-group col-md-4">
-                              <label>dateFin</label>
-                              <input
-                                v-model="dateFin"
-                                type="text"
-                                data-date-format="yyyy/mm/dd"
-                                placeholder="yyyy/mm/dd"
-                                class="form-control"
-                                style=" border-radius: 15px"
-                              />
-                            </div>
-                          </div>
+                              <md-field class="md-form-group" slot="inputs">
+                                <md-icon></md-icon>
+                                <label>Date Fin ...</label>
+                                <md-input
+                                  v-model="dateFin"
+                                  type="date"
+                                  data-date-format="yyyy/mm/dd"
 
-                          <div class="row">
-                            <div class="col-md-10">
-                              <div class="form-group">
-                                <label>objectifs et contenus</label>
-                                <textarea
-                                  v-model="description"
-                                  rows="5"
-                                  class="form-control"
-                                  style=" border-radius: 15px"
-                                />
-                              </div>
+                                ></md-input>
+                              </md-field>
                             </div>
 
-                            <div class="col-md-2">
-                              <div class="row form-group">
-                                <label>horaire Debut</label>
-                                <input
+
+
+
+                            <div class="form-group col-md-4">
+                              <md-field class="md-form-group" slot="inputs">
+                                <md-icon></md-icon>
+                                <label>Horaire Debut..</label>
+                                <md-input
                                   v-model="horaireDebut"
                                   type="time"
-                                  class="form-control"
-                                  style=" border-radius: 15px"
-                                />
-                              </div>
-                              <div class="row form-group">
-                                <label>horaire Fin</label>
-                                <input
+
+                                ></md-input>
+                              </md-field>
+                            </div>
+
+                            <div class="form-group col-md-4">
+                              <md-field class="md-form-group" slot="inputs">
+                                <md-icon></md-icon>
+                                <label>Horaire Fin..</label>
+                                <md-input
                                   v-model="horaireFin"
                                   type="time"
-                                  class="form-control"
-                                  style=" border-radius: 15px"
-                                />
-                              </div>
+
+                                ></md-input>
+                              </md-field>
                             </div>
+
+
                           </div>
+
+
+                          <md-field class="md-form-group" slot="inputs" >
+
+                            <md-icon></md-icon>
+                            <label>Objectifs et Contenus..</label>
+                            <md-textarea v-model="description" type="text"></md-textarea>
+                          </md-field>
                         </div>
                       </div>
                     </div>
-                    <div class="modal-footer" style=" border-radius: 15px">
-                      <button
-                        class="btn btn-outline-success btn-block"
+                    <div class="modal-footer" >
+                      <md-button
+                        class="md-danger md-simple"
                         @click.prevent="handleValid"
                         data-dismiss="modal"
-                        style=" border-radius: 15px"
+
                       >
-                        Valider
-                      </button>
-                      <button
-                        class="btn btn btn-outline-secondary"
+                        <strong>
+                          Valider</strong>
+                      </md-button>
+                      <md-button
+                        class="md-simple md-warning"
                         @click="showModalPage2 = false"
-                        style=" border-radius: 15px"
-                      >
-                        Back
-                      </button>
-                      <button
-                        class="btn btn btn-outline-secondary"
+
+                      ><strong>
+                        Retourner</strong>
+                      </md-button>
+                      <md-button
+                        class=" md-simple"
                         @click="
                           showModalPage2 = false;
                           showModal = false;
                         "
-                        style=" border-radius: 15px"
+
                       >
                         Close
-                      </button>
+                      </md-button>
                     </div>
                   </div>
                 </div>
@@ -349,84 +349,80 @@
             <div class="modal-mask">
               <div class="modal-wrapper">
                 <div class="modal-dialog modal-xl" role="document">
-                  <div class="modal-content" style=" border-radius: 15px">
-                    <div class="modal-header" style=" border-radius: 15px">
-                      <h5 class="modal-title">Details de la formation</h5>
-                      <button
-                        type="button"
-                        class="close"
-                        data-dismiss="modal"
-                        aria-label="Close"
+                  <div class="modal-content" style=" border-radius: 10px">
+                    <div class="modal-header card-header card-header-primary card-header-icon" >
+                      <h4 class="modal-title card-title">Details de la formation</h4>
+                      <md-button
+
+                        class="md-simple md-just-icon md-round modal-default-button"
+                        @click="showModalDetails = false"
                       >
-                        <span
-                          aria-hidden="true"
-                          @click="showModalDetails = false"
-                          >&times;</span
-                        >
-                      </button>
+                       <md-icon><strong>clear</strong></md-icon>
+                      </md-button>
                     </div>
-                    <div class="modal-body">
-                      <div v-if="formations" class="card">
+                    <div class="modal-body" style="border-radius: 20px">
+                      <div v-if="formations" class="card" style="border-radius: 20px">
                         <div class="card-body">
-                          <table id="myTable" style="width:100%">
+                          <table id="myTable" >
                             <tr>
                               <th>&nbsp;</th>
                               <th>{{ formations.title }}</th>
                             </tr>
                             <tr>
-                              <td>lieuFormation :</td>
+                              <td><strong>Lieu : </strong></td>
                               <td>{{ formations.lieuFormation }}</td>
                             </tr>
                             <tr>
-                              <td>public concerné :</td>
+                              <td><strong>Public concerné :</strong></td>
                               <td>{{ formations.publicConcerne }}</td>
                             </tr>
                             <tr>
-                              <td>modalites :</td>
+                              <td><strong>Modalités : </strong></td>
                               <td>{{ formations.modalites }}</td>
                             </tr>
                             <tr>
-                              <td>dureeFormation :</td>
+                              <td><strong> Durèe Formation :</strong></td>
                               <td>{{ formations.dureeFormation }}</td>
                             </tr>
                             <tr>
-                              <td>date :</td>
+                              <td><strong>Date :</strong></td>
                               <td>
                                 De {{ formations.dateDebut }} à
                                 {{ formations.dateFin }}
                               </td>
                             </tr>
                             <tr>
-                              <td>horaire :</td>
+                              <td><strong>Horaire :</strong></td>
                               <td>
                                 De {{ formations.horaireDebut }} à
                                 {{ formations.horaireFin }}
                               </td>
                             </tr>
                             <tr>
-                              <td>objectifs et contenus :</td>
+                              <td><strong>Objectifs et Contenus :</strong></td>
                               <td>{{ formations.description }}</td>
                             </tr>
                           </table>
                         </div>
                       </div>
                     </div>
-                    <div class="modal-footer" style="border-radius: 15px">
-                      <button
-                        class="btn btn-primary"
+
+                      <md-button
+                        class="md-simple md-warning"
                         @click="makePDF"
-                        style="border-radius: 15px"
-                      >
-                        Télécharger PDF
-                      </button>
-                      <button
-                        class="btn btn btn-outline-secondary"
+
+                      ><strong>
+                        <md-icon>download</md-icon> Télécharger PDF</strong>
+
+                      </md-button>
+                      <md-button
+                        class="md-simple"
                         @click="showModalDetails = false"
-                        style=" border-radius: 15px"
-                      >
-                        Close
-                      </button>
-                    </div>
+
+                      ><strong>
+                        Close</strong>
+                      </md-button>
+
                   </div>
                 </div>
               </div>
@@ -438,90 +434,87 @@
           <transition name="modal">
             <div class="modal-mask">
               <div class="modal-wrapper">
-                <div class="modal-dialog modal-xl" role="document">
-                  <div class="modal-content" style=" border-radius: 15px">
-                    <div class="modal-header" style=" border-radius: 15px">
-                      <h5 class="modal-title">Entrer votre formation</h5>
-                      <button
+                <div class="modal-dialog  modal-md" role="document">
+                  <div class="modal-content" style=" border-radius: 10px">
+
+
+                    <div class="modal-header card-header card-header-primary card-header-icon" >
+                      <h4 class="modal-title card-title">
+                        <strong style="text-align: left">Editer votre formation</strong></h4>
+                      <md-button
                         type="button"
-                        class="close"
+                        class="md-simple md-just-icon md-round modal-default-button"
                         data-dismiss="modal"
                         aria-label="Close"
-                      >
-                        <span aria-hidden="true" @click="showModalEdit = false"
-                          >&times;</span
-                        >
-                      </button>
+                        @click="showModalEdit = false"
+                      ><md-icon>clear</md-icon>
+
+                      </md-button>
                     </div>
                     <div class="modal-body">
-                      <div class="card" style=" border-radius: 15px">
+                      <div class="card" style=" border-radius: 10px">
                         <div class="card-body">
                           <div class="form-group">
-                            <label>Titre</label>
-                            <input
-                              v-model="formations.title"
-                              type="text"
-                              class="form-control"
-                              style=" border-radius: 15px"
-                            />
+                            <md-field class="md-form-group" slot="inputs">
+                              <md-icon >  </md-icon>
+                              <md-input v-model="formations.title" type="text"></md-input>
+                              <label>Titre...</label>
+
+                            </md-field>
                           </div>
 
-                          <div class="row">
-                            <div class="form-group col-md-4">
-                              <label>Nombre de jours de la formation</label>
-                              <input
-                                v-model="formations.nombreDeJours"
-                                type="number"
-                                class="form-control"
-                                style=" border-radius: 15px"
-                              />
+
+                            <div class="form-group ">
+                              <md-field class="md-form-group" slot="inputs">
+                                <md-icon >  </md-icon>
+                                <md-input v-model="formations.nombreDeJours" type="number"></md-input>
+                                <label>Nombre de Jours..</label>
+
+                              </md-field>
                             </div>
 
-                            <div class="form-group col-md-4">
-                              <label>Tarifs par jours</label>
-                              <input
-                                v-model="formations.tarifsParJours"
-                                type="number"
-                                class="form-control"
-                                style=" border-radius: 15px"
-                              />
+                            <div class="form-group ">
+                              <md-field class="md-form-group" slot="inputs">
+                                <md-icon >  </md-icon>
+                                <md-input v-model="formations.tarifsParJours" type="number"></md-input>
+                                <label>Tarfis/J...</label>
+
+                              </md-field>
                             </div>
 
-                            <div class="form-group col-md-4">
-                              <label
-                                >Nombre de participants dans la formation</label
-                              >
-                              <input
-                                v-model="formations.nombreDeParticipant"
-                                type="number"
-                                class="form-control"
-                                style=" border-radius: 15px"
-                              />
+                            <div class="form-group ">
+                              <md-field class="md-form-group" slot="inputs">
+                                <md-icon >  </md-icon>
+                                <md-input v-model="formations.nombreDeParticipant" type="number"></md-input>
+                                <label>Nombre de Participants...</label>
+
+                              </md-field>
+
                             </div>
-                          </div>
+
                         </div>
                       </div>
                     </div>
-                    <div class="modal-footer" style=" border-radius: 15px">
-                      <button
-                        class="btn btn-outline-info btn-block"
+
+                      <md-button
+                        class="md-danger md-simple"
                         @click="
                           showModalEditpage2 = true;
                           editFormationPart2();
                         "
-                        style=" border-radius: 15px"
-                      >
-                        Continuer pour editer le Plan
-                      </button>
-                      <button
-                        class="btn btn btn-outline-secondary"
+
+                      ><strong>
+                        Editer le Plan</strong>
+                      </md-button>
+                      <md-button
+                        class=" md-simple"
                         @click="showModalEdit = false"
-                        style=" border-radius: 15px"
-                      >
-                        Close
-                      </button>
+
+                      ><strong>
+                        Close</strong>
+                      </md-button>
                     </div>
-                  </div>
+
                 </div>
               </div>
             </div>
@@ -533,14 +526,15 @@
             <div class="modal-mask">
               <div class="modal-wrapper">
                 <div class="modal-dialog modal-xl" role="document">
-                  <div class="modal-content" style=" border-radius: 15px">
-                    <div class="modal-header" style=" border-radius: 15px">
-                      <h5 class="modal-title">
-                        Entrer votre plan de formation
+                  <div class="modal-content" style=" border-radius: 10px">
+                    <div class="modal-header card-header card-header-primary card-header-icon" >
+                      <h5 class="modal-title card-title ">
+                        Modifier Votre Plan
                       </h5>
-                      <button
+
+                      <md-button
                         type="button"
-                        class="close"
+                        class="md-simple md-just-icon md-round modal-default-button"
                         data-dismiss="modal"
                         aria-label="Close"
                       >
@@ -552,139 +546,138 @@
                           "
                           >&times;</span
                         >
-                      </button>
+                      </md-button>
                     </div>
                     <div class="modal-body">
                       <div class="card" style=" border-radius: 15px">
                         <div class="card-body">
                           <div class="row">
-                            <div class="form-group col-md-4">
-                              <label>lieuFormation</label>
-                              <input
-                                v-model="formations.lieuFormation"
-                                type="text"
-                                class="form-control"
-                                style=" border-radius: 15px"
-                              />
+                            <div class="form-group col-md-4 ">
+
+                              <md-field class="md-form-group" slot="inputs">
+                                <md-icon></md-icon>
+                                <label>Lieu de Formation ...</label>
+                                <md-input v-model="formations.lieuFormation" type="text"></md-input>
+                              </md-field>
                             </div>
 
                             <div class="form-group col-md-4">
-                              <label>public concerné</label>
-                              <input
-                                v-model="formations.publicConcerne"
-                                type="text"
-                                class="form-control"
-                                style=" border-radius: 15px"
-                              />
+
+                              <md-field class="md-form-group" slot="inputs">
+                                <md-icon></md-icon>
+                                <label>Public Concerné ...</label>
+                                <md-input v-model="formations.publicConcerne" type="text"></md-input>
+                              </md-field>
                             </div>
 
                             <div class="form-group col-md-4">
-                              <label>modalites</label>
-                              <input
-                                v-model="formations.modalites"
-                                type="text"
-                                class="form-control"
-                                style=" border-radius: 15px"
-                              />
+
+                              <md-field class="md-form-group" slot="inputs">
+                                <md-icon></md-icon>
+                                <label>Modalités ...</label>
+                                <md-input v-model="formations.modalites" type="text"></md-input>
+                              </md-field>
                             </div>
 
                             <div class="form-group col-md-4">
-                              <label>dureeFormation</label>
-                              <input
-                                v-model="formations.dureeFormation"
-                                type="number"
-                                class="form-control"
-                                style=" border-radius: 15px"
-                              />
+                              <md-field class="md-form-group" slot="inputs">
+                                <md-icon></md-icon>
+                                <label>Durée de Formation...</label>
+                                <md-input v-model="formations.dureeFormation" type="text"></md-input>
+                              </md-field>
                             </div>
 
                             <div class="form-group col-md-4">
-                              <label>dateDebut</label>
-                              <input
-                                v-model="formations.dateDebut"
-                                type="text"
-                                data-date-format="yyyy/mm/dd"
-                                placeholder="yyyy/mm/dd"
-                                class="form-control"
-                                style=" border-radius: 15px"
-                              />
+                              <md-field class="md-form-group" slot="inputs">
+                                <md-icon></md-icon>
+                                <label>Date Debut ...</label>
+                                <md-input
+                                  v-model="formations.dateDebut"
+                                  type="date"
+                                  data-date-format="yyyy/mm/dd"
+
+                                ></md-input>
+                              </md-field>
                             </div>
 
                             <div class="form-group col-md-4">
-                              <label>dateFin</label>
-                              <input
-                                v-model="formations.dateFin"
-                                type="text"
-                                data-date-format="yyyy/mm/dd"
-                                placeholder="yyyy/mm/dd"
-                                class="form-control"
-                                style=" border-radius: 15px"
-                              />
-                            </div>
-                          </div>
+                              <md-field class="md-form-group" slot="inputs">
+                                <md-icon></md-icon>
+                                <label>Date Fin ...</label>
+                                <md-input
+                                  v-model="formations.dateFin"
+                                  type="date"
+                                  data-date-format="yyyy/mm/dd"
 
-                          <div class="row">
-                            <div class="col-md-10">
-                              <div class="form-group">
-                                <label>objectifs et contenus</label>
-                                <textarea
-                                  v-model="formations.description"
-                                  rows="5"
-                                  class="form-control"
-                                  style=" border-radius: 15px"
-                                />
-                              </div>
+                                ></md-input>
+                              </md-field>
                             </div>
 
-                            <div class="col-md-2">
-                              <div class="row form-group">
-                                <label>horaire Debut</label>
-                                <input
+
+
+
+                            <div class="form-group col-md-4">
+                              <md-field class="md-form-group" slot="inputs">
+                                <md-icon></md-icon>
+                                <label>Horaire Debut..</label>
+                                <md-input
                                   v-model="formations.horaireDebut"
                                   type="time"
-                                  class="form-control"
-                                  style=" border-radius: 15px"
-                                />
-                              </div>
-                              <div class="row form-group">
-                                <label>horaire Fin</label>
-                                <input
+
+                                ></md-input>
+                              </md-field>
+                            </div>
+
+                            <div class="form-group col-md-4">
+                              <md-field class="md-form-group" slot="inputs">
+                                <md-icon></md-icon>
+                                <label>Horaire Fin..</label>
+                                <md-input
                                   v-model="formations.horaireFin"
                                   type="time"
-                                  class="form-control"
-                                  style=" border-radius: 15px"
-                                />
-                              </div>
+
+                                ></md-input>
+                              </md-field>
                             </div>
                           </div>
+
+                          <md-field class="md-form-group" slot="inputs" >
+
+                            <md-icon></md-icon>
+                            <label>Objectifs et Contenus..</label>
+                            <md-textarea v-model="description" type="text"></md-textarea>
+                          </md-field>
                         </div>
                       </div>
                     </div>
-                    <div class="modal-footer" style=" border-radius: 15px">
-                      <button
-                        class="btn btn-outline-success btn-block"
+
+                    <div class="modal-footer" >
+                      <md-button
+                        class="md-danger md-simple"
                         @click.prevent="updateFormation(formations.id)"
-                        style=" border-radius: 15px"
+                        data-dismiss="modal"
+
                       >
-                        Valider
-                      </button>
-                      <button
-                        class="btn btn btn-outline-secondary"
+                        <strong>
+                          Valider</strong>
+                      </md-button>
+                      <md-button
+                        class="md-simple md-warning"
                         @click="showModalEditpage2 = false"
-                        style=" border-radius: 15px"
-                      >
-                        Back
-                      </button>
-                      <button
-                        class="btn btn btn-outline-secondary"
+
+                      ><strong>
+                        Retourner</strong>
+                      </md-button>
+                      <md-button
+                        class=" md-simple"
                         @click="
                           showModalEditpage2 = false;
                           showModalEdit = false;
                         "
-                        style=" border-radius: 15px"
+
                       >
                         Close
-                      </button>
+                      </md-button>
                     </div>
                   </div>
                 </div>
