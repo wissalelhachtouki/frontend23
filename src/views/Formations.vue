@@ -4,7 +4,7 @@
       <MainSidebar />
 
       <div class="home_content">
-        <div><MainNavbar2 /></div>
+        <header><MainNavbar2 /></header>
         <div class="d-flex  width">
           <div class="   mt-5 w-100 ">
             <div class="container-fluid">
@@ -91,6 +91,8 @@
             </div>
           </div>
         </div>
+        <footer> <h2>hhh</h2></footer>
+
 
         <div v-if="showModal" v-cloak>
           <transition name="modal">

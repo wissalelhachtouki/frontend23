@@ -7,18 +7,8 @@
 
     <MainSidebar />
     <div class="home_content">
-      <div><MainNavbar2/></div>
+      <header><MainNavbar2/></header>
       <div class="row d-flex  justify-content-center container" >
-
-        <tabs
-          :tab-name="['Gestion' ]"
-          :tab-icon="['assignment']"
-          plain
-          flex-column
-          nav-pills-icons
-          color-button="danger"
-        >
-        </tabs>
         <div class="col-md-17"  style="border-radius: 10px ; width: 80%">
           <div class="card-hover-shadow-5x mb-5 card ">
             <h2><strong style="text-align: left">To do list</strong></h2>
@@ -153,6 +143,7 @@
           </div>
         </div>
       </div>
+      <footer> <h2>hhh</h2></footer>
     </div>
   </div>
   </div>
@@ -163,13 +154,12 @@ import MainSidebar from "@/layout/MainSidebar";
 import MainNavbar2 from "@/layout/MainNavbar2";
 import { mapGetters } from "vuex";
 import axios from "axios";
-import Tabs from "../components/Tabs";
+
 export default {
   name: "Todos",
   components: {
     MainSidebar,
-    MainNavbar2,
-    Tabs
+    MainNavbar2
   },
   data() {
     return {

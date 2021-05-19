@@ -2,7 +2,7 @@
   <div class="calendar">
     <MainSidebar />
     <div class="home_content">
-      <div><MainNavbar2/></div>
+      <header><MainNavbar2/></header>
       <div class="container-fluid">
         <vue-cal
           class="vuecal--dark-theme"
@@ -21,6 +21,7 @@
         >
         </vue-cal>
       </div>
+      <footer> <h2>hhh</h2></footer>
     </div>
   </div>
 </template>

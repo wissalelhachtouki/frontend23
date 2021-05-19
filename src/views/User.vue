@@ -2,9 +2,11 @@
   <div class="user">
     <MainSidebar />
     <div class="home_content">
-      <div><MainNavbar2/></div>
+      <header><MainNavbar2/></header>
+      <div>
 
-
+      </div>
+      <footer> <h2>hhh</h2></footer>
     </div>
   </div>
 </template>
