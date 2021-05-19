@@ -4,105 +4,95 @@
       <MainSidebar />
 
       <div class="home_content">
-        <div><MainNavbar2/></div>
-
-        <div class="container-fluid">
-          <div class="row">
-            <div class="col-md-12">
-              <div class="card card-styling " style="border-radius: 10px ; width: 899px; margin: 30px">
-                <div class="card-header card-header-primary card-header-icon">
-
-                  <h4 class="card-title">List des Formations</h4>
-                  <div class="md-layout-item md-size-10 " style="float: right ; "  >
-                    <md-button
-style="border-radius: 15px"
-                      class=" md-primary md-block"
-                      @click="showModal = true"
-
-
+        <div><MainNavbar2 /></div>
+        <div class="d-flex  width">
+          <div class="   mt-5 w-100 ">
+            <div class="container-fluid">
+                <div class="col-md-12">
+                  <div class="card card-styling " style="border-radius: 10px ; margin-bottom: 30px">
+                    <div
+                      class="card-header card-header-primary card-header-icon"
+                    >
+                      <h4 class="card-title">List des Formations
+                      <div
+                        class="md-layout-item md-size-10 "
+                        style="float: right"
                       >
-                      <md-icon>library_books</md-icon> Ajouter
+                        <md-button
+                          style="border-radius: 15px"
+                          class=" md-primary md-block"
+                          @click="showModal = true"
+                        >
+                          <md-icon>library_books</md-icon> Ajouter
+                        </md-button>
+                      </div>
+                      </h4>
+                    </div>
 
-                    </md-button>
-                  </div>
-                </div>
-
-
-                    <table class="table" >
+                    <table class="table">
                       <thead>
-                      <tr>
-                        <th class="text-center">ID</th>
-                        <th>Titre</th>
-                        <th>Nombre Jours</th>
-                        <th class="text-left">Nombre Participants</th>
-                        <th class="text-right">Tarifs/J</th>
-                        <th class="text-center">Actions</th>
-                      </tr>
+                        <tr>
+                          <th class="text-center">ID</th>
+                          <th class="text-center">Titre</th>
+                          <th class="text-center">Nombre Jours</th>
+                          <th class="text-center">Tarifs/J</th>
+                          <th class="text-center">Nombre Participants</th>
+                          <th class="text-center">Actions</th>
+                        </tr>
                       </thead>
                       <tbody>
-
-
-                      <tr
-                        v-for="(formation, index) in formations"
-                        :key="formation.id"
-                      >
-                        <td>{{ index + 1 }}</td>
-                        <td>{{ formation.title }}</td>
-                        <td>{{ formation.nombreDeJours }}</td>
-                        <td>{{ formation.nombreDeParticipant}}</td>
-                        <td>{{ formation.tarifsParJours }} DH</td>
-                        <td>
-                        <span
-                        ><i
-                          @click="
-                              showModalDetails = true;
-                              forDetails(formation);
-                            "
-                          class="btn btn-link text-info material-icons"
-                          style="margin: 0 5px ; border-radius: 15px"
-                        >person</i
-                        ></span>
-                          <span
-                          ><i
-                            @click="
-                              showModalEdit = true;
-                              editFormationPart1(formation);
-                            "
-                            class="btn btn-link text-success material-icons"
-                            style="margin: 0 5px ; border-radius: 15px"
-                          >edit</i
-                          ></span>
-                          <span
-                          ><i
-                            @click="deleteFormation(formation)"
-
-                            style="margin: 0 5px ; border-radius: 15px"
-                            class="btn btn-link text-danger material-icons"
-                          >close</i
-                          ></span>
-                        </td>
-                      </tr>
-
-
+                        <tr
+                          v-for="(formation, index) in formations"
+                          :key="formation.id"
+                        >
+                          <td class="text-center">{{ index + 1 }}</td>
+                          <td class="text-center">{{ formation.title }}</td>
+                          <td class="text-center">{{ formation.nombreDeJours }}</td>
+                          <td class="text-center">{{ formation.tarifsParJours }} DH</td>
+                          <td class="text-center">{{ formation.nombreDeParticipant }}</td>
+                          <td class="text-center">
+                            <span
+                              ><i
+                                @click="
+                                  showModalDetails = true;
+                                  forDetails(formation);
+                                "
+                                class="btn btn-link text-info material-icons"
+                                style="margin: 0 5px ; border-radius: 15px"
+                                >person</i
+                              ></span
+                            >
+                            <span
+                              ><i
+                                @click="
+                                  showModalEdit = true;
+                                  editFormationPart1(formation);
+                                "
+                                class="btn btn-link text-success material-icons"
+                                style="margin: 0 5px ; border-radius: 15px"
+                                >edit</i
+                              ></span
+                            >
+                            <span
+                              ><i
+                                @click="deleteFormation(formation)"
+                                style="margin: 0 5px ; border-radius: 15px"
+                                class="btn btn-link text-danger material-icons"
+                                >close</i
+                              ></span
+                            >
+                          </td>
+                        </tr>
                       </tbody>
                     </table>
-
+                  </div>
 
               </div>
             </div>
-
-
-
           </div>
-
-</div>
-
-
-
-
+        </div>
 
         <div v-if="showModal" v-cloak>
-
           <transition name="modal">
             <div class="modal-mask">
               <div class="modal-wrapper">
@@ -110,8 +100,7 @@ style="border-radius: 15px"
                   <div class="modal-content" style=" border-radius: 10px">
                     <div class="modal-header" style=" border-radius: 10px">
                       <h5 class="modal-title">
-
-                        <strong >Entrer votre formation</strong>
+                        <strong>Entrer votre formation</strong>
                       </h5>
                       <md-button
                         type="button"
@@ -119,8 +108,7 @@ style="border-radius: 15px"
                         data-dismiss="modal"
                         aria-label="Close"
                         @click="showModal = false"
-                      ><md-icon>clear</md-icon>
-
+                        ><md-icon>clear</md-icon>
                       </md-button>
                     </div>
                     <div class="modal-body">
@@ -167,18 +155,16 @@ style="border-radius: 15px"
                       </div>
                     </div>
 
-                    <div class="modal-footer" >
+                    <div class="modal-footer">
                       <md-button
                         class="md-simple"
                         @click="showModalPage2 = true"
-
                       >
                         Continuer vers le Plan
                       </md-button>
                       <md-button
                         class="md-danger md-simple"
                         @click="showModal = false"
-
                       >
                         Close
                       </md-button>
@@ -187,10 +173,8 @@ style="border-radius: 15px"
                 </div>
               </div>
             </div>
-
           </transition>
         </div>
-
 
         <div v-if="showModalPage2" v-cloak>
           <transition name="modal">
@@ -285,23 +269,17 @@ style="border-radius: 15px"
                                 style=" border-radius: 15px"
                               />
                             </div>
-
-
-
-
-
                           </div>
 
                           <div class="row">
-
                             <div class="col-md-10">
                               <div class="form-group">
                                 <label>objectifs et contenus</label>
                                 <textarea
-                                    v-model="description"
-                                    rows="5"
-                                    class="form-control"
-                                    style=" border-radius: 15px"
+                                  v-model="description"
+                                  rows="5"
+                                  class="form-control"
+                                  style=" border-radius: 15px"
                                 />
                               </div>
                             </div>
@@ -310,26 +288,23 @@ style="border-radius: 15px"
                               <div class="row form-group">
                                 <label>horaire Debut</label>
                                 <input
-                                    v-model="horaireDebut"
-                                    type="time"
-                                    class="form-control"
-                                    style=" border-radius: 15px"
+                                  v-model="horaireDebut"
+                                  type="time"
+                                  class="form-control"
+                                  style=" border-radius: 15px"
                                 />
                               </div>
                               <div class="row form-group">
                                 <label>horaire Fin</label>
                                 <input
-                                    v-model="horaireFin"
-                                    type="time"
-                                    class="form-control"
-                                    style=" border-radius: 15px"
+                                  v-model="horaireFin"
+                                  type="time"
+                                  class="form-control"
+                                  style=" border-radius: 15px"
                                 />
                               </div>
                             </div>
-
                           </div>
-
-
                         </div>
                       </div>
                     </div>
@@ -390,57 +365,55 @@ style="border-radius: 15px"
                     </div>
                     <div class="modal-body">
                       <div v-if="formations" class="card">
-
-
                         <div class="card-body">
-
-                        <table id="myTable" style="width:100%">
-                          <tr>
-                            <th>&nbsp;</th>
-                            <th>{{ formations.title }}</th>
-                          </tr>
-                          <tr>
-                            <td>lieuFormation : </td>
-                            <td>{{ formations.lieuFormation }}</td>
-                          </tr>
-                          <tr>
-                            <td>public concerné : </td>
-                            <td>{{ formations.publicConcerne }}</td>
-                          </tr>
-                          <tr>
-                            <td>modalites : </td>
-                            <td>{{ formations.modalites }}</td>
-                          </tr>
-                          <tr>
-                            <td>dureeFormation : </td>
-                            <td>{{ formations.dureeFormation }}</td>
-                          </tr>
-                          <tr>
-                            <td>date : </td>
-                            <td>De  {{ formations.dateDebut }}  à  {{ formations.dateFin }}</td>
-                          </tr>
-                          <tr>
-                            <td>horaire : </td>
-                            <td>De  {{ formations.horaireDebut }}  à  {{ formations.horaireFin }}</td>
-                          </tr>
-                          <tr>
-                            <td>objectifs et contenus :</td>
-                            <td>{{ formations.description }}</td>
-                          </tr>
-                        </table>
-
-
-
-
+                          <table id="myTable" style="width:100%">
+                            <tr>
+                              <th>&nbsp;</th>
+                              <th>{{ formations.title }}</th>
+                            </tr>
+                            <tr>
+                              <td>lieuFormation :</td>
+                              <td>{{ formations.lieuFormation }}</td>
+                            </tr>
+                            <tr>
+                              <td>public concerné :</td>
+                              <td>{{ formations.publicConcerne }}</td>
+                            </tr>
+                            <tr>
+                              <td>modalites :</td>
+                              <td>{{ formations.modalites }}</td>
+                            </tr>
+                            <tr>
+                              <td>dureeFormation :</td>
+                              <td>{{ formations.dureeFormation }}</td>
+                            </tr>
+                            <tr>
+                              <td>date :</td>
+                              <td>
+                                De {{ formations.dateDebut }} à
+                                {{ formations.dateFin }}
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>horaire :</td>
+                              <td>
+                                De {{ formations.horaireDebut }} à
+                                {{ formations.horaireFin }}
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>objectifs et contenus :</td>
+                              <td>{{ formations.description }}</td>
+                            </tr>
+                          </table>
                         </div>
-
                       </div>
                     </div>
                     <div class="modal-footer" style="border-radius: 15px">
                       <button
-                          class="btn btn-primary"
-                          @click="makePDF"
-                          style="border-radius: 15px"
+                        class="btn btn-primary"
+                        @click="makePDF"
+                        style="border-radius: 15px"
                       >
                         Télécharger PDF
                       </button>
@@ -646,20 +619,17 @@ style="border-radius: 15px"
                                 style=" border-radius: 15px"
                               />
                             </div>
-
-
                           </div>
 
                           <div class="row">
-
                             <div class="col-md-10">
                               <div class="form-group">
                                 <label>objectifs et contenus</label>
                                 <textarea
-                                    v-model="formations.description"
-                                    rows="5"
-                                    class="form-control"
-                                    style=" border-radius: 15px"
+                                  v-model="formations.description"
+                                  rows="5"
+                                  class="form-control"
+                                  style=" border-radius: 15px"
                                 />
                               </div>
                             </div>
@@ -668,26 +638,23 @@ style="border-radius: 15px"
                               <div class="row form-group">
                                 <label>horaire Debut</label>
                                 <input
-                                    v-model="formations.horaireDebut"
-                                    type="time"
-                                    class="form-control"
-                                    style=" border-radius: 15px"
+                                  v-model="formations.horaireDebut"
+                                  type="time"
+                                  class="form-control"
+                                  style=" border-radius: 15px"
                                 />
                               </div>
                               <div class="row form-group">
                                 <label>horaire Fin</label>
                                 <input
-                                    v-model="formations.horaireFin"
-                                    type="time"
-                                    class="form-control"
-                                    style=" border-radius: 15px"
+                                  v-model="formations.horaireFin"
+                                  type="time"
+                                  class="form-control"
+                                  style=" border-radius: 15px"
                                 />
                               </div>
                             </div>
-
                           </div>
-
-
                         </div>
                       </div>
                     </div>
@@ -723,11 +690,8 @@ style="border-radius: 15px"
             </div>
           </transition>
         </div>
-
       </div>
     </div>
-
-
   </div>
 </template>
 
@@ -738,15 +702,12 @@ import axios from "axios";
 import { mapGetters } from "vuex";
 import JSPDF from "jspdf";
 import autoTable from "jspdf-autotable";
-import NavTabsCard from "../components/cards/NavTabsCard";
+
 export default {
   name: "Formations",
   components: {
     MainSidebar,
-    MainNavbar2,
-    NavTabsCard
-
-
+    MainNavbar2
   },
   data() {
     return {
@@ -894,7 +855,7 @@ export default {
       console.log(response);
       alert("Formation deleted!");
     },
-    makePDF(){
+    makePDF() {
       var doc = new JSPDF();
 
       autoTable(doc, { html: "#myTable" });
@@ -1014,5 +975,4 @@ td {
   display: table-cell;
   vertical-align: middle;
 }
-
 </style>
