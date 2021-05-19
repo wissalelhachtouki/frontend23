@@ -5,7 +5,7 @@
       <div><MainNavbar2/></div>
       <div class="container-fluid">
         <vue-cal
-          class="vuecal--green-theme"
+          class="vuecal--dark-theme"
           selected-date="2021-1-21"
           :disable-views="['years', 'year']"
           default-view="month"
@@ -38,7 +38,8 @@ export default {
   components: {
     MainSidebar,
     "vue-cal": vuecal,
-    MainNavbar2
+    MainNavbar2,
+
   },
   data: () => ({}),
   computed: {

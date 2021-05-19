@@ -33,9 +33,7 @@
             :key="item"
             v-if="isActivePanel(tabName[index])"
           >
-            <slot :name="getTabContent(index + 1)">
-              This is the default text!
-            </slot>
+
           </div>
         </div>
       </transition>

@@ -6,181 +6,103 @@
       <div class="home_content">
         <div><MainNavbar2/></div>
 
-        <div class="d-flex  width">
-          <div class="   mt-5 w-100 ">
-            <!-- Main content -->
-            <div class="card-styling" style="border-radius: 10px">
-              <div class="card-header border-0">
-                <div class="row">
-                  <div class="col-6">
-                    <h3 class="mb-0"><strong>Liste des Formation</strong></h3>
-                  </div>
-                  <div class="col-6 text-right">
-                    <button
-                      type="warning"
-                      class="btn    btn-sm btn-info"
-                      @click="showModal = true"
-                      ><!---->
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="card card-styling " style="border-radius: 10px ; width: 899px; margin: 30px">
+                <div class="card-header card-header-primary card-header-icon">
 
-                      <i class="fas fa-edit"></i>
-                      <span class="btn-inner--text">Add</span>
-                    </button>
+                  <h4 class="card-title">List des Formations</h4>
+                  <div class="md-layout-item md-size-10 " style="float: right ; "  >
+                    <md-button
+style="border-radius: 15px"
+                      class=" md-primary md-block"
+                      @click="showModal = true"
+
+
+                      >
+                      <md-icon>library_books</md-icon> Ajouter
+
+                    </md-button>
                   </div>
                 </div>
-              </div>
 
-              <div class="el-table__header-wrapper">
-                <table
-                  cellspacing="0"
-                  cellpadding="0"
-                  border="0"
-                  class="el-table__header"
-                  style="width: 1250px;"
-                >
-                  <colgroup>
-                    <col name="el-table_4_column_13" width="76" />
-                    <col name="el-table_4_column_14" width="220" />
-                    <col name="el-table_4_column_15" width="294" />
-                    <col name="el-table_4_column_16" width="220" />
-                    <col name="el-table_4_column_17" width="220" />
-                    <col name="el-table_4_column_18" width="220" />
-                  </colgroup>
-                  <thead class="">
-                    <tr class="">
-                      <th
-                        colspan="1"
-                        rowspan="1"
-                        class="el-table_4_column_13  is-center   is-leaf"
-                      >
-                        <div class="cell">ID</div>
-                      </th>
-                      <th
-                        colspan="1"
-                        rowspan="1"
-                        class="el-table_4_column_14     is-leaf"
-                      >
-                        <div class="cell">Titre</div>
-                      </th>
-                      <th
-                        colspan="1"
-                        rowspan="1"
-                        class="el-table_4_column_15     is-leaf"
-                      >
-                        <div class="cell">Nombre de jours</div>
-                      </th>
-                      <th
-                        colspan="1"
-                        rowspan="1"
-                        class="el-table_4_column_16  is-center   is-leaf"
-                      >
-                        <div class="cell">Nombre de participant</div>
-                      </th>
-                      <th
-                        colspan="1"
-                        rowspan="1"
-                        class="el-table_4_column_17  is-right   is-leaf"
-                      >
-                        <div class="cell">Tarifs/J</div>
-                      </th>
-                      <th
-                        colspan="1"
-                        rowspan="1"
-                        class="el-table_4_column_18  is-right   is-leaf"
-                      >
-                        <div class="cell">Actions</div>
-                      </th>
-                    </tr>
-                  </thead>
-                </table>
-              </div>
 
-              <div class="card-body">
-                <table class="table  ">
-                  <tbody style=" border-radius: 15px">
-                    <tr
-                      v-for="(formation, index) in formations"
-                      :key="formation.id"
-                    >
-                      <td>{{ index + 1 }}</td>
-                      <td>{{ formation.title }}</td>
-                      <td>{{ formation.nombreDeJours }}</td>
-                      <td>{{ formation.tarifsParJours }} DH</td>
-                      <td>{{ formation.nombreDeParticipant }}</td>
-                      <td>
+                    <table class="table" >
+                      <thead>
+                      <tr>
+                        <th class="text-center">ID</th>
+                        <th>Titre</th>
+                        <th>Nombre Jours</th>
+                        <th class="text-left">Nombre Participants</th>
+                        <th class="text-right">Tarifs/J</th>
+                        <th class="text-center">Actions</th>
+                      </tr>
+                      </thead>
+                      <tbody>
+
+
+                      <tr
+                        v-for="(formation, index) in formations"
+                        :key="formation.id"
+                      >
+                        <td>{{ index + 1 }}</td>
+                        <td>{{ formation.title }}</td>
+                        <td>{{ formation.nombreDeJours }}</td>
+                        <td>{{ formation.nombreDeParticipant}}</td>
+                        <td>{{ formation.tarifsParJours }} DH</td>
+                        <td>
                         <span
-                          ><i
-                            @click="
+                        ><i
+                          @click="
                               showModalDetails = true;
                               forDetails(formation);
                             "
-                            class="bx bxs-plus-square btn btn-info"
-                            style="margin: 0 5px ; border-radius: 15px"
-                          ></i
+                          class="btn btn-link text-info material-icons"
+                          style="margin: 0 5px ; border-radius: 15px"
+                        >person</i
                         ></span>
-                        <span
+                          <span
                           ><i
                             @click="
                               showModalEdit = true;
                               editFormationPart1(formation);
                             "
-                            class="fa fa-edit btn btn-warning"
+                            class="btn btn-link text-success material-icons"
                             style="margin: 0 5px ; border-radius: 15px"
-                          ></i
-                        ></span>
-                        <span
+                          >edit</i
+                          ></span>
+                          <span
                           ><i
                             @click="deleteFormation(formation)"
-                            class="bx bxs-trash btn btn-danger"
-                            style="margin: 0 5px ; border-radius: 15px"
-                          ></i
-                        ></span>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
 
-                <div class="card-footer">
-                    <!---->
-                    <div
-                      class="col-12 d-flex justify-content-center justify-content-sm-between flex-wrap"
-                    >
-                      <div></div>
-                      <ul
-                        class="pagination pagination-no-border pagination-primary"
-                      >
-                        <li class="page-item prev-page">
-                          <a aria-label="Previous" class="page-link">
-                            <i
-                              aria-hidden="true"
-                              class=" fas fa-angle-double-left"
-                            ></i
-                          ></a>
-                        </li>
-                        <li class="page-item"><a class="page-link">1</a></li>
-                        <li class="page-item"><a class="page-link">2</a></li>
-                        <li class="page-item"><a class="page-link">3</a></li>
-                        <li class="page-item active">
-                          <a class="page-link">4</a>
-                        </li>
-                        <li class="page-item"><a class="page-link">5</a></li>
-                        <li class="page-item page-pre next-page">
-                          <a aria-label="Next" class="page-link">
-                            <i
-                              aria-hidden="true"
-                              class=" fas fa-angle-double-right"
-                            ></i>
-                          </a>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
+                            style="margin: 0 5px ; border-radius: 15px"
+                            class="btn btn-link text-danger material-icons"
+                          >close</i
+                          ></span>
+                        </td>
+                      </tr>
+
+
+                      </tbody>
+                    </table>
+
+
               </div>
             </div>
+
+
+
           </div>
-          <!-- /.content -->
-        </div>
+
+</div>
+
+
+
+
 
         <div v-if="showModal" v-cloak>
+
           <transition name="modal">
             <div class="modal-mask">
               <div class="modal-wrapper">
@@ -188,17 +110,18 @@
                   <div class="modal-content" style=" border-radius: 10px">
                     <div class="modal-header" style=" border-radius: 10px">
                       <h5 class="modal-title">
-                        <strong>Entrer votre formation</strong>
+
+                        <strong >Entrer votre formation</strong>
                       </h5>
-                      <button
+                      <md-button
                         type="button"
-                        class="close"
+                        class="md-simple md-just-icon md-round modal-default-button"
                         data-dismiss="modal"
                         aria-label="Close"
-                      >
-                        <span aria-hidden="true" @click="showModal = false"
-                          >&times;</span>
-                      </button>
+                        @click="showModal = false"
+                      ><md-icon>clear</md-icon>
+
+                      </md-button>
                     </div>
                     <div class="modal-body">
                       <div class="card" style=" border-radius: 10px">
@@ -243,28 +166,31 @@
                         </div>
                       </div>
                     </div>
-                    <div class="modal-footer" style=" border-radius: 10px">
-                      <button
-                        class="btn btn-outline-info btn-block"
+
+                    <div class="modal-footer" >
+                      <md-button
+                        class="md-simple"
                         @click="showModalPage2 = true"
-                        style=" border-radius: 10px"
+
                       >
                         Continuer vers le Plan
-                      </button>
-                      <button
-                        class="btn btn btn-outline-secondary"
+                      </md-button>
+                      <md-button
+                        class="md-danger md-simple"
                         @click="showModal = false"
-                        style=" border-radius: 10px"
+
                       >
                         Close
-                      </button>
+                      </md-button>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
+
           </transition>
         </div>
+
 
         <div v-if="showModalPage2" v-cloak>
           <transition name="modal">
@@ -797,17 +723,11 @@
             </div>
           </transition>
         </div>
+
       </div>
     </div>
 
-    <footer class="footer">
-      <div class="container-fluid">
-        <ul class="nav"></ul>
-        <div class="copyright">
-          © 2021, made with <i class="fa-favorite"></i> by Us .
-        </div>
-      </div>
-    </footer>
+
   </div>
 </template>
 
@@ -818,12 +738,15 @@ import axios from "axios";
 import { mapGetters } from "vuex";
 import JSPDF from "jspdf";
 import autoTable from "jspdf-autotable";
-
+import NavTabsCard from "../components/cards/NavTabsCard";
 export default {
   name: "Formations",
   components: {
     MainSidebar,
-    MainNavbar2
+    MainNavbar2,
+    NavTabsCard
+
+
   },
   data() {
     return {
