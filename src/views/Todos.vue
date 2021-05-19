@@ -52,17 +52,20 @@
                       v-for="(todo, index) in todos"
                       :key="todo.id"
                       class="list-group-item"
-                      v-if="!todo.completed"
                     >
                       <div class="widget-subheading">
                         <i> N° {{ index + 1 }}</i>
                       </div>
-                      <div class="todo-indicator bg-info"></div>
+                      <div v-if="!todo.completed" class="todo-indicator bg-info"></div>
+                      <div v-else class="todo-indicator bg-success"></div>
                       <div class="widget-content p-0">
                         <div class="widget-content-wrapper">
                           <div class="widget-content-left mr-2"></div>
                           <div class="widget-content-left">
-                            <div class="widget-heading">
+                            <div v-if="!todo.completed" class="widget-heading">
+                              {{ todo.name }}
+                            </div>
+                            <div v-else class="widget-heading" style="text-decoration: line-through">
                               {{ todo.name }}
                             </div>
                             <div class="widget-subheading">
@@ -71,61 +74,19 @@
                           </div>
                           <div class="widget-content-right">
                             <button
+                                v-if="!todo.completed"
                               @click.prevent="updateTodo(todo.id)"
                               class="border-0 btn-transition btn btn-outline-success"
                             >
                               <i class="fa fa-check"></i>
                             </button>
                             <button
-                              @click="deleteTodo(todo)"
-                              class="border-0 btn-transition btn btn-outline-danger"
+                                v-if="todo.completed"
+                                disabled
+                                class="border-0 btn-transition btn btn-outline-success"
                             >
-                              <i class="fa fa-trash"></i>
+                              <i class="fa fa-check"></i>Done
                             </button>
-                          </div>
-                        </div>
-                      </div>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-
-            <div class="card-header-tab card-header">
-              <div
-                class="card-header-title font-size-lg text-capitalize font-weight-normal"
-              >
-                <i class="fa fa-check-square"></i
-                ><strong>&nbsp;Completed</strong>
-              </div>
-            </div>
-
-            <div class="wrapper">
-              <div style="position: static;" class="ps ps--active-y">
-                <div class="ps-content">
-                  <ul class=" list-group list-group-flush">
-                    <li
-                      v-for="(todo, index) in todos"
-                      :key="todo.id"
-                      class="list-group-item"
-                      v-if="todo.completed"
-                    >
-                      <div class="widget-subheading">
-                        <i> N° {{ index + 1 }}</i>
-                      </div>
-                      <div class="todo-indicator bg-success"></div>
-                      <div class="widget-content p-0">
-                        <div class="widget-content-wrapper">
-                          <div class="widget-content-left mr-2"></div>
-                          <div class="widget-content-left">
-                            <div class="widget-heading" style="text-decoration: line-through">
-                              {{ todo.name }}
-                            </div>
-                            <div class="widget-subheading">
-                              By : {{ user.name }}
-                            </div>
-                          </div>
-                          <div class="widget-content-right">
                             <button
                               @click="deleteTodo(todo)"
                               class="border-0 btn-transition btn btn-outline-danger"
@@ -208,7 +169,7 @@ export default {
 
       await this.$store.dispatch("deleteTodo", todo);
       console.log(response);
-      alert("Todo deleted!");
+      //alert("Todo deleted!");
     },
     async updateTodo(id) {
       try {
@@ -216,11 +177,14 @@ export default {
           id: id,
           completed: true
         };
+
         console.log("this data id");
         console.log(data.id);
         console.log("this data updated");
         console.log(data);
         await this.$store.dispatch("updateTodo", data);
+
+
       } catch (e) {
         console.log(e);
       }

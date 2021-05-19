@@ -645,7 +645,7 @@
 
                             <md-icon></md-icon>
                             <label>Objectifs et Contenus..</label>
-                            <md-textarea v-model="description" type="text"></md-textarea>
+                            <md-textarea v-model="formations.description" type="text"></md-textarea>
                           </md-field>
                         </div>
                       </div>
