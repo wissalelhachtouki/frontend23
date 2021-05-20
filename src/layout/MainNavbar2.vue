@@ -10,35 +10,53 @@
           <h3 class="md-title">Transparent</h3>
         </div>
         <div class="md-toolbar-section-end">
-          <md-button
-            class="md-just-icon md-simple md-white md-toolbar-toggle"
-          >
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </md-button>
 
-          <div class="md-collapse">
+            <md-button
+              class="md-just-icon md-simple md-toolbar-toggle"
+              :class="{ toggled: toggledClass }"
+              @click="toggleNavbarMobile()"
+            >
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </md-button>
+
+            <div class="md-collapse">
+              <div class="md-collapse-wrapper">
+                <mobile-menu nav-mobile-section-start="false">
+                  <!-- Here you can add your items from the section-start of your toolbar -->
+                </mobile-menu>
+                <md-list>
+
+                  <md-list-item>
+                    <a href="#/dashboard">
+                      <i class="material-icons">dashboard</i>
+
+                    </a>
+                  </md-list-item>
+
+                  <md-list-item>
+                    <a href="#/todo-list">
+                      <i class="material-icons">notifications</i>
+
+                    </a>
+                  </md-list-item>
+
+                  <md-list-item>
+                    <a href="#/user">
+                      <i class="material-icons">account_circle</i>
+
+                    </a>
+                  </md-list-item>
+
+
+                </md-list>
+              </div>
+            </div>
 
 
 
-            <md-list>
-              <md-list-item href="javascript:void(0)">
-                <i class="fab fa-facebook-square"></i>
-                <p>Facebook</p>
-              </md-list-item>
 
-              <md-list-item href="javascript:void(0)">
-                <i class="fab fa-twitter"></i>
-                <p>Twitter</p>
-              </md-list-item>
-
-              <md-list-item href="javascript:void(0)">
-                <i class="fab fa-instagram"></i>
-                <p>Instagram</p>
-              </md-list-item>
-            </md-list>
-          </div>
         </div>
       </div>
     </md-toolbar>
