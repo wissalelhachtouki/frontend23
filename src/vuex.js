@@ -78,10 +78,13 @@ const store = new Vuex.Store({
         newValue.push(
               {
                 start: response.data.data[i].dateDebut + " " + response.data.data[i].horaireDebut,
-                end: response.data.data[i].dateFin + " " + response.data.data[i].horaireFin,
-                title: response.data.data[i].title + " - " + response.data.data[i].lieuFormation
-              }
-          );
+                end: response.data.data[i].dateDebut + " " + response.data.data[i].horaireFin,
+                title: response.data.data[i].title + " - " + response.data.data[i].lieuFormation,
+                repeat: {
+                  every: 'day',
+                  until: response.data.data[i].dateFin
+                }
+              });
       }
       console.log("the 2 " + newValue);
       state.commit("setEvents", newValue);

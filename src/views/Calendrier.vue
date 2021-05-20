@@ -5,7 +5,7 @@
       <header><MainNavbar2/></header>
       <div class="container-fluid">
         <vue-cal
-          class="vuecal--dark-theme"
+          class="vuecal"
           selected-date="2021-1-21"
           :disable-views="['years', 'year']"
           default-view="month"
