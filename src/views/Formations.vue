@@ -1,6 +1,6 @@
 <template>
   <div class="wrapper">
-
+    <div class="page-header header-filter">
       <MainSidebar />
 
       <div class="home_content">
@@ -686,7 +686,7 @@
           </transition>
         </div>
       </div>
-
+    </div>
   </div>
 </template>
 

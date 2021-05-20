@@ -1,6 +1,6 @@
 <template>
   <div class="todos">
-
+    <div class="page-header header-filter">
     <MainSidebar />
     <div class="home_content">
       <header><MainNavbar2/></header>
@@ -102,7 +102,7 @@
       </div>
       <footer> <h2>hhh</h2></footer>
     </div>
-
+    </div>
   </div>
 </template>
 
