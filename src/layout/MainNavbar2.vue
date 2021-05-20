@@ -1,68 +1,68 @@
 <template>
   <div class="wrapper" style="overflow: hidden">
 
-        <div class="md-layout">
-          <div class="md-layout-item">
-    <md-toolbar class="md-transparent">
-      <div class="md-toolbar-row">
-        <div class="md-toolbar-section-start">
-          <h3 v-if="$route.name" class="md-title"><strong>{{ $route.name }}</strong></h3>
-        </div>
-        <div class="md-toolbar-section-end">
-
-            <md-button
-              class="md-just-icon md-simple md-toolbar-toggle"
-              :class="{ toggled: toggledClass }"
-              @click="toggleNavbarMobile()"
-            >
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </md-button>
-
-            <div class="md-collapse">
-              <div class="md-collapse-wrapper">
-                <mobile-menu nav-mobile-section-start="false">
-                  <!-- Here you can add your items from the section-start of your toolbar -->
-                </mobile-menu>
-                <md-list>
-
-                  <md-list-item>
-                    <a href="#/dashboard">
-                      <i class="material-icons" style="color: #3B4958">dashboard</i>
-
-                    </a>
-                  </md-list-item>
-
-                  <md-list-item>
-                    <a href="#/todo-list">
-                      <i class="material-icons" style="color: #3B4958">notifications</i>
-
-                    </a>
-                  </md-list-item>
-
-                  <md-list-item>
-                    <a href="#/user">
-                      <i class="material-icons" style="color: #3B4958">account_circle</i>
-
-                    </a>
-                  </md-list-item>
-
-
-                </md-list>
-              </div>
+    <div class="md-layout">
+      <div class="md-layout-item">
+        <md-toolbar class="md-transparent">
+          <div class="md-toolbar-row">
+            <div class="md-toolbar-section-start">
+              <h3 v-if="$route.name" class="md-title"><strong>{{ $route.name }}</strong></h3>
             </div>
+            <div class="md-toolbar-section-end">
+
+              <md-button
+                class="md-just-icon md-simple md-toolbar-toggle"
+                :class="{ toggled: toggledClass }"
+                @click="toggleNavbarMobile()"
+              >
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </md-button>
+
+              <div class="md-collapse">
+                <div class="md-collapse-wrapper">
+                  <mobile-menu nav-mobile-section-start="false">
+                    <!-- Here you can add your items from the section-start of your toolbar -->
+                  </mobile-menu>
+                  <md-list>
+
+                    <md-list-item>
+                      <a href="#/dashboard">
+                        <i class="material-icons" style="color: #3B4958">dashboard</i>
+
+                      </a>
+                    </md-list-item>
+
+                    <md-list-item>
+                      <a href="#/todo-list">
+                        <i class="material-icons" style="color: #3B4958">notifications</i>
+
+                      </a>
+                    </md-list-item>
+
+                    <md-list-item>
+                      <a href="#/user">
+                        <i class="material-icons" style="color: #3B4958">account_circle</i>
+
+                      </a>
+                    </md-list-item>
+
+
+                  </md-list>
+                </div>
+              </div>
 
 
 
 
-        </div>
-      </div>
-    </md-toolbar>
-    <!-- Container wrapper -->
+            </div>
           </div>
-        </div>
+        </md-toolbar>
+        <!-- Container wrapper -->
       </div>
+    </div>
+  </div>
 
 
   <!-- Navbar -->
@@ -143,7 +143,7 @@ export default {
     },
     handleScroll() {
       let scrollValue =
-          document.body.scrollTop || document.documentElement.scrollTop;
+        document.body.scrollTop || document.documentElement.scrollTop;
       let navbarColor = document.getElementById("toolbar");
       this.currentScrollValue = scrollValue;
       if (this.colorOnScroll > 0 && scrollValue > this.colorOnScroll) {

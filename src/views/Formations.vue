@@ -8,84 +8,84 @@
         <div class="d-flex  width">
           <div class="   mt-5 w-100 ">
             <div class="container-fluid">
-                <div class="col-md-12">
-                  <div class="card card-styling " style="border-radius: 10px ; margin-bottom: 30px">
-                    <div
-                      class="card-header card-header-primary card-header-icon"
-                    >
-                      <h4 class="card-title">List des Formations
+              <div class="col-md-12">
+                <div class="card card-styling " style="border-radius: 10px ; margin-bottom: 30px">
+                  <div
+                    class="card-header card-header-primary card-header-icon"
+                  >
+                    <h4 class="card-title">List des Formations
                       <div
                         class="md-layout-item md-size-10 "
                         style="float: right"
                       >
                         <md-button
-                            id="btn1"
+                          id="btn1"
                           class=" md-primary md-sm  md-block"
                           @click="showModal = true"
                         >
                           <md-icon>playlist_add</md-icon> Ajouter
                         </md-button>
                       </div>
-                      </h4>
-                    </div>
+                    </h4>
+                  </div>
 
-                    <table class="table">
-                      <thead>
-                        <tr>
-                          <th class="text-center" >ID</th>
-                          <th class="text-center">Titre</th>
-                          <th class="text-center">Nombre Jours</th>
-                          <th class="text-center">Tarifs/J</th>
-                          <th class="text-center">Nombre Participants</th>
-                          <th class="text-center">Actions</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr
-                          v-for="(formation, index) in formations"
-                          :key="formation.id"
-                        >
-                          <td class="text-center" >{{ index + 1 }}</td>
-                          <td class="text-center">{{ formation.title }}</td>
-                          <td class="text-center">{{ formation.nombreDeJours }}</td>
-                          <td class="text-center">{{ formation.tarifsParJours }} DH</td>
-                          <td class="text-center">{{ formation.nombreDeParticipant }}</td>
-                          <td class="text-center">
+                  <table class="table">
+                    <thead>
+                    <tr>
+                      <th class="text-center" >ID</th>
+                      <th class="text-center">Titre</th>
+                      <th class="text-center">Nombre Jours</th>
+                      <th class="text-center">Tarifs/J</th>
+                      <th class="text-center">Nombre Participants</th>
+                      <th class="text-center">Actions</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr
+                      v-for="(formation, index) in formations"
+                      :key="formation.id"
+                    >
+                      <td class="text-center" >{{ index + 1 }}</td>
+                      <td class="text-center">{{ formation.title }}</td>
+                      <td class="text-center">{{ formation.nombreDeJours }}</td>
+                      <td class="text-center">{{ formation.tarifsParJours }} DH</td>
+                      <td class="text-center">{{ formation.nombreDeParticipant }}</td>
+                      <td class="text-center">
                             <span
-                              ><i
-                                @click="
+                            ><i
+                              @click="
                                   showModalDetails = true;
                                   forDetails(formation);
                                 "
-                                class="btn btn-link text-info material-icons"
-                                style="margin: 0 5px ; border-radius: 15px"
-                                >list</i
-                              ></span  >
+                              class="btn btn-link text-info material-icons"
+                              style="margin: 0 5px ; border-radius: 15px"
+                            >list</i
+                            ></span  >
 
-                            <span
-                              ><i
-                                @click="
+                        <span
+                        ><i
+                          @click="
                                   showModalEdit = true;
                                   editFormationPart1(formation);
                                 "
-                                class="btn btn-link text-success material-icons"
-                                style="margin: 0 5px ; border-radius: 15px"
-                                >edit</i
-                              ></span
-                            >
-                            <span
-                              ><i
-                                @click="deleteFormation(formation)"
-                                style="margin: 0 5px ; border-radius: 15px"
-                                class="btn btn-link text-danger material-icons"
-                                >close</i
-                              ></span
-                            >
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
+                          class="btn btn-link text-success material-icons"
+                          style="margin: 0 5px ; border-radius: 15px"
+                        >edit</i
+                        ></span
+                        >
+                        <span
+                        ><i
+                          @click="deleteFormation(formation)"
+                          style="margin: 0 5px ; border-radius: 15px"
+                          class="btn btn-link text-danger material-icons"
+                        >close</i
+                        ></span
+                        >
+                      </td>
+                    </tr>
+                    </tbody>
+                  </table>
+                </div>
 
               </div>
             </div>
@@ -112,7 +112,7 @@
                         data-dismiss="modal"
                         aria-label="Close"
                         @click="showModal = false"
-                        ><md-icon>clear</md-icon>
+                      ><md-icon>clear</md-icon>
                       </md-button>
                     </div>
                     <div class="modal-body">
@@ -161,19 +161,19 @@
                     </div>
 
 
-                      <md-button
-                        class="md-simple md-rose"
-                        @click="showModalPage2 = true"
+                    <md-button
+                      class="md-simple md-rose"
+                      @click="showModalPage2 = true"
 
-                      ><strong>
-                        Continuer vers le Plan</strong>
-                      </md-button>
-                      <md-button
-                        class="md-simple"
-                        @click="showModal = false"
-                      ><strong>
-                        Close</strong>
-                      </md-button>
+                    ><strong>
+                      Continuer vers le Plan</strong>
+                    </md-button>
+                    <md-button
+                      class="md-simple"
+                      @click="showModal = false"
+                    ><strong>
+                      Close</strong>
+                    </md-button>
 
                   </div>
                 </div>
@@ -246,13 +246,13 @@
                             <div class="form-group col-md-4">
                               <md-field class="md-form-group" slot="inputs">
                                 <md-icon></md-icon>
-                              <label>Date Debut ...</label>
-                              <md-input
-                                v-model="dateDebut"
-                                type="date"
-                                data-date-format="yyyy/mm/dd"
+                                <label>Date Debut ...</label>
+                                <md-input
+                                  v-model="dateDebut"
+                                  type="date"
+                                  data-date-format="yyyy/mm/dd"
 
-                              ></md-input>
+                                ></md-input>
                               </md-field>
                             </div>
 
@@ -357,7 +357,7 @@
                         class="md-simple md-just-icon md-round modal-default-button"
                         @click="showModalDetails = false"
                       >
-                       <md-icon><strong>clear</strong></md-icon>
+                        <md-icon><strong>clear</strong></md-icon>
                       </md-button>
                     </div>
                     <div class="modal-body" style="border-radius: 20px">
@@ -407,21 +407,21 @@
                       </div>
                     </div>
 
-                      <md-button
-                        class="md-simple md-warning"
-                        @click="makePDF"
+                    <md-button
+                      class="md-simple md-warning"
+                      @click="makePDF"
 
-                      ><strong>
-                        <md-icon>download</md-icon> Télécharger PDF</strong>
+                    ><strong>
+                      <md-icon>download</md-icon> Télécharger PDF</strong>
 
-                      </md-button>
-                      <md-button
-                        class="md-simple"
-                        @click="showModalDetails = false"
+                    </md-button>
+                    <md-button
+                      class="md-simple"
+                      @click="showModalDetails = false"
 
-                      ><strong>
-                        Close</strong>
-                      </md-button>
+                    ><strong>
+                      Close</strong>
+                    </md-button>
 
                   </div>
                 </div>
@@ -464,56 +464,56 @@
                           </div>
 
 
-                            <div class="form-group ">
-                              <md-field class="md-form-group" slot="inputs">
-                                <md-icon >  </md-icon>
-                                <md-input v-model="formations.nombreDeJours" type="number"></md-input>
-                                <label>Nombre de Jours..</label>
+                          <div class="form-group ">
+                            <md-field class="md-form-group" slot="inputs">
+                              <md-icon >  </md-icon>
+                              <md-input v-model="formations.nombreDeJours" type="number"></md-input>
+                              <label>Nombre de Jours..</label>
 
-                              </md-field>
-                            </div>
+                            </md-field>
+                          </div>
 
-                            <div class="form-group ">
-                              <md-field class="md-form-group" slot="inputs">
-                                <md-icon >  </md-icon>
-                                <md-input v-model="formations.tarifsParJours" type="number"></md-input>
-                                <label>Tarfis/J...</label>
+                          <div class="form-group ">
+                            <md-field class="md-form-group" slot="inputs">
+                              <md-icon >  </md-icon>
+                              <md-input v-model="formations.tarifsParJours" type="number"></md-input>
+                              <label>Tarfis/J...</label>
 
-                              </md-field>
-                            </div>
+                            </md-field>
+                          </div>
 
-                            <div class="form-group ">
-                              <md-field class="md-form-group" slot="inputs">
-                                <md-icon >  </md-icon>
-                                <md-input v-model="formations.nombreDeParticipant" type="number"></md-input>
-                                <label>Nombre de Participants...</label>
+                          <div class="form-group ">
+                            <md-field class="md-form-group" slot="inputs">
+                              <md-icon >  </md-icon>
+                              <md-input v-model="formations.nombreDeParticipant" type="number"></md-input>
+                              <label>Nombre de Participants...</label>
 
-                              </md-field>
+                            </md-field>
 
-                            </div>
+                          </div>
 
                         </div>
                       </div>
                     </div>
 
-                      <md-button
-                        class="md-danger md-simple"
-                        @click="
+                    <md-button
+                      class="md-danger md-simple"
+                      @click="
                           showModalEditpage2 = true;
                           editFormationPart2();
                         "
 
-                      ><strong>
-                        Editer le Plan</strong>
-                      </md-button>
-                      <md-button
-                        class=" md-simple"
-                        @click="showModalEdit = false"
+                    ><strong>
+                      Editer le Plan</strong>
+                    </md-button>
+                    <md-button
+                      class=" md-simple"
+                      @click="showModalEdit = false"
 
-                      ><strong>
-                        Close</strong>
-                      </md-button>
-                    </div>
+                    ><strong>
+                      Close</strong>
+                    </md-button>
+                  </div>
 
                 </div>
               </div>
@@ -544,7 +544,7 @@
                             showModalEditpage2 = false;
                             showModalEdit = false;
                           "
-                          >&times;</span
+                        >&times;</span
                         >
                       </md-button>
                     </div>
