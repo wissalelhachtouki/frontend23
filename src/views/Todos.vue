@@ -1,9 +1,5 @@
 <template>
   <div class="todos">
-    <div
-      class="page-header header-filter"
-      :style="headerStyle"
-    >
 
     <MainSidebar />
     <div class="home_content">
@@ -106,7 +102,7 @@
       </div>
       <footer> <h2>hhh</h2></footer>
     </div>
-  </div>
+
   </div>
 </template>
 
@@ -128,18 +124,9 @@ export default {
       completed: false
     };
   },
-  props: {
-    header: {
-      type: String,
-      default: require("@/assets/img/vue-mk-headerr.jpg")
-    },
-  },
+
   computed: {
-    headerStyle() {
-      return {
-        backgroundImage: `url(${this.header})`
-      };
-    },
+
     ...mapGetters(["todos"]),
     ...mapGetters(["user"])
   },

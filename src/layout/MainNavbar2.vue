@@ -1,74 +1,53 @@
 <template>
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <!-- Container wrapper -->
-    <div class="container-fluid">
-      <!-- Toggle button -->
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-mdb-toggle="collapse"
-        data-mdb-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <i class="fas fa-bars"></i>
-      </button>
+  <div class="wrapper">
 
-      <!-- Collapsible wrapper -->
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <!-- Navbar brand -->
-        <a class="navbar-brand mt-2 mt-lg-0" href="#">
-          <img
-            src="https://mdbootstrap.com/img/logo/mdb-transaprent-noshadows.png"
-            height="15"
-            alt=""
-            loading="lazy"
-          />
-        </a>
-      </div>
-      <!-- Collapsible wrapper -->
 
-      <!-- Right elements -->
-      <div class="d-flex align-items-center">
-        <!-- Avatar -->
-        <a
-          class="dropdown-toggle d-flex align-items-center hidden-arrow"
-          href="#"
-          id="navbarDropdownMenuLink"
-          role="button"
-          data-mdb-toggle="dropdown"
-          aria-expanded="false"
-        >
-          <img
-            src="https://mdbootstrap.com/img/new/avatars/2.jpg"
-            class="rounded-circle"
-            height="25"
-            width="25"
-            alt=""
-            loading="lazy"
-          />
-        </a>
-        <ul
-          class="dropdown-menu dropdown-menu-end"
-          aria-labelledby="navbarDropdownMenuLink"
-        >
-          <li>
-            <a class="dropdown-item" href="#">My profile</a>
-          </li>
-          <li>
-            <a class="dropdown-item" href="#">Settings</a>
-          </li>
-          <li>
-            <a class="dropdown-item" href="#">Logout</a>
-          </li>
-        </ul>
+        <div class="md-layout">
+          <div class="md-layout-item">
+    <md-toolbar class="md-info">
+      <div class="md-toolbar-row">
+        <div class="md-toolbar-section-start">
+          <h3 class="md-title">Transparent</h3>
+        </div>
+        <div class="md-toolbar-section-end">
+          <md-button
+            class="md-just-icon md-simple md-white md-toolbar-toggle"
+          >
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </md-button>
+
+          <div class="md-collapse">
+
+
+
+            <md-list>
+              <md-list-item href="javascript:void(0)">
+                <i class="fab fa-facebook-square"></i>
+                <p>Facebook</p>
+              </md-list-item>
+
+              <md-list-item href="javascript:void(0)">
+                <i class="fab fa-twitter"></i>
+                <p>Twitter</p>
+              </md-list-item>
+
+              <md-list-item href="javascript:void(0)">
+                <i class="fab fa-instagram"></i>
+                <p>Instagram</p>
+              </md-list-item>
+            </md-list>
+          </div>
+        </div>
       </div>
-      <!-- Right elements -->
-    </div>
+    </md-toolbar>
     <!-- Container wrapper -->
-  </nav>
+          </div>
+        </div>
+      </div>
+
+
   <!-- Navbar -->
 </template>
 

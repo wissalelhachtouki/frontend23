@@ -1,6 +1,6 @@
 <template>
   <div class="wrapper">
-    <div class="page-header header-filter" :style="headerStyle">
+
       <MainSidebar />
 
       <div class="home_content">
@@ -686,7 +686,7 @@
           </transition>
         </div>
       </div>
-    </div>
+
   </div>
 </template>
 
@@ -728,18 +728,9 @@ export default {
       frm: {}
     };
   },
-  props: {
-    header: {
-      type: String,
-      default: require("@/assets/img/vue-mk-headerr.jpg")
-    }
-  },
+
   computed: {
-    headerStyle() {
-      return {
-        backgroundImage: `url(${this.header})`
-      };
-    },
+
     ...mapGetters(["formations"])
   },
   methods: {
