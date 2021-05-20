@@ -189,6 +189,8 @@ export default {
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
   transition: all 0.5s ease;
   overflow-y: scroll;
+  z-index: 100;
+
 }
 h2 {
   text-align: center;
@@ -404,6 +406,7 @@ i {
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
   transition: all 0.5s ease;
   overflow-y: scroll;
+  z-index: 100;
 }
 .sidebar.active ~ .home_content {
   z-index: 100;

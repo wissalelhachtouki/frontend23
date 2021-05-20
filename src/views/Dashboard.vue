@@ -3,7 +3,7 @@
 
 
     <MainSidebar />
-    <div class="home_content">
+    <div class="home_content" style="overflow-x: hidden">
 
       <header>
         <MainNavbar2/>

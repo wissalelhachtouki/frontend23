@@ -19,7 +19,7 @@
                         style="float: right"
                       >
                         <md-button
-
+                            id="btn1"
                           class=" md-primary md-sm  md-block"
                           @click="showModal = true"
                         >
@@ -844,7 +844,8 @@ export default {
     makePDF() {
       var doc = new JSPDF();
 
-      autoTable(doc, { html: "#myTable" });
+      autoTable(doc, { html: "#myTable"});
+
 
       doc.save("MaFormation.pdf");
     }
@@ -917,9 +918,12 @@ td {
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
   transition: all 0.5s ease;
   overflow-y: scroll;
+  z-index: 100;
+
 }
 .sidebar.active ~ .home_content {
   z-index: 100;
+  overflow-y: scroll;
 }
 .width {
   width: 95%;
@@ -960,5 +964,10 @@ td {
 .modal-wrapper {
   display: table-cell;
   vertical-align: middle;
+}
+
+#btn1{
+  background: rgb(0,183,225);
+  background: linear-gradient(0deg, rgba(0,183,225,1) 0%, rgba(0,231,201,1) 100%);
 }
 </style>

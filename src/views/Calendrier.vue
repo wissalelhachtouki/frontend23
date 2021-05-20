@@ -13,11 +13,11 @@
           :events="events"
           overlaps-per-time-step
           style="
-            background-color: #fff;
-            margin-top: 2%;
+            background: rgb(0,183,225);
+            background: linear-gradient(0deg, rgba(0,183,225,1) 0%, rgba(0,231,201,1) 69%);
+            margin-top: 1%;
             border: 1px transparent;
-            border-radius: 10px;
-            "
+            border-radius: 10px;"
         >
         </vue-cal>
       </div>
@@ -92,7 +92,7 @@ export default {
 
 .container-fluid, .container-lg, .container-md, .container-sm, .container-xl {
   width: 90%;
-  height: 85%;
+  height: 90%;
   padding-right: 15px;
   padding-left: 15px;
   margin-right: auto;

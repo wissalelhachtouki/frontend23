@@ -1,5 +1,5 @@
 <template>
-  <div class="wrapper">
+  <div class="wrapper" style="overflow: hidden">
 
         <div class="md-layout">
           <div class="md-layout-item">
