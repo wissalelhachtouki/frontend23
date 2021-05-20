@@ -2,43 +2,40 @@
   <div class="todos">
     <div class="page-header header-filter">
     <MainSidebar />
+
     <div class="home_content">
       <header><MainNavbar2/></header>
-      <div class="row d-flex  justify-content-center container" >
-        <div class="col-md-17"  style="border-radius: 10px ; width: 80%">
-          <div class="card-hover-shadow-5x mb-5 card ">
-            <h2><strong style="text-align: left">To do list</strong></h2>
+      <div class=" d-flex  width" >
+        <div class="mt-5 w-100" >
+          <div class="container-fluid">
+            <div class="col-md-12">
+              <div class="card card-styling " style="border-radius: 20px ; margin-bottom: 30px">
 
-            <div class="card-header-tab card-header">
-              <div
-                class="card-header-title font-size-lg text-capitalize font-weight-normal "
-              >
-                <i class="fa fa-plus-square"></i
-                ><strong>&nbsp;Add Tasks</strong>
-                <input
 
-                  v-model="name"
-                  type="text"
-                  class="form-control "
-                  placeholder="New tasks go here..."
-                />
-                <button class="btn btn-info" @click.prevent="handleValid">
-                  Add
-                </button>
+            <div class="card-header card-header-primary card-header-icon">
 
-              </div>
-            </div>
-            <div class="row">
+              <h4 class="card-title">Tasks
+                <div
+                  class="md-layout-item md-size-10 "
+                  style="float: right "
+                >
+                  <md-button
+                    id="btn1"
+                    class=" md-warning md-sm  md-block"
+                    @click="showModaltodo = true"
+                    v-model="name"
+                  >
+                    <md-icon>task</md-icon> Add Task
+                  </md-button>
+
 
             </div>
-
-            <div class="card-header-tab card-header">
-              <div
-                class="card-header-title font-size-lg text-capitalize font-weight-normal"
-              >
-                <i class="fa fa-tasks"></i><strong>&nbsp;Task Lists</strong>
-              </div>
+              </h4>
             </div>
+
+
+
+
 
             <div class="wrapper">
               <div style="position: static;" class="ps ps--active-y">
@@ -97,10 +94,73 @@
                 </div>
               </div>
             </div>
+
+          </div>
+        </div>
           </div>
         </div>
       </div>
       <footer> <h2>hhh</h2></footer>
+
+      <div v-if="showModaltodo" v-cloak>
+        <transition name="modal">
+          <div class="modal-mask">
+            <div class="modal-wrapper">
+              <div class="modal-dialog  modal-md" role="document">
+                <div class="modal-content" style=" border-radius: 10px">
+                  <div class="modal-header card-header card-header-primary card-header-icon"  >
+                    <h4 class="modal-title card-title " >
+                      <strong style="text-align: left">Entrer votre formation</strong>
+                    </h4>
+
+                    <md-button
+                      type="button"
+                      class="md-simple md-just-icon md-round modal-default-button"
+                      data-dismiss="modal"
+                      aria-label="Close"
+                      @click="showModaltodo = false"
+                    ><md-icon>clear</md-icon>
+                    </md-button>
+                  </div>
+                  <div class="modal-body">
+                    <div class="card" style=" border-radius: 10px">
+                      <div class="card-body">
+                        <div class="form-group">
+                          <md-field class="md-form-group" slot="inputs">
+                            <md-icon >  </md-icon>
+                            <md-input v-model="title" type="text"></md-input>
+                            <label>Task...</label>
+
+                          </md-field>
+                        </div>
+
+
+
+                      </div>
+                    </div>
+                  </div>
+
+
+                  <md-button
+                    class="md-simple md-rose"
+                    @click.prevent="handleValid"
+                  ><strong>
+                    Ajouter</strong>
+                  </md-button>
+                  <md-button
+                    class="md-simple"
+                    @click="showModaltodo = false"
+                  ><strong>
+                    Supprimer</strong>
+                  </md-button>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </transition>
+      </div>
+
     </div>
     </div>
   </div>
@@ -181,223 +241,53 @@ export default {
 </script>
 
 <style scoped>
-.home_content {
-  position: absolute;
-  height: 100%;
-  width: calc(100% - 78px);
-  left: 78px;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-  transition: all 0.5s ease;
-  overflow-y: scroll;
-  z-index: 100;
-
-}
-h2 {
-  text-align: center;
-  padding-top: 10px;
-  margin-bottom: 0px;
-}
-.controls {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-around;
-}
-input {
-  flex: 8;
-  padding: 0 10px;
-  margin: 5px 20px;
-  align-content: center;
-  width: 60%;
-}
-
-button {
-  background: none;
-  border: 0px;
-  color: #888888;
-  font-size: 15px;
-  width: 60px;
-  margin: 10px 0 0;
-  font-family: Lato, sans-serif;
-  cursor: pointer;
-}
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
-    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  font-size: 0.88rem;
-  font-weight: 400;
-  line-height: 1.5;
-  color: #495057;
-  text-align: left;
-  background-color: #6200ea;
-}
-
-i {
-  font-style: italic;
-}
-
-.container {
-  margin-top: 100px;
-}
-
-.card {
-  box-shadow: 0 0.46875rem 2.1875rem rgba(4, 9, 20, 0.03),
-    0 0.9375rem 1.40625rem rgba(4, 9, 20, 0.03),
-    0 0.25rem 0.53125rem rgba(4, 9, 20, 0.05),
-    0 0.125rem 0.1875rem rgba(4, 9, 20, 0.03);
-  border-width: 0;
-  transition: all 0.2s;
-}
-
 .card-header:first-child {
-  border-radius: calc(0.25rem - 1px) calc(0.25rem - 1px) 0 0;
+  border-radius: calc(0.375rem - 1px) calc(0.375rem - 1px) 0 0;
 }
-
+.border-0 {
+  border: 0 !important;
+}
 .card-header {
-  display: flex;
-  align-items: center;
-  border-bottom-width: 1px;
-  padding-top: 0;
-  padding-bottom: 0;
-  padding-right: 0.625rem;
-  height: 3.5rem;
-  background-color: #fff;
-}
-
-.widget-subheading {
-  color: #858a8e;
-  font-size: 10px;
-}
-
-.card-header.card-header-tab .card-header-title {
-  display: flex;
-  align-items: center;
-  white-space: nowrap;
-}
-
-.card-header .header-icon {
-  font-size: 1.65rem;
-  margin-right: 0.625rem;
-}
-
-.card-header.card-header-tab .card-header-title {
-  display: flex;
-  align-items: center;
-  white-space: nowrap;
-}
-
-.btn-actions-pane-right {
-  margin-left: auto;
-  white-space: nowrap;
-}
-
-.text-capitalize {
-  text-transform: capitalize !important;
-}
-
-.scroll-area-sm {
-  height: 288px;
-  overflow-x: hidden;
-}
-
-.list-group-item {
-  position: relative;
-  display: block;
-  padding: 0.75rem 1.25rem;
-  margin-bottom: -1px;
-  background-color: #fff;
-  border: 1px solid rgba(0, 0, 0, 0.125);
-}
-
-.list-group {
-  display: flex;
-  flex-direction: column;
-  padding-left: 0;
+  padding: 1.25rem 1.5rem;
   margin-bottom: 0;
-}
-
-.todo-indicator {
-  position: absolute;
-  width: 4px;
-  height: 60%;
-  border-radius: 0.3rem;
-  left: 0.625rem;
-  top: 20%;
-  opacity: 0.6;
-  transition: opacity 0.2s;
-}
-
-.bg-warning {
-  background-color: #f7b924 !important;
-}
-
-.widget-content {
-  padding: 1rem;
-  flex-direction: row;
-  align-items: center;
-}
-
-.widget-content .widget-content-wrapper {
-  display: flex;
-  flex: 1;
-  position: relative;
-  align-items: center;
-}
-
-.widget-content .widget-content-right.widget-content-actions {
-  visibility: hidden;
-  opacity: 0;
-  transition: opacity 0.2s;
-}
-
-.widget-content .widget-content-right {
-  margin-left: auto;
-}
-
-.btn:not(:disabled):not(.disabled) {
-  cursor: pointer;
-}
-
-.btn {
-  transition: color 0.15s, background-color 0.15s, border-color 0.15s,
-    box-shadow 0.15s;
-}
-
-.btn-outline-success {
-  color: #3ac47d;
-  border-color: #3ac47d;
-}
-
-.btn-outline-success:hover {
-  color: #fff;
-  background-color: #3ac47d;
-  border-color: #3ac47d;
-}
-
-.btn-outline-success:hover {
-  color: #fff;
-  background-color: #3ac47d;
-  border-color: #3ac47d;
-}
-
-.btn-primary {
-  color: #fff;
-  background-color: #3f6ad8;
-  border-color: #3f6ad8;
-}
-
-.btn {
-  position: relative;
-  transition: color 0.15s, background-color 0.15s, border-color 0.15s,
-    box-shadow 0.15s;
-  outline: none !important;
-}
-
-.card-footer {
   background-color: #fff;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+col-6 {
+  position: relative;
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  flex: 0 0 50%;
+  max-width: 50%;
 }
 
+h3 {
+  font-size: 1.0625rem;
+}
+.card-styling {
+  margin-top: 2%;
+  background-color: white;
+  color: #333533;
+
+  box-shadow: 0 8px 8px 0 rgba(0, 0, 0.3, 0.3);
+  transition: 0.3s;
+}
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th,
+td {
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+.card-styling:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0.5, 0.5);
+}
 .home_content {
   position: absolute;
   height: 100%;
@@ -407,9 +297,11 @@ i {
   transition: all 0.5s ease;
   overflow-y: scroll;
   z-index: 100;
+
 }
 .sidebar.active ~ .home_content {
   z-index: 100;
+  overflow-y: scroll;
 }
 .width {
   width: 95%;
@@ -425,6 +317,8 @@ i {
   width: calc(100% - 240px);
   left: 240px;
 }
+
+
 .modal-mask {
   position: fixed;
   z-index: 9998;
@@ -432,6 +326,7 @@ i {
   left: 0;
   width: 100%;
   height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
   display: table;
   transition: opacity 0.3s ease;
 }
@@ -439,5 +334,10 @@ i {
 .modal-wrapper {
   display: table-cell;
   vertical-align: middle;
+}
+
+#btn1{
+  background: rgb(0,183,225);
+  background: linear-gradient(0deg, rgba(0,183,225,1) 0%, rgba(0,231,201,1) 100%);
 }
 </style>

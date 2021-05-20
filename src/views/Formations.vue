@@ -20,7 +20,7 @@
                       >
                         <md-button
                           id="btn1"
-                          class=" md-primary md-sm  md-block"
+                          class=" md-warning md-sm  md-block"
                           @click="showModal = true"
                         >
                           <md-icon>playlist_add</md-icon> Ajouter
@@ -877,13 +877,7 @@ col-6 {
   flex: 0 0 50%;
   max-width: 50%;
 }
-.btn-neutral {
-  color: #5e72e4;
-}
-.fas {
-  font-family: "Font Awesome 5 Free";
-  font-weight: 900;
-}
+
 h3 {
   font-size: 1.0625rem;
 }
@@ -939,15 +933,7 @@ td {
   width: calc(100% - 240px);
   left: 240px;
 }
-.background-color {
-  background-color: #fff;
-}
-.border {
-  -webkit-box-shadow: -1px -1px 17px 4px #e1e5ea;
-  box-shadow: -1px -1px 17px 4px #e1e5ea;
-  border: 2px solid #1c6ea4;
-  border-radius: 10px;
-}
+
 
 .modal-mask {
   position: fixed;

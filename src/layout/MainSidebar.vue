@@ -126,6 +126,7 @@ body{
   width: 78px;
   background: rgb(0,183,225);
   background: linear-gradient(0deg, rgba(0,183,225,1) 0%, rgba(0,231,201,1) 100%);
+
   padding: 6px 14px;
   z-index: 99;
   transition: all 0.5s ease;
