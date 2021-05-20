@@ -14,28 +14,13 @@
                 <div
                   class="card-header card-header-primary card-header-icon"
                 >
-                  <h4 class="card-title">Edit Profile
+                  <h4 class="card-title">My Profile
 
                   </h4>
 
                 </div>
                 <div class=" row ">
-                  <md-field class="md-form-group col-md-4" slot="inputs">
-                  <md-icon></md-icon>
-                  <label>Nom d'utilisateur...</label>
-                  <md-input  type="email"></md-input>
-                </md-field>
-                  <md-field class="md-form-group col-md-4" slot="inputs">
-                    <md-icon></md-icon>
-                    <label>UserName...</label>
-                    <md-input v-model="email" type="email"></md-input>
-                  </md-field>
 
-                  <md-field class="md-form-group col-md-3" slot="inputs">
-                    <md-icon></md-icon>
-                    <label>First Name...</label>
-                    <md-input v-model="password" type="email"></md-input>
-                  </md-field>
 
                     <md-field class="md-form-group col-md-5" slot="inputs">
                       <md-icon></md-icon>

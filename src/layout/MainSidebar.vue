@@ -15,25 +15,25 @@
       <div class="user-info">
 
         <div class="user">
-          <div class="photo">
+          <div class="photo" style="text-align: left">
             <img src="@/assets/img/christian.jpg" alt="avatar">
-          </div><div   v-if="user" class="user-info"> <strong style="color: whitesmoke">{{ user.name }}</strong><a data-toggle="collapse"> <b class="caret"></b></a>
+          </div><div   v-if="user" class="user-info"> <strong style="color: whitesmoke">{{ user.name }}</strong><a data-toggle="collapse"></a>
         <div style="animation-fill-mode: both; animation-timing-function: ease-out;" data-old-padding-top="" data-old-padding-bottom="" data-old-overflow="">
           <ul class="nav">
 
             <li>
-              <a href="#vue">
-                <i class="bx bxs-dashboard"></i>
-                <span class="links_name">Edit Profile</span>
+              <a href="#/user">
+                <i class="bx bx-user"></i>
+                <span class="links_name">Profile</span>
               </a>
-              <span class="tooltip">Dashboard</span>
+              <span class="tooltip">Profile</span>
             </li>
             <li>
-              <a href="#vue">
-            <i class="bx bxs-dashboard"></i>
+              <a href="#edituser">
+            <i class="bx bxs-edit"></i>
             <span class="links_name">Edit Profile</span>
           </a>
-              <span class="tooltip">Dashboard</span>
+              <span class="tooltip">Edit Profile</span>
           </li>
 
 

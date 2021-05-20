@@ -17,6 +17,7 @@ import User from "@/views/User";
 import Calendrier from "@/views/Calendrier";
 import Formations from "@/views/Formations";
 import Todos from "@/views/Todos";
+import edituser from "@/views/edituser";
 
 Vue.use(Router);
 
@@ -97,6 +98,11 @@ export default new Router({
       path: "/user",
       name: "user",
       components: { default: User }
+    },
+    {
+      path: "/edituser",
+      name: "edituser",
+      components: { default: edituser }
     },
     {
       path: "/calendrier",
