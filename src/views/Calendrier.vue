@@ -21,7 +21,14 @@
         >
         </vue-cal>
       </div>
-      <footer> <h2>hhh</h2></footer>
+      <md-footer>
+        <div class="md-toolbar-section-start">
+          <h2  ><strong>Forma</strong></h2>
+        </div>
+        <div class="md-toolbar-section-end">
+          <h3 v-if="$route.name" class="md-rose">© 2021, made with <md-icon> favorite</md-icon> by Us.</h3>
+        </div>
+      </md-footer>
     </div>
   </div>
 </template>

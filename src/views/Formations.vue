@@ -96,7 +96,14 @@
           </div>
         </div>
 
-        <footer> <h2>hhh</h2></footer>
+        <md-footer>
+          <div class="md-toolbar-section-start">
+            <h2  ><strong>Forma</strong></h2>
+          </div>
+          <div class="md-toolbar-section-end">
+            <h3 v-if="$route.name" class="md-rose">© 2021, made with <md-icon> favorite</md-icon> by Us.</h3>
+          </div>
+        </md-footer>
 
 
         <div v-if="showModal" v-cloak>
@@ -106,7 +113,7 @@
                 <div class="modal-dialog  modal-md" role="document">
                   <div class="modal-content" style=" border-radius: 10px">
                     <div class="modal-header card-header card-header-primary card-header-icon"  >
-                      <h4 class="modal-title card-title " >
+                      <h4 class="modal-title  card-title " >
                         <strong style="text-align: left">Entrer votre formation</strong>
                       </h4>
 

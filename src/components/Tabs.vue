@@ -33,7 +33,9 @@
             :key="item"
             v-if="isActivePanel(tabName[index])"
           >
+            <slot :name="getTabContent(index + 1)">
 
+            </slot>
           </div>
         </div>
       </transition>

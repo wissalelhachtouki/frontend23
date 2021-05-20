@@ -67,26 +67,24 @@
                                   </div>
                                 </div>
                                 <div class="widget-content-right">
-                                  <button
-                                      v-if="!todo.completed"
-                                      @click.prevent="updateTodo(todo.id)"
-                                      class="border-0 btn-transition btn btn-outline-success"
-                                  >
-                                    <i class="fa fa-check"></i>
-                                  </button>
-                                  <button
-                                      v-if="todo.completed"
-                                      disabled
-                                      class="border-0 btn-transition btn btn-outline-success"
-                                  >
-                                    <i class="fa fa-check"></i>Done
-                                  </button>
-                                  <button
-                                      @click="deleteTodo(todo)"
-                                      class="border-0 btn-transition btn btn-outline-danger"
-                                  >
-                                    <i class="fa fa-trash"></i>
-                                  </button>
+
+                                  <span
+                                  ><i
+                                    v-if="!todo.completed"
+                                    @click.prevent="updateTodo(todo.id)"
+                                    class="btn text-success material-icons"
+                                    style="margin: 0 5px ; border-radius: 15px"
+                                  >check</i
+                                  ></span  >
+
+                                  <span
+                                  ><i
+
+                                    @click="deleteTodo(todo)"
+                                    class="btn  text-danger material-icons"
+                                    style="margin: 0 5px ; border-radius: 15px"
+                                  >delete</i
+                                  ></span  >
                                 </div>
                               </div>
                             </div>
@@ -101,7 +99,14 @@
             </div>
           </div>
         </div>
-        <footer> <h2>hhh</h2></footer>
+        <md-footer>
+          <div class="md-toolbar-section-start">
+            <h2  ><strong>Forma</strong></h2>
+          </div>
+          <div class="md-toolbar-section-end">
+            <h3 v-if="$route.name" class="md-rose">© 2021, made with <md-icon> favorite</md-icon> by Us.</h3>
+          </div>
+        </md-footer>
 
         <div v-if="showModaltodo" v-cloak>
           <transition name="modal">

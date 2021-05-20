@@ -9,6 +9,40 @@
       </div>
       <i class="bx bx-menu" id="btn"></i>
     </div>
+    <div class="user"><div class="photo">
+
+    </div>
+      <div class="user-info">
+
+        <div class="user">
+          <div class="photo">
+            <img src="@/assets/img/christian.jpg" alt="avatar">
+          </div><div   v-if="user" class="user-info"> <strong style="color: whitesmoke">{{ user.name }}</strong><a data-toggle="collapse"> <b class="caret"></b></a>
+        <div style="animation-fill-mode: both; animation-timing-function: ease-out;" data-old-padding-top="" data-old-padding-bottom="" data-old-overflow="">
+          <ul class="nav">
+
+            <li>
+              <a href="#vue">
+                <i class="bx bxs-dashboard"></i>
+                <span class="links_name">Edit Profile</span>
+              </a>
+              <span class="tooltip">Dashboard</span>
+            </li>
+            <li>
+              <a href="#vue">
+            <i class="bx bxs-dashboard"></i>
+            <span class="links_name">Edit Profile</span>
+          </a>
+              <span class="tooltip">Dashboard</span>
+          </li>
+
+
+
+          </ul>
+        </div>
+      </div>
+    </div>
+
     <ul class="nav_list">
       <li>
         <a href="#/dashboard">
@@ -17,6 +51,7 @@
         </a>
         <span class="tooltip">Dashboard</span>
       </li>
+
       <li>
         <a href="#/user">
           <i class="bx bx-user"></i>
@@ -32,6 +67,13 @@
         <span class="tooltip">Calendar</span>
       </li>
       <li>
+        <a href="#/todo-list">
+          <i class='bx bx-task' ></i>
+          <span class="links_name">Tasks</span>
+        </a>
+        <span class="tooltip">Tasks</span>
+      </li>
+      <li>
         <a href="#/formations">
           <i class='bx bx-list-check' ></i>
           <span class="links_name">List Formations</span>
@@ -39,15 +81,13 @@
         <span class="tooltip">Formations</span>
       </li>
       <li>
-        <a href="#/todo-list">
-          <i class='bx bx-task' ></i>
-          <span class="links_name">Tasks</span>
-        </a>
-        <span class="tooltip">Tasks</span>
+
       </li>
+      <li>
 
-
+      </li>
     </ul>
+
     <div class="profile_content">
         <ul class="nav_list">
           <li>
@@ -59,8 +99,8 @@
         </ul>
 
     </div>
-  </div>
-
+      </div></div>
+    </div>
 </template>
 
 <script>
@@ -100,6 +140,37 @@ export default {
 </script>
 
 <style scoped>
+.sidebar .caret {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  margin-left: 2px;
+  vertical-align: middle;
+  border-top: 4px dashed;
+  border-right: 4px solid transparent;
+  border-left: 4px solid transparent;
+}
+.sidebar .user .user-info .caret {
+  position: absolute;
+  top: 8px;
+  right: 15px;
+}
+.sidebar .user .photo {
+  width: 34px;
+  height: 34px;
+  overflow: hidden;
+  float: left;
+  z-index: 5;
+  margin-right: 13px;
+  border-radius: 50%;
+  margin-left: 23px;
+  transition: transform .3s linear,opacity .3s linear,-webkit-transform .3s linear;
+}
+.sidebar .user {
+  padding-bottom: 20px;
+  margin: 20px auto 0;
+  position: relative;
+}
 /* Google Font CDN Link */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
 *{
@@ -124,9 +195,7 @@ body{
   left: 0;
   height: 100%;
   width: 78px;
-  background: rgb(0,183,225);
-  background: linear-gradient(0deg, rgba(0,183,225,1) 0%, rgba(0,231,201,1) 100%);
-
+ background-color: #01579b;
   padding: 6px 14px;
   z-index: 99;
   transition: all 0.5s ease;
