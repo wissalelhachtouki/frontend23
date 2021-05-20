@@ -1,10 +1,14 @@
 <template>
   <div class="wrapper">
+
+
     <div class="page-header header-filter">
       <MainSidebar />
 
       <div class="home_content">
+
         <header><MainNavbar2 /></header>
+
         <div class="d-flex  width">
           <div class="   mt-5 w-100 ">
             <div class="container-fluid">
@@ -250,7 +254,7 @@
                                 <md-input
                                   v-model="dateDebut"
                                   type="date"
-                                  data-date-format="yyyy/mm/dd"
+
 
                                 ></md-input>
                               </md-field>
@@ -263,7 +267,7 @@
                                 <md-input
                                   v-model="dateFin"
                                   type="date"
-                                  data-date-format="yyyy/mm/dd"
+
 
                                 ></md-input>
                               </md-field>
@@ -728,10 +732,17 @@ export default {
       frm: {}
     };
   },
+  props: {
+    header: {
+      type: String,
+      default: require("@/assets/img/vue-mk-headerr.jpg")
+    },
 
+  },
   computed: {
 
-    ...mapGetters(["formations"])
+    ...mapGetters(["formations"]),
+
   },
   methods: {
     async handleValid() {

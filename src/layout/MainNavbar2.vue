@@ -2,8 +2,10 @@
   <div class="wrapper" style="overflow: hidden">
 
     <div class="md-layout">
+
       <div class="md-layout-item">
         <md-toolbar class="md-transparent">
+
           <div class="md-toolbar-row">
             <div class="md-toolbar-section-start">
               <h3 v-if="$route.name" class="md-title"><strong>{{ $route.name }}</strong></h3>
@@ -87,6 +89,7 @@ export default {
     MobileMenu
   },
   props: {
+
     type: {
       type: String,
       default: "white",
@@ -114,6 +117,7 @@ export default {
     };
   },
   computed: {
+
     showDownload() {
       const excludedRoutes = ["login", "landing", "profile"];
       return excludedRoutes.every(r => r !== this.$route.name);
