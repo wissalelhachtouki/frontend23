@@ -4,10 +4,10 @@
 
         <div class="md-layout">
           <div class="md-layout-item">
-    <md-toolbar class="md-info">
+    <md-toolbar class="md-transparent">
       <div class="md-toolbar-row">
         <div class="md-toolbar-section-start">
-          <h3 v-if="$route.name" class="md-title">{{ $route.name }}</h3>
+          <h3 v-if="$route.name" class="md-title"><strong>{{ $route.name }}</strong></h3>
         </div>
         <div class="md-toolbar-section-end">
 
@@ -30,21 +30,21 @@
 
                   <md-list-item>
                     <a href="#/dashboard">
-                      <i class="material-icons">dashboard</i>
+                      <i class="material-icons" style="color: #3B4958">dashboard</i>
 
                     </a>
                   </md-list-item>
 
                   <md-list-item>
                     <a href="#/todo-list">
-                      <i class="material-icons">notifications</i>
+                      <i class="material-icons" style="color: #3B4958">notifications</i>
 
                     </a>
                   </md-list-item>
 
                   <md-list-item>
                     <a href="#/user">
-                      <i class="material-icons">account_circle</i>
+                      <i class="material-icons" style="color: #3B4958">account_circle</i>
 
                     </a>
                   </md-list-item>
@@ -75,4 +75,7 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+.md-title{
+}
+</style>
