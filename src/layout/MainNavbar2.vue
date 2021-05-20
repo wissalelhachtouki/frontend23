@@ -42,9 +42,8 @@
                     </md-list-item>
 
                     <md-list-item>
-                      <a href="#/user">
+                      <a href="#/user" class="text-dark">
                         <i class="material-icons" style="color: #3B4958">account_circle</i>
-
                       </a>
                     </md-list-item>
 
