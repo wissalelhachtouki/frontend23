@@ -8,16 +8,16 @@
       <header>
         <MainNavbar2/>
       </header>
-      <div class="card">
-      <h4 class="mb-4 text-muted" style="margin-bottom: 3rem">Dashboard</h4>
-      <div class="row">
+      <div>
+      <br>
+      <div class="row" style="margin: auto">
         <div class="col-lg-3 col-md-6 col-sm-6">
           <div class="card card-stats">
             <div class="card-header card-header-info card-header-icon">
               <div class="card-icon">
                 <i class="fas fa-user-circle"></i>
               </div>
-              <p class="card-category">TOTAL VISITOR</p>
+              <p class="card-category">Nombre de Formations</p>
               <h3 class="card-title">555</h3>
             </div>
 
@@ -29,8 +29,8 @@
               <div class="card-icon">
                 <i class="fas fa-user-circle"></i>
               </div>
-              <p class="card-category">ORDERS</p>
-              <h3 class="card-title">343</h3>
+              <p class="card-category">Moyenne</p>
+              <h3 class="card-title">343 Dh</h3>
             </div>
 
           </div>
@@ -41,7 +41,7 @@
               <div class="card-icon">
                 <i class="fas fa-user-circle"></i>
               </div>
-              <p class="card-category">PRODUCTS</p>
+              <p class="card-category">test</p>
               <h3 class="card-title">75</h3>
             </div>
 
@@ -53,105 +53,12 @@
               <div class="card-icon">
                 <i class="fas fa-user-circle"></i>
               </div>
-              <p class="card-category">TOTAL SALE</p>
+              <p class="card-category">test</p>
               <h3 class="card-title">$245</h3>
             </div>
 
           </div>
         </div>
-
-<!--
-        <div class="col-md-6 col-lg-3 mb-4">
-          <div class="card border-0 rounded-0">
-            <div class="card-body">
-              <div class="card-innerBody d-flex align-items-center">
-                <div class="card-icon text-light">
-                  <i class="fas fa-dollar-sign" ></i>
-                </div>
-                <div class="ml-auto">
-                  <p class="card-label text-right text-muted">Revenue</p>
-                  <h4 class="card-text text-right ">$ 199,099</h4>
-                </div>
-              </div>
-            </div>
-            <div class="card-footer d-flex ">
-              <small class="text-muted">Since last month</small>
-              <small class="text-success ml-auto">
-                <i class="fa fa-caret-up" aria-hidden="true"></i>
-                5,35%
-              </small>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-6 col-lg-3 mb-4">
-          <div class="card border-0 rounded-0">
-            <div class="card-body">
-              <div class="card-innerBody d-flex align-items-center">
-                <div class="card-icon text-light">
-                  <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                </div>
-                <div class="ml-auto">
-                  <p class="card-label text-right text-muted">Orders</p>
-                  <h4 class="card-text text-right ">2,200</h4>
-                </div>
-              </div>
-            </div>
-            <div class="card-footer d-flex ">
-              <small class="text-muted">Since last month</small>
-              <small class="text-success ml-auto">
-                <i class="fa fa-caret-up" aria-hidden="true"></i>
-                8,66%
-              </small>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-6 col-lg-3 mb-4">
-          <div class="card border-0 rounded-0">
-            <div class="card-body">
-              <div class="card-innerBody d-flex align-items-center">
-                <div class="card-icon text-light">
-                  <i class="fa fa-users" aria-hidden="true"></i>
-                </div>
-                <div class="ml-auto">
-                  <p class="card-label text-right text-muted">Visitors</p>
-                  <h4 class="card-text text-right ">702,258</h4>
-                </div>
-              </div>
-            </div>
-            <div class="card-footer d-flex ">
-              <small class="text-muted">Since last month</small>
-              <small class="text-danger ml-auto">
-                <i class="fa fa-caret-down" aria-hidden="true"></i>
-                2,81%
-              </small>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-6 col-lg-3 mb-4">
-          <div class="card border-0 rounded-0">
-            <div class="card-body">
-              <div class="card-innerBody d-flex align-items-center">
-                <div class="card-icon text-light">
-                  <i class="fa fa-heartbeat" aria-hidden="true"></i>
-                </div>
-                <div class="ml-auto">
-                  <p class="card-label text-right text-muted">Followers</p>
-                  <h4 class="card-text text-right "> +50K</h4>
-                </div>
-              </div>
-            </div>
-            <div class="card-footer d-flex ">
-              <small class="text-muted">Since last month</small>
-              <small class="text-success ml-auto">
-                <i class="fa fa-caret-up" aria-hidden="true"></i>
-                1,74%
-              </small>
-            </div>
-          </div>
-        </div>-->
 
       </div>
 
@@ -161,38 +68,29 @@
 
         <div class=" col-12 col-xl mb-4 align-items-stretch">
           <div class="border  p-2 mt-5 w-100 background-color">
+            <AreaChart :height="300" />
+          </div>
+        </div>
+
+        </div>
+
+
+        <div class="row width mb-4">
+
+        <div class=" col-6 col-xl mb-4 align-items-stretch">
+          <div class="border  p-2 mt-5 w-100 background-color">
             <LineChart :height="300" />
+          </div>
+        </div>
+          <div class=" col-6 col-xl mb-4 align-items-stretch">
+          <div class="border  p-2 mt-5 w-100 background-color">
+            <BarChart :height="300" />
           </div>
         </div>
 
         </div>
 
       <div class="col-12 col-xl mb-4 align-items-stretch">
-        <div class="card h-100 border-0 rounded-0">
-          <div class="card-title mb-1 p-3 d-flex">
-            <h6>Chart Doughnut</h6>
-            <a class="btn ml-auto p-0 text-lightning"> <i class="fas fa-ellipsis-h"></i> </a>
-          </div>
-          <div class="card-body">
-            <div class="chart-container d-flex h-100 align-items-center justify-content-center" style="position: relative;">
-              <canvas id="chart-doughnut" style="height:100%"></canvas>
-            </div>
-          </div>
-          <div class="card-footer">
-            <div class="legend d-flex just">
-              <div class="flex-fill text-center"><span class="d-inline-block rounded-circle mr-2"
-                                                       style="background: #5b6582;"></span><small>HTML</small></div>
-              <div class="flex-fill text-center"><span class="d-inline-block rounded-circle mr-2"
-                                                       style="background: #98a4c7;"></span><small>CSS</small></div>
-              <div class="flex-fill text-center"><span class="d-inline-block rounded-circle mr-2"
-                                                       style="background: #36a2eb;"></span><small>Javascript</small></div>
-            </div>
-
-          </div>
-        </div>
-      </div>
-
-      <div class="col-12 col-xl-8 mb-4 align-items-stretch">
         <div class="card h-100 border-0 rounded-0">
           <div class="card-title mb-1 p-3 d-flex">
             <h6>Purchases</h6>
@@ -255,6 +153,7 @@
 
     </div>
   </div>
+
       </div>
       <md-footer>
         <div class="md-toolbar-section-start">
@@ -281,7 +180,9 @@ export default {
   components: {
     MainSidebar,
     LineChart,
-    MainNavbar2
+    MainNavbar2,
+    BarChart,
+    AreaChart
   },
   data() {
     return {

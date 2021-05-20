@@ -22,14 +22,14 @@
           <ul class="nav">
 
             <li>
-              <a href="#/user">
+              <a href="#/profile">
                 <i class="bx bx-user"></i>
                 <span class="links_name">Profile</span>
               </a>
               <span class="tooltip">Profile</span>
             </li>
             <li>
-              <a href="#edituser">
+              <a href="#/edituser">
             <i class="bx bxs-edit"></i>
             <span class="links_name">Edit Profile</span>
           </a>

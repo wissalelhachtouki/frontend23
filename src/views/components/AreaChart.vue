@@ -34,7 +34,12 @@ export default {
             "April",
             "May",
             "June",
-            "July"
+            "July",
+            "August",
+            "September",
+            "October",
+            "November",
+            "December"
           ],
           datasets: [
             {
@@ -53,7 +58,7 @@ export default {
               pointBorderColor: "white",
               borderWidth: 1,
               backgroundColor: this.gradient2,
-              data: [60, 55, 32, 10, 2, 12, 53]
+              data: [60, 55, 32, 10, 2, 12, 53, 44]
             }
           ]
         },
