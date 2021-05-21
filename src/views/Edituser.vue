@@ -11,7 +11,7 @@ w<template>
                   <div class="content">
                   <div class=" row ">
                     <div class="col-lg-8 col-md-7">
-                    <div class="card" style="margin: 10px">
+                    <div class="card" style="margin: 15px">
                       <div
                         class="card-header card-header-primary card-header-icon"
                       >
@@ -99,17 +99,7 @@ w<template>
                       </div>
                     </div>
                     </div>
-                    <div class="col-lg-4 col-md-5">
-                      <div class="card card-user">
-                        <!----><div class="card-image">
-                        <div class="image">
-                          <img src="@/assets/img/christian.jpg" alt="...">
-                        </div></div><!---->
-                        <div class="card-body">
-                          <div>
-                            <div class="author">
-                              <a href="#">
-                                <img class="avatar border-gray" src="img/mike.jpg" alt="..."><h5 class="title">Mike Andrew</h5></a><p class="description">michael24</p></div><p class="description text-center"> "Lamborghini Mercy <br> Your chick she so thirsty <br> I'm in that two seat Lambo" </p></div></div><hr><div class="card-footer"><div class="button-container"><button type="button" class="btn btn-icon btn-round     btn-neutral btn-lg" href="#"><!----><i class="fa fa-facebook-square"></i><!----></button><button type="button" class="btn btn-icon btn-round     btn-neutral btn-lg" href="#"><!----><i class="fa fa-twitter"></i><!----></button><button type="button" class="btn btn-icon btn-round     btn-neutral btn-lg" href="#"><!----><i class="fa fa-google-plus-square"></i><!----></button></div></div></div></div>
+                    <div class="md-layout-item md-medium-size-100 md-size-33"><div class="md-card md-card-profile md-theme-default"><div class="md-card-avatar"><img src="@/assets/img/christian.jpg" class="img"></div><div class="md-card-content"><h6 class="category text-gray">CEO / Co-Founder</h6><h4 class="card-title">Alec Thompson</h4><p class="card-description"> Don't be scared of the truth because we need to restart the human foundation in truth And I love you like Kanye loves Kanye I love Rick Owens’ bed design but the back is... </p><button type="button" class="md-button md-round md-theme-default md-success"><div class="md-ripple"><div class="md-button-content">Follow</div> </div></button></div></div></div>
                   </div>
                   </div>
                   <footer class="footer">
