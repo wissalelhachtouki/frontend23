@@ -26,7 +26,7 @@
                             @click="showModaltodo = true"
                             v-model="name"
                         >
-                          <md-icon>playlist_add</md-icon> Add Task
+                          <md-icon>playlist_add </md-icon> Add Task
                         </md-button>
 
 
