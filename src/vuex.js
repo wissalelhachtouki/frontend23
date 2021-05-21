@@ -8,7 +8,8 @@ const state = {
   user: null,
   formations: [],
   todos: [],
-  events: []
+  events: [],
+  areas: []
 };
 
 const store = new Vuex.Store({
@@ -25,11 +26,28 @@ const store = new Vuex.Store({
     },
     events: state => {
       return state.events;
+    },
+    areas: state => {
+      return state.areas;
     }
   },
   actions: {
     user(context, user) {
       context.commit("user", user);
+    },
+    async setAreas(state) {
+      const response = await axios.get("formations");
+      console.log(response.data);
+      let newValue = [];
+      for (var i = 0; i < response.data.data.length; i++) {
+        newValue = state.areas.push({
+          nombreDeParticipant: response.data.data[i].nombreDeParticipant,
+          tarifsParJours: response.data.data[i].tarifsParJours
+        });
+      }
+      console.log("this is newwwww value");
+      console.log(newValue);
+      state.commit("setAreas", newValue);
     },
     deleteFormation(context, formationToRemove) {
       const newValue = state.formations.filter(
@@ -75,16 +93,24 @@ const store = new Vuex.Store({
       console.log("the 1 " + newValue);
 
       for (let i = 0; i < response.data.data.length; i++) {
-        newValue.push(
-              {
-                start: response.data.data[i].dateDebut + " " + response.data.data[i].horaireDebut,
-                end: response.data.data[i].dateDebut + " " + response.data.data[i].horaireFin,
-                title: response.data.data[i].title + " - " + response.data.data[i].lieuFormation,
-                repeat: {
-                  every: 'day',
-                  until: response.data.data[i].dateFin
-                }
-              });
+        newValue.push({
+          start:
+            response.data.data[i].dateDebut +
+            " " +
+            response.data.data[i].horaireDebut,
+          end:
+            response.data.data[i].dateDebut +
+            " " +
+            response.data.data[i].horaireFin,
+          title:
+            response.data.data[i].title +
+            " - " +
+            response.data.data[i].lieuFormation,
+          repeat: {
+            every: "day",
+            until: response.data.data[i].dateFin
+          }
+        });
       }
       console.log("the 2 " + newValue);
       state.commit("setEvents", newValue);
@@ -124,6 +150,9 @@ const store = new Vuex.Store({
   mutations: {
     user(state, user) {
       state.user = user;
+    },
+    setAreas(state, newValue) {
+      state.areas = newValue;
     },
     deleteFormation(state, newValue) {
       state.formations = newValue;

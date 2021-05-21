@@ -1,5 +1,6 @@
 <script>
 import { Line } from "vue-chartjs";
+import { mapGetters } from "vuex";
 
 export default {
   extends: Line,
@@ -9,7 +10,12 @@ export default {
       gradient2: null
     };
   },
+  computed: {
+    ...mapGetters(["areas"])
+  },
   mounted() {
+    this.$store.dispatch("setAreas");
+
     this.gradient = this.$refs.canvas
         .getContext("2d")
         .createLinearGradient(0, 0, 0, 450);
@@ -49,7 +55,7 @@ export default {
               borderWidth: 1,
               pointBorderColor: "white",
               backgroundColor: this.gradient,
-              data: [40, 39, 10, 40, 39, 80, 40]
+              data: this.areas.nombreDeParticipant
             },
             {
               label: "Data Two",

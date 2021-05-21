@@ -18,7 +18,7 @@
                 <i class="fas fa-user-circle"></i>
               </div>
               <p class="card-category">Nombre de Formations</p>
-              <h3 class="card-title">555</h3>
+              <h3 class="card-title">{{ formations.length }}</h3>
             </div>
 
           </div>
@@ -30,7 +30,7 @@
                 <i class="fas fa-user-circle"></i>
               </div>
               <p class="card-category">Moyenne</p>
-              <h3 class="card-title">343 Dh</h3>
+              <h3 class="card-title"></h3>
             </div>
 
           </div>
@@ -201,11 +201,15 @@ export default {
   },
   computed: {
     ...mapGetters({ user: "user" }),
+    ...mapGetters(["formations"]),
     headerStyle() {
       return {
         backgroundImage: `url(${this.header})`
       };
     }
+  },
+  mounted() {
+    this.$store.dispatch("setFormations");
   }
 };
 </script>

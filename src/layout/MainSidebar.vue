@@ -3,47 +3,42 @@
   <div class="sidebar">
     <div class="logo_content">
       <div class="logo">
-        <i class='bx bxl-c-plus-plus'></i>
-        <div v-if="user" class="logo_name">{{ user.name }}</div>
+        <div v-if="user" class="logo_name">Bonjour, {{ user.name }}</div>
         <div v-else class="logo_name">no one</div>
       </div>
       <i class="bx bx-menu" id="btn"></i>
     </div>
-    <div class="user"><div class="photo">
+    <div class="user">
 
-    </div>
-      <div class="user-info">
 
-        <div class="user">
+
           <div class="photo" style="text-align: left">
             <img src="@/assets/img/christian.jpg" alt="avatar">
-          </div><div   v-if="user" class="user-info"> <strong style="color: whitesmoke">{{ user.name }}</strong><a data-toggle="collapse"></a>
-        <div style="animation-fill-mode: both; animation-timing-function: ease-out;" data-old-padding-top="" data-old-padding-bottom="" data-old-overflow="">
-          <ul class="nav">
+          </div>
+          <div v-if="user" class="user-info">
+            <strong style="color: whitesmoke">{{ user.name }}</strong><a data-toggle="collapse"></a>
 
-            <li>
-              <a href="#/profile">
-                <i class="bx bx-user"></i>
-                <span class="links_name">Profile</span>
-              </a>
-              <span class="tooltip">Profile</span>
-            </li>
-            <li>
-              <a href="#/edituser">
-            <i class="bx bxs-edit"></i>
-            <span class="links_name">Edit Profile</span>
-          </a>
-              <span class="tooltip">Edit Profile</span>
-          </li>
-
-
-
-          </ul>
-        </div>
       </div>
-    </div>
+
 
     <ul class="nav_list">
+      <li>
+        <a href="#/profile">
+          <i class="bx bx-user"></i>
+          <span class="links_name">Profile</span>
+        </a>
+        <span class="tooltip">Profile</span>
+      </li>
+      <li>
+        <a href="#/edituser">
+          <i class="bx bxs-edit"></i>
+          <span class="links_name">Edit Profile</span>
+        </a>
+        <span class="tooltip">Edit Profile</span>
+      </li>
+
+      <br>
+
       <li>
         <a href="#/dashboard">
           <i class="bx bxs-dashboard"></i>
@@ -99,7 +94,8 @@
         </ul>
 
     </div>
-      </div></div>
+
+    </div>
     </div>
 </template>
 
