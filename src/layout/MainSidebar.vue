@@ -16,7 +16,7 @@
             <img src="@/assets/img/christian.jpg" alt="avatar">
           </div>
           <div v-if="user" class="user-info">
-            <strong style="color: whitesmoke">{{ user.name }}</strong><a data-toggle="collapse"></a>
+            <strong class="links_name" style="color: whitesmoke">{{ user.name }}</strong><a data-toggle="collapse"></a>
 
       </div>
 

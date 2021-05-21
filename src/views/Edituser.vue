@@ -1,4 +1,4 @@
-<template>
+w<template>
   <div class="wrapper">
     <div class="page-header header-filter">
       <MainSidebar />
@@ -339,7 +339,7 @@ ul li.editMode label {
   left: 78px;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
   transition: all 0.5s ease;
-  overflow-y: scroll;
+  overflow-x: hidden;
   z-index: 100;
 
 }
