@@ -885,6 +885,19 @@ export default {
 .border-0 {
   border: 0 !important;
 }
+.card{
+  border: 0;
+  border-radius: .1875rem;
+  display: inline-block;
+  position: relative;
+  width: 100%;
+  margin-bottom: 20px;
+  box-shadow: 0 1px 15px 1px ;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+}
 .card-header {
   padding: 1.25rem 1.5rem;
   margin-bottom: 0;

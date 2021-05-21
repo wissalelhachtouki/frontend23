@@ -15,7 +15,7 @@ w<template>
                       <div
                         class="card-header card-header-primary card-header-icon"
                       >
-                        <h4 class="card-title">Edit Profile
+                        <h4 class="card-title">Edit Profile - Complete your profile
 
 
                         </h4>
@@ -44,7 +44,7 @@ w<template>
 
                             <md-field class="md-form-group col-md-11 " slot="inputs">
                               <md-icon>adress</md-icon>
-                              <label>About Me...</label>
+                              <label>Address...</label>
                               <md-input v-model="email" type="email"></md-input>
                             </md-field>
 
@@ -69,18 +69,20 @@ w<template>
                               </md-field>
                             <md-field class="md-form-group col-md-4" slot="inputs">
                               <md-icon></md-icon>
-                              <label>Code Postal...</label>
-                              <md-input v-model="email" type="email"></md-input>
+                              <label>Age...</label>
+                              <md-input v-model="email" type="number"></md-input>
                             </md-field>
 
                       </div>
                           <div class="row">
 
-                              <md-field class="md-form-group col-md-11 " slot="inputs">
-                                <md-icon>adress</md-icon>
-                                <label>About Me...</label>
-                                <md-input v-model="email" type="email"></md-input>
-                              </md-field>
+
+                            <md-field class="md-form-group col-md-11" slot="inputs" >
+
+                              <label> About Me.. </label>
+
+                              <md-textarea v-model="textarea" type="text"></md-textarea>
+                            </md-field>
 
                           </div>
                           <div
@@ -99,7 +101,26 @@ w<template>
                       </div>
                     </div>
                     </div>
-                    <div class="md-layout-item md-medium-size-100 md-size-33" style="margin: auto"><div class="md-card md-card-profile md-theme-default"><div class="md-card-avatar"><img src="@/assets/img/christian.jpg" class="img"></div><div class="md-card-content"><h6 class="category text-gray">CEO / Co-Founder</h6><h4 class="card-title">Alec Thompson</h4><p class="card-description"> Don't be scared of the truth because we need to restart the human foundation in truth And I love you like Kanye loves Kanye I love Rick Owens’ bed design but the back is... </p><button type="button" class="md-button md-round md-theme-default md-success"><div class="md-ripple"><div class="md-button-content">Follow</div> </div></button></div></div></div>
+                    <div class="md-layout-item md-medium-size-100 md-size-33" style="margin: auto">
+                      <div class="md-card md-card-profile md-theme-default">
+                        <div class="md-card-avatar">
+                          <img src="@/assets/img/christian.jpg" class="img">
+                        </div>
+                        <div class="md-card-content">
+                          <h6 class="category text-gray">CEO / Co-Founder</h6>
+                          <h4 class="card-title">Alec Thompson</h4>
+                          <p class="card-description">
+                            Don't be scared of the truth because we need to restart the
+                            human foundation in truth And I love you like Kanye
+                            loves Kanye I love Rick Owens’ bed design but the back is... </p>
+                          <md-button
+
+                            class=" md-rose   md-simple "
+
+                          >
+                           <strong>  Profile</strong>
+                          </md-button>
+                        </div></div></div>
                   </div>
                   </div>
                   <footer class="footer">
@@ -256,23 +277,7 @@ input[type="text"]:focus {
   color: #333;
 }
 
-/* New Task */
 
-label[for="new-task"] {
-  display: block;
-  margin: 0 0 20px;
-}
-
-input#new-task {
-  float: left;
-  width: 318px;
-}
-
-p > button:hover {
-  color: #0fc57c;
-}
-
-/* Task list */
 
 li {
   overflow: hidden;
