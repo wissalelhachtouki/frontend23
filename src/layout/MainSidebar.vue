@@ -209,7 +209,7 @@ body{
   left: 0;
   height: 100%;
   width: 78px;
- background-color: #01579b;
+ background-color: #212120;
   padding: 6px 14px;
   z-index: 99;
   transition: all 0.5s ease;

@@ -6,7 +6,7 @@
       <div class="home_content">
         <svg height="100%" width="100%" id="svg" viewBox="0 0 1440 400" xmlns="http://www.w3.org/2000/svg" class="transition duration-300 ease-in-out delay-150"><defs><linearGradient id="gradient"><stop offset="5%" stop-color="#0c2340ff"></stop><stop offset="95%" stop-color="#2a5788ff"></stop></linearGradient></defs><path d="M 0,400 C 0,400 0,200 0,200 C 205.71428571428572,257.14285714285717 822.8571428571429,228.57142857142858 1440,200 C 1440,200 1440,400 1440,400 Z" stroke="none" stroke-width="0" fill="url(#gradient)" class="transition-all duration-300 ease-in-out delay-150" transform="rotate(-180 720 200)"></path></svg>
         <header><MainNavbar2/></header>
-        <div class=" d-flex  width" style="margin-top: -4%">
+        <div class=" d-flex  width" style="margin-top: -6%">
           <div class="mt-5 w-100" >
             <div class="container-fluid">
               <div class="col-md-12">
@@ -21,12 +21,12 @@
                           style="float: right "
                       >
                         <md-button
-                            id="btn1"
-                            class=" md-warning md-sm  md-block"
+
+                            class=" md-primary md-sm  md-block"
                             @click="showModaltodo = true"
                             v-model="name"
                         >
-                          <md-icon>task</md-icon> Add Task
+                          <md-icon>playlist_add</md-icon> Add Task
                         </md-button>
 
 
@@ -289,9 +289,7 @@ td {
   padding-top: 15px;
   padding-bottom: 15px;
 }
-.card-styling:hover {
-  box-shadow: 0 8px 16px 0 rgba(0, 0, 0.5, 0.5);
-}
+
 .home_content {
   position: absolute;
   height: 100%;
@@ -335,6 +333,9 @@ td {
   transition: opacity 0.3s ease;
 }
 
+.card-styling:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0.5, 0.5);
+}
 .modal-wrapper {
   display: table-cell;
   vertical-align: middle;
