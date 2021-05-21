@@ -25,39 +25,39 @@
                     <md-field class="md-form-group col-md-5" slot="inputs">
                       <md-icon></md-icon>
                       <label>First Name...</label>
-                      <md-input v-model="email" type="email"></md-input>
+                      <md-input type="email"></md-input>
                     </md-field>
                     <md-field class="md-form-group col-md-5" slot="inputs">
                       <md-icon></md-icon>
                       <label>Last Name...</label>
-                      <md-input v-model="email" type="email"></md-input>
+                      <md-input type="email"></md-input>
                     </md-field>
 
                     <md-field class="md-form-group col-md-11 " slot="inputs">
                       <md-icon>adress</md-icon>
                       <label>Adresse...</label>
-                      <md-input v-model="email" type="email"></md-input>
+                      <md-input type="email"></md-input>
                     </md-field>
 
                   <md-field class="md-form-group col-md-4" slot="inputs">
                     <md-icon></md-icon>
                     <label>City...</label>
-                    <md-input v-model="email" type="email"></md-input>
+                    <md-input type="email"></md-input>
                   </md-field>
                   <md-field class="md-form-group col-md-4" slot="inputs">
                     <md-icon></md-icon>
                     <label>Country...</label>
-                    <md-input v-model="email" type="email"></md-input>
+                    <md-input type="email"></md-input>
                   </md-field>
                   <md-field class="md-form-group col-md-3" slot="inputs">
                     <md-icon></md-icon>
                     <label>Postal Code...</label>
-                    <md-input v-model="email" type="email"></md-input>
+                    <md-input type="email"></md-input>
                   </md-field>
                   <md-field class="md-form-group col-md-11 " slot="inputs">
                     <md-icon>adress</md-icon>
                     <label>About Me...</label>
-                    <md-input v-model="email" type="email"></md-input>
+                    <md-input type="email"></md-input>
                   </md-field>
 
               </div>

@@ -31,21 +31,21 @@
 
                     <md-list-item>
                       <a href="#/dashboard">
-                        <i class="material-icons" style="color: #3B4958">dashboard</i>
+                        <i class="material-icons">dashboard</i>
 
                       </a>
                     </md-list-item>
 
                     <md-list-item>
                       <a href="#/todo-list">
-                        <i class="material-icons" style="color: #3B4958">notifications</i>
+                        <i class="material-icons">notifications</i>
 
                       </a>
                     </md-list-item>
 
                     <md-list-item>
                       <a href="#/profile" class="text-dark">
-                        <i class="material-icons" style="color: #3B4958">account_circle</i>
+                        <i class="material-icons">account_circle</i>
                       </a>
                     </md-list-item>
 
