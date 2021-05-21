@@ -22,15 +22,15 @@
 
 
     <ul class="nav_list">
-      <li>
-        <a href="#/profile">
+      <li @click="test1">
+        <a class="btn">
           <i class="bx bx-user"></i>
           <span class="links_name">Profile</span>
         </a>
         <span class="tooltip">Profile</span>
       </li>
-      <li>
-        <a href="#/edituser">
+      <li @click="test2">
+        <a class="btn">
           <i class="bx bxs-edit"></i>
           <span class="links_name">Edit Profile</span>
         </a>
@@ -39,8 +39,8 @@
 
       <br>
 
-      <li>
-        <a href="#/dashboard">
+      <li @click="test3">
+        <a class="btn">
           <i class="bx bxs-dashboard"></i>
           <span class="links_name">Dashboard</span>
         </a>
@@ -54,22 +54,22 @@
         </a>
         <span class="tooltip">User</span>
       </li>
-      <li>
-        <a href="#/calendrier">
+      <li @click="test4">
+        <a class="btn">
           <i class='bx bx-calendar' ></i>
           <span class="links_name">Calendar</span>
         </a>
         <span class="tooltip">Calendar</span>
       </li>
-      <li>
-        <a href="#/todo-list">
+      <li @click="test5">
+        <a class="btn">
           <i class='bx bx-task' ></i>
           <span class="links_name">Tasks</span>
         </a>
         <span class="tooltip">Tasks</span>
       </li>
-      <li>
-        <a href="#/formations">
+      <li @click="test6">
+        <a class="btn">
           <i class='bx bx-list-check' ></i>
           <span class="links_name">List Formations</span>
         </a>
@@ -112,6 +112,24 @@ export default {
       localStorage.removeItem("token");
       this.$store.dispatch("user", null);
       this.$router.push("/");
+    },
+    test1(){
+      this.$router.push("/profile");
+    },
+    test2(){
+      this.$router.push("/edituser");
+    },
+    test3(){
+      this.$router.push("/dashboard");
+    },
+    test4(){
+      this.$router.push("/calendrier");
+    },
+    test5(){
+      this.$router.push("/todo-list");
+    },
+    test6(){
+      this.$router.push("/formations");
     }
   },
   mounted() {

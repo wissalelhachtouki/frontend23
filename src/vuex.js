@@ -9,7 +9,7 @@ const state = {
   formations: [],
   todos: [],
   events: [],
-  areas: []
+  areas1: []
 };
 
 const store = new Vuex.Store({
@@ -27,27 +27,26 @@ const store = new Vuex.Store({
     events: state => {
       return state.events;
     },
-    areas: state => {
-      return state.areas;
+    areas1: state => {
+      return state.areas1;
     }
   },
   actions: {
     user(context, user) {
       context.commit("user", user);
     },
-    async setAreas(state) {
+    async setAreas1(state) {
       const response = await axios.get("formations");
       console.log(response.data);
       let newValue = [];
-      for (var i = 0; i < response.data.data.length; i++) {
-        newValue = state.areas.push({
-          nombreDeParticipant: response.data.data[i].nombreDeParticipant,
-          tarifsParJours: response.data.data[i].tarifsParJours
-        });
+      for (let i = 0; i < response.data.data.length; i++) {
+        newValue = state.areas1.push(
+          response.data.data[i].nombreDeParticipant
+        );
       }
       console.log("this is newwwww value");
       console.log(newValue);
-      state.commit("setAreas", newValue);
+      state.commit("setAreas1", newValue);
     },
     deleteFormation(context, formationToRemove) {
       const newValue = state.formations.filter(
@@ -151,8 +150,8 @@ const store = new Vuex.Store({
     user(state, user) {
       state.user = user;
     },
-    setAreas(state, newValue) {
-      state.areas = newValue;
+    setAreas1(state, newValue) {
+      state.areas1 = newValue;
     },
     deleteFormation(state, newValue) {
       state.formations = newValue;

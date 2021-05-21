@@ -11,10 +11,10 @@ export default {
     };
   },
   computed: {
-    ...mapGetters(["areas"])
+    ...mapGetters(["areas1"])
   },
   mounted() {
-    this.$store.dispatch("setAreas");
+    this.$store.dispatch("setAreas1");
 
     this.gradient = this.$refs.canvas
         .getContext("2d")
@@ -55,7 +55,7 @@ export default {
               borderWidth: 1,
               pointBorderColor: "white",
               backgroundColor: this.gradient,
-              data: this.areas.nombreDeParticipant
+              data: this.areas1
             },
             {
               label: "Data Two",
