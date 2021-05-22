@@ -54,7 +54,7 @@ export default {
   props: {
     task: {
       type: String,
-      default: require("@/assets/img/aboutus.jpg")
+      default: require("@/assets/img/tasks.jpg")
     }
   }
 

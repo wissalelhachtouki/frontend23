@@ -42,7 +42,7 @@ export default {
   props: {
     cal: {
       type: String,
-      default: require("@/assets/img/aboutus.jpg")
+      default: require("@/assets/img/listformations.jpg")
     }
   }
 

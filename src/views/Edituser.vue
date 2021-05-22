@@ -4,7 +4,7 @@ w<template>
       <MainSidebar />
 
       <div class="home_content">
-        <svg height="100%" width="100%" id="svg" viewBox="0 0 1440 400" xmlns="http://www.w3.org/2000/svg" class="transition duration-300 ease-in-out delay-150"><defs><linearGradient id="gradient"><stop offset="5%" stop-color="#2a5788ff"></stop><stop offset="95%" stop-color="#0c2340ff"></stop></linearGradient></defs><path d="M 0,400 C 0,400 0,200 0,200 C 205.71428571428572,257.14285714285717 822.8571428571429,228.57142857142858 1440,200 C 1440,200 1440,400 1440,400 Z" stroke="none" stroke-width="0" fill="url(#gradient)" class="transition-all duration-300 ease-in-out delay-150" transform="rotate(-180 720 200)"></path></svg>
+        <svg height="100%" width="100%" id="svg" viewBox="0 0 1440 400" xmlns="http://www.w3.org/2000/svg" class="transition duration-300 ease-in-out delay-150"><defs><linearGradient id="gradient"><stop offset="5%" stop-color="#0c2340ff"></stop><stop offset="95%" stop-color="#2a5788ff"></stop></linearGradient></defs><path d="M 0,400 C 0,400 0,200 0,200 C 205.71428571428572,257.14285714285717 822.8571428571429,228.57142857142858 1440,200 C 1440,200 1440,400 1440,400 Z" stroke="none" stroke-width="0" fill="url(#gradient)" class="transition-all duration-300 ease-in-out delay-150" transform="rotate(-180 720 200)"></path></svg>
         <header><MainNavbar2/></header>
 
 
@@ -25,18 +25,52 @@ w<template>
                         <form>
                           <div class="row">
 
-                              <md-field class="md-form-group col-md-5" slot="inputs">
+                              <md-field class="md-form-group col-md-6" slot="inputs">
                                 <md-icon></md-icon>
-                                <label>First Name...</label>
-                                <md-input type="email"></md-input>
+                                <label>Username...</label>
+                                <md-input type="text"></md-input>
                               </md-field>
 
 
-                              <md-field class="md-form-group col-md-5" slot="inputs">
+                              <md-field class="md-form-group col-md-6" slot="inputs">
                                 <md-icon></md-icon>
-                                <label>Last Name...</label>
+                                <label>Email address...</label>
                                 <md-input  type="email"></md-input>
                               </md-field>
+
+                          </div>
+                          <div class="row">
+
+                            <md-field class="md-form-group col-md-6" slot="inputs">
+                              <md-icon></md-icon>
+                              <label>First name...</label>
+                              <md-input type="text"></md-input>
+                            </md-field>
+
+
+                            <md-field class="md-form-group col-md-6" slot="inputs">
+                              <md-icon></md-icon>
+                              <label>Last name...</label>
+                              <md-input  type="email"></md-input>
+                            </md-field>
+
+                          </div>
+                          <div class="row">
+
+                            <md-field class="md-form-group col-md-6" slot="inputs">
+                              <md-icon></md-icon>
+                              <label>Job...</label>
+                              <md-input  type="text"></md-input>
+                            </md-field>
+
+
+
+                            <md-field class="md-form-group col-md-6" slot="inputs">
+                              <md-icon></md-icon>
+                              <label>Age...</label>
+                              <md-input type="number"></md-input>
+                            </md-field>
+
 
                           </div>
 
@@ -45,7 +79,7 @@ w<template>
                             <md-field class="md-form-group col-md-11 " slot="inputs">
                               <md-icon>adress</md-icon>
                               <label>Address...</label>
-                              <md-input  type="email"></md-input>
+                              <md-input  type="text"></md-input>
                             </md-field>
 
                           </div>
@@ -56,24 +90,32 @@ w<template>
 
                               <md-field class="md-form-group col-md-4" slot="inputs">
                                 <md-icon></md-icon>
-                                <label>Country...</label>
-                                <md-input  type="email"></md-input>
+                                <label>City...</label>
+                                <md-input  type="text"></md-input>
                               </md-field>
 
 
 
                               <md-field class="md-form-group col-md-4" slot="inputs">
                                 <md-icon></md-icon>
-                                <label>City...</label>
-                                <md-input type="email"></md-input>
+                                <label>Country...</label>
+                                <md-input type="text"></md-input>
                               </md-field>
                             <md-field class="md-form-group col-md-4" slot="inputs">
                               <md-icon></md-icon>
-                              <label>Age...</label>
-                              <md-input type="number"></md-input>
+                              <label>Postal code ...</label>
+                              <md-input type="text"></md-input>
                             </md-field>
 
                       </div>
+
+
+
+
+
+
+
+
                           <div class="row">
 
 
@@ -85,18 +127,20 @@ w<template>
                             </md-field>
 
                           </div>
+                          <div class="modal-footer">
                           <div
                             class="md-layout-item md-size-10 "
-
+                            style="float: right ; margin-top: 30px"
                           >
                             <md-button
-                              id="btn1"
+
                               class=" md-warning md-sm  md-block"
 
                             >
                               <md-icon>playlist_add</md-icon> Ajouter
                             </md-button>
                           </div>
+                      </div>
                         </form>
                       </div>
                     </div>
@@ -107,32 +151,28 @@ w<template>
                           <img src="@/assets/img/christian.jpg" class="img">
                         </div>
                         <div class="md-card-content">
-                          <h6 class="category text-gray">CEO / Co-Founder</h6>
-                          <h4 class="card-title">Alec Thompson</h4>
+                          <h4 class="card-title">First last name , age</h4>
+                          <h6 class="category text-gray">City, Country</h6>
+<br>
                           <p class="card-description">
-                            Don't be scared of the truth because we need to restart the
-                            human foundation in truth And I love you like Kanye
-                            loves Kanye I love Rick Owens’ bed design but the back is... </p>
+                         (About Me )Ryan — the name taken by Melbourne-raised, Brooklyn-based Nick Murphy — writes,
+                            performs and records all of his own music.... </p>
+                          <div
+                            class="md-layout-item md-size-10 "
+                          style="margin-left: 112px "
+                          >
                           <md-button
-
-                            class=" md-rose   md-simple "
+                              href="#/profile"
+                              id="btn1"
+                            class=" md-info  md-sm md-block "
 
                           >
-                           <strong>  Profile</strong>
+                            More
                           </md-button>
+                          </div>
                         </div></div></div>
                   </div>
                   </div>
-                  <footer class="footer">
-                    <div class="container-fluid d-flex flex-wrap justify-content-between">
-                      <nav>
-                        <ul class="footer-menu">
-                          <li>
-                            <a href="#/dashboard" class="">EditUser</a>
-                          </li>
-                        </ul>
-                      </nav>
-                      <div class="copyright"> © 2021, Designed by <a href="https://www.invisionapp.com/">Invision</a>. Coded by <a href="https://binarcode.com" target="_blank" rel="noopener">BinarCode</a> and <a href="https://www.creative-tim.com/?ref=pdf-vuejs" target="_blank" rel="noopener">Creative Tim</a>. </div></div></footer>
 
 
 
@@ -260,18 +300,7 @@ label[for="new-task"] {
   text-transform: uppercase;
 }
 
-input[type="text"] {
-  margin: 0;
-  font-size: 18px;
-  line-height: 18px;
-  height: 18px;
-  padding: 10px;
-  border: 1px solid #ddd;
-  background: #fff;
-  border-radius: 6px;
-  font-family: Lato, sans-serif;
-  color: #888;
-}
+
 
 input[type="text"]:focus {
   color: #333;
@@ -364,7 +393,10 @@ ul li.editMode label {
   border: 2px solid #1c6ea4;
   border-radius: 10px;
 }
-
+#btn1{
+  background: rgb(0,183,225);
+  background: linear-gradient(0deg, rgba(0,183,225,1) 0%, rgba(0,231,201,1) 100%);
+}
 #svg{
   position: absolute;
   left: 0;

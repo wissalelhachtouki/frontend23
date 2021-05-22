@@ -44,7 +44,7 @@
                     </md-list-item>
 
                     <md-list-item>
-                      <a href="#/profile" class="text-dark">
+                      <a href="#/profile" >
                         <i class="material-icons">account_circle</i>
                       </a>
                     </md-list-item>

@@ -4,77 +4,32 @@
     <MainSidebar />
 
     <div class="home_content">
-      <svg height="100%" width="100%" id="svg" viewBox="0 0 1440 400" xmlns="http://www.w3.org/2000/svg" class="transition duration-300 ease-in-out delay-150"><defs><linearGradient id="gradient"><stop offset="5%" stop-color="#2a5788ff"></stop><stop offset="95%" stop-color="#0c2340ff"></stop></linearGradient></defs><path d="M 0,400 C 0,400 0,200 0,200 C 205.71428571428572,257.14285714285717 822.8571428571429,228.57142857142858 1440,200 C 1440,200 1440,400 1440,400 Z" stroke="none" stroke-width="0" fill="url(#gradient)" class="transition-all duration-300 ease-in-out delay-150" transform="rotate(-180 720 200)"></path></svg>
+      <svg height="100%" width="100%" id="svg" viewBox="0 0 1440 400" xmlns="http://www.w3.org/2000/svg" class="transition duration-300 ease-in-out delay-150"><defs><linearGradient id="gradient"><stop offset="5%" stop-color="#0c2340ff"></stop><stop offset="95%" stop-color="#2a5788ff"></stop></linearGradient></defs><path d="M 0,400 C 0,400 0,200 0,200 C 205.71428571428572,257.14285714285717 822.8571428571429,228.57142857142858 1440,200 C 1440,200 1440,400 1440,400 Z" stroke="none" stroke-width="0" fill="url(#gradient)" class="transition-all duration-300 ease-in-out delay-150" transform="rotate(-180 720 200)"></path></svg>
       <header><MainNavbar2/></header>
-      <div class="d-flex  width" style="margin-top: -3%">
-        <div class="   mt-5 w-100 ">
-          <div class="container-fluid">
-            <div class=" md-layout  ">
-              <div class="card card-styling md-layout " style="border-radius: 5px ; margin-bottom: 30px">
-                <div
-                  class="card-header card-header-primary card-header-icon"
-                >
-                  <h4 class="card-title">My Profile
-
-                  </h4>
-
-                </div>
-                <div class=" row ">
-
-
-                    <md-field class="md-form-group col-md-5" slot="inputs">
-                      <md-icon></md-icon>
-                      <label>First Name...</label>
-                      <md-input type="email"></md-input>
-                    </md-field>
-                    <md-field class="md-form-group col-md-5" slot="inputs">
-                      <md-icon></md-icon>
-                      <label>Last Name...</label>
-                      <md-input type="email"></md-input>
-                    </md-field>
-
-                    <md-field class="md-form-group col-md-11 " slot="inputs">
-                      <md-icon>adress</md-icon>
-                      <label>Adresse...</label>
-                      <md-input type="email"></md-input>
-                    </md-field>
-
-                  <md-field class="md-form-group col-md-4" slot="inputs">
-                    <md-icon></md-icon>
-                    <label>City...</label>
-                    <md-input type="email"></md-input>
-                  </md-field>
-                  <md-field class="md-form-group col-md-4" slot="inputs">
-                    <md-icon></md-icon>
-                    <label>Country...</label>
-                    <md-input type="email"></md-input>
-                  </md-field>
-                  <md-field class="md-form-group col-md-3" slot="inputs">
-                    <md-icon></md-icon>
-                    <label>Postal Code...</label>
-                    <md-input type="email"></md-input>
-                  </md-field>
-                  <md-field class="md-form-group col-md-11 " slot="inputs">
-                    <md-icon>adress</md-icon>
-                    <label>About Me...</label>
-                    <md-input type="email"></md-input>
-                  </md-field>
-
-              </div>
-
-              </div>
+      <div class="content">
+        <div class="md-layout-item md-medium-size-100 md-size-100" >
+          <div class="md-card md-card-profile md-theme-default " style=" margin-bottom: 30px"  >
+            <div class="md-card-avatar">
+              <img src="@/assets/img/christian.jpg" class="img">
             </div>
-          </div>
+            <div class="md-card-content">
+              <h4 class="card-title">First last name , age</h4>
+              <h6 class="category text-gray">City, Country</h6><br>
+              <h6 class="category text-black-50">Job</h6>
+              <h6 class="category text-gray">Address, code postal</h6>
+<br><br>
+              <p class="card-description">
+                (About Me )Don't be scared of the truth because we need to restart the
+                human foundation in truth And I love you like Kanye
+                loves Kanye I love Rick Owens’ bed design but the back is... </p>
+
+            </div></div></div>
+
+
+
+
       </div>
-      </div>
-      <md-footer>
-        <div class="md-toolbar-section-start">
-          <h2  ><strong>Forma</strong></h2>
-        </div>
-        <div class="md-toolbar-section-end">
-          <h3 v-if="$route.name" class="md-rose">© 2021, made with <md-icon> favorite</md-icon> by Us.</h3>
-        </div>
-      </md-footer>
+
 
   </div>
     </div>
@@ -309,5 +264,16 @@ ul li.editMode label {
   left: 0;
   width: 100%;
   height: auto;
+}
+.md-card {
+  margin-top: 2%;
+  background-color: white;
+  color: #333533;
+
+  box-shadow: 0 8px 8px 0 rgba(0, 0, 0.3, 0.3);
+  transition: 0.3s;
+}
+.md-card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0.5, 0.5);
 }
 </style>
