@@ -40,9 +40,7 @@ const store = new Vuex.Store({
       console.log(response.data);
       let newValue = [];
       for (let i = 0; i < response.data.data.length; i++) {
-        newValue = state.areas1.push(
-          response.data.data[i].nombreDeParticipant
-        );
+        newValue = state.areas1.push(response.data.data[i].nombreDeParticipant);
       }
       console.log("this is newwwww value");
       console.log(newValue);
@@ -95,23 +93,16 @@ const store = new Vuex.Store({
         newValue.push({
           start:
             response.data.data[i].dateDebut +
-            " " +
+            "T" +
             response.data.data[i].horaireDebut,
           end:
             response.data.data[i].dateDebut +
-            " " +
+            "T" +
             response.data.data[i].horaireFin,
-          title:
-            response.data.data[i].title +
-            " - " +
-            response.data.data[i].lieuFormation,
-          repeat: {
-            every: "day",
-            until: response.data.data[i].dateFin
-          }
+          title: response.data.data[i].title
         });
       }
-      console.log("the 2 " + newValue);
+      console.log(newValue);
       state.commit("setEvents", newValue);
     },
 
@@ -142,7 +133,7 @@ const store = new Vuex.Store({
       );
 
       let newValue = state.todos;
-      newValue[todoToUpdateIndex] = updatedTodo;
+      newValue[todoToUpdateIndex].completed = true;
       context.commit("updateTodo", newValue);
     }
   },

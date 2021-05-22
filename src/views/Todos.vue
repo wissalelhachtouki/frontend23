@@ -56,12 +56,10 @@
                               <div class="widget-content-wrapper">
                                 <div class="widget-content-left mr-2"></div>
                                 <div class="widget-content-left">
-                                  <div v-if="!todo.completed" class="widget-heading">
+                                  <div v-bind:class="{ linebar: todo.completed }" class="widget-heading">
                                     {{ todo.name }}
                                   </div>
-                                  <div v-else class="widget-heading" style="text-decoration: line-through">
-                                    {{ todo.name }}
-                                  </div>
+
                                   <div v-if="todo.completed" class="widget-subheading">
                                     At : {{ todo.completed_at }}
                                   </div>
@@ -71,7 +69,7 @@
                                   <span
                                   ><i
                                     v-if="!todo.completed"
-                                    @click.prevent="updateTodo(todo.id)"
+                                    @click.prevent="updateTodo(todo)"
                                     class="btn text-success material-icons"
                                     style="margin: 0 5px ; border-radius: 15px"
                                   >check</i
@@ -174,7 +172,8 @@ export default {
     return {
       name: "",
       completed: false,
-      showModaltodo: false
+      showModaltodo: false,
+      currentDate: new Date()
     };
   },
   props: {
@@ -222,15 +221,16 @@ export default {
       console.log(response);
       //alert("Todo deleted!");
     },
-    async updateTodo(id) {
+    async updateTodo(todo) {
       try {
         const data = {
-          id: id,
+          id: todo.id,
           completed: true
         };
 
-        console.log("this data id");
-        console.log(data.id);
+        console.log("this todo");
+        console.log(todo);
+
         console.log("this data updated");
         console.log(data);
         await this.$store.dispatch("updateTodo", data);
@@ -451,5 +451,9 @@ td {
   left: 0;
   width: 100%;
   height: auto;
+}
+
+.linebar{
+  text-decoration: line-through
 }
 </style>

@@ -776,6 +776,21 @@ export default {
 
         await this.$store.dispatch("addFormation", data);
 
+
+            this.title = "";
+            this.nombreDeJours = "";
+            this.tarifsParJours = "";
+            this.nombreDeParticipant = "";
+            this.modalites = "";
+            this.publicConcerne = "";
+            this.lieuFormation = "";
+            this.dureeFormation = "";
+            this.dateDebut = "";
+            this.dateFin = "";
+            this.horaireDebut = "";
+            this.horaireFin = "";
+            this.description = "";
+
         this.showModal = false;
         this.showModalPage2 = false;
       } catch (e) {
