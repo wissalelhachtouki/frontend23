@@ -35,12 +35,25 @@ const store = new Vuex.Store({
     user(context, user) {
       context.commit("user", user);
     },
+    async updateProfile(context, profile) {
+      const response = await axios.post("updateProfile", profile);
+      console.log("this is updated profile");
+      console.log(response.data.data);
+      context.commit("updateProfile", response.data.data);
+    },
+    async updatePicture(context, picture) {
+      const response = await axios.post("updatePicture", picture);
+      console.log("this is updated profile");
+      console.log(response.data.data);
+      context.commit("updatePicture", response.data.data);
+    },
     async setAreas1(state) {
       const response = await axios.get("formations");
       console.log(response.data);
       let newValue = [];
       for (let i = 0; i < response.data.data.length; i++) {
-        newValue = state.areas1.push(response.data.data[i].nombreDeParticipant);
+        console.log(response.data.data[i].nombreDeParticipant);
+        newValue = store.state.areas1.push(response.data.data[i].nombreDeParticipant);
       }
       console.log("this is newwwww value");
       console.log(newValue);
@@ -93,15 +106,23 @@ const store = new Vuex.Store({
         newValue.push({
           start:
             response.data.data[i].dateDebut +
-            "T" +
+            " " +
             response.data.data[i].horaireDebut,
           end:
-            response.data.data[i].dateDebut +
-            "T" +
+            response.data.data[i].dateFin +
+            " " +
             response.data.data[i].horaireFin,
-          title: response.data.data[i].title
+          title:
+            response.data.data[i].title +
+            " - " +
+            response.data.data[i].lieuFormation,
+          repeat: {
+            every: "day",
+            until: response.data.data[i].dateFin
+          }
         });
       }
+      console.log("the 2 ");
       console.log(newValue);
       state.commit("setEvents", newValue);
     },
@@ -134,12 +155,19 @@ const store = new Vuex.Store({
 
       let newValue = state.todos;
       newValue[todoToUpdateIndex].completed = true;
+      newValue[todoToUpdateIndex].completed_at = updatedTodo.completed_at;
       context.commit("updateTodo", newValue);
     }
   },
   mutations: {
     user(state, user) {
       state.user = user;
+    },
+    updateProfile(state, profile) {
+      state.user = profile;
+    },
+    updatePicture(state, profile) {
+      state.user = profile;
     },
     setAreas1(state, newValue) {
       state.areas1 = newValue;

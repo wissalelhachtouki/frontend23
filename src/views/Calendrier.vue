@@ -11,7 +11,7 @@
 
         <vue-cal
           class="vuecal--blue-theme"
-          selected-date="2021-1-21"
+          selected-date="2021-6-21"
           :disable-views="['years', 'year']"
           default-view="month"
           events-on-month-view="true"
@@ -114,6 +114,7 @@ export default {
   padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
+  margin-bottom: 5vh;
 }
 
 #svg{

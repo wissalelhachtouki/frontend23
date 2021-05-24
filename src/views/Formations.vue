@@ -243,7 +243,7 @@
                               <md-field class="md-form-group" slot="inputs">
                                 <md-icon></md-icon>
                                 <label>Durée de Formation...</label>
-                                <md-input v-model="dureeFormation" type="text"></md-input>
+                                <md-input v-model="dureeFormation" type="number"></md-input>
                               </md-field>
                             </div>
 
@@ -587,7 +587,7 @@
                               <md-field class="md-form-group" slot="inputs">
                                 <md-icon></md-icon>
                                 <label>Durée de Formation...</label>
-                                <md-input v-model="formations.dureeFormation" type="text"></md-input>
+                                <md-input v-model="formations.dureeFormation" type="number"></md-input>
                               </md-field>
                             </div>
 

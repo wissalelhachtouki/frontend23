@@ -10,18 +10,15 @@
         <div class="md-layout-item md-medium-size-100 md-size-100" >
           <div class="md-card md-card-profile md-theme-default " style=" margin-bottom: 30px"  >
             <div class="md-card-avatar">
-              <img src="@/assets/img/christian.jpg" class="img">
+              <img :src="'http://localhost:8000/'+user.picture" class="img">
             </div>
             <div class="md-card-content">
-              <h4 class="card-title">First last name , age</h4>
-              <h6 class="category text-gray">City, Country</h6><br>
-              <h6 class="category text-black-50">Job</h6>
-              <h6 class="category text-gray">Address, code postal</h6>
+              <h4 class="card-title">{{ user.firstName }} {{ user.lastName }} ,  {{ user.age }}ans</h4>
+              <h6 class="category text-gray">{{ user.city }} ,  {{ user.country }}</h6><br>
+              <h6 class="category text-black-50">{{ user.job }}</h6>
+              <h6 class="category text-gray">{{ user.adresse }} ,  {{ user.codePostal }}</h6>
 <br><br>
-              <p class="card-description">
-                (About Me )Don't be scared of the truth because we need to restart the
-                human foundation in truth And I love you like Kanye
-                loves Kanye I love Rick Owens’ bed design but the back is... </p>
+              <p class="card-description">{{ user.aboutMe }}</p>
 
             </div></div></div>
 
@@ -275,5 +272,12 @@ ul li.editMode label {
 }
 .md-card:hover {
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0.5, 0.5);
+}
+
+
+img{
+  min-height: 120px !important;
+  background-position: center;
+  background-size: cover;
 }
 </style>

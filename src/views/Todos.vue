@@ -24,7 +24,6 @@
 
                             class=" md-primary md-sm  md-block"
                             @click="showModaltodo = true"
-                            v-model="name"
                         >
                           <md-icon>playlist_add </md-icon> Add Task
                         </md-button>
@@ -57,7 +56,7 @@
                                 <div class="widget-content-left mr-2"></div>
                                 <div class="widget-content-left">
                                   <div v-bind:class="{ linebar: todo.completed }" class="widget-heading">
-                                    {{ todo.name }}
+                                    {{ todo.nameTodo }}
                                   </div>
 
                                   <div v-if="todo.completed" class="widget-subheading">
@@ -110,7 +109,7 @@
                           <div class="form-group">
                             <md-field class="md-form-group" slot="inputs">
                               <md-icon >  </md-icon>
-                              <md-input v-model="name" type="text"></md-input>
+                              <md-input v-model="nameTodo" type="text"></md-input>
                               <label>Task...</label>
 
                             </md-field>
@@ -163,7 +162,7 @@ export default {
   },
   data() {
     return {
-      name: "",
+      nameTodo: "",
       completed: false,
       showModaltodo: false,
       currentDate: new Date()
@@ -191,14 +190,14 @@ export default {
     async handleValid() {
       try {
         const data = {
-          name: this.name,
+          nameTodo: this.nameTodo,
           completed: false,
           completed_at: null
         };
 
         await this.$store.dispatch("addTodo", data);
 
-        this.name = "";
+        this.nameTodo = "";
 
         this.showModaltodo = false;
       } catch (e) {
@@ -218,7 +217,8 @@ export default {
       try {
         const data = {
           id: todo.id,
-          completed: true
+          completed: true,
+          completed_at: new Date()
         };
 
         console.log("this todo");

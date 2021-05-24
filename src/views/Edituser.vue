@@ -28,14 +28,14 @@ w<template>
                               <md-field class="md-form-group col-md-6" slot="inputs">
                                 <md-icon></md-icon>
                                 <label>Username...</label>
-                                <md-input type="text"></md-input>
+                                <md-input v-model="name" type="text"></md-input>
                               </md-field>
 
 
                               <md-field class="md-form-group col-md-6" slot="inputs">
                                 <md-icon></md-icon>
                                 <label>Email address...</label>
-                                <md-input  type="email"></md-input>
+                                <md-input v-model="user.email" type="email" disabled="disabled"></md-input>
                               </md-field>
 
                           </div>
@@ -44,14 +44,14 @@ w<template>
                             <md-field class="md-form-group col-md-6" slot="inputs">
                               <md-icon></md-icon>
                               <label>First name...</label>
-                              <md-input type="text"></md-input>
+                              <md-input v-model="firstName" type="text"></md-input>
                             </md-field>
 
 
                             <md-field class="md-form-group col-md-6" slot="inputs">
                               <md-icon></md-icon>
                               <label>Last name...</label>
-                              <md-input  type="email"></md-input>
+                              <md-input v-model="lastName"  type="text"></md-input>
                             </md-field>
 
                           </div>
@@ -60,7 +60,7 @@ w<template>
                             <md-field class="md-form-group col-md-6" slot="inputs">
                               <md-icon></md-icon>
                               <label>Job...</label>
-                              <md-input  type="text"></md-input>
+                              <md-input v-model="job"  type="text"></md-input>
                             </md-field>
 
 
@@ -68,7 +68,7 @@ w<template>
                             <md-field class="md-form-group col-md-6" slot="inputs">
                               <md-icon></md-icon>
                               <label>Age...</label>
-                              <md-input type="number"></md-input>
+                              <md-input v-model="age" type="number"></md-input>
                             </md-field>
 
 
@@ -79,7 +79,7 @@ w<template>
                             <md-field class="md-form-group col-md-11 " slot="inputs">
                               <md-icon>adress</md-icon>
                               <label>Address...</label>
-                              <md-input  type="text"></md-input>
+                              <md-input v-model="adresse"  type="text"></md-input>
                             </md-field>
 
                           </div>
@@ -91,7 +91,7 @@ w<template>
                               <md-field class="md-form-group col-md-4" slot="inputs">
                                 <md-icon></md-icon>
                                 <label>City...</label>
-                                <md-input  type="text"></md-input>
+                                <md-input v-model="city"  type="text"></md-input>
                               </md-field>
 
 
@@ -99,12 +99,12 @@ w<template>
                               <md-field class="md-form-group col-md-4" slot="inputs">
                                 <md-icon></md-icon>
                                 <label>Country...</label>
-                                <md-input type="text"></md-input>
+                                <md-input v-model="country" type="text"></md-input>
                               </md-field>
                             <md-field class="md-form-group col-md-4" slot="inputs">
                               <md-icon></md-icon>
                               <label>Postal code ...</label>
-                              <md-input type="text"></md-input>
+                              <md-input v-model="codePostal" type="number"></md-input>
                             </md-field>
 
                       </div>
@@ -123,7 +123,7 @@ w<template>
 
                               <label> About Me.. </label>
 
-                              <md-textarea  type="text"></md-textarea>
+                              <md-textarea v-model="aboutMe"  type="text"></md-textarea>
                             </md-field>
 
                           </div>
@@ -133,7 +133,7 @@ w<template>
                             style="float: right ; margin-top: 30px"
                           >
                             <md-button
-
+                                @click.prevent="handleValid"
                               class=" md-warning md-sm  md-block"
 
                             >
@@ -148,18 +148,19 @@ w<template>
                     <div class="md-layout-item md-medium-size-100 md-size-33" style="margin: auto">
                       <div class="md-card md-card-profile md-theme-default">
                         <div class="md-card-avatar">
-                          <img src="@/assets/img/christian.jpg" class="img">
+                          <div>
+                          <img :src="'http://localhost:8000/'+user.picture" class="img">
+                          </div>
+                          <input type="file" name="picture" class="form-control-file" id="picture" @change="onFileChange"/>
                         </div>
                         <div class="md-card-content">
-                          <h4 class="card-title">First last name , age</h4>
-                          <h6 class="category text-gray">City, Country</h6>
-<br>
-                          <p class="card-description">
-                         (About Me )Ryan — the name taken by Melbourne-raised, Brooklyn-based Nick Murphy — writes,
-                            performs and records all of his own music.... </p>
+                          <h4 class="card-title">{{ user.firstName }} {{ user.lastName }} ,  {{ user.age }}ans</h4>
+                          <h6 class="category text-gray">{{ user.city }} ,  {{ user.country }}</h6>
+                          <br>
+                          <p class="card-description">{{ user.aboutMe }}</p>
                           <div
                             class="md-layout-item md-size-10 "
-                          style="margin-left: 112px "
+                          style="margin-left: 112px"
                           >
                           <md-button
                               href="#/profile"
@@ -188,24 +189,71 @@ import MainNavbar2 from "@/layout/MainNavbar2";
 import { mapGetters } from "vuex";
 
 export default {
-  name: "edituser.vue",
+  name: "Edituser",
   components: {
     MainSidebar,
     MainNavbar2
   },
-  props: {
-    header: {
-      type: String,
-      default: require("@/assets/img/vue-mk-headerr.jpg")
+  data(){
+    return{
+      name: "",
+      firstName: "",
+      lastName: "",
+      job: "",
+      age: "",
+      adresse: "",
+      city: "",
+      country: "",
+      codePostal: "",
+      aboutMe: "",
+      picture: ""
+    };
+  },
+  methods: {
+    async handleValid() {
+      try {
+        const data = {
+          id: this.user.id,
+          name: this.name,
+          firstName: this.firstName,
+          lastName: this.lastName,
+          job: this.job,
+          age: this.age,
+          adresse: this.adresse,
+          city: this.city,
+          country: this.country,
+          codePostal: this.codePostal,
+          aboutMe: this.aboutMe
+        };
+
+        console.log(data);
+        await this.$store.dispatch("updateProfile", data);
+
+            this.name = "";
+            this.firstName = "";
+            this.lastName = "";
+            this.job = "";
+            this.age = "";
+            this.adresse = "";
+            this.city = "";
+            this.country = "";
+            this.codePostal = "";
+            this.aboutMe = "";
+      } catch (e) {
+        this.error = "Error occurred !";
+      }
+    },
+    onFileChange(event){
+      this.user.picture = event.target.files[0];
+      let formData = new FormData();
+
+      formData.append("picture", this.user.picture);
+
+      this.$store.dispatch("updatePicture", formData);
     }
   },
   computed: {
-    ...mapGetters(["user"]),
-    headerStyle() {
-      return {
-        backgroundImage: `url(${this.header})`
-      };
-    }
+    ...mapGetters(["user"])
   }
 };
 </script>
@@ -236,12 +284,6 @@ export default {
 .card-header:first-child {
   border-radius: calc(.25rem - 1px) calc(.25rem - 1px) 0 0;
 }
-
-
-
-
-
-
 
 body {
   background: #fff;
@@ -300,13 +342,9 @@ label[for="new-task"] {
   text-transform: uppercase;
 }
 
-
-
 input[type="text"]:focus {
   color: #333;
 }
-
-
 
 li {
   overflow: hidden;
@@ -402,6 +440,21 @@ ul li.editMode label {
   left: 0;
   width: 100%;
   height: auto;
+}
+
+.md-card-avatar input[type=file] {
+  cursor: pointer;
+  display: block;
+  left: 0;
+  opacity: 0!important;
+  position: absolute;
+  top: 0;
+}
+
+img{
+  min-height: 120px !important;
+  background-position: center;
+  background-size: cover;
 }
 </style>
 

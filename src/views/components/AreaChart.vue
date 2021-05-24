@@ -7,7 +7,8 @@ export default {
   data() {
     return {
       gradient: null,
-      gradient2: null
+      gradient2: null,
+      tab1: this.areas1
     };
   },
   computed: {
@@ -15,6 +16,8 @@ export default {
   },
   mounted() {
     this.$store.dispatch("setAreas1");
+    console.log("dbudbazdhzoidzj");
+    console.log(this.areas1);
 
     this.gradient = this.$refs.canvas
         .getContext("2d")
@@ -49,22 +52,22 @@ export default {
           ],
           datasets: [
             {
-              label: "Data One",
+              label: "Nb de Participants",
               borderColor: "#FC2525",
               pointBackgroundColor: "white",
               borderWidth: 1,
-              pointBorderColor: "white",
+              pointBorderColor: "red",
               backgroundColor: this.gradient,
-              data: this.areas1
+              data: [100, 150, 50]
             },
             {
-              label: "Data Two",
+              label: "Tarifs",
               borderColor: "#05CBE1",
               pointBackgroundColor: "white",
-              pointBorderColor: "white",
+              pointBorderColor: "blue",
               borderWidth: 1,
               backgroundColor: this.gradient2,
-              data: [60, 55, 32, 10, 2, 12, 53, 44]
+              data: [200, 65, 80]
             }
           ]
         },

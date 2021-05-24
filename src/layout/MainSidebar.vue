@@ -1,5 +1,4 @@
 <template>
-
   <div class="sidebar">
     <div class="logo_content">
       <div class="logo">
@@ -9,99 +8,82 @@
       <i class="bx bx-menu" id="btn"></i>
     </div>
     <div class="user">
-
-
-
-          <div class="photo" style="text-align: left">
-            <img src="@/assets/img/christian.jpg" alt="avatar">
-          </div>
-          <div v-if="user" class="user-info">
-            <strong class="links_name" style="color: whitesmoke">{{ user.name }}</strong><a data-toggle="collapse"></a>
-
+      <div v-if="user" class="user-info">
+        <div class="photo" style="text-align: left">
+          <img :src="'http://localhost:8000/' + user.picture" class="img" />
+        </div>
+        <strong class="links_name" style="color: whitesmoke"
+          >{{ user.firstName }} {{ user.lastName }}</strong
+        ><a data-toggle="collapse"></a>
       </div>
 
+      <ul class="nav_list">
+        <li @click="test1">
+          <a class="btn">
+            <i class="bx bx-user"></i>
+            <span class="links_name">Profile</span>
+          </a>
+          <span class="tooltip">Profile</span>
+        </li>
+        <li @click="test2">
+          <a class="btn">
+            <i class="bx bxs-edit"></i>
+            <span class="links_name">Edit Profile</span>
+          </a>
+          <span class="tooltip">Edit Profile</span>
+        </li>
 
-    <ul class="nav_list">
-      <li @click="test1">
-        <a class="btn">
-          <i class="bx bx-user"></i>
-          <span class="links_name">Profile</span>
-        </a>
-        <span class="tooltip">Profile</span>
-      </li>
-      <li @click="test2">
-        <a class="btn">
-          <i class="bx bxs-edit"></i>
-          <span class="links_name">Edit Profile</span>
-        </a>
-        <span class="tooltip">Edit Profile</span>
-      </li>
+        <br />
 
-      <br>
+        <li @click="test3">
+          <a class="btn">
+            <i class="bx bxs-dashboard"></i>
+            <span class="links_name">Dashboard</span>
+          </a>
+          <span class="tooltip">Dashboard</span>
+        </li>
 
-      <li @click="test3">
-        <a class="btn">
-          <i class="bx bxs-dashboard"></i>
-          <span class="links_name">Dashboard</span>
-        </a>
-        <span class="tooltip">Dashboard</span>
-      </li>
+        <li @click="test4">
+          <a class="btn">
+            <i class="bx bx-calendar"></i>
+            <span class="links_name">Calendar</span>
+          </a>
+          <span class="tooltip">Calendar</span>
+        </li>
+        <li @click="test5">
+          <a class="btn">
+            <i class="bx bx-task"></i>
+            <span class="links_name">Tasks</span>
+          </a>
+          <span class="tooltip">Tasks</span>
+        </li>
+        <li @click="test6">
+          <a class="btn">
+            <i class="bx bx-list-check"></i>
+            <span class="links_name">List Formations</span>
+          </a>
+          <span class="tooltip">Formations</span>
+        </li>
+        <li></li>
+        <li></li>
+      </ul>
 
-      <li>
-        <a href="#/user">
-          <i class="bx bx-user"></i>
-          <span class="links_name">User</span>
-        </a>
-        <span class="tooltip">User</span>
-      </li>
-      <li @click="test4">
-        <a class="btn">
-          <i class='bx bx-calendar' ></i>
-          <span class="links_name">Calendar</span>
-        </a>
-        <span class="tooltip">Calendar</span>
-      </li>
-      <li @click="test5">
-        <a class="btn">
-          <i class='bx bx-task' ></i>
-          <span class="links_name">Tasks</span>
-        </a>
-        <span class="tooltip">Tasks</span>
-      </li>
-      <li @click="test6">
-        <a class="btn">
-          <i class='bx bx-list-check' ></i>
-          <span class="links_name">List Formations</span>
-        </a>
-        <span class="tooltip">Formations</span>
-      </li>
-      <li>
-
-      </li>
-      <li>
-
-      </li>
-    </ul>
-
-    <div class="profile_content">
+      <div class="profile_content">
         <ul class="nav_list">
           <li>
             <a @click="handleClick">
-              <i class='bx bx-log-out' ></i>
+              <i class="bx bx-log-out"></i>
               <span class="links_name">Log out</span>
             </a>
           </li>
         </ul>
-
+      </div>
     </div>
-
-    </div>
-    </div>
+  </div>
 </template>
 
 <script>
 import { mapGetters } from "vuex";
-
 
 export default {
   computed: {
@@ -113,22 +95,22 @@ export default {
       this.$store.dispatch("user", null);
       this.$router.push("/");
     },
-    test1(){
+    test1() {
       this.$router.push("/profile");
     },
-    test2(){
+    test2() {
       this.$router.push("/edituser");
     },
-    test3(){
+    test3() {
       this.$router.push("/dashboard");
     },
-    test4(){
+    test4() {
       this.$router.push("/calendrier");
     },
-    test5(){
+    test5() {
       this.$router.push("/todo-list");
     },
-    test6(){
+    test6() {
       this.$router.push("/formations");
     }
   },
@@ -148,7 +130,7 @@ export default {
         console.log("this is else");
         btn.classList.replace("bx-menu-alt-right", "bx-menu");
       }
-    }
+    };
   }
 };
 </script>
@@ -178,7 +160,8 @@ export default {
   margin-right: 13px;
   border-radius: 50%;
   margin-left: 23px;
-  transition: transform .3s linear,opacity .3s linear,-webkit-transform .3s linear;
+  transition: transform 0.3s linear, opacity 0.3s linear,
+    -webkit-transform 0.3s linear;
 }
 .sidebar .user {
   padding-bottom: 20px;
@@ -187,38 +170,38 @@ export default {
 }
 /* Google Font CDN Link */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Poppins" , sans-serif;
+  font-family: "Poppins", sans-serif;
 }
-body{
+body {
   position: relative;
   min-height: 100vh;
   width: 100%;
   overflow: hidden;
 }
-::selection{
+::selection {
   color: #fff;
   background: #11101d;
 }
-.sidebar{
+.sidebar {
   position: fixed;
   top: 0;
   left: 0;
   height: 100%;
   width: 78px;
- background-color: #0C2340;
+  background-color: #0c2340;
   padding: 6px 14px;
   z-index: 99;
   transition: all 0.5s ease;
 }
 
-.sidebar.active{
-  width: 240px
+.sidebar.active {
+  width: 240px;
 }
-.sidebar .logo_content .logo{
+.sidebar .logo_content .logo {
   color: #fff;
   display: flex;
   height: 50px;
@@ -228,19 +211,19 @@ body{
   pointer-events: none;
   transition: all 0.5s ease;
 }
-.sidebar.active .logo_content .logo{
+.sidebar.active .logo_content .logo {
   opacity: 1;
   pointer-events: none;
 }
-.logo_content .logo i{
+.logo_content .logo i {
   font-size: 28px;
   margin-right: 5px;
 }
-.logo_content .logo .logo_name{
+.logo_content .logo .logo_name {
   font-size: 20px;
   font-weight: 400;
 }
-.sidebar #btn{
+.sidebar #btn {
   position: absolute;
   color: #fff;
   top: 6px;
@@ -252,13 +235,13 @@ body{
   line-height: 50px;
   transform: translateX(-50%);
 }
-.sidebar.active #btn{
+.sidebar.active #btn {
   left: 90%;
 }
-.sidebar ul{
+.sidebar ul {
   margin-top: 20px;
 }
-.sidebar ul li{
+.sidebar ul li {
   position: relative;
   height: 50px;
   width: 100%;
@@ -267,11 +250,11 @@ body{
   line-height: 50px;
   margin: 5px 0;
 }
-.sidebar ul li .tooltip{
+.sidebar ul li .tooltip {
   position: absolute;
   left: 125px;
   top: 0;
-  transform: translate(-50% , -50%);
+  transform: translate(-50%, -50%);
   border-radius: 6px;
   height: 35px;
   width: 120px;
@@ -284,15 +267,15 @@ body{
   pointer-events: none;
   display: block;
 }
-.sidebar.active ul li .tooltip{
+.sidebar.active ul li .tooltip {
   display: none;
 }
-.sidebar ul li:hover .tooltip{
+.sidebar ul li:hover .tooltip {
   transition: all 0.5s ease;
   opacity: 1;
-  top: 50%
+  top: 50%;
 }
-.sidebar ul li input{
+.sidebar ul li input {
   position: absolute;
   height: 100%;
   width: 100%;
@@ -306,18 +289,18 @@ body{
   font-size: 18px;
   color: #fff;
 }
-.sidebar ul li .bx-search{
+.sidebar ul li .bx-search {
   position: absolute;
   z-index: 99;
   color: #fff;
   font-size: 22px;
   transition: all 0.5s ease;
 }
-.sidebar ul li .bx-search:hover{
+.sidebar ul li .bx-search:hover {
   background: #fff;
   color: #1d1b31;
 }
-.sidebar ul li a{
+.sidebar ul li a {
   color: #fff;
   display: flex;
   align-items: center;
@@ -326,11 +309,11 @@ body{
   white-space: nowrap;
   transition: all 0.4s ease;
 }
-.sidebar ul li a:hover{
+.sidebar ul li a:hover {
   color: #11101d;
   background: #fff;
 }
-.sidebar ul li i{
+.sidebar ul li i {
   font-size: 18px;
   font-weight: 400;
   height: 50px;
@@ -339,36 +322,36 @@ body{
   line-height: 50px;
   text-align: center;
 }
-.sidebar .links_name{
+.sidebar .links_name {
   font-size: 15px;
   font-weight: 400;
   opacity: 0;
   pointer-events: none;
   transition: all 0.3s ease;
 }
-.sidebar.active .links_name{
+.sidebar.active .links_name {
   transition: 0s;
   opacity: 1;
-  pointer-events: auto
+  pointer-events: auto;
 }
-.sidebar .profile_content{
+.sidebar .profile_content {
   position: absolute;
   color: #fff;
   bottom: 0;
   left: 0;
   width: 100%;
 }
-.sidebar .profile_content .profile{
+.sidebar .profile_content .profile {
   position: relative;
   padding: 10px 6px;
   height: 60px;
   background: none;
   transition: all 0.4s ease;
 }
-.sidebar.active .profile_content .profile{
+.sidebar.active .profile_content .profile {
   background: #1d1b31;
 }
-.profile_content .profile .profile_details{
+.profile_content .profile .profile_details {
   display: flex;
   align-items: center;
   opacity: 0;
@@ -376,27 +359,27 @@ body{
   white-space: nowrap;
   transition: all 0.4s ease;
 }
-.sidebar.active ~ .profile .profile_details{
+.sidebar.active ~ .profile .profile_details {
   opacity: 1;
   pointer-events: auto;
 }
-.profile .profile_details img{
+.profile .profile_details img {
   height: 45px;
   width: 45px;
   object-fit: cover;
   border-radius: 12px;
 }
-.profile .profile_details .name_job{
+.profile .profile_details .name_job {
   margin-left: 10px;
 }
-.profile .profile_details .name{
+.profile .profile_details .name {
   font-size: 15px;
   font-weight: 400;
 }
-.profile .profile_details .job{
+.profile .profile_details .job {
   font-size: 12px;
 }
-.profile #log_out{
+.profile #log_out {
   position: absolute;
   bottom: 5px;
   left: 50%;
@@ -409,33 +392,38 @@ body{
   transition: all 0.4s ease;
   background: #1d1b31;
 }
-.sidebar.active .profile #log_out{
+.sidebar.active .profile #log_out {
   left: 88%;
 }
-.sidebar.active .profile #log_out{
-  background: none
+.sidebar.active .profile #log_out {
+  background: none;
 }
-.home_content{
+.home_content {
   position: absolute;
   height: 100%;
   width: calc(100% - 78px);
   left: 78px;
-  background: #E4E9F7;
-  box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+  background: #e4e9f7;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
   transition: all 0.5s ease;
 }
-.sidebar.active ~ .home_content{
+.sidebar.active ~ .home_content {
   z-index: 100;
 }
-.home_content .text{
+.home_content .text {
   font-size: 25px;
   font-weight: 500;
   color: #1d1b31;
   margin: 12px;
 }
-.sidebar.active ~ .home_content{
+.sidebar.active ~ .home_content {
   width: calc(100% - 240px);
   left: 240px;
+}
 
+img {
+  min-height: 40px !important;
+  background-position: center;
+  background-size: cover;
 }
 </style>
