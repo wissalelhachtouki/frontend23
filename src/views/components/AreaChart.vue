@@ -7,8 +7,7 @@ export default {
   data() {
     return {
       gradient: null,
-      gradient2: null,
-      tab1: this.areas1
+      gradient2: null
     };
   },
   computed: {
@@ -58,7 +57,7 @@ export default {
               borderWidth: 1,
               pointBorderColor: "red",
               backgroundColor: this.gradient,
-              data: [100, 150, 50]
+              data: [100, 165, 80]
             },
             {
               label: "Tarifs",

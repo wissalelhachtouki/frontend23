@@ -9,7 +9,11 @@ const state = {
   formations: [],
   todos: [],
   events: [],
-  areas1: []
+  areas1: [],
+  revenu: null,
+  revenuParjour: null,
+  revenuGlobal: null,
+  moyennePart: null
 };
 
 const store = new Vuex.Store({
@@ -29,11 +33,69 @@ const store = new Vuex.Store({
     },
     areas1: state => {
       return state.areas1;
+    },
+    revenu: state => {
+      return state.revenu;
+    },
+    revenuParjour: state => {
+      return state.revenuParjour;
+    },
+    revenuGlobal: state => {
+      return state.revenuGlobal;
+    },
+    moyennePart: state => {
+      return state.moyennePart;
     }
   },
   actions: {
     user(context, user) {
       context.commit("user", user);
+    },
+    async setRevenu(state) {
+      const response = await axios.get("formations");
+      console.log(response.data);
+      let newValue = null;
+
+      newValue = (response.data.data[response.data.data.length-1].nombreDeParticipant*response.data.data[response.data.data.length-1].tarifsParJours*response.data.data[response.data.data.length-1].nombreDeJours);
+
+      console.log("this is newwwww value");
+      console.log(newValue);
+      state.commit("setRevenu", newValue);
+    },
+    async setRevenuParjour(state) {
+      const response = await axios.get("formations");
+      console.log(response.data);
+      let newValue = null;
+
+      newValue = (response.data.data[response.data.data.length-1].nombreDeParticipant*response.data.data[response.data.data.length-1].tarifsParJours);
+
+      console.log("this is newwwww value");
+      console.log(newValue);
+      state.commit("setRevenuParjour", newValue);
+    },
+    async setRevenuGlobal(state) {
+      const response = await axios.get("formations");
+      console.log(response.data);
+      let newValue = null;
+      for (let i = 0; i < response.data.data.length; i++) {
+        newValue += (response.data.data[response.data.data.length-1].nombreDeParticipant*response.data.data[response.data.data.length-1].tarifsParJours*response.data.data[response.data.data.length-1].nombreDeJours);
+      }
+      console.log("this is newwwww value");
+      console.log(newValue);
+      state.commit("setRevenuGlobal", newValue);
+    },
+    async setMoyennePart(state) {
+      const response = await axios.get("formations");
+      console.log(response.data);
+      let newValue = null;
+      for (let i = 0; i < response.data.data.length; i++) {
+        console.log(response.data.data[i].nombreDeParticipant);
+        newValue += response.data.data[i].nombreDeParticipant;
+      }
+      newValue = newValue / response.data.data.length;
+      console.log("this is newwwww value");
+      console.log(newValue);
+      state.commit("setMoyennePart", newValue);
     },
     async updateProfile(context, profile) {
       const response = await axios.post("updateProfile", profile);
@@ -162,6 +224,18 @@ const store = new Vuex.Store({
   mutations: {
     user(state, user) {
       state.user = user;
+    },
+    setRevenu(state, newValue) {
+      state.revenu = newValue;
+    },
+    setRevenuParjour(state, newValue) {
+      state.revenuParjour = newValue;
+    },
+    setRevenuGlobal(state, newValue) {
+      state.revenuGlobal = newValue;
+    },
+    setMoyennePart(state, newValue) {
+      state.moyennePart = newValue;
     },
     updateProfile(state, profile) {
       state.user = profile;

@@ -35,8 +35,8 @@
           <div class="md-card md-card-stats md-theme-default">
             <div class="md-card-header md-card-header-icon md-card-header-info">
               <div class="card-icon"><i class="fab fa-twitter"></i></div>
-              <p class="category">Folowers</p>
-              <h3 class="title">+<span>245</span></h3>
+              <p class="category">Nombre de formations</p>
+              <h3 class="title">+<span>{{ formations.length }}</span></h3>
             </div>
             <div class="md-card-actions md-alignment-left">
               <div class="stats">
@@ -54,17 +54,40 @@
               <div class="card-icon">
                 <i class="md-icon md-icon-font md-theme-default">equalizer</i>
               </div>
-              <p class="category">Website Visits</p>
-              <h3 class="title"><span>75</span>.<span>521</span></h3>
+              <p class="category">Revenu Global</p>
+              <h3 class="title"><span>{{ revenuGlobal }}</span> DH</h3>
             </div>
             <div class="md-card-actions md-alignment-left">
               <div class="stats">
-                <i class="md-icon md-icon-font md-theme-default">local_offer</i>
-                Tracked from Google Analytics
+                <i class="md-icon md-icon-font md-theme-default">update</i> Just
+                Updated
               </div>
             </div>
           </div>
         </div>
+
+        <div
+            class="md-layout-item md-medium-size-50 md-xsmall-size-100 md-size-25"
+        >
+          <div class="md-card md-card-stats md-theme-default">
+            <div
+                class="md-card-header md-card-header-icon md-card-header-orange"
+            >
+              <div class="card-icon">
+                <i class="md-icon md-icon-font md-theme-default">weekend</i>
+              </div>
+              <p class="category">Moyenne des participants</p>
+              <h3 class="title"><span>{{ moyennePart }}</span></h3>
+            </div>
+            <div class="md-card-actions md-alignment-left">
+              <div class="stats">
+                <i class="md-icon md-icon-font md-theme-default">update</i> Just
+                Updated
+              </div>
+            </div>
+          </div>
+        </div>
+
         <div
           class="md-layout-item md-medium-size-50 md-xsmall-size-100 md-size-25"
         >
@@ -76,38 +99,17 @@
                 <i class="md-icon md-icon-font md-theme-default">store</i>
               </div>
               <p class="category">Revenue</p>
-              <h3 class="title">$ <span>34</span>,<span>245</span></h3>
+              <h5 class="title"><span>{{ revenu }}</span> DH <br> <span>{{ revenuParjour }}</span> DH/Jour</h5>
             </div>
             <div class="md-card-actions md-alignment-left">
               <div class="stats">
                 <i class="md-icon md-icon-font md-theme-default">date_range</i>
-                Last <span>24</span> Hours
+                Derniére <span>formation</span>
               </div>
             </div>
           </div>
         </div>
-        <div
-          class="md-layout-item md-medium-size-50 md-xsmall-size-100 md-size-25"
-        >
-          <div class="md-card md-card-stats md-theme-default">
-            <div
-              class="md-card-header md-card-header-icon md-card-header-orange"
-            >
-              <div class="card-icon">
-                <i class="md-icon md-icon-font md-theme-default">weekend</i>
-              </div>
-              <p class="category">Bookings</p>
-              <h3 class="title"><span>184</span></h3>
-            </div>
-            <div class="md-card-actions md-alignment-left">
-              <div class="stats">
-                <i class="md-icon md-icon-font text-danger md-theme-default"
-                  >warning</i
-                ><a href="#pablo">Get More Space...</a>
-              </div>
-            </div>
-          </div>
-        </div>
+
         <div
           class="md-layout-item md-medium-size-100 md-xsmall-size-100 md-size-100"
         >
@@ -268,7 +270,7 @@ export default {
       chartData: {
         Books: 24,
         Magazine: 30,
-        Newspapers: 10
+        Newspapers: 10,
       }
     };
   },
@@ -280,6 +282,10 @@ export default {
   },
   computed: {
     ...mapGetters({ user: "user" }),
+    ...mapGetters({ revenu: "revenu" }),
+    ...mapGetters({ revenuParjour: "revenuParjour" }),
+    ...mapGetters({ revenuGlobal: "revenuGlobal" }),
+    ...mapGetters({ moyennePart: "moyennePart" }),
     ...mapGetters(["formations"]),
     headerStyle() {
       return {
@@ -289,6 +295,10 @@ export default {
   },
   mounted() {
     this.$store.dispatch("setFormations");
+    this.$store.dispatch("setRevenu");
+    this.$store.dispatch("setRevenuParjour");
+    this.$store.dispatch("setRevenuGlobal");
+    this.$store.dispatch("setMoyennePart");
   }
 };
 </script>
