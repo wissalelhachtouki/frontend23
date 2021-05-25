@@ -10,6 +10,10 @@ const state = {
   todos: [],
   events: [],
   areas1: [],
+  areas2: [],
+  line: [],
+  bar: [],
+  form: [],
   revenu: null,
   revenuParjour: null,
   revenuGlobal: null,
@@ -34,6 +38,18 @@ const store = new Vuex.Store({
     areas1: state => {
       return state.areas1;
     },
+    areas2: state => {
+      return state.areas2;
+    },
+    line: state => {
+      return state.line;
+    },
+    bar: state => {
+      return state.bar;
+    },
+    form: state => {
+      return state.form;
+    },
     revenu: state => {
       return state.revenu;
     },
@@ -53,48 +69,36 @@ const store = new Vuex.Store({
     },
     async setRevenu(state) {
       const response = await axios.get("formations");
-      console.log(response.data);
       let newValue = null;
 
       newValue = (response.data.data[response.data.data.length-1].nombreDeParticipant*response.data.data[response.data.data.length-1].tarifsParJours*response.data.data[response.data.data.length-1].nombreDeJours);
 
-      console.log("this is newwwww value");
-      console.log(newValue);
       state.commit("setRevenu", newValue);
     },
     async setRevenuParjour(state) {
       const response = await axios.get("formations");
-      console.log(response.data);
       let newValue = null;
 
       newValue = (response.data.data[response.data.data.length-1].nombreDeParticipant*response.data.data[response.data.data.length-1].tarifsParJours);
 
-      console.log("this is newwwww value");
-      console.log(newValue);
       state.commit("setRevenuParjour", newValue);
     },
     async setRevenuGlobal(state) {
       const response = await axios.get("formations");
-      console.log(response.data);
       let newValue = null;
       for (let i = 0; i < response.data.data.length; i++) {
         newValue += (response.data.data[response.data.data.length-1].nombreDeParticipant*response.data.data[response.data.data.length-1].tarifsParJours*response.data.data[response.data.data.length-1].nombreDeJours);
       }
-      console.log("this is newwwww value");
-      console.log(newValue);
       state.commit("setRevenuGlobal", newValue);
     },
     async setMoyennePart(state) {
       const response = await axios.get("formations");
-      console.log(response.data);
       let newValue = null;
       for (let i = 0; i < response.data.data.length; i++) {
-        console.log(response.data.data[i].nombreDeParticipant);
         newValue += response.data.data[i].nombreDeParticipant;
       }
       newValue = newValue / response.data.data.length;
-      console.log("this is newwwww value");
-      console.log(newValue);
+
       state.commit("setMoyennePart", newValue);
     },
     async updateProfile(context, profile) {
@@ -111,15 +115,23 @@ const store = new Vuex.Store({
     },
     async setAreas1(state) {
       const response = await axios.get("formations");
-      console.log(response.data);
-      let newValue = [];
-      for (let i = 0; i < response.data.data.length; i++) {
-        console.log(response.data.data[i].nombreDeParticipant);
-        newValue = store.state.areas1.push(response.data.data[i].nombreDeParticipant);
-      }
-      console.log("this is newwwww value");
-      console.log(newValue);
-      state.commit("setAreas1", newValue);
+      state.commit("setAreas1", response.data);
+    },
+    async setAreas2(state) {
+      const response = await axios.get("formations");
+      state.commit("setAreas2", response.data);
+    },
+    async setLine(state) {
+      const response = await axios.get("formations");
+      state.commit("setLine", response.data);
+    },
+    async setBar(state) {
+      const response = await axios.get("formations");
+      state.commit("setBar", response.data);
+    },
+    async setForm(state) {
+      const response = await axios.get("formations");
+      state.commit("setForm", response.data);
     },
     deleteFormation(context, formationToRemove) {
       const newValue = state.formations.filter(
@@ -243,8 +255,41 @@ const store = new Vuex.Store({
     updatePicture(state, profile) {
       state.user = profile;
     },
-    setAreas1(state, newValue) {
-      state.areas1 = newValue;
+    setAreas1(state, theValue) {
+      for (let i = 0; i < theValue.data.length; i++) {
+        state.areas1.push(theValue.data[i].nombreDeParticipant);
+      }
+      console.log("this is the area1");
+      console.log(state.areas1);
+
+    },
+    setAreas2(state, theValue) {
+      for (let i = 0; i < theValue.data.length; i++) {
+        state.areas2.push(theValue.data[i].tarifsParJours);
+      }
+      console.log("this is area2");
+      console.log(state.areas2);
+
+    },
+    setLine(state, theValue) {
+      for (let i = 0; i < theValue.data.length; i++) {
+        state.line.push(theValue.data[i].nombreDeParticipant*theValue.data[i].tarifsParJours*theValue.data[i].nombreDeJours);
+      }
+      console.log("this is line chart");
+      console.log(state.line);
+
+    },
+    setBar(state, theValue) {
+      for (let i = 0; i < theValue.data.length; i++) {
+        state.bar.push(theValue.data[i].nombreDeJours);
+      }
+      console.log("this is bar chart");
+      console.log(state.bar);
+    },
+    setForm(state, theValue) {
+      for (let i = 1; i <= theValue.data.length; i++) {
+        state.form.push("formation "+i);
+      }
     },
     deleteFormation(state, newValue) {
       state.formations = newValue;

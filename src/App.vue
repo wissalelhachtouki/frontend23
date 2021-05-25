@@ -20,8 +20,16 @@ export default {
 
   async created() {
     const response = await axios.get("user");
-
-    this.$store.dispatch("user", response.data);
+    await this.$store.dispatch("user", response.data);
+  },
+  mounted() {
+    /*
+    this.$store.dispatch("setAreas1");
+    this.$store.dispatch("setAreas2");
+    this.$store.dispatch("setLine");
+    this.$store.dispatch("setBar");
+    this.$store.dispatch("setForm");
+     */
   }
 };
 </script>

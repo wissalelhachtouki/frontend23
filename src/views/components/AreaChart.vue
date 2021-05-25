@@ -11,13 +11,11 @@ export default {
     };
   },
   computed: {
-    ...mapGetters(["areas1"])
+    ...mapGetters(["areas1"]),
+    ...mapGetters(["areas2"]),
+    ...mapGetters(["form"])
   },
   mounted() {
-    this.$store.dispatch("setAreas1");
-    console.log("dbudbazdhzoidzj");
-    console.log(this.areas1);
-
     this.gradient = this.$refs.canvas
         .getContext("2d")
         .createLinearGradient(0, 0, 0, 450);
@@ -35,20 +33,7 @@ export default {
 
     this.renderChart(
         {
-          labels: [
-            "January",
-            "February",
-            "March",
-            "April",
-            "May",
-            "June",
-            "July",
-            "August",
-            "September",
-            "October",
-            "November",
-            "December"
-          ],
+          labels: this.form,
           datasets: [
             {
               label: "Nb de Participants",
@@ -57,7 +42,7 @@ export default {
               borderWidth: 1,
               pointBorderColor: "red",
               backgroundColor: this.gradient,
-              data: [100, 165, 80]
+              data: this.areas1
             },
             {
               label: "Tarifs",
@@ -66,7 +51,7 @@ export default {
               pointBorderColor: "blue",
               borderWidth: 1,
               backgroundColor: this.gradient2,
-              data: [200, 65, 80]
+              data: this.areas2
             }
           ]
         },

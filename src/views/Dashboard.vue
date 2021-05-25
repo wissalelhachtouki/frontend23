@@ -117,36 +117,14 @@
             <AreaChart/>
             <div class="md-card-content">
               <!---->
-              <div class="md-card-action-buttons text-center">
-                <!----><button
-                  type="button"
-                  class="md-button md-simple md-info md-just-icon md-theme-default"
-                >
-                  <div class="md-ripple">
-                    <div class="md-button-content">
-                      <i class="md-icon md-icon-font md-theme-default"
-                        >refresh</i
-                      >
-                    </div>
-                  </div></button
-                ><button
-                  type="button"
-                  class="md-button md-simple md-just-icon md-theme-default"
-                >
-                  <div class="md-ripple">
-                    <div class="md-button-content">
-                      <i class="md-icon md-icon-font md-theme-default">edit</i>
-                    </div>
-                  </div>
-                </button>
-              </div>
+
               <h4 class="title">Website Views</h4>
               <p class="category">Last Campaign Performance</p>
             </div>
             <div class="md-card-actions md-alignment-left">
               <div class="stats">
                 <i class="md-icon md-icon-font md-theme-default">access_time</i>
-                updated <span>10</span> days ago
+                updated in last formation
               </div>
             </div>
           </div>
@@ -158,29 +136,7 @@
             <LineChart/>
             <div class="md-card-content">
               <!---->
-              <div class="md-card-action-buttons text-center">
-                <!----><button
-                  type="button"
-                  class="md-button md-simple md-info md-just-icon md-theme-default"
-                >
-                  <div class="md-ripple">
-                    <div class="md-button-content">
-                      <i class="md-icon md-icon-font md-theme-default"
-                        >refresh</i
-                      >
-                    </div>
-                  </div></button
-                ><button
-                  type="button"
-                  class="md-button md-simple md-just-icon md-theme-default"
-                >
-                  <div class="md-ripple">
-                    <div class="md-button-content">
-                      <i class="md-icon md-icon-font md-theme-default">edit</i>
-                    </div>
-                  </div>
-                </button>
-              </div>
+
               <h4 class="title">Daily Sales</h4>
               <p class="category">
                 <span class="text-success"
@@ -192,7 +148,7 @@
             <div class="md-card-actions md-alignment-left">
               <div class="stats">
                 <i class="md-icon md-icon-font md-theme-default">access_time</i>
-                updated <span>4</span> minutes ago
+                updated in last formation
               </div>
             </div>
           </div>
@@ -204,29 +160,7 @@
             <BarChart/>
             <div class="md-card-content">
               <!---->
-              <div class="md-card-action-buttons text-center">
-                <!----><button
-                  type="button"
-                  class="md-button md-simple md-info md-just-icon md-theme-default"
-                >
-                  <div class="md-ripple">
-                    <div class="md-button-content">
-                      <i class="md-icon md-icon-font md-theme-default"
-                        >refresh</i
-                      >
-                    </div>
-                  </div></button
-                ><button
-                  type="button"
-                  class="md-button md-simple md-just-icon md-theme-default"
-                >
-                  <div class="md-ripple">
-                    <div class="md-button-content">
-                      <i class="md-icon md-icon-font md-theme-default">edit</i>
-                    </div>
-                  </div>
-                </button>
-              </div>
+
               <h4 class="title">Daily Sales</h4>
               <p class="category">
                 <span class="text-success"
@@ -238,7 +172,7 @@
             <div class="md-card-actions md-alignment-left">
               <div class="stats">
                 <i class="md-icon md-icon-font md-theme-default">access_time</i>
-                updated <span>4</span> minutes ago
+                updated in last formation
               </div>
             </div>
           </div>
@@ -299,6 +233,11 @@ export default {
     this.$store.dispatch("setRevenuParjour");
     this.$store.dispatch("setRevenuGlobal");
     this.$store.dispatch("setMoyennePart");
+    this.$store.dispatch("setAreas1");
+    this.$store.dispatch("setAreas2");
+    this.$store.dispatch("setLine");
+    this.$store.dispatch("setBar");
+    this.$store.dispatch("setForm");
   }
 };
 </script>
