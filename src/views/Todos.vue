@@ -49,8 +49,8 @@
                             <div class="widget-subheading" hidden>
                               <i> N° {{ index + 1 }}</i>
                             </div>
-                            <div v-if="!todo.completed" class="todo-indicator bg-warning"></div>
-                            <div v-else class="todo-indicator bg-danger"></div>
+                            <div v-if="!todo.completed" class="todo-indicator bg-info"></div>
+                            <div v-else class="todo-indicator bg-primary"></div>
                             <div class="widget-content p-0">
                               <div class="widget-content-wrapper">
                                 <div class="widget-content-left mr-2"></div>
@@ -71,7 +71,7 @@
                                     @click.prevent="updateTodo(todo)"
                                     class="btn text-success material-icons"
                                     style="margin: 0 5px ; border-radius: 15px"
-                                  >check</i
+                                  >done_all</i
                                   ></span  >
 
                                   <span
