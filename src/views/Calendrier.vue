@@ -17,7 +17,7 @@
           :events="events"
           overlaps-per-time-step
           style="
-          background-color: white;
+            background-color: white;
             margin-top: 1%;
             border: 1px transparent;
             border-radius: 10px;"
@@ -122,5 +122,6 @@ export default {
   width: 100%;
   height: auto;
 }
+
 
 </style>
