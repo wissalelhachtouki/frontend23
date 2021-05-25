@@ -11,7 +11,6 @@
 
         <vue-cal
           class="vuecal--blue-theme"
-          selected-date="2021-6-21"
           :disable-views="['years', 'year']"
           default-view="month"
           events-on-month-view="true"

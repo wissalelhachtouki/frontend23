@@ -87,7 +87,7 @@ const store = new Vuex.Store({
       const response = await axios.get("formations");
       let newValue = null;
       for (let i = 0; i < response.data.data.length; i++) {
-        newValue += (response.data.data[response.data.data.length-1].nombreDeParticipant*response.data.data[response.data.data.length-1].tarifsParJours*response.data.data[response.data.data.length-1].nombreDeJours);
+        newValue += (response.data.data[i].nombreDeParticipant*response.data.data[i].tarifsParJours*response.data.data[i].nombreDeJours);
       }
       state.commit("setRevenuGlobal", newValue);
     },
