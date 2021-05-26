@@ -17,7 +17,8 @@ const state = {
   revenu: null,
   revenuParjour: null,
   revenuGlobal: null,
-  moyennePart: null
+  moyennePart: null,
+  loading: true
 };
 
 const store = new Vuex.Store({
@@ -61,6 +62,9 @@ const store = new Vuex.Store({
     },
     moyennePart: state => {
       return state.moyennePart;
+    },
+    loading: state => {
+      return state.loading;
     }
   },
   actions: {
@@ -231,6 +235,13 @@ const store = new Vuex.Store({
       newValue[todoToUpdateIndex].completed = true;
       newValue[todoToUpdateIndex].completed_at = updatedTodo.completed_at;
       context.commit("updateTodo", newValue);
+    },
+
+    setloading(context, cont){
+      cont = false;
+      console.log("aaaaaaa");
+      console.log(cont);
+      context.commit("setloading", cont);
     }
   },
   mutations: {
@@ -256,6 +267,7 @@ const store = new Vuex.Store({
       state.user = profile;
     },
     setAreas1(state, theValue) {
+      state.areas1 = [];
       for (let i = 0; i < theValue.data.length; i++) {
         state.areas1.push(theValue.data[i].nombreDeParticipant);
       }
@@ -264,6 +276,7 @@ const store = new Vuex.Store({
 
     },
     setAreas2(state, theValue) {
+      state.areas2 = [];
       for (let i = 0; i < theValue.data.length; i++) {
         state.areas2.push(theValue.data[i].tarifsParJours);
       }
@@ -272,6 +285,7 @@ const store = new Vuex.Store({
 
     },
     setLine(state, theValue) {
+      state.line = [];
       for (let i = 0; i < theValue.data.length; i++) {
         state.line.push(theValue.data[i].nombreDeParticipant*theValue.data[i].tarifsParJours*theValue.data[i].nombreDeJours);
       }
@@ -280,6 +294,7 @@ const store = new Vuex.Store({
 
     },
     setBar(state, theValue) {
+      state.bar = [];
       for (let i = 0; i < theValue.data.length; i++) {
         state.bar.push(theValue.data[i].nombreDeJours);
       }
@@ -287,6 +302,7 @@ const store = new Vuex.Store({
       console.log(state.bar);
     },
     setForm(state, theValue) {
+      state.form = [];
       for (let i = 1; i <= theValue.data.length; i++) {
         state.form.push("formation "+i);
       }
@@ -319,6 +335,9 @@ const store = new Vuex.Store({
 
     setEvents(state, events) {
       state.events = events;
+    },
+    setloading(state, newValue){
+      state.loading = newValue;
     }
   }
 });

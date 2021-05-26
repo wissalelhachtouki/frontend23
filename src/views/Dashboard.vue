@@ -28,7 +28,8 @@
       <header>
         <MainNavbar2 />
       </header>
-      <div class="md-layout" style="margin: auto">
+      <div v-if="loading" class="loader-xbox"></div>
+      <div v-if="!loading" class="md-layout" style="margin: auto">
         <div
           class="md-layout-item md-medium-size-50 md-xsmall-size-100 md-size-25"
         >
@@ -109,7 +110,6 @@
             </div>
           </div>
         </div>
-
         <div
           class="md-layout-item md-medium-size-100 md-xsmall-size-100 md-size-100"
         >
@@ -221,6 +221,8 @@ export default {
     ...mapGetters({ revenuGlobal: "revenuGlobal" }),
     ...mapGetters({ moyennePart: "moyennePart" }),
     ...mapGetters(["formations"]),
+    ...mapGetters(["form"]),
+    ...mapGetters({ loading: "loading" }),
     headerStyle() {
       return {
         backgroundImage: `url(${this.header})`
@@ -228,16 +230,21 @@ export default {
     }
   },
   mounted() {
+    console.log("this mounted");
     this.$store.dispatch("setFormations");
     this.$store.dispatch("setRevenu");
     this.$store.dispatch("setRevenuParjour");
     this.$store.dispatch("setRevenuGlobal");
     this.$store.dispatch("setMoyennePart");
+    this.$store.dispatch("setForm");
+
     this.$store.dispatch("setAreas1");
     this.$store.dispatch("setAreas2");
     this.$store.dispatch("setLine");
     this.$store.dispatch("setBar");
-    this.$store.dispatch("setForm");
+    setTimeout(() => {
+      this.$store.dispatch("setloading");
+    },6000)
   }
 };
 </script>
@@ -425,5 +432,52 @@ export default {
   transition-property: color, background-color;
   will-change: color, background-color;
   background: #fff;
+}
+
+
+.loader-xbox {
+  position: absolute;
+  top: calc(50% - 25px);
+  left: calc(50% - 25px);
+}
+
+.loader-xbox, .loader-xbox:before, .loader-xbox:after {
+  position: absolute;
+  border: 3px solid transparent;
+  border-top: 3px solid hsl(83, 82%, 53%);
+  border-radius: 50%;
+  animation: rotate linear infinite;
+  content: '';
+}
+
+.loader-xbox {
+  height: 100px;
+  width: 100px;
+  animation-duration: 1.05s;
+}
+
+.loader-xbox:before {
+  height: 75px;
+  width: 75px;
+  top: 10px;
+  left: 10px;
+  animation-duration: 10s;
+}
+
+.loader-xbox:after {
+  height: 50px;
+  width: 50px;
+  top: 22px;
+  left: 22px;
+  animation-duration: 4s;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotateZ(360deg);
+  }
+  to {
+    transform: rotateZ(0deg);
+  }
 }
 </style>
