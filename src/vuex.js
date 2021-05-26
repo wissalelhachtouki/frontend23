@@ -271,8 +271,8 @@ const store = new Vuex.Store({
       for (let i = 0; i < theValue.data.length; i++) {
         state.areas1.push(theValue.data[i].nombreDeParticipant);
       }
-      console.log("this is the area1");
-      console.log(state.areas1);
+      //console.log("this is the area1");
+      //console.log(state.areas1);
 
     },
     setAreas2(state, theValue) {
@@ -280,8 +280,8 @@ const store = new Vuex.Store({
       for (let i = 0; i < theValue.data.length; i++) {
         state.areas2.push(theValue.data[i].tarifsParJours);
       }
-      console.log("this is area2");
-      console.log(state.areas2);
+      //console.log("this is area2");
+      //console.log(state.areas2);
 
     },
     setLine(state, theValue) {
@@ -289,8 +289,8 @@ const store = new Vuex.Store({
       for (let i = 0; i < theValue.data.length; i++) {
         state.line.push(theValue.data[i].nombreDeParticipant*theValue.data[i].tarifsParJours*theValue.data[i].nombreDeJours);
       }
-      console.log("this is line chart");
-      console.log(state.line);
+      //console.log("this is line chart");
+      //console.log(state.line);
 
     },
     setBar(state, theValue) {
@@ -298,13 +298,13 @@ const store = new Vuex.Store({
       for (let i = 0; i < theValue.data.length; i++) {
         state.bar.push(theValue.data[i].nombreDeJours);
       }
-      console.log("this is bar chart");
-      console.log(state.bar);
+      //console.log("this is bar chart");
+      //console.log(state.bar);
     },
     setForm(state, theValue) {
       state.form = [];
       for (let i = 1; i <= theValue.data.length; i++) {
-        state.form.push("formation "+i);
+        state.form.push("formation " + i);
       }
     },
     deleteFormation(state, newValue) {
