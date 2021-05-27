@@ -113,8 +113,6 @@ const store = new Vuex.Store({
     },
     async updatePicture(context, picture) {
       const response = await axios.post("updatePicture", picture);
-      console.log("this is updated profile");
-      console.log(response.data.data);
       context.commit("updatePicture", response.data.data);
     },
     async setAreas1(state) {
@@ -141,13 +139,12 @@ const store = new Vuex.Store({
       const newValue = state.formations.filter(
         formation => formation !== formationToRemove
       );
-      console.log(newValue);
       context.commit("deleteFormation", newValue);
     },
     async addFormation(context, formationToAdd) {
       const response = await axios.post("formations", formationToAdd);
-      console.log("this is add formation");
-      console.log(response.data.data);
+      //console.log("this is add formation");
+      //console.log(response.data.data);
       context.commit("addFormation", response.data.data);
     },
     async updateFormation(context, updatedFormation) {
@@ -156,8 +153,8 @@ const store = new Vuex.Store({
         "formations/" + updatedFormation.id,
         updatedFormation
       );
-      console.log("this is update formation");
-      console.log(response.data);
+      //console.log("this is update formation");
+      //console.log(response.data);
 
       let formationToUpdateIndex = state.formations.findIndex(
         formation => formation.id === updatedFormation.id
@@ -169,7 +166,7 @@ const store = new Vuex.Store({
     },
     async setFormations(state) {
       const response = await axios.get("formations");
-      console.log(response.data);
+      //console.log(response.data);
       state.commit("setFormations", response.data);
     },
 
@@ -177,8 +174,6 @@ const store = new Vuex.Store({
       let newValue = [];
 
       const response = await axios.get("formations");
-
-      console.log("the 1 " + newValue);
 
       for (let i = 0; i < response.data.data.length; i++) {
         newValue.push({
@@ -207,18 +202,14 @@ const store = new Vuex.Store({
 
     async setTodos(state) {
       const response = await axios.get("todos");
-      console.log(response.data);
       state.commit("setTodos", response.data);
     },
     deleteTodo(context, todoToRemove) {
       const newValue = state.todos.filter(todo => todo !== todoToRemove);
-      console.log(newValue);
       context.commit("deleteTodo", newValue);
     },
     async addTodo(context, todoToAdd) {
       const response = await axios.post("todos", todoToAdd);
-      console.log("this is add todo");
-      console.log(response.data.data);
       context.commit("addTodo", response.data.data);
     },
     async updateTodo(context, updatedTodo) {
@@ -239,9 +230,12 @@ const store = new Vuex.Store({
 
     setloading(context, cont){
       cont = false;
-      console.log("aaaaaaa");
-      console.log(cont);
       context.commit("setloading", cont);
+    },
+
+    setloadingT(context, cont){
+      cont = true;
+      context.commit("setloadingT", cont);
     }
   },
   mutations: {
@@ -258,7 +252,7 @@ const store = new Vuex.Store({
       state.revenuGlobal = newValue;
     },
     setMoyennePart(state, newValue) {
-      state.moyennePart = newValue;
+      state.moyennePart = newValue.toFixed(0);
     },
     updateProfile(state, profile) {
       state.user = profile;
@@ -337,6 +331,9 @@ const store = new Vuex.Store({
       state.events = events;
     },
     setloading(state, newValue){
+      state.loading = newValue;
+    },
+    setloadingT(state, newValue){
       state.loading = newValue;
     }
   }

@@ -97,7 +97,7 @@ export default {
 
 
         if (verified){
-          this.$router.push("/dashboard");
+          this.$router.push("/edituser");
         }else{
         this.$router.push("/sendEmail");
         }

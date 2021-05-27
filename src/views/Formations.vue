@@ -746,7 +746,7 @@ export default {
       };
     },
     ...mapGetters(["formations"]),
-
+    ...mapGetters({ loading: "loading" })
   },
   methods: {
     async handleValid() {
@@ -873,15 +873,13 @@ export default {
     },
     makePDF() {
       var doc = new JSPDF();
-
       autoTable(doc, { html: "#myTable"});
-
-
       doc.save("MaFormation.pdf");
     }
   },
   mounted() {
     this.$store.dispatch("setFormations");
+    this.$store.dispatch("setloadingT");
   }
 };
 </script>

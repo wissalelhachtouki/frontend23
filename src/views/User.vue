@@ -1,34 +1,64 @@
 <template>
   <div class="wrapper">
     <div class="page-header header-filter">
-    <MainSidebar />
+      <MainSidebar />
 
-    <div class="home_content">
-      <svg height="100%" width="100%" id="svg" viewBox="0 0 1440 400" xmlns="http://www.w3.org/2000/svg" class="transition duration-300 ease-in-out delay-150"><defs><linearGradient id="gradient"><stop offset="5%" stop-color="#0c2340ff"></stop><stop offset="95%" stop-color="#2a5788ff"></stop></linearGradient></defs><path d="M 0,400 C 0,400 0,200 0,200 C 205.71428571428572,257.14285714285717 822.8571428571429,228.57142857142858 1440,200 C 1440,200 1440,400 1440,400 Z" stroke="none" stroke-width="0" fill="url(#gradient)" class="transition-all duration-300 ease-in-out delay-150" transform="rotate(-180 720 200)"></path></svg>
-      <header><MainNavbar2/></header>
-      <div class="content">
-        <div class="md-layout-item md-medium-size-100 md-size-100" >
-          <div class="md-card md-card-profile md-theme-default " style=" margin-bottom: 30px"  >
-            <div class="md-card-avatar">
-              <img :src="'http://localhost:8000/'+user.picture" class="img">
+      <div class="home_content">
+        <svg
+          height="100%"
+          width="100%"
+          id="svg"
+          viewBox="0 0 1440 400"
+          xmlns="http://www.w3.org/2000/svg"
+          class="transition duration-300 ease-in-out delay-150"
+        >
+          <defs>
+            <linearGradient id="gradient">
+              <stop offset="5%" stop-color="#0c2340ff"></stop>
+              <stop offset="95%" stop-color="#2a5788ff"></stop>
+            </linearGradient>
+          </defs>
+          <path
+            d="M 0,400 C 0,400 0,200 0,200 C 205.71428571428572,257.14285714285717 822.8571428571429,228.57142857142858 1440,200 C 1440,200 1440,400 1440,400 Z"
+            stroke="none"
+            stroke-width="0"
+            fill="url(#gradient)"
+            class="transition-all duration-300 ease-in-out delay-150"
+            transform="rotate(-180 720 200)"
+          ></path>
+        </svg>
+        <header><MainNavbar2 /></header>
+        <div class="content">
+          <div class="md-layout-item md-medium-size-100 md-size-100">
+            <div
+              class="md-card md-card-profile md-theme-default "
+              style=" margin-bottom: 30px"
+            >
+              <div class="md-card-avatar">
+                <img
+                  :src="'http://localhost:8000/' + user.picture"
+                  class="img"
+                />
+              </div>
+              <div class="md-card-content">
+                <h4 class="card-title">
+                  {{ user.firstName }} {{ user.lastName }} , {{ user.age }}ans
+                </h4>
+                <h6 class="category text-gray">
+                  {{ user.city }} , {{ user.country }}
+                </h6>
+                <br />
+                <h6 class="category text-black-50">{{ user.job }}</h6>
+                <h6 class="category text-gray">
+                  {{ user.adresse }} , {{ user.codePostal }}
+                </h6>
+                <br /><br />
+                <p class="card-description">{{ user.aboutMe }}</p>
+              </div>
             </div>
-            <div class="md-card-content">
-              <h4 class="card-title">{{ user.firstName }} {{ user.lastName }} ,  {{ user.age }}ans</h4>
-              <h6 class="category text-gray">{{ user.city }} ,  {{ user.country }}</h6><br>
-              <h6 class="category text-black-50">{{ user.job }}</h6>
-              <h6 class="category text-gray">{{ user.adresse }} ,  {{ user.codePostal }}</h6>
-<br><br>
-              <p class="card-description">{{ user.aboutMe }}</p>
-
-            </div></div></div>
-
-
-
-
+          </div>
+        </div>
       </div>
-
-
-  </div>
     </div>
   </div>
 </template>
@@ -227,7 +257,6 @@ ul li.editMode label {
   transition: all 0.5s ease;
   overflow-y: scroll;
   z-index: 100;
-
 }
 .sidebar.active ~ .home_content {
   z-index: 100;
@@ -256,7 +285,7 @@ ul li.editMode label {
   border-radius: 10px;
 }
 
-#svg{
+#svg {
   position: absolute;
   left: 0;
   width: 100%;
@@ -274,8 +303,7 @@ ul li.editMode label {
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0.5, 0.5);
 }
 
-
-img{
+img {
   min-height: 120px !important;
   background-position: center;
   background-size: cover;
