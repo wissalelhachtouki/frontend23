@@ -32,7 +32,7 @@ function guardMyroute(to, from, next) {
   if (isAuthenticated) {
     next(); // allow to enter route
   } else {
-    next("/error"); // go to '/login';
+    next("/error"); // go to '/home';
   }
 }
 
