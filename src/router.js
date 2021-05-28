@@ -19,8 +19,22 @@ import Formations from "@/views/Formations";
 import Todos from "@/views/Todos";
 import Edituser from "@/views/Edituser";
 import AdminDashboard from "@/views/AdminDashboard";
+import NonAuth from "@/views/NonAuth";
 
 Vue.use(Router);
+
+function guardMyroute(to, from, next) {
+  var isAuthenticated = false;
+  //this is just an example. You will have to find a better or
+  // centralised way to handle you localstorage data handling
+  if (localStorage.getItem("token")) isAuthenticated = true;
+  else isAuthenticated = false;
+  if (isAuthenticated) {
+    next(); // allow to enter route
+  } else {
+    next("/error"); // go to '/login';
+  }
+}
 
 export default new Router({
   routes: [
@@ -32,6 +46,11 @@ export default new Router({
         header: { colorOnScroll: 200 },
         footer: { backgroundColor: "black" }
       }
+    },
+    {
+      path: "/error",
+      name: "error",
+      components: { default: NonAuth }
     },
     {
       path: "/blog1",
@@ -73,7 +92,6 @@ export default new Router({
         header: { colorOnScroll: 400 }
       }
     },
-    ,
     {
       path: "/forgot-password",
       name: "forgot",
@@ -93,41 +111,49 @@ export default new Router({
     {
       path: "/dashboard",
       name: "dashboard",
+      beforeEnter: guardMyroute,
       components: { default: Dashboard }
     },
     {
       path: "/admin/dashboard",
       name: "admindashboard",
+      beforeEnter: guardMyroute,
       components: { default: AdminDashboard }
     },
     {
       path: "/profile",
       name: "profile",
+      beforeEnter: guardMyroute,
       components: { default: User }
     },
     {
       path: "/edituser",
       name: "edituser",
+      beforeEnter: guardMyroute,
       components: { default: Edituser }
     },
     {
       path: "/calendrier",
       name: "calendrier",
+      beforeEnter: guardMyroute,
       components: { default: Calendrier }
     },
     {
       path: "/formations",
       name: "formations",
+      beforeEnter: guardMyroute,
       components: { default: Formations }
     },
     {
       path: "/todo-list",
       name: "todo-list",
+      beforeEnter: guardMyroute,
       components: { default: Todos }
     },
     {
       path: "/sendEmail",
       name: "sendEmail",
+      beforeEnter: guardMyroute,
       components: { default: SendEmail, header: MainNavbar },
       props: {
         header: { colorOnScroll: 400 }
