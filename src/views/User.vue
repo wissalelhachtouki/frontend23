@@ -28,7 +28,10 @@
             transform="rotate(-180 720 200)"
           ></path>
         </svg>
-        <header><MainNavbar2 /></header>
+        <header>
+          <NavBarAdmin v-if="user.type"/>
+          <MainNavbar2 v-else/>
+        </header>
         <div class="content">
           <div class="md-layout-item md-medium-size-100 md-size-100">
             <div
@@ -73,6 +76,7 @@
 import MainSidebar from "@/layout/MainSidebar";
 import MainAdminSidebar from "@/layout/MainAdminSidebar";
 import MainNavbar2 from "@/layout/MainNavbar2";
+import NavBarAdmin from "@/layout/NavBarAdmin";
 
 import { mapGetters } from "vuex";
 
@@ -81,7 +85,8 @@ export default {
   components: {
     MainSidebar,
     MainAdminSidebar,
-    MainNavbar2
+    MainNavbar2,
+    NavBarAdmin
   },
   props: {
     header: {

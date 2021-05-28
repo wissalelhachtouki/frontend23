@@ -24,8 +24,6 @@
               </md-label>
 
 
-              <md-checkbox v-model="boolean" slot="action">Remember me</md-checkbox>
-
               <md-label slot="action" class="md-form-group">
                 <br>
                 <a href="#/forgot-password">Forgot Password?</a>
@@ -68,7 +66,6 @@ export default {
     return {
       email: "",
       password: "",
-      boolean: false,
       error: ""
     };
   },

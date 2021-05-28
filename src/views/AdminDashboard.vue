@@ -27,7 +27,7 @@
             transform="rotate(-180 720 200)"
           ></path>
         </svg>
-        <header><h3>Admin Dashboard</h3></header>
+        <header><NavBarAdmin/></header>
 
         <div class="d-flex  width" style="margin-top: 2%">
           <div class="   mt-5 w-100 ">
@@ -196,13 +196,15 @@
 
 <script>
 import MainAdminSidebar from "@/layout/MainAdminSidebar";
+import NavBarAdmin from "@/layout/NavBarAdmin";
 import { mapGetters } from "vuex";
 import axios from "axios";
 
 export default {
   name: "AdminDashboard",
   components: {
-    MainAdminSidebar
+    MainAdminSidebar,
+    NavBarAdmin
   },
   data() {
     return {

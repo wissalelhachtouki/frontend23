@@ -13,9 +13,9 @@
             <div class="md-toolbar-section-end">
 
               <md-button
-                class="md-just-icon md-simple md-toolbar-toggle"
-                :class="{ toggled: toggledClass }"
-                @click="toggleNavbarMobile()"
+                  class="md-just-icon md-simple md-toolbar-toggle"
+                  :class="{ toggled: toggledClass }"
+                  @click="toggleNavbarMobile()"
               >
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
@@ -30,18 +30,12 @@
                   <md-list>
 
                     <md-list-item>
-                      <a href="#/dashboard">
+                      <a href="#/admin/dashboard">
                         <i class="material-icons">dashboard</i>
 
                       </a>
                     </md-list-item>
 
-                    <md-list-item>
-                      <a href="#/todo-list">
-                        <i class="material-icons">notifications</i>
-
-                      </a>
-                    </md-list-item>
 
                     <md-list-item>
                       <a href="#/profile" >
@@ -146,7 +140,7 @@ export default {
     },
     handleScroll() {
       let scrollValue =
-        document.body.scrollTop || document.documentElement.scrollTop;
+          document.body.scrollTop || document.documentElement.scrollTop;
       let navbarColor = document.getElementById("toolbar");
       this.currentScrollValue = scrollValue;
       if (this.colorOnScroll > 0 && scrollValue > this.colorOnScroll) {

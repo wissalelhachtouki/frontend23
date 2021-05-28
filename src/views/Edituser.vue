@@ -6,7 +6,10 @@ w<template>
 
       <div class="home_content">
         <svg height="100%" width="100%" id="svg" viewBox="0 0 1440 400" xmlns="http://www.w3.org/2000/svg" class="transition duration-300 ease-in-out delay-150"><defs><linearGradient id="gradient"><stop offset="5%" stop-color="#0c2340ff"></stop><stop offset="95%" stop-color="#2a5788ff"></stop></linearGradient></defs><path d="M 0,400 C 0,400 0,200 0,200 C 205.71428571428572,257.14285714285717 822.8571428571429,228.57142857142858 1440,200 C 1440,200 1440,400 1440,400 Z" stroke="none" stroke-width="0" fill="url(#gradient)" class="transition-all duration-300 ease-in-out delay-150" transform="rotate(-180 720 200)"></path></svg>
-        <header><MainNavbar2/></header>
+        <header>
+          <NavBarAdmin v-if="user.type"/>
+          <MainNavbar2 v-else/>
+        </header>
 
 
                   <div class="content">
@@ -194,6 +197,7 @@ w<template>
 <script>
 import MainSidebar from "@/layout/MainSidebar";
 import MainAdminSidebar from "@/layout/MainAdminSidebar";
+import NavBarAdmin from "@/layout/NavBarAdmin";
 import MainNavbar2 from "@/layout/MainNavbar2";
 
 import { mapGetters } from "vuex";
@@ -203,7 +207,8 @@ export default {
   components: {
     MainSidebar,
     MainAdminSidebar,
-    MainNavbar2
+    MainNavbar2,
+    NavBarAdmin
   },
   data(){
     return{
