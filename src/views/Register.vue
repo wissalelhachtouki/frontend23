@@ -78,6 +78,7 @@ export default {
           const data = {
             name: this.name,
             email: this.email,
+            type: 0,
             password: this.password,
             password_confirmation: this.password_confirmation
         };

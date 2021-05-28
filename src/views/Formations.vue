@@ -386,7 +386,7 @@
                             </tr>
                             <tr>
                               <td><strong> Durèe Formation :</strong></td>
-                              <td>{{ formations.dureeFormation }}</td>
+                              <td>{{ formations.dureeFormation }}h</td>
                             </tr>
                             <tr>
                               <td><strong>Date :</strong></td>
@@ -864,7 +864,12 @@ export default {
 
     async deleteFormation(formation) {
       // Delete from database
-      const response = await axios.delete("formations/" + formation.id);
+      const response = await axios.delete("formations/" + formation.id, {
+        headers: {
+          Authorization: "Bearer " + localStorage.getItem("token"),
+          verification: "Bearer " + localStorage.getItem("tokenV")
+        }
+      });
       // Delete from the state
 
       await this.$store.dispatch("deleteFormation", formation);

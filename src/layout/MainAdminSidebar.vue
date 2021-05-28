@@ -42,32 +42,12 @@
         <li @click="test3">
           <a class="btn">
             <i class="bx bxs-dashboard"></i>
-            <span class="links_name">Dashboard</span>
+            <span class="links_name">Admin</span>
           </a>
           <span class="tooltip">Dashboard</span>
         </li>
 
-        <li @click="test4">
-          <a class="btn">
-            <i class="bx bx-calendar"></i>
-            <span class="links_name">Calendar</span>
-          </a>
-          <span class="tooltip">Calendar</span>
-        </li>
-        <li @click="test5">
-          <a class="btn">
-            <i class="bx bx-task"></i>
-            <span class="links_name">Tasks</span>
-          </a>
-          <span class="tooltip">Tasks</span>
-        </li>
-        <li @click="test6">
-          <a class="btn">
-            <i class="bx bx-list-check"></i>
-            <span class="links_name">List Formations</span>
-          </a>
-          <span class="tooltip">Formations</span>
-        </li>
+
         <li></li>
         <li></li>
       </ul>
@@ -107,16 +87,7 @@ export default {
       this.$router.push("/edituser");
     },
     test3() {
-      this.$router.push("/dashboard");
-    },
-    test4() {
-      this.$router.push("/calendrier");
-    },
-    test5() {
-      this.$router.push("/todo-list");
-    },
-    test6() {
-      this.$router.push("/formations");
+      this.$router.push("/admin/dashboard");
     }
   },
   mounted() {
@@ -166,7 +137,7 @@ export default {
   border-radius: 50%;
   margin-left: 23px;
   transition: transform 0.3s linear, opacity 0.3s linear,
-    -webkit-transform 0.3s linear;
+  -webkit-transform 0.3s linear;
 }
 .sidebar .user {
   padding-bottom: 20px;
@@ -197,7 +168,7 @@ body {
   left: 0;
   height: 100%;
   width: 78px;
-  background-color: #0c2340;
+  background-color: black;
   padding: 6px 14px;
   z-index: 99;
   transition: all 0.5s ease;

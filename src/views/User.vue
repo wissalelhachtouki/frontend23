@@ -1,7 +1,8 @@
 <template>
   <div class="wrapper">
     <div class="page-header header-filter">
-      <MainSidebar />
+      <MainAdminSidebar v-if="user.type"/>
+      <MainSidebar v-else/>
 
       <div class="home_content">
         <svg
@@ -34,15 +35,20 @@
               class="md-card md-card-profile md-theme-default "
               style=" margin-bottom: 30px"
             >
-              <div class="md-card-avatar">
-                <img
-                  :src="'http://localhost:8000/' + user.picture"
-                  class="img"
-                />
-              </div>
+
+                <div v-if="user.picture === null" class="md-card-avatar">
+                  <img :src="'http://localhost:8000/images/default-user-image.jpg'" class="img" />
+                </div>
+                <div v-else class="md-card-avatar">
+                  <img :src="'http://localhost:8000/' + user.picture" class="img" />
+                </div>
+
               <div class="md-card-content">
-                <h4 class="card-title">
+                <h4 v-if="user.firstName !== null && user.lastName !== null && user.age !== null" class="card-title">
                   {{ user.firstName }} {{ user.lastName }} , {{ user.age }}ans
+                </h4>
+                <h4 v-else class="card-title">
+                  {{ user.name }}
                 </h4>
                 <h6 class="category text-gray">
                   {{ user.city }} , {{ user.country }}
@@ -65,6 +71,7 @@
 
 <script>
 import MainSidebar from "@/layout/MainSidebar";
+import MainAdminSidebar from "@/layout/MainAdminSidebar";
 import MainNavbar2 from "@/layout/MainNavbar2";
 
 import { mapGetters } from "vuex";
@@ -73,6 +80,7 @@ export default {
   name: "User",
   components: {
     MainSidebar,
+    MainAdminSidebar,
     MainNavbar2
   },
   props: {

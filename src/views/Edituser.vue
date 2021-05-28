@@ -1,7 +1,8 @@
 w<template>
   <div class="wrapper">
     <div class="page-header header-filter">
-      <MainSidebar />
+      <MainAdminSidebar v-if="user.type"/>
+      <MainSidebar v-else/>
 
       <div class="home_content">
         <svg height="100%" width="100%" id="svg" viewBox="0 0 1440 400" xmlns="http://www.w3.org/2000/svg" class="transition duration-300 ease-in-out delay-150"><defs><linearGradient id="gradient"><stop offset="5%" stop-color="#0c2340ff"></stop><stop offset="95%" stop-color="#2a5788ff"></stop></linearGradient></defs><path d="M 0,400 C 0,400 0,200 0,200 C 205.71428571428572,257.14285714285717 822.8571428571429,228.57142857142858 1440,200 C 1440,200 1440,400 1440,400 Z" stroke="none" stroke-width="0" fill="url(#gradient)" class="transition-all duration-300 ease-in-out delay-150" transform="rotate(-180 720 200)"></path></svg>
@@ -148,13 +149,21 @@ w<template>
                     <div class="md-layout-item md-medium-size-100 md-size-33" style="margin: auto">
                       <div class="md-card md-card-profile md-theme-default">
                         <div class="md-card-avatar">
-                          <div>
-                          <img :src="'http://localhost:8000/'+user.picture" class="img">
+                          <div v-if="user.picture === null">
+                            <img :src="'http://localhost:8000/images/default-user-image.jpg'" class="img" />
+                          </div>
+                          <div v-else>
+                            <img :src="'http://localhost:8000/' + user.picture" class="img" />
                           </div>
                           <input type="file" name="picture" class="form-control-file" id="picture" @change="onFileChange"/>
                         </div>
                         <div class="md-card-content">
-                          <h4 class="card-title">{{ user.firstName }} {{ user.lastName }} ,  {{ user.age }}ans</h4>
+                          <h4 v-if="user.firstName !== null && user.lastName !== null && user.age !== null" class="card-title">
+                            {{ user.firstName }} {{ user.lastName }} , {{ user.age }}ans
+                          </h4>
+                          <h4 v-else class="card-title">
+                            {{ user.name }}
+                          </h4>
                           <h6 class="category text-gray">{{ user.city }} ,  {{ user.country }}</h6>
                           <br>
                           <p class="card-description">{{ user.aboutMe }}</p>
@@ -184,6 +193,7 @@ w<template>
 
 <script>
 import MainSidebar from "@/layout/MainSidebar";
+import MainAdminSidebar from "@/layout/MainAdminSidebar";
 import MainNavbar2 from "@/layout/MainNavbar2";
 
 import { mapGetters } from "vuex";
@@ -192,6 +202,7 @@ export default {
   name: "Edituser",
   components: {
     MainSidebar,
+    MainAdminSidebar,
     MainNavbar2
   },
   data(){

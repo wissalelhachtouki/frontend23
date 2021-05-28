@@ -77,7 +77,7 @@ export default {
       try {
         const data = {
           email: this.email,
-          password: this.password,
+          password: this.password
         };
         const response = await axios.post("login", data);
         localStorage.setItem("token", response.data.token);
@@ -97,8 +97,12 @@ export default {
 
 
         if (verified){
-          this.$router.push("/edituser");
-        }else{
+          if (response.data.user.type === 0) {
+            this.$router.push("/edituser");
+          } else {
+            this.$router.push("/admin/dashboard")
+          }
+        } else {
         this.$router.push("/sendEmail");
         }
 

@@ -206,7 +206,12 @@ export default {
     },
     async deleteTodo(todo) {
       // Delete from database
-      const response = await axios.delete("todos/" + todo.id);
+      const response = await axios.delete("todos/" + todo.id, {
+        headers: {
+          Authorization: "Bearer " + localStorage.getItem("token"),
+          verification: "Bearer " + localStorage.getItem("tokenV")
+        }
+      });
       // Delete from the state
 
       await this.$store.dispatch("deleteTodo", todo);

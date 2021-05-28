@@ -18,6 +18,7 @@ import Calendrier from "@/views/Calendrier";
 import Formations from "@/views/Formations";
 import Todos from "@/views/Todos";
 import Edituser from "@/views/Edituser";
+import AdminDashboard from "@/views/AdminDashboard";
 
 Vue.use(Router);
 
@@ -93,6 +94,11 @@ export default new Router({
       path: "/dashboard",
       name: "dashboard",
       components: { default: Dashboard }
+    },
+    {
+      path: "/admin/dashboard",
+      name: "admindashboard",
+      components: { default: AdminDashboard }
     },
     {
       path: "/profile",

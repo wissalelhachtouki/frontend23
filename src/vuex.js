@@ -7,6 +7,7 @@ Vue.use(Vuex);
 const state = {
   user: null,
   formations: [],
+  users: [],
   todos: [],
   events: [],
   areas1: [],
@@ -29,6 +30,9 @@ const store = new Vuex.Store({
     },
     formations: state => {
       return state.formations;
+    },
+    users: state => {
+      return state.users;
     },
     todos: state => {
       return state.todos;
@@ -71,8 +75,22 @@ const store = new Vuex.Store({
     user(context, user) {
       context.commit("user", user);
     },
+    async getUsers(state) {
+      const response = await axios.get("admin/dashboard", {
+        headers: {
+          Authorization: "Bearer " + localStorage.getItem("token"),
+          verification: "Bearer " + localStorage.getItem("tokenV")
+        }
+      });
+      state.commit("getUsers", response.data);
+    },
     async setRevenu(state) {
-      const response = await axios.get("formations");
+      const response = await axios.get("formations", {
+        headers: {
+          Authorization: "Bearer " + localStorage.getItem("token"),
+          verification: "Bearer " + localStorage.getItem("tokenV")
+        }
+      });
       let newValue = null;
 
       newValue = (response.data.data[response.data.data.length-1].nombreDeParticipant*response.data.data[response.data.data.length-1].tarifsParJours*response.data.data[response.data.data.length-1].nombreDeJours);
@@ -80,7 +98,12 @@ const store = new Vuex.Store({
       state.commit("setRevenu", newValue);
     },
     async setRevenuParjour(state) {
-      const response = await axios.get("formations");
+      const response = await axios.get("formations", {
+        headers: {
+          Authorization: "Bearer " + localStorage.getItem("token"),
+          verification: "Bearer " + localStorage.getItem("tokenV")
+        }
+      });
       let newValue = null;
 
       newValue = (response.data.data[response.data.data.length-1].nombreDeParticipant*response.data.data[response.data.data.length-1].tarifsParJours);
@@ -88,7 +111,12 @@ const store = new Vuex.Store({
       state.commit("setRevenuParjour", newValue);
     },
     async setRevenuGlobal(state) {
-      const response = await axios.get("formations");
+      const response = await axios.get("formations", {
+        headers: {
+          Authorization: "Bearer " + localStorage.getItem("token"),
+          verification: "Bearer " + localStorage.getItem("tokenV")
+        }
+      });
       let newValue = null;
       for (let i = 0; i < response.data.data.length; i++) {
         newValue += (response.data.data[i].nombreDeParticipant*response.data.data[i].tarifsParJours*response.data.data[i].nombreDeJours);
@@ -96,7 +124,12 @@ const store = new Vuex.Store({
       state.commit("setRevenuGlobal", newValue);
     },
     async setMoyennePart(state) {
-      const response = await axios.get("formations");
+      const response = await axios.get("formations", {
+        headers: {
+          Authorization: "Bearer " + localStorage.getItem("token"),
+          verification: "Bearer " + localStorage.getItem("tokenV")
+        }
+      });
       let newValue = null;
       for (let i = 0; i < response.data.data.length; i++) {
         newValue += response.data.data[i].nombreDeParticipant;
@@ -106,33 +139,68 @@ const store = new Vuex.Store({
       state.commit("setMoyennePart", newValue);
     },
     async updateProfile(context, profile) {
-      const response = await axios.post("updateProfile", profile);
+      const response = await axios.post("updateProfile", profile, {
+        headers: {
+          Authorization: "Bearer " + localStorage.getItem("token"),
+          verification: "Bearer " + localStorage.getItem("tokenV")
+        }
+      });
       console.log("this is updated profile");
       console.log(response.data.data);
       context.commit("updateProfile", response.data.data);
     },
     async updatePicture(context, picture) {
-      const response = await axios.post("updatePicture", picture);
+      const response = await axios.post("updatePicture", picture, {
+        headers: {
+          Authorization: "Bearer " + localStorage.getItem("token"),
+          verification: "Bearer " + localStorage.getItem("tokenV")
+        }
+      });
       context.commit("updatePicture", response.data.data);
     },
     async setAreas1(state) {
-      const response = await axios.get("formations");
+      const response = await axios.get("formations", {
+        headers: {
+          Authorization: "Bearer " + localStorage.getItem("token"),
+          verification: "Bearer " + localStorage.getItem("tokenV")
+        }
+      });
       state.commit("setAreas1", response.data);
     },
     async setAreas2(state) {
-      const response = await axios.get("formations");
+      const response = await axios.get("formations", {
+        headers: {
+          Authorization: "Bearer " + localStorage.getItem("token"),
+          verification: "Bearer " + localStorage.getItem("tokenV")
+        }
+      });
       state.commit("setAreas2", response.data);
     },
     async setLine(state) {
-      const response = await axios.get("formations");
+      const response = await axios.get("formations", {
+        headers: {
+          Authorization: "Bearer " + localStorage.getItem("token"),
+          verification: "Bearer " + localStorage.getItem("tokenV")
+        }
+      });
       state.commit("setLine", response.data);
     },
     async setBar(state) {
-      const response = await axios.get("formations");
+      const response = await axios.get("formations", {
+        headers: {
+          Authorization: "Bearer " + localStorage.getItem("token"),
+          verification: "Bearer " + localStorage.getItem("tokenV")
+        }
+      });
       state.commit("setBar", response.data);
     },
     async setForm(state) {
-      const response = await axios.get("formations");
+      const response = await axios.get("formations", {
+        headers: {
+          Authorization: "Bearer " + localStorage.getItem("token"),
+          verification: "Bearer " + localStorage.getItem("tokenV")
+        }
+      });
       state.commit("setForm", response.data);
     },
     deleteFormation(context, formationToRemove) {
@@ -141,8 +209,19 @@ const store = new Vuex.Store({
       );
       context.commit("deleteFormation", newValue);
     },
+    deleteUser(context, userToRemove) {
+      const newValue = state.users.filter(
+        user => user !== userToRemove
+      );
+      context.commit("deleteUser", newValue);
+    },
     async addFormation(context, formationToAdd) {
-      const response = await axios.post("formations", formationToAdd);
+      const response = await axios.post("formations", formationToAdd, {
+        headers: {
+          Authorization: "Bearer " + localStorage.getItem("token"),
+          verification: "Bearer " + localStorage.getItem("tokenV")
+        }
+      });
       //console.log("this is add formation");
       //console.log(response.data.data);
       context.commit("addFormation", response.data.data);
@@ -151,7 +230,12 @@ const store = new Vuex.Store({
       // axios call to update the formation in the database
       const response = await axios.put(
         "formations/" + updatedFormation.id,
-        updatedFormation
+        updatedFormation, {
+          headers: {
+            Authorization: "Bearer " + localStorage.getItem("token"),
+            verification: "Bearer " + localStorage.getItem("tokenV")
+          }
+        }
       );
       //console.log("this is update formation");
       //console.log(response.data);
@@ -165,7 +249,12 @@ const store = new Vuex.Store({
       context.commit("updateFormation", newValue);
     },
     async setFormations(state) {
-      const response = await axios.get("formations");
+      const response = await axios.get("formations", {
+        headers: {
+          Authorization: "Bearer " + localStorage.getItem("token"),
+          verification: "Bearer " + localStorage.getItem("tokenV")
+        }
+      });
       //console.log(response.data);
       state.commit("setFormations", response.data);
     },
@@ -173,8 +262,12 @@ const store = new Vuex.Store({
     async setEvents(state) {
       let newValue = [];
 
-      const response = await axios.get("formations");
-
+      const response = await axios.get("formations", {
+        headers: {
+          Authorization: "Bearer " + localStorage.getItem("token"),
+          verification: "Bearer " + localStorage.getItem("tokenV")
+        }
+      });
       for (let i = 0; i < response.data.data.length; i++) {
         newValue.push({
           start:
@@ -201,7 +294,12 @@ const store = new Vuex.Store({
     },
 
     async setTodos(state) {
-      const response = await axios.get("todos");
+      const response = await axios.get("todos", {
+        headers: {
+          Authorization: "Bearer " + localStorage.getItem("token"),
+          verification: "Bearer " + localStorage.getItem("tokenV")
+        }
+      });
       state.commit("setTodos", response.data);
     },
     deleteTodo(context, todoToRemove) {
@@ -209,12 +307,22 @@ const store = new Vuex.Store({
       context.commit("deleteTodo", newValue);
     },
     async addTodo(context, todoToAdd) {
-      const response = await axios.post("todos", todoToAdd);
+      const response = await axios.post("todos", todoToAdd, {
+        headers: {
+          Authorization: "Bearer " + localStorage.getItem("token"),
+          verification: "Bearer " + localStorage.getItem("tokenV")
+        }
+      });
       context.commit("addTodo", response.data.data);
     },
     async updateTodo(context, updatedTodo) {
       // axios call to update the formation in the database
-      const response = await axios.put("todos/" + updatedTodo.id, updatedTodo);
+      const response = await axios.put("todos/" + updatedTodo.id, updatedTodo, {
+        headers: {
+          Authorization: "Bearer " + localStorage.getItem("token"),
+          verification: "Bearer " + localStorage.getItem("tokenV")
+        }
+      });
       console.log("this is update todo");
       console.log(response.data);
 
@@ -241,6 +349,9 @@ const store = new Vuex.Store({
   mutations: {
     user(state, user) {
       state.user = user;
+    },
+    getUsers(state, users) {
+      state.users = users;
     },
     setRevenu(state, newValue) {
       state.revenu = newValue;
@@ -303,6 +414,9 @@ const store = new Vuex.Store({
     },
     deleteFormation(state, newValue) {
       state.formations = newValue;
+    },
+    deleteUser(state, newValue) {
+      state.users = newValue;
     },
     updateFormation(state, newValue) {
       state.formations = newValue;
