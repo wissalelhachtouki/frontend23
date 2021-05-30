@@ -81,13 +81,15 @@ export default {
 
         localStorage.setItem("tokenV", response.data.user.tokenV);
 
+        localStorage.setItem("type", response.data.user.type);
 
-        console.log(response.data);
+        localStorage.setItem("verifiedIn", response.data.email_verified_at);
+
+
 
         await this.$store.dispatch("user", response.data.user);
 
 
-        console.log(response);
 
         const verified = response.data.email_verified_at;
 

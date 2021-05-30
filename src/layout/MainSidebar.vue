@@ -97,6 +97,9 @@ export default {
   methods: {
     handleClick() {
       localStorage.removeItem("token");
+      localStorage.removeItem("tokenV");
+      localStorage.removeItem("type");
+      localStorage.removeItem("verifiedIn");
       this.$store.dispatch("user", null);
       this.$router.push("/");
     },

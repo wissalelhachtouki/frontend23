@@ -77,6 +77,9 @@ export default {
   methods: {
     handleClick() {
       localStorage.removeItem("token");
+      localStorage.removeItem("tokenV");
+      localStorage.removeItem("type");
+      localStorage.removeItem("verifiedIn");
       this.$store.dispatch("user", null);
       this.$router.push("/");
     },
@@ -168,7 +171,7 @@ body {
   left: 0;
   height: 100%;
   width: 78px;
-  background-color: black;
+  background-color: #0c2340;
   padding: 6px 14px;
   z-index: 99;
   transition: all 0.5s ease;

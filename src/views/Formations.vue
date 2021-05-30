@@ -366,44 +366,57 @@
                     </div>
                     <div class="modal-body" style="border-radius: 20px">
                       <div v-if="formations" class="card" style="border-radius: 20px">
-                        <div class="card-body">
+                        <div class="card-body"  style="max-height: 60vh;
+                                                       overflow-y: auto;">
                           <table id="myTable" >
                             <tr>
-                              <th>&nbsp;</th>
+                              <th style="width: 50%">&nbsp;</th>
                               <th>{{ formations.title }}</th>
                             </tr>
                             <tr>
-                              <td><strong>Lieu : </strong></td>
+                              <td style="width: 50%"><strong>Nombre de jour : </strong></td>
+                              <td>{{ formations.nombreDeJours }} jours</td>
+                            </tr>
+                            <tr>
+                              <td style="width: 50%"><strong>Tarif/jour : </strong></td>
+                              <td>{{ formations.tarifsParJours }} DH</td>
+                            </tr>
+                            <tr>
+                              <td style="width: 50%"><strong>Nombre de participant : </strong></td>
+                              <td>{{ formations.nombreDeParticipant }} personnes</td>
+                            </tr>
+                            <tr>
+                              <td style="width: 50%"><strong>Lieu : </strong></td>
                               <td>{{ formations.lieuFormation }}</td>
                             </tr>
                             <tr>
-                              <td><strong>Public concerné :</strong></td>
+                              <td style="width: 50%"><strong>Public concerné :</strong></td>
                               <td>{{ formations.publicConcerne }}</td>
                             </tr>
                             <tr>
-                              <td><strong>Modalités : </strong></td>
+                              <td style="width: 50%"><strong>Modalités : </strong></td>
                               <td>{{ formations.modalites }}</td>
                             </tr>
                             <tr>
-                              <td><strong> Durèe Formation :</strong></td>
+                              <td style="width: 50%"><strong> Durèe Formation :</strong></td>
                               <td>{{ formations.dureeFormation }}h</td>
                             </tr>
                             <tr>
-                              <td><strong>Date :</strong></td>
+                              <td style="width: 50%"><strong>Date :</strong></td>
                               <td>
                                 De {{ formations.dateDebut }} à
                                 {{ formations.dateFin }}
                               </td>
                             </tr>
                             <tr>
-                              <td><strong>Horaire :</strong></td>
+                              <td style="width: 50%"><strong>Horaire :</strong></td>
                               <td>
                                 De {{ formations.horaireDebut }} à
                                 {{ formations.horaireFin }}
                               </td>
                             </tr>
                             <tr>
-                              <td><strong>Objectifs et Contenus :</strong></td>
+                              <td style="width: 50%"><strong>Objectifs et Contenus :</strong></td>
                               <td>{{ formations.description }}</td>
                             </tr>
                           </table>
@@ -878,7 +891,7 @@ export default {
     },
     makePDF() {
       var doc = new JSPDF();
-      autoTable(doc, { html: "#myTable"});
+      autoTable(doc, { html: "#myTable"}, {columnStyles: { 0: { halign: 'center', fillColor: [0, 255, 0] } }});
       doc.save("MaFormation.pdf");
     }
   },

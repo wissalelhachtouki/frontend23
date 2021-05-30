@@ -36,7 +36,7 @@
                 <div class="card card-styling " style=" margin-bottom: 30px">
                   <div class="card-header card-header-primary card-header-icon">
                     <h4 class="card-title">
-                      Liste des users
+                      Liste des formateurs
                       <div
                         class="md-layout-item md-size-10 "
                         style="float: right"
@@ -118,7 +118,7 @@
             <div class="modal-mask">
               <div class="modal-wrapper">
                 <div class="modal-dialog modal-xl" role="document">
-                  <div class="modal-content" style=" border-radius: 10px">
+                  <div class="modal-content" style=" border-radius: 10px;">
                     <div
                       class="modal-header card-header card-header-primary card-header-icon"
                     >
@@ -132,7 +132,9 @@
                         <md-icon><strong>clear</strong></md-icon>
                       </md-button>
                     </div>
-                    <div class="modal-body" style="border-radius: 20px">
+                    <div class="modal-body" style="border-radius: 20px;
+                                                    max-height: 60vh;
+                                                    overflow-y: auto;">
                       <div
                         v-if="forms"
                         class="card"
@@ -149,6 +151,7 @@
                                 <th class="text-center">lieuFormation</th>
                                 <th class="text-center">publicConcerne</th>
                                 <th class="text-center">Horaire</th>
+                                <th class="text-center">Actions</th>
                               </tr>
                             </thead>
                             <tbody>
@@ -171,6 +174,12 @@
                                 </td>
                                 <td class="text-center">De {{ form.dateDebut }} à
                                   {{ form.dateFin }}</td>
+                                <td class="text-center">
+                                  <span><i
+                                      @click="deleteFormation(form)"
+                                      style="margin: 0 5px ; border-radius: 15px"
+                                      class="btn btn-link text-danger material-icons">close</i></span>
+                                </td>
                               </tr>
                             </tbody>
                           </table>
@@ -197,7 +206,8 @@
 <script>
 import MainAdminSidebar from "@/layout/MainAdminSidebar";
 import NavBarAdmin from "@/layout/NavBarAdmin";
-import { mapGetters } from "vuex";
+import { mapGetters, mapState } from "vuex";
+import store from "vuex";
 import axios from "axios";
 
 export default {
@@ -209,6 +219,7 @@ export default {
   data() {
     return {
       showModalDetails: false,
+      id: "",
       name: "",
       email: "",
       firstName: "",
@@ -233,7 +244,7 @@ export default {
         }
       });
       this.forms = response.data.data;
-      console.log(this.forms);
+      this.id = user.id;
     },
     async deleteUser(user) {
       // Delete from database
@@ -246,12 +257,25 @@ export default {
       // Delete from the state
 
       await this.$store.dispatch("deleteUser", user);
-      console.log(response);
       alert("User deleted!");
+    },
+    async deleteFormation(form) {
+      // Delete from database
+      const response = await axios.delete("admin/" + this.id +"/formations/" + form.id, {
+        headers: {
+          Authorization: "Bearer " + localStorage.getItem("token"),
+          verification: "Bearer " + localStorage.getItem("tokenV")
+        }
+      });
+      // Delete from the state
+
+      alert("formation deleted!");
+      this.showModalDetails = false;
     }
   },
   computed: {
-    ...mapGetters(["users"])
+    ...mapGetters(["users"]),
+    ...mapGetters(["formationsAdmin"])
   },
   mounted() {
     this.$store.dispatch("getUsers");

@@ -21,10 +21,11 @@ import Edituser from "@/views/Edituser";
 import AdminDashboard from "@/views/AdminDashboard";
 import NonAuth from "@/views/NonAuth";
 
+
 Vue.use(Router);
 
 function guardMyroute(to, from, next) {
-  var isAuthenticated = false;
+  let isAuthenticated = false;
   //this is just an example. You will have to find a better or
   // centralised way to handle you localstorage data handling
   if (localStorage.getItem("token")) isAuthenticated = true;
@@ -32,7 +33,48 @@ function guardMyroute(to, from, next) {
   if (isAuthenticated) {
     next(); // allow to enter route
   } else {
-    next("/error"); // go to '/home';
+    next("/error");
+  }
+}
+
+function guardMyrouteVerify(to, from, next) {
+  let isAuthenticated = false;
+  //this is just an example. You will have to find a better or
+  // centralised way to handle you localstorage data handling
+  if (localStorage.getItem("token") && localStorage.getItem("verifiedIn") == null) isAuthenticated = true;
+  else isAuthenticated = false;
+  if (isAuthenticated) {
+    next(); // allow to enter route
+  } else {
+    next("/error");
+  }
+}
+
+function guardMyrouteAdmin(to, from, next) {
+  let isAuthenticated = false;
+  //this is just an example. You will have to find a better or
+  // centralised way to handle you localstorage data handling
+
+  console.log(localStorage.getItem("type"));
+  if (localStorage.getItem("token") && localStorage.getItem("type") == 1)
+    isAuthenticated = true;
+  else isAuthenticated = false;
+  if (isAuthenticated) {
+    next(); // allow to enter route
+  } else {
+    next("/error");
+  }
+}
+function guardMyrouteUser(to, from, next) {
+  let isAuthenticated = false;
+  //this is just an example. You will have to find a better or
+  // centralised way to handle you localstorage data handling
+  if (localStorage.getItem("token") && localStorage.getItem("type") == 0) isAuthenticated = true;
+  else isAuthenticated = false;
+  if (isAuthenticated) {
+    next(); // allow to enter route
+  } else {
+    next("/error");
   }
 }
 
@@ -111,13 +153,13 @@ export default new Router({
     {
       path: "/dashboard",
       name: "dashboard",
-      beforeEnter: guardMyroute,
+      beforeEnter: guardMyrouteUser,
       components: { default: Dashboard }
     },
     {
       path: "/admin/dashboard",
       name: "admindashboard",
-      beforeEnter: guardMyroute,
+      beforeEnter: guardMyrouteAdmin,
       components: { default: AdminDashboard }
     },
     {
@@ -135,25 +177,25 @@ export default new Router({
     {
       path: "/calendrier",
       name: "calendrier",
-      beforeEnter: guardMyroute,
+      beforeEnter: guardMyrouteUser,
       components: { default: Calendrier }
     },
     {
       path: "/formations",
       name: "formations",
-      beforeEnter: guardMyroute,
+      beforeEnter: guardMyrouteUser,
       components: { default: Formations }
     },
     {
       path: "/todo-list",
       name: "todo-list",
-      beforeEnter: guardMyroute,
+      beforeEnter: guardMyrouteUser,
       components: { default: Todos }
     },
     {
       path: "/sendEmail",
       name: "sendEmail",
-      beforeEnter: guardMyroute,
+      beforeEnter: guardMyrouteVerify,
       components: { default: SendEmail, header: MainNavbar },
       props: {
         header: { colorOnScroll: 400 }
