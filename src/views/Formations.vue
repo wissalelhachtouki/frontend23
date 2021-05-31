@@ -891,7 +891,7 @@ export default {
     },
     makePDF() {
       var doc = new JSPDF();
-      autoTable(doc, { html: "#myTable"}, {columnStyles: { 0: { halign: 'center', fillColor: [0, 255, 0] } }});
+      autoTable(doc, { html: "#myTable" });
       doc.save("MaFormation.pdf");
     }
   },
