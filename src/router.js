@@ -20,6 +20,8 @@ import Todos from "@/views/Todos";
 import Edituser from "@/views/Edituser";
 import AdminDashboard from "@/views/AdminDashboard";
 import NonAuth from "@/views/NonAuth";
+import InfoQualite from "./views/InfoQualite";
+import Qualite from "./views/Qualite";
 
 
 Vue.use(Router);
@@ -193,9 +195,21 @@ export default new Router({
       components: { default: Todos }
     },
     {
+      path: "/infoQualite",
+      name: "infoQualite",
+      beforeEnter: guardMyrouteUser,
+      components: { default: InfoQualite }
+    },
+    {
+      path: "/qualite",
+      name: "qualite",
+      beforeEnter: guardMyrouteUser,
+      components: { default: Qualite }
+    },
+    {
       path: "/sendEmail",
       name: "sendEmail",
-      beforeEnter: guardMyrouteVerify,
+      beforeEnter: guardMyroute,
       components: { default: SendEmail, header: MainNavbar },
       props: {
         header: { colorOnScroll: 400 }

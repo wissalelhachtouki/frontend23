@@ -1,4 +1,4 @@
-w<template>
+<template>
   <div class="wrapper">
     <div class="page-header header-filter">
       <MainAdminSidebar v-if="user.type"/>

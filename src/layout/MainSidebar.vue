@@ -64,13 +64,35 @@
         <li @click="test6">
           <a class="btn">
             <i class="bx bx-list-check"></i>
-            <span class="links_name">List Formations</span>
+            <span class="links_name"> Formations</span>
           </a>
           <span class="tooltip">Formations</span>
         </li>
+        <li @click="test8">
+          <a class="btn">
+            <i class="bx bxs-layer-plus"></i>
+            <span class="links_name">Ajouter Rapport</span>
+          </a>
+          <span class="tooltip">Info Qualite</span>
+        </li>
+        <li @click="test9">
+          <a class="btn">
+            <i class="bx bxs-star"></i>
+            <span class="links_name">Rapport  Formations</span>
+          </a>
+          <span class="tooltip">Qualite</span>
+        </li>
+        <li @click="test7">
+          <a class="btn">
+            <i class="bx bx-home"></i>
+            <span class="links_name">Show home</span>
+          </a>
+          <span class="tooltip">Show home</span>
+        </li>
         <li></li>
-        <li></li>
+
       </ul>
+
 
       <div class="profile_content">
         <ul class="nav_list">
@@ -120,6 +142,15 @@ export default {
     },
     test6() {
       this.$router.push("/formations");
+    },
+    test7() {
+      this.$router.push("/");
+    },
+    test8() {
+      this.$router.push("/infoQualite");
+    },
+    test9() {
+      this.$router.push("/qualite");
     }
   },
   mounted() {
