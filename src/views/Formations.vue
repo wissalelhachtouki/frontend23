@@ -135,7 +135,7 @@
                             <md-field class="md-form-group" slot="inputs">
 
                               <md-icon >  </md-icon>
-                              <md-input v-model="nombreDeJours" type="number"></md-input>
+                              <md-input v-model="nombreDeJours" type="number" onkeyup="if(this.value<0){this.value= this.value * -1}"></md-input>
                               <label>Nombre de jour...</label>
 
                             </md-field>
@@ -145,7 +145,7 @@
                             <md-field class="md-form-group" slot="inputs">
                               <div></div>
                               <md-icon >  </md-icon>
-                              <md-input v-model="tarifsParJours" type="number"></md-input>
+                              <md-input v-model="tarifsParJours" type="number" onkeyup="if(this.value<0){this.value= this.value * -1}"></md-input>
                               <label>Tarif/J...</label>
 
                             </md-field>
@@ -155,7 +155,7 @@
                             <md-field class="md-form-group" slot="inputs">
                               <div></div>
                               <md-icon >  </md-icon>
-                              <md-input v-model="nombreDeParticipant" type="number"></md-input>
+                              <md-input v-model="nombreDeParticipant" type="number" onkeyup="if(this.value<0){this.value= this.value * -1}"></md-input>
                               <label>Nombre de Participants...</label>
 
                             </md-field>
@@ -243,7 +243,7 @@
                               <md-field class="md-form-group" slot="inputs">
                                 <md-icon></md-icon>
                                 <label>Durée de Formation...</label>
-                                <md-input v-model="dureeFormation" type="number"></md-input>
+                                <md-input v-model="dureeFormation" type="number" onkeyup="if(this.value<0){this.value= this.value * -1}"></md-input>
                               </md-field>
                             </div>
 
@@ -484,7 +484,7 @@
                           <div class="form-group ">
                             <md-field class="md-form-group" slot="inputs">
                               <md-icon >  </md-icon>
-                              <md-input v-model="formations.nombreDeJours" type="number"></md-input>
+                              <md-input v-model="formations.nombreDeJours" type="number" onkeyup="if(this.value<0){this.value= this.value * -1}"></md-input>
                               <label>Nombre de Jours..</label>
 
                             </md-field>
@@ -493,7 +493,7 @@
                           <div class="form-group ">
                             <md-field class="md-form-group" slot="inputs">
                               <md-icon >  </md-icon>
-                              <md-input v-model="formations.tarifsParJours" type="number"></md-input>
+                              <md-input v-model="formations.tarifsParJours" type="number" onkeyup="if(this.value<0){this.value= this.value * -1}"></md-input>
                               <label>Tarfis/J...</label>
 
                             </md-field>
@@ -502,7 +502,7 @@
                           <div class="form-group ">
                             <md-field class="md-form-group" slot="inputs">
                               <md-icon >  </md-icon>
-                              <md-input v-model="formations.nombreDeParticipant" type="number"></md-input>
+                              <md-input v-model="formations.nombreDeParticipant" type="number" onkeyup="if(this.value<0){this.value= this.value * -1}"></md-input>
                               <label>Nombre de Participants...</label>
 
                             </md-field>
@@ -600,7 +600,7 @@
                               <md-field class="md-form-group" slot="inputs">
                                 <md-icon></md-icon>
                                 <label>Durée de Formation...</label>
-                                <md-input v-model="formations.dureeFormation" type="number"></md-input>
+                                <md-input v-model="formations.dureeFormation" type="number" onkeyup="if(this.value<0){this.value= this.value * -1}"></md-input>
                               </md-field>
                             </div>
 

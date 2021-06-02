@@ -114,8 +114,6 @@ export default {
       type: String,
       default: require("@/assets/img/blog2.jpg")
     }
-
-
   },
   data() {
     return {

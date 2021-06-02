@@ -28,11 +28,11 @@
           ></path>
         </svg>
         <header><NavBarAdmin/></header>
-
-        <div class="d-flex  width" style="margin-top: 2%">
+        <div class="d-flex  width" style="margin-top: -4%">
           <div class="   mt-5 w-100 ">
             <div class="container-fluid">
               <div class="col-md-12">
+
                 <div class="card card-styling " style=" margin-bottom: 30px">
                   <div class="card-header card-header-primary card-header-icon">
                     <h4 class="card-title">
@@ -48,13 +48,14 @@
                     <thead>
                       <tr>
                         <th class="text-center">verifier</th>
-                        <th class="text-center">user name</th>
+                        <th class="text-center">user</th>
                         <th class="text-center">email</th>
-                        <th class="text-center">first last name</th>
+                        <th class="text-center">name</th>
                         <th class="text-center">job</th>
                         <th class="text-center">age</th>
                         <th class="text-center">city</th>
-                        <th class="text-center">Actions</th>
+                        <th class="text-center">Details</th>
+                        <th class="text-center">Supprimer</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -97,6 +98,18 @@
 
                           <span
                             ><i
+                              @click="
+                                showModalTasks = true;
+                                forTodos(user);
+                              "
+                              class="btn btn-link text-info material-icons"
+                              style="margin: 0 5px ; border-radius: 15px"
+                              >check</i
+                            ></span>
+                        </td>
+                        <td class="text-center">
+                          <span
+                            ><i
                               @click="deleteUser(user)"
                               style="margin: 0 5px ; border-radius: 15px"
                               class="btn btn-link text-danger material-icons"
@@ -108,6 +121,7 @@
                     </tbody>
                   </table>
                 </div>
+
               </div>
             </div>
           </div>
@@ -198,6 +212,82 @@
             </div>
           </transition>
         </div>
+
+        <div v-if="showModalTasks" v-cloak>
+          <transition name="modal">
+            <div class="modal-mask">
+              <div class="modal-wrapper">
+                <div class="modal-dialog modal-xl" role="document">
+                  <div class="modal-content" style=" border-radius: 10px;">
+                    <div
+                      class="modal-header card-header card-header-primary card-header-icon"
+                    >
+                      <h4 class="modal-title card-title">
+                        Details des formations
+                      </h4>
+                      <md-button
+                        class="md-simple md-just-icon md-round modal-default-button"
+                        @click="showModalTasks = false"
+                      >
+                        <md-icon><strong>clear</strong></md-icon>
+                      </md-button>
+                    </div>
+                    <div class="modal-body" style="border-radius: 20px;
+                                                    max-height: 60vh;
+                                                    overflow-y: auto;">
+                      <div
+                        v-if="tasks"
+                        class="card"
+                        style="border-radius: 20px"
+                      >
+                        <div class="card-body">
+                          <table class="table">
+                            <thead>
+                              <tr>
+                                <th class="text-center">Titre</th>
+                                <th class="text-center">completed</th>
+                                <th class="text-center">completed at</th>
+                                <th class="text-center">Actions</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr v-for="task in tasks" :key="task.id">
+                                <td class="text-center">{{ task.nameTodo }}</td>
+                                <td class="text-center">
+                                  <strong><span
+                                      v-if="task.completed"
+                                      style="color: green"
+                                  >completer</span
+                                  ><span v-else style="color: red"
+                                  >en attente</span
+                                  ></strong
+                                  >
+                                </td>
+                                <td class="text-center">{{ task.completed_at }}</td>
+                                <td class="text-center">
+                                  <span><i
+                                      @click="deleteTask(task)"
+                                      style="margin: 0 5px ; border-radius: 15px"
+                                      class="btn btn-link text-danger material-icons">close</i></span>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+
+                    <md-button
+                      class="md-simple"
+                      @click="showModalTasks = false"
+                      ><strong> Close</strong>
+                    </md-button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </transition>
+        </div>
       </div>
     </div>
   </div>
@@ -206,9 +296,9 @@
 <script>
 import MainAdminSidebar from "@/layout/MainAdminSidebar";
 import NavBarAdmin from "@/layout/NavBarAdmin";
-import { mapGetters, mapState } from "vuex";
-import store from "vuex";
+import { mapGetters } from "vuex";
 import axios from "axios";
+
 
 export default {
   name: "AdminDashboard",
@@ -219,6 +309,7 @@ export default {
   data() {
     return {
       showModalDetails: false,
+      showModalTasks: false,
       id: "",
       name: "",
       email: "",
@@ -232,7 +323,8 @@ export default {
       codePostal: "",
       aboutMe: "",
       picture: "",
-      forms: []
+      forms: [],
+      tasks: []
     };
   },
   methods: {
@@ -271,11 +363,33 @@ export default {
 
       alert("formation deleted!");
       this.showModalDetails = false;
+    },
+    async forTodos(user) {
+      const response = await axios.get("admin/tasks/" + user.id, {
+        headers: {
+          Authorization: "Bearer " + localStorage.getItem("token"),
+          verification: "Bearer " + localStorage.getItem("tokenV")
+        }
+      });
+      this.tasks = response.data.data;
+      this.id = user.id;
+    },
+    async deleteTask(task) {
+      // Delete from database
+      const response = await axios.delete("admin/" + this.id +"/tasks/" + task.id, {
+        headers: {
+          Authorization: "Bearer " + localStorage.getItem("token"),
+          verification: "Bearer " + localStorage.getItem("tokenV")
+        }
+      });
+      // Delete from the state
+
+      alert("task deleted!");
+      this.showModalTasks = false;
     }
   },
   computed: {
-    ...mapGetters(["users"]),
-    ...mapGetters(["formationsAdmin"])
+    ...mapGetters(["users"])
   },
   mounted() {
     this.$store.dispatch("getUsers");
