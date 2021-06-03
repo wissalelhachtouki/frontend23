@@ -893,6 +893,10 @@ export default {
       var doc = new JSPDF();
       autoTable(doc, { html: "#myTable" });
       doc.save("MaFormation.pdf");
+      doc.setFontSize(22);
+      doc.setTextColor(255, 0, 0);
+
+
     }
   },
   mounted() {
@@ -903,6 +907,7 @@ export default {
 </script>
 
 <style scoped>
+
 .card-header:first-child {
   border-radius: calc(0.375rem - 1px) calc(0.375rem - 1px) 0 0;
 }
@@ -948,9 +953,7 @@ td {
   padding-top: 15px;
   padding-bottom: 15px;
 }
-.card-styling:hover {
-  box-shadow: 0 8px 16px 0 rgba(0, 0, 0.5, 0.5);
-}
+
 .home_content {
   position: absolute;
   height: 100%;

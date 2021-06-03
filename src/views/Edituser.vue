@@ -138,7 +138,7 @@
                           >
                             <md-button
                                 @click.prevent="handleValid"
-                              class=" md-warning md-sm  md-block"
+                              class=" md-primary md-sm  md-block"
 
                             >
                               <md-icon>playlist_add</md-icon> Ajouter

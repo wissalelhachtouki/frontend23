@@ -118,8 +118,8 @@
             <div class="md-card-content">
               <!---->
 
-              <h4 class="title">Website Views</h4>
-              <p class="category">Last Campaign Performance</p>
+              <h4 class="title">Tarifs et Nombre de Participants</h4>
+
             </div>
             <div class="md-card-actions md-alignment-left">
               <div class="stats">
@@ -137,13 +137,8 @@
             <div class="md-card-content">
               <!---->
 
-              <h4 class="title">Daily Sales</h4>
-              <p class="category">
-                <span class="text-success"
-                  ><i class="fas fa-long-arrow-alt-up"></i><span>55</span>%
-                </span>
-                increase in today sales.
-              </p>
+              <h4 class="title">Revenu des Formations</h4>
+
             </div>
             <div class="md-card-actions md-alignment-left">
               <div class="stats">
@@ -161,13 +156,8 @@
             <div class="md-card-content">
               <!---->
 
-              <h4 class="title">Daily Sales</h4>
-              <p class="category">
-                <span class="text-success"
-                  ><i class="fas fa-long-arrow-alt-up"></i><span>55</span>%
-                </span>
-                increase in today sales.
-              </p>
+              <h4 class="title">Nombre de Jour par Formation</h4>
+
             </div>
             <div class="md-card-actions md-alignment-left">
               <div class="stats">

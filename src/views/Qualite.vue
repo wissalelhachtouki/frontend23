@@ -24,7 +24,7 @@
 
                         <md-button
 
-                          class=" md-primary md-sm  md-block"
+                          class=" md-warning md-sm  md-block"
 
                         >
                           <md-icon>expand_more</md-icon> more

@@ -34,10 +34,12 @@
             <i class="bx bxs-edit"></i>
             <span class="links_name">Edit Profile</span>
           </a>
+
           <span class="tooltip">Edit Profile</span>
         </li>
-
-        <br />
+<br>
+        <hr style="background-color: white">
+<br>
 
         <li @click="test3">
           <a class="btn">
@@ -175,6 +177,7 @@ export default {
 </script>
 
 <style scoped>
+
 .sidebar .caret {
   display: inline-block;
   width: 0;

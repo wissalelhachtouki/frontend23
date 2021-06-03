@@ -7,9 +7,13 @@
           <div class="md-layout">
 
             <div class="md-layout-item md-size-50 mx-auto">
-              <h4 style="font-weight: 300 ; margin-bottom: 50px  ; line-height: 1.7; z-index: 4">
-                <strong style="color: #1b5e20 ">Forma </strong> est un produit  qui édite des solutions innovantes en mode SaaS. Forts de notre expertise en technologies web et de notre expérience de la formation , nous développons des outils à destination des organismes de formation <br>et des formateurs indépendants : outils pédagogiques, solution de formation à distance <br> pour
-                les équipes commerciales et logiciel de gestion administrative.
+              <h4 style=" margin-bottom: 50px  ; line-height: 1.7; z-index: 4">
+                <strong style="color: #1b5e20 ">Forma </strong> développe des outils à destination des organismes de formation et des formateurs indépendants , Forts de notre expertise en technologies web et de notre expérience de la formation . <br> Nous mettons à votre disposition les meilleurs conditions pour réussir votre formation :<br><br>  ➺ outils pédagogiques. <br>  ➺
+                solution de formation à distance.
+                <br>  ➺ Sécurité et protection de vos données.
+                <br>  ➺ Générateur de documents en accord avec la réglementation.
+                <br>  ➺ 100% dédiée à la formation.
+                <br>  ➺ Technologie innovante et ergonomique.
               </h4>
               <div class="col-z-index text-left col-md-6" >
                 <md-button href="#/register" class="md-simple md-rose md-round md-lg"
