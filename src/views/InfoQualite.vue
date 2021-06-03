@@ -155,6 +155,8 @@ export default {
         this.efficacite = "";
         this.avis = "";
 
+        await this.$router.push("/qualite");
+
       } catch (e) {
         this.error = "Error occurred !";
       }
