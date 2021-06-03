@@ -9,9 +9,9 @@
         <div class=" d-flex  width" style="margin-top: -5%">
           <div class="mt-5 w-100">
             <div class="container-fluid">
-              <div class="col-md-12">
+              <div class="col-md-12" style="margin-bottom: 3%">
                 <div v-for="formation in formations"
-                     :key="formation.id" class="card card-styling " style="margin-bottom: 30px">
+                     :key="formation.id" class="card card-styling">
                   <div class="card-header card-header-primary card-header-icon">
                     <h4 class="card-title">
                       {{ formation.title }}
