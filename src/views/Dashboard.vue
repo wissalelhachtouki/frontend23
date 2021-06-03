@@ -37,7 +37,7 @@
             <div class="md-card-header md-card-header-icon md-card-header-info">
               <div class="card-icon"><i class="fab fa-twitter"></i></div>
               <p class="category">Nombre de formations</p>
-              <h3 class="title">+<span>{{ formations.length }}</span></h3>
+              <h3 class="title"><span>{{ formations.length }}</span></h3>
             </div>
             <div class="md-card-actions md-alignment-left">
               <div class="stats">

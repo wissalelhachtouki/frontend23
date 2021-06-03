@@ -15,13 +15,8 @@
           <div class=" row ">
             <div class="col-lg-9 col-md-9" style="margin: auto">
               <div class="card">
-                <div
-                  class="card-header card-header-primary card-header-icon"
-                >
-                  <h4 class="card-title">Rapport Qualité de la formation - Compléter votre rapport
-
-
-                  </h4>
+                <div class="card-header card-header-primary card-header-icon">
+                  <h4 class="card-title">Rapport Qualité de la formation - Compléter votre rapport</h4>
 
                 </div>
                 <div class="card-body">
@@ -31,7 +26,7 @@
                       <md-field class="md-form-group col-md-12" slot="inputs">
                         <md-icon></md-icon>
                         <label>Formation name...</label>
-                        <md-input type="text"></md-input>
+                        <md-input v-model="title_formation" type="text"></md-input>
                       </md-field>
 
 
@@ -42,14 +37,16 @@
                       <md-field class="md-form-group col-md-12" slot="inputs">
                         <md-icon></md-icon>
                         <label>Préparation de la formation...</label>
-                        <md-input type="number"></md-input>
+                        <md-input v-model="preparation" type="number" onkeyup="if(this.value<0){this.value = this.value * -1}
+                                                                                else if(this.value>100){this.value = 100}"></md-input>
                       </md-field>
 
 
                       <md-field class="md-form-group col-md-12" slot="inputs">
                         <md-icon></md-icon>
                         <label>Organisation de la formation...</label>
-                        <md-input type="number"></md-input>
+                        <md-input v-model="organisation" type="number" onkeyup="if(this.value<0){this.value = this.value * -1}
+                                                                                else if(this.value>100){this.value = 100}"></md-input>
                       </md-field>
 
 
@@ -58,7 +55,8 @@
                       <md-field class="md-form-group col-md-12" slot="inputs">
                         <md-icon></md-icon>
                         <label>Déroulement de la formation...</label>
-                        <md-input type="number"></md-input>
+                        <md-input v-model="deroulement" type="number" onkeyup="if(this.value<0){this.value = this.value * -1}
+                                                                                else if(this.value>100){this.value = 100}"></md-input>
                       </md-field>
 
 
@@ -66,7 +64,8 @@
                       <md-field class="md-form-group col-md-12" slot="inputs">
                         <md-icon></md-icon>
                         <label>Contenu de la formation...</label>
-                        <md-input type="number"></md-input>
+                        <md-input v-model="contenu" type="number" onkeyup="if(this.value<0){this.value = this.value * -1}
+                                                                                else if(this.value>100){this.value = 100}"></md-input>
                       </md-field>
 
 
@@ -74,43 +73,24 @@
                       <md-field class="md-form-group col-md-12 " slot="inputs">
                         <md-icon>adress</md-icon>
                         <label>Efficacité de la formation...</label>
-                        <md-input type="number"></md-input>
+                        <md-input v-model="efficacite" type="number" onkeyup="if(this.value<0){this.value = this.value * -1}
+                                                                                else if(this.value>100){this.value = 100}"></md-input>
                       </md-field>
-
-
-
-
-
-
-
-
-
-
-
-
-
 
                     <div class="row">
-
-
                       <md-field class="md-form-group col-md-11" slot="inputs" >
-
                         <label>Avis.. </label>
-
-                        <md-textarea  type="text"></md-textarea>
+                        <md-textarea v-model="avis" type="text"></md-textarea>
                       </md-field>
-
                     </div>
+
                     <div class="modal-footer">
                       <div
-                        class="md-layout-item md-size-10 "
-                        style="float: right ; margin-top: 30px"
-                      >
+                          class="md-layout-item md-size-10"
+                          style="float: right ; margin-top: 30px">
                         <md-button
-                          href="#/qualite"
-                          class=" md-primary md-sm  md-block"
-
-                        >
+                            @click.prevent="handleValid"
+                            class=" md-warning md-sm  md-block">
                           <md-icon>playlist_add</md-icon> Ajouter
                         </md-button>
                       </div>
@@ -121,9 +101,6 @@
             </div>
           </div>
         </div>
-
-
-
       </div>
     </div>
   </div>
@@ -132,26 +109,56 @@
 <script>
 import MainSidebar from "@/layout/MainSidebar";
 import MainNavbar2 from "@/layout/MainNavbar2";
+import axios from "axios";
 
 
 export default {
   name: "InfoQualite",
   components: {
     MainSidebar,
-    MainNavbar2,
-
-
+    MainNavbar2
   },
   data(){
     return{
-
+      title_formation: "",
+      preparation: "",
+      organisation: "",
+      deroulement: "",
+      contenu: "",
+      efficacite: "",
+      avis: ""
     };
   },
   methods: {
+    async handleValid() {
+      try {
+        const data = {
+          title_formation: this.title_formation,
+          preparation: this.preparation,
+          organisation: this.organisation,
+          deroulement: this.deroulement,
+          contenu: this.contenu,
+          efficacite: this.efficacite,
+          avis: this.avis
+        };
+        const response = await axios.post("addQuality", data, {
+          headers: {
+            Authorization: "Bearer " + localStorage.getItem("token"),
+            verification: "Bearer " + localStorage.getItem("tokenV")
+          }
+        });
+        this.title_formation = "";
+        this.preparation = "";
+        this.organisation = "";
+        this.deroulement = "";
+        this.contenu = "";
+        this.efficacite = "";
+        this.avis = "";
 
-  },
-  computed: {
-
+      } catch (e) {
+        this.error = "Error occurred !";
+      }
+    }
   }
 };
 </script>

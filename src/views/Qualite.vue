@@ -7,44 +7,170 @@
         <svg height="100%" width="100%" id="svg" viewBox="0 0 1440 400" xmlns="http://www.w3.org/2000/svg" class="transition duration-300 ease-in-out delay-150"><defs><linearGradient id="gradient"><stop offset="5%" stop-color="#0c2340ff"></stop><stop offset="95%" stop-color="#2a5788ff"></stop></linearGradient></defs><path d="M 0,400 C 0,400 0,200 0,200 C 205.71428571428572,257.14285714285717 822.8571428571429,228.57142857142858 1440,200 C 1440,200 1440,400 1440,400 Z" stroke="none" stroke-width="0" fill="url(#gradient)" class="transition-all duration-300 ease-in-out delay-150" transform="rotate(-180 720 200)"></path></svg>
         <header><MainNavbar2/></header>
         <div class=" d-flex  width" style="margin-top: -5%">
-          <div class="mt-5 w-100" >
+          <div class="mt-5 w-100">
             <div class="container-fluid">
               <div class="col-md-12">
                 <div class="card card-styling " style="margin-bottom: 30px">
-
-
-                  <div class="card-header card-header-primary card-header-icon">
-
-                    <h4 class="card-title">Formation 1
-
+                  <div
+                      v-for="formation in formations"
+                      :key="formation.id"
+                      class="card-header card-header-primary card-header-icon"
+                  >
+                    <h4 class="card-title">
+                      {{ formation.title }}
                       <div
                         class="md-layout-item md-size-10"
                         style="float: right"
                       >
 
                         <md-button
-
+                            @click="
+                            forQuality(formation.id);
+                            showModalQuality = formation.id;
+                          "
                           class=" md-warning md-sm  md-block"
-
+                            :id="'btnMore'+formation.id"
                         >
                           <md-icon>expand_more</md-icon> more
                         </md-button>
-                        <!--
-                        <md-button
-
-                          class=" md-warning md-sm  md-block"
-
-                        >
-                          <md-icon>download</md-icon>  PDF
-                        </md-button>
--->
 
                       </div>
                     </h4>
+                    <div v-if="showModalQuality == formation.id" v-cloak :id="'collapse'+formation.id">
+                      <transition name="collapse">
+                        <div class="collapse-mask">
+                          <div class="collapse-wrapper">
+                            <div class="collapse-dialog collapse-xl" role="document">
+                              <div
+                                  class="modal-content"
+                                  style=" border-radius: 10px"
+                              >
+                                <div class="card-header"  style="border-bottom: none">
+                                  <h4 class="card-title" >
+                                    <strong style="text-align: left"></strong>
+                                  </h4>
 
+                                  <md-button
+                                      type="button"
+                                      class="md-simple md-just-icon md-round modal-default-button"
+                                      data-dismiss="modal"
+                                      aria-label="Close"
+                                      @click="showModalQuality = false"
+                                  ><md-icon>clear</md-icon>
+                                  </md-button>
+                                </div>
+                                <div
+                                    class="modal-body"
+                                    style="border-radius: 20px ; margin-top: -1%"
+                                >
+                                  <div class="row">
+                                    <h2 class="col-md-10">
+                                      <strong>Satisfaction: </strong>
+                                    </h2>
+                                    <h1 class="col-md-2">
+                                      <strong>{{ satisfaction }}%</strong>
+                                    </h1>
+                                  </div>
+
+
+                                  <div class="progress">
+                                    <div
+                                        class="progress-bar progress-bar-info progress-bar-striped"
+                                        role="progressbar"
+                                        aria-valuemin="0"
+                                        aria-valuemax="100"
+                                        :style="{ width: satisfaction + '%' }"
+                                    ></div>
+                                  </div>
+                                  <hr />
+                                  <h6>
+                                    Préparation de la formation:
+                                    <strong> {{ quality.preparation }}%</strong>
+                                  </h6>
+                                  <div class="progress">
+                                    <div
+                                        class="progress-bar progress-bar-info progress-bar-striped"
+                                        role="progressbar"
+                                        aria-valuemin="0"
+                                        aria-valuemax="100"
+                                        :style="{
+                                        width: quality.preparation + '%'
+                                      }"
+                                    ></div>
+                                  </div>
+                                  <h6>
+                                    Organisation de la formation:
+                                    <strong>
+                                      {{ quality.organisation }}%</strong
+                                    >
+                                  </h6>
+                                  <div class="progress">
+                                    <div
+                                        class="progress-bar progress-bar-info progress-bar-striped"
+                                        role="progressbar"
+                                        aria-valuemin="0"
+                                        aria-valuemax="100"
+                                        :style="{
+                                        width: quality.organisation + '%'
+                                      }"
+                                    ></div>
+                                  </div>
+                                  <h6>
+                                    Déroulement de la formation:
+                                    <strong> {{ quality.deroulement }}%</strong>
+                                  </h6>
+                                  <div class="progress">
+                                    <div
+                                        class="progress-bar progress-bar-info progress-bar-striped"
+                                        role="progressbar"
+                                        aria-valuemin="0"
+                                        aria-valuemax="100"
+                                        :style="{
+                                        width: quality.deroulement + '%'
+                                      }"
+                                    ></div>
+                                  </div>
+                                  <h6>
+                                    Contenu de la formation:
+                                    <strong> {{ quality.contenu }}%</strong>
+                                  </h6>
+                                  <div class="progress">
+                                    <div
+                                        class="progress-bar progress-bar-info progress-bar-striped"
+                                        role="progressbar"
+                                        aria-valuemin="0"
+                                        aria-valuemax="100"
+                                        :style="{ width: quality.contenu + '%' }"
+                                    ></div>
+                                  </div>
+                                  <h6>
+                                    Efficacité de la formation:
+                                    <strong> {{ quality.efficacite }}%</strong>
+                                  </h6>
+                                  <div class="progress">
+                                    <div
+                                        class="progress-bar progress-bar-info progress-bar-striped"
+                                        role="progressbar"
+                                        aria-valuemin="0"
+                                        aria-valuemax="100"
+                                        :style="{
+                                        width: quality.efficacite + '%'
+                                      }"
+                                    ></div>
+                                  </div>
+                                  <hr />
+                                  <h3><strong>Avis</strong></h3>
+                                  <p>{{ quality.avis }}</p>
+                                </div>
+
+
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </transition>
+                    </div>
                   </div>
-
-
 
 
 
@@ -62,6 +188,8 @@
 <script>
 import MainSidebar from "@/layout/MainSidebar";
 import MainNavbar2 from "@/layout/MainNavbar2";
+import { mapGetters } from "vuex";
+import axios from "axios";
 
 export default {
   name: "Qualite",
@@ -71,11 +199,47 @@ export default {
   },
   data() {
     return {
+      showModalQuality: false,
+      showQuality: "",
+      satisfaction: 0,
+      quality: {},
+      formation: {}
     };
   },
+  computed: {
+    ...mapGetters(["formations"])
+  },
   mounted() {
+    this.$store.dispatch("setFormations");
   },
   methods: {
+    async forQuality(id) {
+      try {
+        const response = await axios.get("showQuality/" + id, {
+          headers: {
+            Authorization: "Bearer " + localStorage.getItem("token"),
+            verification: "Bearer " + localStorage.getItem("tokenV")
+          }
+        });
+        this.satisfaction =
+            (response.data.data.preparation +
+                response.data.data.organisation +
+                response.data.data.deroulement +
+                response.data.data.contenu +
+                response.data.data.efficacite) /
+            5;
+        this.quality = response.data.data;
+      } catch (e) {
+        this.error = "Error occurred !";
+        this.quality = {};
+        this.quality.preparation = 0;
+        this.quality.organisation = 0;
+        this.quality.deroulement = 0;
+        this.quality.contenu = 0;
+        this.quality.efficacite = 0;
+        this.satisfaction = 0;
+      }
+    }
   }
 };
 </script>
