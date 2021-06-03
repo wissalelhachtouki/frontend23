@@ -10,12 +10,9 @@
           <div class="mt-5 w-100">
             <div class="container-fluid">
               <div class="col-md-12">
-                <div class="card card-styling " style="margin-bottom: 30px">
-                  <div
-                      v-for="formation in formations"
-                      :key="formation.id"
-                      class="card-header card-header-primary card-header-icon"
-                  >
+                <div v-for="formation in formations"
+                     :key="formation.id" class="card card-styling " style="margin-bottom: 30px">
+                  <div class="card-header card-header-primary card-header-icon">
                     <h4 class="card-title">
                       {{ formation.title }}
                       <div
@@ -68,14 +65,14 @@
                                       <strong>Satisfaction: </strong>
                                     </h2>
                                     <h1 class="col-md-2">
-                                      <strong>{{ satisfaction }}%</strong>
+                                      <strong style="color: green">{{ satisfaction }}%</strong>
                                     </h1>
                                   </div>
 
 
                                   <div class="progress">
                                     <div
-                                        class="progress-bar progress-bar-info progress-bar-striped"
+                                        class="progress-bar bg-success progress-bar-striped"
                                         role="progressbar"
                                         aria-valuemin="0"
                                         aria-valuemax="100"
@@ -85,11 +82,11 @@
                                   <hr />
                                   <h6>
                                     Préparation de la formation:
-                                    <strong> {{ quality.preparation }}%</strong>
+                                    <strong style="color: #00b0ff"> {{ quality.preparation }}%</strong>
                                   </h6>
                                   <div class="progress">
                                     <div
-                                        class="progress-bar progress-bar-info progress-bar-striped"
+                                        class="progress-bar bg-info progress-bar-striped"
                                         role="progressbar"
                                         aria-valuemin="0"
                                         aria-valuemax="100"
@@ -100,13 +97,13 @@
                                   </div>
                                   <h6>
                                     Organisation de la formation:
-                                    <strong>
+                                    <strong style="color: #00b0ff">
                                       {{ quality.organisation }}%</strong
                                     >
                                   </h6>
                                   <div class="progress">
                                     <div
-                                        class="progress-bar progress-bar-info progress-bar-striped"
+                                        class="progress-bar bg-info progress-bar-striped"
                                         role="progressbar"
                                         aria-valuemin="0"
                                         aria-valuemax="100"
@@ -117,11 +114,11 @@
                                   </div>
                                   <h6>
                                     Déroulement de la formation:
-                                    <strong> {{ quality.deroulement }}%</strong>
+                                    <strong style="color: #00b0ff"> {{ quality.deroulement }}%</strong>
                                   </h6>
                                   <div class="progress">
                                     <div
-                                        class="progress-bar progress-bar-info progress-bar-striped"
+                                        class="progress-bar bg-info progress-bar-striped"
                                         role="progressbar"
                                         aria-valuemin="0"
                                         aria-valuemax="100"
@@ -132,11 +129,11 @@
                                   </div>
                                   <h6>
                                     Contenu de la formation:
-                                    <strong> {{ quality.contenu }}%</strong>
+                                    <strong style="color: #00b0ff"> {{ quality.contenu }}%</strong>
                                   </h6>
                                   <div class="progress">
                                     <div
-                                        class="progress-bar progress-bar-info progress-bar-striped"
+                                        class="progress-bar bg-info progress-bar-striped"
                                         role="progressbar"
                                         aria-valuemin="0"
                                         aria-valuemax="100"
@@ -145,11 +142,11 @@
                                   </div>
                                   <h6>
                                     Efficacité de la formation:
-                                    <strong> {{ quality.efficacite }}%</strong>
+                                    <strong style="color: #00b0ff"> {{ quality.efficacite }}%</strong>
                                   </h6>
                                   <div class="progress">
                                     <div
-                                        class="progress-bar progress-bar-info progress-bar-striped"
+                                        class="progress-bar bg-info progress-bar-striped"
                                         role="progressbar"
                                         aria-valuemin="0"
                                         aria-valuemax="100"

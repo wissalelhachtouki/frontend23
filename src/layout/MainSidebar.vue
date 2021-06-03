@@ -1,5 +1,5 @@
 <template>
-  <div class="sidebar">
+  <div class="sidebar" style="overflow-y: auto ; overflow-x: hidden">
     <div class="logo_content">
       <div class="logo">
         <div v-if="user" class="logo_name">Bonjour, {{ user.name }}</div>
