@@ -33,7 +33,7 @@
           <MainNavbar2 v-else/>
         </header>
         <div class="content">
-          <div class="md-layout-item md-medium-size-100 md-size-100">
+          <div class="col-lg-9 col-md-9" style="margin: auto">
             <div
               class="md-card md-card-profile md-theme-default "
               style=" margin-bottom: 30px"

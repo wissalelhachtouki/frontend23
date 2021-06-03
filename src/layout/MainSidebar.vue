@@ -231,7 +231,7 @@ body {
   left: 0;
   height: 100%;
   width: 78px;
-  background-color: #0c2340;
+  background-color: #0E2340;
   padding: 6px 14px;
   z-index: 99;
   transition: all 0.5s ease;
