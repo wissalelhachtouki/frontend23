@@ -4,7 +4,7 @@
       <br>
 
       <div class="title">
-        <h3><strong>Pilotez vos formations en temps réel</strong></h3>
+        <h4 class="card-title">  ☞ Pilotez vos formations en temps réel</h4>
       </div>
 
       <div class="md-layout">
@@ -14,11 +14,11 @@
             <!-- here you can add your content for tab-content -->
 
             <template slot="tab-pane-1">
-              <h4>● Générateur de documents formation</h4>
-              <h4>● Tableau de bord des formations inter/intra</h4>
-              <h4>● Planning des sessions et des ressources</h4>
-              <h4>● Bilan Pédagogique et Financier automatique</h4>
-              <h4>● Catalogue de formations</h4>
+              <h4> ✓ Une mise à jour en temps réel et un gain de temps maximal.</h4>
+              <h4> ✓ Avoir une vision globale de l’activité.</h4>
+              <h4> ✓ Une bonne gestion de l’emploi du temps.</h4>
+              <h4> ✓ L’amélioration de la productivité.</h4>
+
             </template>
         </tabs>
       </div>

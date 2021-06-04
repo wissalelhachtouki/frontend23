@@ -1,87 +1,33 @@
 <template>
   <div class="wrapper">
-    <div id="nav-tabs">
+    <div id="details">
+      <br>
+
+      <div
+        class="title"
+      >
+        <h4 class="card-title">   ☞ Pilotez vos formations en temps réel</h4>
+      </div>
 
       <div class="md-layout">
-        <div class="md-layout-item md-size-25 md-small-size-100">
 
-          <nav-tabs-card no-label>
-            <template slot="content">
-              <md-tabs class="md-success md-alignment-centered" md-alignment="left">
-                <md-tab id="tab-home"  md-icon="lock"  >
-                  <h4><strong>Sécurité et  protection de vos  données </strong></h4>
+        <div class="md-layout-item md-size-50 md-small-size-100">
+          <tabs :tab-name="['Rapport']" :tab-icon="['description']" plain flex-column nav-pills-icons color-button="rose">
+            <!-- here you can add your content for tab-content -->
 
-                  <h4>Notre solution utilise un cryptage 128 bits qui vous
-                    garantit une haute  protection de vos données
-                    et de celles de vos formés</h4>
-
-                </md-tab>
-
-              </md-tabs>
+            <template slot="tab-pane-1">
+              <h4> ✓ Générateur de documents formation</h4>
+              <h4> ✓ Tableau de bord des formations inter/intra</h4>
+              <h4> ✓ Planning des sessions et des ressources</h4>
+              <h4> ✓ Bilan Pédagogique et Financier automatique</h4>
+              <h4> ✓ Catalogue de formations</h4>
             </template>
-          </nav-tabs-card>
+          </tabs>
         </div>
 
-        <div class="md-layout-item md-alignment-center md-size-25 md-small-size-100">
-          <h3><small><div></div> </small></h3>
-
-
-          <nav-tabs-card no-label>
-            <template slot="content">
-              <md-tabs class="md-warning md-alignment-centered" md-alignment="left">
-                <md-tab id="tab-home" md-icon="folder " >
-                  <h4><strong>Générateur de<br> documents en accord avec la réglementation</strong></h4>
-
-                  <h4>Remplissez vos informations et générez automatiquement les documents
-
-                    administratifs</h4>
-                </md-tab>
-
-              </md-tabs>
-            </template>
-          </nav-tabs-card>
+        <div class="md-layout-item md-size-50 md-small-size-100">
+          <img :src="cal" class="rounded" alt="Cinque Terre">
         </div>
-
-        <div class="md-layout-item  md-size-25 md-small-size-100">
-
-          <nav-tabs-card no-label>
-            <template slot="content">
-              <md-tabs class="md-info md-alignment-centered" md-alignment="center">
-                <md-tab id="tab-home" md-icon="stay_current_portrait   " >
-                  <h4><strong>Technologie
-                    innovante et  ergonomique</strong></h4>
-                  <h4>La technologie innovante que nous utilisons offre
-                    fiabilité et sécurité.<br>L’application est rapide et
-                    simple à prendre en main.
-                  </h4>
-                </md-tab>
-
-              </md-tabs>
-            </template>
-          </nav-tabs-card>
-        </div>
-
-        <div class="md-layout-item md-alignment-center md-size-25 md-small-size-100">
-          <h3><small><div></div> </small></h3>
-
-
-          <nav-tabs-card no-label>
-            <template slot="content">
-              <md-tabs class="md-rose md-alignment-centered" md-alignment="left">
-                <md-tab id="tab-home"  md-icon="verified">
-                  <h4><strong>100% dédiée à la<br> formation</strong></h4>
-
-                  <h4>La solution Digiforma a été pensée etdéveloppée par des
-
-                    formateurs confirmés. Le service est disponible 24h/24h à partir den’importe quel ordinateur.</h4>
-                </md-tab>
-
-              </md-tabs>
-            </template>
-          </nav-tabs-card>
-        </div>
-
-
 
       </div>
     </div>
@@ -89,13 +35,22 @@
 </template>
 
 <script>
-import { NavTabsCard } from "@/components";
+import { Tabs } from "@/components";
 
 export default {
   components: {
-    NavTabsCard
+    Tabs
+  },
+  props: {
+    cal: {
+      type: String,
+      default: require("@/assets/img/calendrier.jpg")
+    }
   }
+
 };
 </script>
 
-<style lang="css"></style>
+<style lang="css">
+
+</style>

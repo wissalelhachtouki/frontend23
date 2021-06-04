@@ -51,9 +51,7 @@
 
       <div class="section">
         <div class="container">
-          <div class="title">
-            <h2 style="text-align: center ; color: darkslategray ; font-family: 'Arial Rounded MT Bold'"  ><strong> Gérer vos formations  ne devrait<br> pas vous prendre plus de temps.</strong></h2>
-          </div>
+
           <card></card>
         </div>
       </div>

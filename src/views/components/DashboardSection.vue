@@ -9,7 +9,10 @@
         </div>
 
         <div class="md-layout-item md-size-50 md-small-size-100">
-          <h3><strong>Améliorez votre suivi avec DASHBOARD intégrer</strong></h3>
+          <div class="title">
+            <h4 class="card-title"> ☞ Améliorez votre suivi avec DASHBOARD intégrer</h4>
+          </div>
+
           <tabs
               :tab-name="['Dashboard']"
               :tab-icon="['dashboard']"
@@ -20,11 +23,11 @@
           >
             <!-- here you can add your content for tab-content -->
             <template slot="tab-pane-1">
-              <h4>● Générateur de documents formation</h4>
-              <h4>● Tableau de bord des formations inter/intra</h4>
-              <h4>● Un système d’évaluations numériques ultra complet</h4>
-              <h4>● Bilan Pédagogique et Financier automatique</h4>
-              <h4>● Améliorez vos formations avec les indicateurs de performances</h4>
+              <h4> ✓  Bilan Pédagogique et Financier automatique.</h4>
+              <h4> ✓  Tableau de bord des formations.</h4>
+              <h4> ✓  Vision globale de l’activité.</h4>
+
+              <h4> ✓  Limiter les erreurs</h4>
             </template>
 
           </tabs>

@@ -2,7 +2,7 @@
   <div class="wrapper">
     <div id="details">
       <div class="title">
-        <h3 ><strong>Améliorez votre performence avec <br> une To-Do list intégrer</strong></h3>
+        <h4  class="card-title"> ☞ Améliorez votre performence avec  une To-Do list intégrer</h4>
       </div>
       <div class="md-layout">
 
@@ -18,10 +18,10 @@
             <!-- here you can add your content for tab-content -->
 
             <template slot="tab-pane-1">
-              <h4>● Fixer vos Priorités</h4>
-              <h4>● Mieux organiser votre journée</h4>
-              <h4>● Gagner du temps</h4>
-              <h4>● Diminuer son stress</h4>
+              <h4> ✓ Fixer vos Priorités</h4>
+              <h4> ✓ Mieux organiser votre journée</h4>
+              <h4> ✓ Gagner du temps</h4>
+              <h4> ✓ Diminuer son stress</h4>
             </template>
 
 
