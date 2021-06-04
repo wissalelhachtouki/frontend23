@@ -15,7 +15,7 @@ export default {
         datasets: [
           {
             label: "Nombre de jour",
-            backgroundColor: "#D8BFD8",
+            backgroundColor: "#1eae98",
             data: this.bar
           }
         ]

@@ -14,6 +14,7 @@ const state = {
   areas2: [],
   line: [],
   bar: [],
+  pie: [],
   form: [],
   revenu: null,
   revenuParjour: null,
@@ -51,6 +52,9 @@ const store = new Vuex.Store({
     },
     bar: state => {
       return state.bar;
+    },
+    pie: state => {
+      return state.pie;
     },
     form: state => {
       return state.form;
@@ -193,6 +197,23 @@ const store = new Vuex.Store({
         }
       });
       state.commit("setBar", response.data);
+    },
+    async setPie(state) {
+      const response = await axios.get("formations", {
+        headers: {
+          Authorization: "Bearer " + localStorage.getItem("token"),
+          verification: "Bearer " + localStorage.getItem("tokenV")
+        }
+      });
+
+      const response2 = await axios.get("showQuality/" + response.data.data[response.data.data.length-1].id , {
+        headers: {
+          Authorization: "Bearer " + localStorage.getItem("token"),
+          verification: "Bearer " + localStorage.getItem("tokenV")
+        }
+      });
+
+      state.commit("setPie", response2.data);
     },
     async setForm(state) {
       const response = await axios.get("formations", {
@@ -403,8 +424,12 @@ const store = new Vuex.Store({
       for (let i = 0; i < theValue.data.length; i++) {
         state.bar.push(theValue.data[i].nombreDeJours);
       }
-      //console.log("this is bar chart");
-      //console.log(state.bar);
+    },
+    setPie(state, theValue) {
+      state.pie = [];
+        state.pie.push(theValue.data.organisation);
+        state.pie.push(theValue.data.deroulement);
+        state.pie.push(theValue.data.efficacite);
     },
     setForm(state, theValue) {
       state.form = [];

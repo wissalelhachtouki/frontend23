@@ -83,7 +83,6 @@ export default {
 
         localStorage.setItem("type", response.data.user.type);
 
-        localStorage.setItem("verifiedIn", response.data.email_verified_at);
 
 
 

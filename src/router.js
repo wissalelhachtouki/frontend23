@@ -39,19 +39,6 @@ function guardMyroute(to, from, next) {
   }
 }
 
-function guardMyrouteVerify(to, from, next) {
-  let isAuthenticated = false;
-  //this is just an example. You will have to find a better or
-  // centralised way to handle you localstorage data handling
-  if (localStorage.getItem("token") && localStorage.getItem("verifiedIn") == null) isAuthenticated = true;
-  else isAuthenticated = false;
-  if (isAuthenticated) {
-    next(); // allow to enter route
-  } else {
-    next("/error");
-  }
-}
-
 function guardMyrouteAdmin(to, from, next) {
   let isAuthenticated = false;
   //this is just an example. You will have to find a better or

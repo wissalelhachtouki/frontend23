@@ -148,8 +148,9 @@
             </div>
           </div>
         </div>
+        <div class="row md-layout-item md-medium-size-100 md-xsmall-size-100 md-size-100">
         <div
-          class="md-layout-item md-medium-size-100 md-xsmall-size-100 md-size-100"
+          class="md-layout-item md-medium-size-66 md-xsmall-size-66 md-size-66"
         >
           <div class="md-card md-card-chart md-theme-default" data-count="7">
             <BarChart/>
@@ -167,6 +168,28 @@
             </div>
           </div>
         </div>
+
+          <div
+          class="md-layout-item md-medium-size-34 md-xsmall-size-34 md-size-34"
+        >
+          <div class="md-card md-card-chart md-theme-default" data-count="7">
+            <PieChart/>
+            <div class="md-card-content">
+              <!---->
+
+              <h4 class="title">Le rapport de la derniére formation</h4>
+
+            </div>
+            <div class="md-card-actions md-alignment-left">
+              <div class="stats">
+                <i class="md-icon md-icon-font md-theme-default">access_time</i>
+                updated in last formation
+              </div>
+            </div>
+          </div>
+        </div>
+        </div>
+
       </div>
     </div>
   </div>
@@ -179,6 +202,7 @@ import { mapGetters } from "vuex";
 import LineChart from "./components/LineChart.vue";
 import BarChart from "./components/BarChart.vue";
 import AreaChart from "./components/AreaChart.vue";
+import PieChart from "./components/PieChart.vue";
 
 export default {
   name: "Dashboard",
@@ -187,7 +211,8 @@ export default {
     LineChart,
     MainNavbar2,
     BarChart,
-    AreaChart
+    AreaChart,
+    PieChart
   },
   data() {
     return {
@@ -232,9 +257,10 @@ export default {
     this.$store.dispatch("setAreas2");
     this.$store.dispatch("setLine");
     this.$store.dispatch("setBar");
+    this.$store.dispatch("setPie");
     setTimeout(() => {
       this.$store.dispatch("setloading");
-    },6000)
+    },7000)
   }
 };
 </script>
