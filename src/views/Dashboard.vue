@@ -35,7 +35,8 @@
         >
           <div class="md-card md-card-stats md-theme-default">
             <div class="md-card-header md-card-header-icon md-card-header-info">
-              <div class="card-icon"><i class="fab fa-twitter"></i></div>
+              <div class="card-icon">
+              <i class="md-icon md-icon-font md-theme-default">post_add</i></div>
               <p class="category">Nombre de formations</p>
               <h3 class="title"><span>{{ formations.length }}</span></h3>
             </div>
@@ -51,7 +52,7 @@
           class="md-layout-item md-medium-size-50 md-xsmall-size-100 md-size-25"
         >
           <div class="md-card md-card-stats md-theme-default">
-            <div class="md-card-header md-card-header-icon md-card-header-rose">
+            <div class="md-card-header md-card-header-icon md-card-header-primary">
               <div class="card-icon">
                 <i class="md-icon md-icon-font md-theme-default">equalizer</i>
               </div>
@@ -72,10 +73,10 @@
         >
           <div class="md-card md-card-stats md-theme-default">
             <div
-                class="md-card-header md-card-header-icon md-card-header-orange"
+                class="md-card-header md-card-header-icon md-card-header-red"
             >
               <div class="card-icon">
-                <i class="md-icon md-icon-font md-theme-default">weekend</i>
+                <i class="md-icon md-icon-font md-theme-default">groups</i>
               </div>
               <p class="category">Moyenne des participants</p>
               <h3 class="title"><span>{{ moyennePart }}</span></h3>
@@ -97,7 +98,7 @@
               class="md-card-header md-card-header-icon md-card-header-green"
             >
               <div class="card-icon">
-                <i class="md-icon md-icon-font md-theme-default">store</i>
+                <i class="md-icon md-icon-font md-theme-default">attach_money</i>
               </div>
               <p class="category">Revenue</p>
               <h5 class="title"><span>{{ revenu }}</span> DH <br> <span>{{ revenuParjour }}</span> DH/Jour</h5>
@@ -177,7 +178,7 @@
             <div class="md-card-content">
               <!---->
 
-              <h4 class="title">Le rapport de la derniére formation</h4>
+              <h4 class="title">Rapport de la derniére formation (%)</h4>
 
             </div>
             <div class="md-card-actions md-alignment-left">

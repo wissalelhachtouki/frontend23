@@ -32,7 +32,7 @@
         <li @click="test2">
           <a class="btn">
             <i class="bx bxs-edit"></i>
-            <span class="links_name">Edit Profile</span>
+            <span class="links_name">Editer Profile</span>
           </a>
 
           <span class="tooltip">Edit Profile</span>

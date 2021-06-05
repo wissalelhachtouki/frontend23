@@ -98,7 +98,7 @@ export default {
     },
     img: {
       type: String,
-      default: require("@/assets/img/christian.jpg")
+      default: require("@/assets/img/ identité.jpg")
     }
   },
   computed: {

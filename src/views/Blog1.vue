@@ -6,7 +6,7 @@
     ></parallax>
     <div class="main main-raised">
       <div class="section profile-content">
-        <div class="container" style="margin-top: 6%">
+        <div class="container">
           <div class="md-layout">
             <div class="md-layout-item md-size-50 mx-auto">
               <div class="profile">

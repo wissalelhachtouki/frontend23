@@ -15,7 +15,7 @@
 
                   <div class="card-header card-header-primary card-header-icon">
 
-                    <h4 class="card-title">Tasks
+                    <h4 class="card-title">Tâches
                       <div
                           class="md-layout-item md-size-10 "
                           style="float: right "
@@ -25,7 +25,7 @@
                             class=" md-primary md-sm  md-block"
                             @click="showModaltodo = true"
                         >
-                          <md-icon>playlist_add </md-icon> Add Task
+                          <md-icon>playlist_add </md-icon> Tâche
                         </md-button>
 
 

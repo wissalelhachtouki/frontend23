@@ -19,7 +19,7 @@
                       <div
                         class="card-header card-header-primary card-header-icon"
                       >
-                        <h4 class="card-title">Edit Profile - Complete your profile
+                        <h4 class="card-title">Completer votre profile
 
 
                         </h4>
@@ -31,14 +31,14 @@
 
                               <md-field class="md-form-group col-md-6" slot="inputs">
                                 <md-icon></md-icon>
-                                <label>Username...</label>
+                                <label>Nom d'utilisateur...</label>
                                 <md-input v-model="name" type="text"></md-input>
                               </md-field>
 
 
                               <md-field class="md-form-group col-md-6" slot="inputs">
                                 <md-icon></md-icon>
-                                <label>Email address...</label>
+                                <label>Adresse E-mail...</label>
                                 <md-input v-model="user.email" type="email" disabled="disabled"></md-input>
                               </md-field>
 
@@ -47,14 +47,14 @@
 
                             <md-field class="md-form-group col-md-6" slot="inputs">
                               <md-icon></md-icon>
-                              <label>First name...</label>
+                              <label>Prénom...</label>
                               <md-input v-model="firstName" type="text"></md-input>
                             </md-field>
 
 
                             <md-field class="md-form-group col-md-6" slot="inputs">
                               <md-icon></md-icon>
-                              <label>Last name...</label>
+                              <label>Nom...</label>
                               <md-input v-model="lastName"  type="text"></md-input>
                             </md-field>
 
@@ -82,7 +82,7 @@
 
                             <md-field class="md-form-group col-md-11 " slot="inputs">
                               <md-icon>adress</md-icon>
-                              <label>Address...</label>
+                              <label>Addresse...</label>
                               <md-input v-model="adresse"  type="text"></md-input>
                             </md-field>
 
@@ -94,7 +94,7 @@
 
                               <md-field class="md-form-group col-md-4" slot="inputs">
                                 <md-icon></md-icon>
-                                <label>City...</label>
+                                <label>Ville...</label>
                                 <md-input v-model="city"  type="text"></md-input>
                               </md-field>
 
@@ -102,12 +102,12 @@
 
                               <md-field class="md-form-group col-md-4" slot="inputs">
                                 <md-icon></md-icon>
-                                <label>Country...</label>
+                                <label>Pays...</label>
                                 <md-input v-model="country" type="text"></md-input>
                               </md-field>
                             <md-field class="md-form-group col-md-4" slot="inputs">
                               <md-icon></md-icon>
-                              <label>Postal code ...</label>
+                              <label>Code Postal...</label>
                               <md-input v-model="codePostal" type="number"></md-input>
                             </md-field>
 
@@ -125,7 +125,7 @@
 
                             <md-field class="md-form-group col-md-11" slot="inputs" >
 
-                              <label> About Me.. </label>
+                              <label>Profil... </label>
 
                               <md-textarea v-model="aboutMe"  type="text"></md-textarea>
                             </md-field>
@@ -141,7 +141,7 @@
                               class=" md-primary md-sm  md-block"
 
                             >
-                              <md-icon>playlist_add</md-icon> Ajouter
+                              Ajouter
                             </md-button>
                           </div>
                       </div>
@@ -180,7 +180,7 @@
                             class=" md-info  md-sm md-block "
 
                           >
-                            More
+                            Plus
                           </md-button>
                           </div>
                         </div></div></div>

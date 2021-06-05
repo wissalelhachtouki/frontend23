@@ -25,7 +25,7 @@
 
                       <md-field class="md-form-group col-md-12" slot="inputs">
                         <md-icon></md-icon>
-                        <label>Formation name...</label>
+                        <label>Nom de la Formation...</label>
                         <md-input v-model="title_formation" type="text"></md-input>
                       </md-field>
 
@@ -91,7 +91,7 @@
                         <md-button
                             @click.prevent="handleValid"
                             class=" md-primary md-sm  md-block">
-                          <md-icon>playlist_add</md-icon> Ajouter
+                          <md-icon>description</md-icon> Ajouter
                         </md-button>
                       </div>
                     </div>

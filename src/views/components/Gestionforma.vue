@@ -10,7 +10,7 @@
 
         <div class="md-layout-item md-size-50 md-small-size-100">
           <div class="title">
-            <h4 class="card-title"> ☞ Une  list details pour la gestion des formations</h4>
+            <h4 class="card-title"> ☞ Pilotez vos formations en temps réel</h4>
           </div>
           <tabs
               :tab-name="['Gestion' ]"
@@ -22,10 +22,10 @@
           >
             <!-- here you can add your content for tab-content -->
             <template slot="tab-pane-1">
-              <h4> ✓ Fixer vos Priorités</h4>
-              <h4> ✓ Mieux organiser votre journée</h4>
-              <h4> ✓ Gagner du temps</h4>
-              <h4> ✓ Diminuer son stress</h4>
+              <h4> ✓ Générer des documents contenat les détails de votre formation.</h4>
+              <h4> ✓ Plannifier vos formation facilement.</h4>
+              <h4> ✓ Gérer et modifier vos formations.</h4>
+              <h4> ✓ Diminuer son stress.</h4>
             </template>
 
           </tabs>

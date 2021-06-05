@@ -24,10 +24,9 @@
             <!-- here you can add your content for tab-content -->
             <template slot="tab-pane-1">
               <h4> ✓  Bilan Pédagogique et Financier automatique.</h4>
+              <h4> ✓  Vision globale de votre activité.</h4>
               <h4> ✓  Tableau de bord des formations.</h4>
-              <h4> ✓  Vision globale de l’activité.</h4>
-
-              <h4> ✓  Limiter les erreurs</h4>
+              <h4> ✓  Limiter les Erreurs.</h4>
             </template>
 
           </tabs>

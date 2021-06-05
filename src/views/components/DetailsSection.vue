@@ -4,7 +4,7 @@
       <br>
 
       <div class="title">
-        <h4 class="card-title">  ☞ Pilotez vos formations en temps réel</h4>
+        <h4 class="card-title">  ☞ Gestionner votre temps avec CALENDRIER intégrer</h4>
       </div>
 
       <div class="md-layout">
@@ -15,7 +15,7 @@
 
             <template slot="tab-pane-1">
               <h4> ✓ Une mise à jour en temps réel et un gain de temps maximal.</h4>
-              <h4> ✓ Avoir une vision globale de l’activité.</h4>
+              <h4> ✓ Avoir une vision globale de votre activité.</h4>
               <h4> ✓ Une bonne gestion de l’emploi du temps.</h4>
               <h4> ✓ L’amélioration de la productivité.</h4>
 

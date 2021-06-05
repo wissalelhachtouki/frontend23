@@ -30,14 +30,14 @@
               <md-list-item>
                 <a href="#/login">
                   <i class="material-icons">fingerprint</i>
-                  <p>Login </p>
+                  <p>Me connecter </p>
                 </a>
               </md-list-item>
 
               <md-list-item>
                 <a href="#/register">
                   <i class="material-icons">account_circle</i>
-                  <p>Register</p>
+                  <p>M'inscrire</p>
                 </a>
               </md-list-item>
 
@@ -51,7 +51,7 @@
               <md-list-item>
                 <a href="#/">
                   <i class="material-icons">view_day</i>
-                  <p>Home</p>
+                  <p>Accueil</p>
                 </a>
               </md-list-item>
 

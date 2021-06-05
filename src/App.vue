@@ -28,4 +28,4 @@ export default {
 <style>
 @import "~bootstrap/dist/css/bootstrap.css";
 </style>
-© 2021 GitHub, Inc.
+

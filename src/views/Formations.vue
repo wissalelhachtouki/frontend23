@@ -38,9 +38,9 @@
                     <tr>
                       <th class="text-center" >ID</th>
                       <th class="text-center">Titre</th>
-                      <th class="text-center">Nombre Jours</th>
-                      <th class="text-center">Tarifs/J</th>
-                      <th class="text-center">Nombre Participants</th>
+                      <th class="text-center">Nombre de Jours</th>
+                      <th class="text-center">Tarif Journalier</th>
+                      <th class="text-center">Nombre de Participants</th>
                       <th class="text-center">Actions</th>
                     </tr>
                     </thead>

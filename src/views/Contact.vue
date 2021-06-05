@@ -5,12 +5,12 @@
         <div class="md-layout">
           <div class="md-layout-item md-size-33 md-small-size-66 md-xsmall-size-100 md-medium-size-40 mx-auto">
             <login-card header-color="orange">
-              <h4 slot="title" class="card-title">Contact Us</h4>
+              <h4 slot="title" class="card-title"> Nous Contacter </h4>
 
 
               <md-field class="md-form-group" slot="inputs">
                 <md-icon>people</md-icon>
-                <label> Votre Nom ...</label>
+                <label>Nom ...</label>
                 <md-input v-model="nom" type="text"></md-input>
               </md-field>
 
@@ -18,7 +18,7 @@
 
               <md-field class="md-form-group" slot="inputs">
                 <md-icon>email</md-icon>
-                <label> Your Email ...</label>
+                <label>Adresse E-mail...</label>
                 <md-input v-model="email" type="email"></md-input>
               </md-field>
 

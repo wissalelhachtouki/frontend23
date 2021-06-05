@@ -6,7 +6,7 @@
       <div
         class="title"
       >
-        <h4 class="card-title">   ☞ Pilotez vos formations en temps réel</h4>
+        <h4 class="card-title">   ☞ Soyez au top de la démarche qualité</h4>
       </div>
 
       <div class="md-layout">
@@ -16,11 +16,10 @@
             <!-- here you can add your content for tab-content -->
 
             <template slot="tab-pane-1">
-              <h4> ✓ Générateur de documents formation</h4>
-              <h4> ✓ Tableau de bord des formations inter/intra</h4>
-              <h4> ✓ Planning des sessions et des ressources</h4>
-              <h4> ✓ Bilan Pédagogique et Financier automatique</h4>
-              <h4> ✓ Catalogue de formations</h4>
+              <h4> ✓ Infographie de la formation et du transfert des acquis pour impressionner vos clients.</h4>
+              <h4> ✓ Améliorez vos formations avec les indicateurs de performances.</h4>
+              <h4> ✓ Un système d’évaluations numériques ultra complet.</h4>
+
             </template>
           </tabs>
         </div>
@@ -44,7 +43,7 @@ export default {
   props: {
     cal: {
       type: String,
-      default: require("@/assets/img/calendrier.jpg")
+      default: require("@/assets/img/rapport.jpg")
     }
   }
 

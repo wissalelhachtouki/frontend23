@@ -28,7 +28,7 @@
                           class=" md-warning md-sm  md-block"
                             :id="'btnMore'+formation.id"
                         >
-                          <md-icon>expand_more</md-icon> more
+                          <md-icon>add</md-icon> Plus
                         </md-button>
 
                       </div>
@@ -330,9 +330,6 @@ td {
   transition: opacity 0.3s ease;
 }
 
-.card-styling:hover {
-  box-shadow: 0 8px 16px 0 rgba(0, 0, 0.5, 0.5);
-}
 .modal-wrapper {
   display: table-cell;
   vertical-align: middle;

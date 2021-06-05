@@ -5,30 +5,30 @@
         <div class="md-layout">
           <div class="md-layout-item md-size-33 md-small-size-66 md-xsmall-size-100 md-medium-size-40 mx-auto">
             <login-card header-color="info">
-              <h4 slot="title" class="card-title">Register</h4>
+              <h4 slot="title" class="card-title">Je m'inscris</h4>
 
 
               <md-field class="md-form-group" slot="inputs">
                 <md-icon>people</md-icon>
-                <label>Nom d'utilisateur...</label>
+                <label>Nom...</label>
                 <md-input v-model="name" type="text"></md-input>
               </md-field>
 
               <md-field class="md-form-group" slot="inputs">
                 <md-icon>email</md-icon>
-                <label>Email...</label>
+                <label>Adresse E-mail...</label>
                 <md-input v-model="email" type="email"></md-input>
               </md-field>
 
               <md-field class="md-form-group" slot="inputs">
                 <md-icon>lock_outline</md-icon>
-                <label>Password...</label>
+                <label>Mot de passe...</label>
                 <md-input v-model="password" type="password"></md-input>
               </md-field>
 
               <md-field class="md-form-group" slot="inputs">
                 <md-icon>warning</md-icon>
-                <label>Confirm Password...</label>
+                <label>Confirmer Mot de passe...</label>
                 <md-input v-model="password_confirmation" type="password"></md-input>
               </md-field>
 
@@ -37,12 +37,12 @@
               </md-label>
 
               <md-button @click.prevent="handleSubmit" slot="footer" class="md-simple md-info md-lg">
-                Confirmer
+                Je m'inscris
               </md-button>
 
               <md-label slot="sign" class="md-form-group">
                 <hr>
-                <p>Have already an account? <a href="#/login">Sign in</a></p>
+                <p>J'ai déjà un compte.<a href="#/login"><u>Je me connecte</u></a></p>
               </md-label>
             </login-card>
           </div>

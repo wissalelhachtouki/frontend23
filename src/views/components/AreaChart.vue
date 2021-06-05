@@ -36,7 +36,7 @@ export default {
           labels: this.form,
           datasets: [
             {
-              label: "Nb de Participants",
+              label: "Nombre de Participants",
               borderColor: "#FC2525",
               pointBackgroundColor: "white",
               borderWidth: 1,
