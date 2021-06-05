@@ -10,8 +10,9 @@
       <div class="container-fluid">
 
         <vue-cal
-          class="vuecal--blue-theme"
+          class="vuecal--green-theme"
           :disable-views="['years', 'year']"
+          :time="false"
           default-view="month"
           events-on-month-view="true"
           :events="events"
@@ -54,7 +55,6 @@ export default {
     }
   },
   computed: {
-    //...mapGetters(["formations"]),
     ...mapGetters(["events"]),
     headerStyle() {
       return {
@@ -122,6 +122,5 @@ export default {
   width: 100%;
   height: auto;
 }
-
 
 </style>

@@ -299,18 +299,10 @@ const store = new Vuex.Store({
             response.data.data[i].dateFin +
             " " +
             response.data.data[i].horaireFin,
-          title:
-            response.data.data[i].title +
-            " - " +
-            response.data.data[i].lieuFormation,
-          repeat: {
-            every: "day",
-            until: response.data.data[i].dateFin
-          }
+          title: response.data.data[i].title,
+          content: response.data.data[i].horaireDebut + " à " + response.data.data[i].horaireFin
         });
       }
-      console.log("the 2 ");
-      console.log(newValue);
       state.commit("setEvents", newValue);
     },
 
