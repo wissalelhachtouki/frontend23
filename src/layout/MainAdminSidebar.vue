@@ -36,9 +36,9 @@
           </a>
           <span class="tooltip">Edit Profile</span>
         </li>
-
         <br />
-
+        <hr style="background-color: white">
+        <br/>
         <li @click="test3">
           <a class="btn">
             <i class="bx bxs-dashboard"></i>
