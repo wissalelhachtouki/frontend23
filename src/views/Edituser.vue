@@ -72,7 +72,7 @@
                             <md-field class="md-form-group col-md-6" slot="inputs">
                               <md-icon></md-icon>
                               <label>Age...</label>
-                              <md-input v-model="age" type="number"></md-input>
+                              <md-input v-model="age" type="number" min="0" onkeyup="if(this.value<0){this.value= this.value * -1}"></md-input>
                             </md-field>
 
 
