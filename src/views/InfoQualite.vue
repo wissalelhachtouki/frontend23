@@ -37,7 +37,7 @@
                       <md-field class="md-form-group col-md-12" slot="inputs">
                         <md-icon></md-icon>
                         <label>Préparation de la formation...</label>
-                        <md-input v-model="preparation" type="number" onkeyup="if(this.value<0){this.value = this.value * -1}
+                        <md-input v-model="preparation" type="number" min="0" max="100" onkeyup="if(this.value<0){this.value = this.value * -1}
                                                                                 else if(this.value>100){this.value = 100}"></md-input>
                       </md-field>
 
@@ -45,7 +45,7 @@
                       <md-field class="md-form-group col-md-12" slot="inputs">
                         <md-icon></md-icon>
                         <label>Organisation de la formation...</label>
-                        <md-input v-model="organisation" type="number" onkeyup="if(this.value<0){this.value = this.value * -1}
+                        <md-input v-model="organisation" type="number" min="0" max="100" onkeyup="if(this.value<0){this.value = this.value * -1}
                                                                                 else if(this.value>100){this.value = 100}"></md-input>
                       </md-field>
 
@@ -55,7 +55,7 @@
                       <md-field class="md-form-group col-md-12" slot="inputs">
                         <md-icon></md-icon>
                         <label>Déroulement de la formation...</label>
-                        <md-input v-model="deroulement" type="number" onkeyup="if(this.value<0){this.value = this.value * -1}
+                        <md-input v-model="deroulement" type="number" min="0" max="100" onkeyup="if(this.value<0){this.value = this.value * -1}
                                                                                 else if(this.value>100){this.value = 100}"></md-input>
                       </md-field>
 
@@ -64,7 +64,7 @@
                       <md-field class="md-form-group col-md-12" slot="inputs">
                         <md-icon></md-icon>
                         <label>Contenu de la formation...</label>
-                        <md-input v-model="contenu" type="number" onkeyup="if(this.value<0){this.value = this.value * -1}
+                        <md-input v-model="contenu" type="number" min="0" max="100" onkeyup="if(this.value<0){this.value = this.value * -1}
                                                                                 else if(this.value>100){this.value = 100}"></md-input>
                       </md-field>
 
@@ -73,7 +73,7 @@
                       <md-field class="md-form-group col-md-12 " slot="inputs">
                         <md-icon>adress</md-icon>
                         <label>Efficacité de la formation...</label>
-                        <md-input v-model="efficacite" type="number" onkeyup="if(this.value<0){this.value = this.value * -1}
+                        <md-input v-model="efficacite" type="number" min="0" max="100" onkeyup="if(this.value<0){this.value = this.value * -1}
                                                                                 else if(this.value>100){this.value = 100}"></md-input>
                       </md-field>
 
