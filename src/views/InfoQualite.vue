@@ -21,7 +21,7 @@
                 </div>
                 <div class="card-body">
                   <form>
-                    <div class="row">
+
 
                       <md-field class="md-form-group col-md-12" slot="inputs">
                         <md-icon></md-icon>
@@ -31,7 +31,7 @@
 
 
 
-                    </div>
+
 
 
                       <md-field class="md-form-group col-md-12" slot="inputs">

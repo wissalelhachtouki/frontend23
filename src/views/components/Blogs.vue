@@ -21,22 +21,18 @@
             >
               <slide>
 
-                <a href="#/blog2" target="_blank">
+                <a href="#/blog1" target="_blank">
 
                 <img :src="carousel1" alt="blog1" />
                 </a>
               </slide>
               <slide>
 
-                <a href="#/blog1" target="_blank">
+                <a href="#/blog2" target="_blank">
                 <img :src="carousel2" alt="carousel2" />
                 </a>
               </slide>
-              <slide>
-                <a href="#/blog1" target="_blank">
-                <img :src="carousel3" alt="carousel3" />
-                </a>
-              </slide>
+
             </carousel>
           </md-card>
         </div>
@@ -56,9 +52,9 @@ export default {
     return {
       classicModal: false,
       selectedDate: new Date("2018/03/26"),
-      carousel1: require("@/assets/img/blog2.jpg"),
-      carousel2: require("@/assets/img/blog1.jpg"),
-      carousel3: require("@/assets/img/blog1.jpg")
+      carousel1: require("@/assets/img/blog1.jpg"),
+      carousel2: require("@/assets/img/blog2.jpg"),
+
     };
   },
   methods: {

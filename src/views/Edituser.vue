@@ -123,7 +123,7 @@
                           <div class="row">
 
 
-                            <md-field class="md-form-group col-md-11" slot="inputs" >
+                            <md-field class="md-form-group col-md-12" slot="inputs" >
 
                               <label>Profil... </label>
 

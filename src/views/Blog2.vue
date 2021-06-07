@@ -19,37 +19,34 @@
                 </div>
                 <div class="name">
                   <h3 class="title">Anass Belkas</h3>
-                  <h6>Quel est le rôle de la formation ?</h6>
-                  <md-button
-                      href="javascript:void(0)"
-                      class="md-just-icon md-simple md-dribbble"
-                  ><i class="fab fa-dribbble"></i
-                  ></md-button>
-                  <md-button
-                      href="javascript:void(0)"
-                      class="md-just-icon md-simple md-twitter"
-                  ><i class="fab fa-twitter"></i
-                  ></md-button>
-                  <md-button
-                      href="javascript:void(0)"
-                      class="md-just-icon md-simple md-pinterest"
-                  ><i class="fab fa-pinterest"></i
-                  ></md-button>
+                  <h6>Gérer la communication avec vos apprenants avant et après une formation</h6>
+
                 </div>
               </div>
             </div>
           </div>
           <div class="description text-center">
             <p>
-              La formation permet au salarié de développer sa carrière professionnelle, sur le long terme. Grâce à ces cursus, il pourra en effet améliorer ses capacités, s’adapter au changement et éventuellement obtenir une promotion. Le renforcement de ses compétences sera par ailleurs favorable à sa mobilité interne, voire externe.
+              Pour initier un contact avec vos apprenants, et la formation n’ayant pas démarré, vous n’avez pas beaucoup d’outils à votre disposition. Le plus simple et le plus efficace de tous ? L’e-mail !
 
-              Les objectifs de la formation peuvent varier en fonction de l’entreprise et des collaborateurs concernés. Ces programmes sont notamment indispensables pour réajuster les connaissances du personnel aux besoins de l’établissement ou à l’évolution du métier.
+              Que celui-ci soit envoyé par l’organisme ou par le formateur ou la formatrice directement, ce message électronique commencera de préférence par des présentations. En quelques lignes, pas plus, dites qui est le formateur ou la formatrice. Donnez quelques éléments de CV, un hobby ou un élément biographique qui ne s’oublie pas (un tour du monde, un changement de voie professionnelle radicale qui l’a amené(e) à devenir formateur, formatrice…).
 
-              Le salarié peut également avoir besoin d’étoffer ses compétences pour mieux remplir ses missions actuelles ou futures. D’ailleurs, de nombreux participants sont motivés par l’envie de progresser dans la hiérarchie. Ils seront ainsi en mesure de concrétiser leurs projets professionnels grâce à la formation.
+             <br> Osez éventuellement une pointe d’humour, ou une devinette sur laquelle méditer en attendant de se retrouver, de manière à marquer les esprits.
 
-              Aujourd’hui, un salarié expérimenté peut vite devenir moins performant face aux nombreux progrès dans son secteur. Il a donc besoin d’une remise à niveau pour gagner en efficacité dans son travail. De plus, les acquis de ces personnes sont précieux pour l’entreprise. La formation permettra ainsi de combler leurs lacunes et de mettre en valeur leurs atouts.
+              <br>Enfin, bien sûr, donnez toutes les informations pratiques qui permettront aux apprenants d’arriver jusqu’à vous le jour J : dates, horaires, adresse physique du lieu de formation ou lien de connexion à l’outil de visioconférence…
 
+              Si la formation s’effectue en présentiel, n’hésitez pas à consigner ces informations dans une convocation que vous glisserez en pièce jointe pour que vos apprenants puissent l’imprimer facilement.
+              <br>Et puis, ajoutez des ressources si cela est pertinent (via un lien dropbox, Google Drive, ou directement en glissant les documents en pièce jointe).
 
+              <br>Enfin, si la formation est effectuée en visioconférence, n’hésitez pas à rappeler quelques bonnes pratiques.
+              <br>Il est essentiel pour les apprenants, et pour la bonne conduite d’une formation à distance, qu’ils s’installent dans un lieu calme, éloigné de l’open space, où ils ne seront pas dérangés.
+
+             <br> Il est également important, pour une bonne compréhension des interventions de chacun (le formateur ou la formatrice, et les autres apprenants), mais aussi pour éviter les désagréments sonores (écho, son de mauvaise qualité…), que chacun utilise un casque ou des écouteurs. Encouragez également chacun à activer sa webcam.
+
+              <br>Cela pour faciliter l’établissement d’une cohésion du groupe, mais aussi l’animation de la formation. Il s’agit là d’un point essentiel que vous pouvez expliquer. <br>
+              Pour conclure, partagez votre plaisir d’animer cette formation et assurez tout le monde de votre disponibilité pour répondre aux questions en amont de la formation.
+<br>
+              <br>
 
             </p>
           </div>
