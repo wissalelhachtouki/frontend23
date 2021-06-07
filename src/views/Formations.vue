@@ -891,12 +891,24 @@ export default {
     },
     makePDF() {
       var doc = new JSPDF();
-      autoTable(doc, { html: "#myTable" });
+      autoTable(doc, {
+        html: "#myTable",
+        headStyles: {
+          halign: "center",
+          valign: "middle",
+          lineWidth: 0.25,
+          lineColor: 200
+        },
+        bodyStyles: {
+          halign: "center",
+          lineWidth: 0.25,
+          lineColor: 200
+        },
+        margin: {
+          top: 30
+        }
+      });
       doc.save("MaFormation.pdf");
-      doc.setFontSize(22);
-      doc.setTextColor(255, 0, 0);
-
-
     }
   },
   mounted() {
