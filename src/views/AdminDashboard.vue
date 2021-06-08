@@ -48,7 +48,6 @@
                     <thead>
                       <tr>
                         <th class="text-center">verifier</th>
-                        <th class="text-center">user</th>
                         <th class="text-center">email</th>
                         <th class="text-center">name</th>
                         <th class="text-center">job</th>
@@ -75,7 +74,6 @@
                             ></strong
                           >
                         </td>
-                        <td class="text-center">{{ user.name }}</td>
                         <td class="text-center">{{ user.email }}</td>
                         <td class="text-center">
                           {{ user.firstName }} {{ user.lastName }}
