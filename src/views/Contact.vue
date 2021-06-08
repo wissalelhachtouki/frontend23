@@ -11,7 +11,7 @@
               <md-field class="md-form-group" slot="inputs">
                 <md-icon>people</md-icon>
                 <label>Nom ...</label>
-                <md-input v-model="nom" type="text"></md-input>
+                <md-input v-model="name" type="text"></md-input>
               </md-field>
 
 
@@ -19,19 +19,27 @@
               <md-field class="md-form-group" slot="inputs">
                 <md-icon>email</md-icon>
                 <label>Adresse E-mail...</label>
-                <md-input v-model="email" type="email"></md-input>
+                <md-input v-model="yourEmail" type="email"></md-input>
               </md-field>
 
               <md-field class="md-form-group" slot="inputs" >
 
                 <label> <md-icon>edit</md-icon> </label>
 
-                <md-textarea v-model="textarea" type="text"></md-textarea>
+                <md-textarea v-model="content" type="text"></md-textarea>
               </md-field>
 
+              <md-label class="md-form-group" slot="error">
+                <div v-if="message" class="alert alert-success" role="alert">
+                  {{ message }}
+                </div>
+              </md-label>
 
+              <md-label class="md-form-group" slot="error">
+                <error v-if="error" :error="error"/>
+              </md-label>
 
-              <md-button slot="footer" class="md-simple md-warning md-lg">
+              <md-button @click.prevent="handleSubmit" slot="footer" class="md-simple md-warning md-lg">
                 Envoyer
               </md-button>
             </login-card>
@@ -44,18 +52,45 @@
 
 <script>
 import { LoginCard } from "@/components";
+import axios from "axios";
+import Error from "@/views/components/Error";
 
 export default {
   components: {
-    LoginCard
+    LoginCard,
+    Error
   },
   bodyClass: "login-page",
   data() {
     return {
-
-      email: null,
-      password: null
+      name: "",
+      yourEmail: "",
+      content: "",
+      message: "",
+      error: ""
     };
+  },
+  methods: {
+    async handleSubmit(){
+      try {
+        const data = {
+          name: this.name,
+          yourEmail: this.yourEmail,
+          content: this.content
+        };
+        const response = await axios.post("contact", data);
+
+        this.name = "";
+        this.yourEmail = "";
+        this.content = "";
+
+        this.message = "Your message was send ! ";
+        this.error = "";
+      } catch (e) {
+        this.error = "Error occurred !";
+        this.message = "";
+      }
+    }
   },
   props: {
     header: {
