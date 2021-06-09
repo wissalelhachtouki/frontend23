@@ -23,7 +23,6 @@ import NonAuth from "@/views/NonAuth";
 import InfoQualite from "./views/InfoQualite";
 import Qualite from "./views/Qualite";
 
-
 Vue.use(Router);
 
 function guardMyroute(to, from, next) {
@@ -141,55 +140,55 @@ export default new Router({
     },
     {
       path: "/dashboard",
-      name: "dashboard",
+      name: "Tableau de bord",
       beforeEnter: guardMyrouteUser,
       components: { default: Dashboard }
     },
     {
       path: "/admin/dashboard",
-      name: "admindashboard",
+      name: "Admin dashboard",
       beforeEnter: guardMyrouteAdmin,
       components: { default: AdminDashboard }
     },
     {
       path: "/profile",
-      name: "profile",
+      name: "Profile",
       beforeEnter: guardMyroute,
       components: { default: User }
     },
     {
       path: "/edituser",
-      name: "edituser",
+      name: "Edit User",
       beforeEnter: guardMyroute,
       components: { default: Edituser }
     },
     {
       path: "/calendrier",
-      name: "calendrier",
+      name: "Calendrier",
       beforeEnter: guardMyrouteUser,
       components: { default: Calendrier }
     },
     {
       path: "/formations",
-      name: "formations",
+      name: "Formations",
       beforeEnter: guardMyrouteUser,
       components: { default: Formations }
     },
     {
       path: "/todo-list",
-      name: "todo-list",
+      name: "Todo list",
       beforeEnter: guardMyrouteUser,
       components: { default: Todos }
     },
     {
       path: "/infoQualite",
-      name: "infoQualite",
+      name: "Ajouter Rapport",
       beforeEnter: guardMyrouteUser,
       components: { default: InfoQualite }
     },
     {
       path: "/qualite",
-      name: "qualite",
+      name: "Rapports",
       beforeEnter: guardMyrouteUser,
       components: { default: Qualite }
     },
