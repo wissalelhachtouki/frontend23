@@ -158,7 +158,7 @@ export default new Router({
     },
     {
       path: "/edituser",
-      name: "Edit User",
+      name: "Editer Profile",
       beforeEnter: guardMyroute,
       components: { default: Edituser }
     },
