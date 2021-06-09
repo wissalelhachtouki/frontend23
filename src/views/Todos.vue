@@ -105,12 +105,12 @@
                 <div class="modal-dialog  modal-md" role="document">
                   <div class="modal-content" style=" border-radius: 10px">
                     <div class="modal-body">
-                      <h4 class="modal-title card-title" style="text-align: center"><strong>Create Task</strong></h4>
+                      <h4 class="modal-title card-title" style="text-align: center"><strong>Ajouter une Nouvelle Tâche</strong></h4>
                           <div class="form-group">
                             <md-field class="md-form-group" slot="inputs">
                               <md-icon >  </md-icon>
                               <md-input v-model="nameTodo" type="text"></md-input>
-                              <label>Task...</label>
+                              <label>Tâche...</label>
 
                             </md-field>
                           </div>

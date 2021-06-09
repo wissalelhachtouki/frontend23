@@ -10,11 +10,11 @@
               </md-card-header>
 
               <md-card-content>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio itaque ea, nostrum odio. Dolores, sed accusantium quasi non.
+Vous allez recevoir un mail de confirmation, Veuillez vérifier votre boîte de réception
               </md-card-content>
 
               <md-card-actions>
-                <md-button @click.prevent="handleSend" class="md-simple md-info md-lg ">Send</md-button>
+                <md-button @click.prevent="handleSend" class="md-simple md-info md-lg ">Envoyer</md-button>
               </md-card-actions>
             </md-card>
           </div>

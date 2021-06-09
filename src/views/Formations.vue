@@ -146,7 +146,7 @@
                               <div></div>
                               <md-icon >  </md-icon>
                               <md-input v-model="tarifsParJours" type="number" min="0" onkeyup="if(this.value<0){this.value= this.value * -1}"></md-input>
-                              <label>Tarif/J...</label>
+                              <label>Tarif journalier...</label>
 
                             </md-field>
                           </div>
@@ -176,7 +176,7 @@
                       class="md-simple"
                       @click="showModal = false"
                     ><strong>
-                      Close</strong>
+                      Fermer</strong>
                     </md-button>
 
                   </div>
@@ -338,7 +338,7 @@
                         "
 
                       >
-                        Close
+                        Fermer
                       </md-button>
                     </div>
                   </div>
@@ -355,7 +355,7 @@
                 <div class="modal-dialog modal-xl" role="document">
                   <div class="modal-content" style=" border-radius: 10px">
                     <div class="modal-header card-header card-header-primary card-header-icon" >
-                      <h4 class="modal-title card-title">Details de la formation</h4>
+                      <h4 class="modal-title card-title">Détails de la formation</h4>
                       <md-button
 
                         class="md-simple md-just-icon md-round modal-default-button"
@@ -378,7 +378,7 @@
                               <td>{{ formations.nombreDeJours }} jours</td>
                             </tr>
                             <tr>
-                              <td style="width: 50%"><strong>Tarif/jour : </strong></td>
+                              <td style="width: 50%"><strong>Tarif journalier : </strong></td>
                               <td>{{ formations.tarifsParJours }} DH</td>
                             </tr>
                             <tr>
@@ -437,7 +437,7 @@
                       @click="showModalDetails = false"
 
                     ><strong>
-                      Close</strong>
+                      Fermer</strong>
                     </md-button>
 
                   </div>
@@ -494,7 +494,7 @@
                             <md-field class="md-form-group" slot="inputs">
                               <md-icon >  </md-icon>
                               <md-input v-model="formations.tarifsParJours" type="number" min="0" onkeyup="if(this.value<0){this.value= this.value * -1}"></md-input>
-                              <label>Tarfis/J...</label>
+                              <label>Tarif journalier...</label>
 
                             </md-field>
                           </div>
@@ -528,7 +528,7 @@
                       @click="showModalEdit = false"
 
                     ><strong>
-                      Close</strong>
+                      Fermer</strong>
                     </md-button>
                   </div>
 

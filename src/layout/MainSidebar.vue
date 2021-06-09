@@ -35,7 +35,7 @@
             <span class="links_name">Editer Profile</span>
           </a>
 
-          <span class="tooltip">Edit Profile</span>
+          <span class="tooltip">Editer Profile</span>
         </li>
 <br>
         <hr style="background-color: white">
@@ -44,24 +44,24 @@
         <li @click="test3">
           <a class="btn">
             <i class="bx bxs-dashboard"></i>
-            <span class="links_name">Dashboard</span>
+            <span class="links_name">Tableau de bord</span>
           </a>
-          <span class="tooltip">Dashboard</span>
+          <span class="tooltip">Tableau de bord</span>
         </li>
 
         <li @click="test4">
           <a class="btn">
             <i class="bx bx-calendar"></i>
-            <span class="links_name">Calendar</span>
+            <span class="links_name">Calendrier</span>
           </a>
-          <span class="tooltip">Calendar</span>
+          <span class="tooltip">Calendrier</span>
         </li>
         <li @click="test5">
           <a class="btn">
             <i class="bx bx-task"></i>
-            <span class="links_name">Tasks</span>
+            <span class="links_name">To-do List</span>
           </a>
-          <span class="tooltip">Tasks</span>
+          <span class="tooltip">To-do List</span>
         </li>
         <li @click="test6">
           <a class="btn">
@@ -75,21 +75,21 @@
             <i class="bx bxs-layer-plus"></i>
             <span class="links_name">Ajouter Rapport</span>
           </a>
-          <span class="tooltip">Info Qualite</span>
+          <span class="tooltip">Ajouter Rapport</span>
         </li>
         <li @click="test9">
           <a class="btn">
             <i class="bx bxs-star"></i>
-            <span class="links_name">Rapport  Formations</span>
+            <span class="links_name">Rapport Formations</span>
           </a>
-          <span class="tooltip">Qualite</span>
+          <span class="tooltip">Rapport Formations</span>
         </li>
         <li @click="test7">
           <a class="btn">
             <i class="bx bx-home"></i>
-            <span class="links_name">Show home</span>
+            <span class="links_name">Accueil</span>
           </a>
-          <span class="tooltip">Show home</span>
+          <span class="tooltip">Accueil</span>
         </li>
         <li></li>
 
@@ -101,7 +101,7 @@
           <li>
             <a @click="handleClick">
               <i class="bx bx-log-out"></i>
-              <span class="links_name">Log out</span>
+              <span class="links_name">Déconnexion</span>
             </a>
           </li>
         </ul>

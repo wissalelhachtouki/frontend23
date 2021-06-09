@@ -63,7 +63,7 @@
 
                             <md-field class="md-form-group col-md-6" slot="inputs">
                               <md-icon></md-icon>
-                              <label>Job...</label>
+                              <label>Profession...</label>
                               <md-input v-model="job"  type="text"></md-input>
                             </md-field>
 
@@ -71,7 +71,7 @@
 
                             <md-field class="md-form-group col-md-6" slot="inputs">
                               <md-icon></md-icon>
-                              <label>Age...</label>
+                              <label>Âge...</label>
                               <md-input v-model="age" type="number" min="0" onkeyup="if(this.value<0){this.value= this.value * -1}"></md-input>
                             </md-field>
 
@@ -81,7 +81,7 @@
                           <div class="row">
 
                             <md-field class="md-form-group col-md-11 " slot="inputs">
-                              <md-icon>adress</md-icon>
+                              <md-icon>adresse</md-icon>
                               <label>Addresse...</label>
                               <md-input v-model="adresse"  type="text"></md-input>
                             </md-field>

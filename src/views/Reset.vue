@@ -26,7 +26,7 @@
               </md-field>
 
               <md-button @click.prevent="handleSubmit" slot="footer" class="md-simple md-danger md-lg">
-                Submit
+                Envoyer
               </md-button>
 
 

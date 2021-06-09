@@ -6,11 +6,11 @@
           <div class="md-layout-item md-size-33 md-small-size-66 md-xsmall-size-100 md-medium-size-40 mx-auto">
             <md-card>
               <md-card-header data-background-color="blue" class="text-center">
-                <div class="md-title">Verification Done !</div>
+                <div class="md-title">Verification Avec Succes !</div>
               </md-card-header>
 
               <md-card-content>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio itaque ea, nostrum odio. Dolores, sed accusantium quasi non.
+                 Votre Email à bien été vérfier .
               </md-card-content>
 
               <md-card-actions>

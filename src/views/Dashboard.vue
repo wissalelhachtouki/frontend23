@@ -42,8 +42,7 @@
             </div>
             <div class="md-card-actions md-alignment-left">
               <div class="stats">
-                <i class="md-icon md-icon-font md-theme-default">update</i> Just
-                Updated
+                <i class="md-icon md-icon-font md-theme-default">update</i> Just Updated
               </div>
             </div>
           </div>
@@ -61,8 +60,8 @@
             </div>
             <div class="md-card-actions md-alignment-left">
               <div class="stats">
-                <i class="md-icon md-icon-font md-theme-default">update</i> Just
-                Updated
+                <i class="md-icon md-icon-font md-theme-default">update</i> Just Updated
+
               </div>
             </div>
           </div>
@@ -125,7 +124,7 @@
             <div class="md-card-actions md-alignment-left">
               <div class="stats">
                 <i class="md-icon md-icon-font md-theme-default">access_time</i>
-                updated in last formation
+                Mise à jour à partir de la dernière formation
               </div>
             </div>
           </div>
@@ -144,7 +143,7 @@
             <div class="md-card-actions md-alignment-left">
               <div class="stats">
                 <i class="md-icon md-icon-font md-theme-default">access_time</i>
-                updated in last formation
+                Mise à jour à partir de la dernière formation
               </div>
             </div>
           </div>
@@ -164,7 +163,7 @@
             <div class="md-card-actions md-alignment-left">
               <div class="stats">
                 <i class="md-icon md-icon-font md-theme-default">access_time</i>
-                updated in last formation
+                Mise à jour à partir de la dernière formation
               </div>
             </div>
           </div>
@@ -184,7 +183,7 @@
             <div class="md-card-actions md-alignment-left">
               <div class="stats">
                 <i class="md-icon md-icon-font md-theme-default">access_time</i>
-                updated in last formation
+                Mise à jour à partir de la dernière formation
               </div>
             </div>
           </div>
