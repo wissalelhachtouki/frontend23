@@ -10,14 +10,26 @@
 
               <md-field class="md-form-group" slot="inputs">
                 <md-icon>people</md-icon>
-                <label>Nom...</label>
+                <label>Nom et Prénom...</label>
                 <md-input v-model="name" type="text"></md-input>
+              </md-field>
+
+              <md-field class="md-form-group" slot="inputs">
+                <md-icon>person</md-icon>
+                <label>Identifiant...</label>
+                <md-input v-model="username" type="text"></md-input>
               </md-field>
 
               <md-field class="md-form-group" slot="inputs">
                 <md-icon>email</md-icon>
                 <label>Adresse E-mail...</label>
                 <md-input v-model="email" type="email"></md-input>
+              </md-field>
+
+              <md-field class="md-form-group" slot="inputs">
+                <md-icon>phone</md-icon>
+                <label>Télephone...</label>
+                <md-input v-model="number" type="text"></md-input>
               </md-field>
 
               <md-field class="md-form-group" slot="inputs">
@@ -67,9 +79,11 @@ export default {
     return {
       name: "",
       email: "",
+      number: "",
       password: "",
       password_confirmation: "",
-      error: ""
+      error: "",
+      username: "",
     };
   },
   methods: {

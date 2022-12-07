@@ -8,9 +8,9 @@
               <h4 slot="title" class="card-title">Je me connecte</h4>
 
               <md-field class="md-form-group" slot="inputs">
-                <md-icon>email</md-icon>
-                <label>Adresse E-mail...</label>
-                <md-input v-model="email" type="email"></md-input>
+                <md-icon>person</md-icon>
+                <label>Identifiant...</label>
+                <md-input v-model="username" type="text"></md-input>
               </md-field>
 
               <md-field class="md-form-group" slot="inputs">
@@ -64,7 +64,7 @@ export default {
   bodyClass: "login-page",
   data() {
     return {
-      email: "",
+      username: "",
       password: "",
       error: ""
     };
@@ -73,7 +73,7 @@ export default {
     async handleSubmit(){
       try {
         const data = {
-          email: this.email,
+          username: this.username,
           password: this.password
         };
         const response = await axios.post("login", data);

@@ -6,8 +6,6 @@ import Contact from "./views/Contact";
 import MainNavbar from "./layout/MainNavbar.vue";
 import MainFooter from "./layout/MainFooter.vue";
 import Register from "@/views/Register";
-import Blog1 from "./views/Blog1";
-import Blog2 from "./views/Blog2";
 import Dashboard from "@/views/Dashboard";
 import Forgot from "@/views/Forgot";
 import Reset from "@/views/Reset";
@@ -81,22 +79,6 @@ export default new Router({
       path: "/error",
       name: "error",
       components: { default: NonAuth }
-    },
-    {
-      path: "/blog1",
-      name: "blog1",
-      components: { default: Blog1, header: MainNavbar, footer: MainFooter },
-      props: {
-        header: { colorOnScroll: 200 }
-      }
-    },
-    {
-      path: "/blog2",
-      name: "blog2",
-      components: { default: Blog2, header: MainNavbar, footer: MainFooter },
-      props: {
-        header: { colorOnScroll: 200 }
-      }
     },
     {
       path: "/login",
